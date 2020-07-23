@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.5.1"
+        "version": "2.6.0"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -49,6 +49,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -121,6 +124,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -180,6 +186,260 @@
                 ]
             }
         },
+        "\/bookmarks\/{bookmark}": {
+            "delete": {
+                "tags": [
+                    "Bookmark"
+                ],
+                "summary": "Remove one Bookmark resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "deleteBookmark",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "bookmark",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": [
+                    "Bookmark"
+                ],
+                "summary": "Retrieve one Bookmark resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "getBookmark",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "bookmark",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Bookmark"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/bookmarks": {
+            "post": {
+                "tags": [
+                    "Bookmark"
+                ],
+                "summary": "Create one Bookmark resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "postBookmark",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/BookmarkData"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Returned when the resource is created",
+                        "schema": {
+                            "$ref": "#\/definitions\/Bookmark"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
         "\/business-activities": {
             "get": {
                 "tags": [
@@ -206,6 +466,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -305,6 +568,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -392,6 +658,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -477,6 +746,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -580,6 +852,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -654,6 +929,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -736,6 +1014,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -821,6 +1102,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -913,6 +1197,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -998,6 +1285,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -1089,6 +1379,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -1163,6 +1456,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -1252,6 +1548,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -1339,6 +1638,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -1413,6 +1715,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -1505,6 +1810,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -1584,6 +1892,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -1669,6 +1980,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -1743,6 +2057,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -1830,6 +2147,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -1934,6 +2254,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -2014,6 +2337,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -2104,6 +2430,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -2191,6 +2520,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -2271,6 +2603,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -2356,6 +2691,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -2448,6 +2786,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -2522,6 +2863,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -2601,6 +2945,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -2694,6 +3041,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -2785,6 +3135,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -2867,6 +3220,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -2947,6 +3303,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -3037,6 +3396,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -3045,6 +3407,9 @@
                         "name": "state",
                         "pattern": ".*",
                         "type": "string"
+                    },
+                    {
+                        "$ref": "#\/parameters\/visibility__"
                     },
                     {
                         "$ref": "#\/parameters\/category"
@@ -3063,9 +3428,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/organization"
-                    },
-                    {
-                        "$ref": "#\/parameters\/visibility__"
                     },
                     {
                         "$ref": "#\/parameters\/page"
@@ -3142,6 +3504,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -3235,6 +3600,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -3323,6 +3691,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -3427,6 +3798,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -3514,6 +3888,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -3599,6 +3976,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -3691,6 +4071,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -3765,6 +4148,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -3855,6 +4241,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -3969,6 +4358,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -4059,6 +4451,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -4139,6 +4534,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -4224,6 +4622,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -4314,6 +4715,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -4408,6 +4812,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -4482,6 +4889,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -4564,6 +4974,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -4653,6 +5066,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -4701,6 +5117,111 @@
                 ]
             }
         },
+        "\/members\/{member}\/bookmarks": {
+            "get": {
+                "tags": [
+                    "Member"
+                ],
+                "summary": "Retrieve all Bookmark resources.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "cgetBookmarksByMember",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/page"
+                    },
+                    {
+                        "$ref": "#\/parameters\/limit"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "member",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/BookmarkPagination"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
         "\/members\/{member}": {
             "delete": {
                 "tags": [
@@ -4727,6 +5248,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -4809,6 +5333,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -4894,6 +5421,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -4986,6 +5516,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -5062,9 +5595,14 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
                         "in": "path",
                         "name": "knowledgeBase",
                         "required": true,
@@ -5147,6 +5685,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -5168,6 +5709,8 @@
                         "$ref": "#\/parameters\/limit"
                     },
                     {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
                         "in": "path",
                         "name": "knowledgeBase",
                         "required": true,
@@ -5250,6 +5793,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -5268,6 +5814,8 @@
                         "$ref": "#\/parameters\/limit"
                     },
                     {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
                         "in": "path",
                         "name": "knowledgeBase",
                         "required": true,
@@ -5350,6 +5898,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -5430,6 +5981,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -5519,6 +6073,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -5593,6 +6150,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -5686,6 +6246,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -5776,6 +6339,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -5856,6 +6422,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -5941,6 +6510,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -6031,6 +6603,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -6125,6 +6700,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -6212,6 +6790,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -6286,6 +6867,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -6378,6 +6962,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -6466,6 +7053,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -6558,6 +7148,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -6646,6 +7239,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -6752,6 +7348,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -6868,6 +7467,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -6976,6 +7578,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -7081,6 +7686,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -7184,6 +7792,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -7298,6 +7909,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -7417,6 +8031,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -7520,6 +8137,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -7648,6 +8268,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -7676,6 +8299,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/place"
+                    },
+                    {
+                        "$ref": "#\/parameters\/priority"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -7783,6 +8409,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -7885,6 +8514,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -7968,6 +8600,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -8060,6 +8695,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -8145,6 +8783,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -8252,6 +8893,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -8339,6 +8983,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -8367,6 +9014,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/place"
+                    },
+                    {
+                        "$ref": "#\/parameters\/priority"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -8471,6 +9121,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -8560,6 +9213,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -8682,6 +9338,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -8796,6 +9455,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -8899,6 +9561,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -9021,6 +9686,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -9049,6 +9717,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/place"
+                    },
+                    {
+                        "$ref": "#\/parameters\/priority"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -9156,6 +9827,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -9258,6 +9932,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -9341,6 +10018,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -9431,6 +10111,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -9546,6 +10229,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -9620,6 +10306,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -9730,6 +10419,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -9813,6 +10505,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -9905,6 +10600,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -9985,6 +10683,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -10074,6 +10775,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -10148,6 +10852,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -10258,6 +10965,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -10358,6 +11068,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -10446,6 +11159,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -10568,6 +11284,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -10651,6 +11370,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -10743,6 +11465,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -10828,6 +11553,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -10920,6 +11648,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -11007,6 +11738,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -11081,6 +11815,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -11170,6 +11907,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -11257,6 +11997,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -11337,6 +12080,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -11422,6 +12168,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -11514,6 +12263,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -11588,6 +12340,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -11675,6 +12430,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -11749,6 +12507,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -11803,6 +12564,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -11881,6 +12645,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -11948,6 +12715,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -12037,6 +12807,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -12117,6 +12890,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -12202,6 +12978,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -12294,6 +13073,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app"
                     },
                     {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
@@ -12368,6 +13150,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
@@ -12919,6 +13704,177 @@
                 "member"
             ]
         },
+        "Bookmark": {
+            "type": "object",
+            "properties": {
+                "_embedded": {
+                    "type": "object",
+                    "properties": {
+                        "member": {
+                            "$ref": "#\/definitions\/Member"
+                        },
+                        "place": {
+                            "$ref": "#\/definitions\/Place"
+                        }
+                    }
+                },
+                "_links": {
+                    "type": "object",
+                    "properties": {
+                        "member": {
+                            "$ref": "#\/definitions\/BookmarkLinksMember"
+                        },
+                        "place": {
+                            "$ref": "#\/definitions\/BookmarkLinksPlace"
+                        },
+                        "self": {
+                            "$ref": "#\/definitions\/BookmarkLinksSelf"
+                        }
+                    }
+                },
+                "createdAt": {
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "id": {
+                    "format": "uuid",
+                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "type": {
+                    "format": "string",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            }
+        },
+        "BookmarkCollection": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "$ref": "#\/definitions\/Bookmark"
+                    }
+                }
+            }
+        },
+        "BookmarkData": {
+            "type": "object",
+            "properties": {
+                "member": {
+                    "type": "string"
+                },
+                "place": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "member",
+                "place"
+            ]
+        },
+        "BookmarkLinksMember": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the member associated to the given bookmark.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/BookmarkLinksMemberIriTemplate"
+                }
+            }
+        },
+        "BookmarkLinksMemberIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "member": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "BookmarkLinksPlace": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the place associated to the given bookmark.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/BookmarkLinksPlaceIriTemplate"
+                }
+            }
+        },
+        "BookmarkLinksPlaceIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "place": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "BookmarkLinksSelf": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the self associated to the given bookmark.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/BookmarkLinksSelfIriTemplate"
+                }
+            }
+        },
+        "BookmarkLinksSelfIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "bookmark": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "BookmarkPagination": {
+            "allOf": [
+                {
+                    "$ref": "#\/definitions\/Pagination"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "_embedded": {
+                            "$ref": "#\/definitions\/BookmarkCollection"
+                        }
+                    }
+                }
+            ]
+        },
         "BusinessActivity": {
             "type": "object",
             "properties": {
@@ -13443,11 +14399,6 @@
                     "readOnly": true,
                     "type": "string"
                 },
-                "key": {
-                    "format": "string",
-                    "maxLength": 255,
-                    "type": "string"
-                },
                 "name": {
                     "format": "string",
                     "maxLength": 255,
@@ -13655,6 +14606,12 @@
                     "readOnly": true,
                     "type": "string"
                 },
+                "priorities": {
+                    "items": {
+                        "$ref": "#\/definitions\/ReportTypePriority"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "format": "string",
                     "readOnly": true,
@@ -13854,12 +14811,6 @@
                     "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
                     "readOnly": true,
                     "type": "string"
-                },
-                "state": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
                 },
                 "type": {
                     "format": "string",
@@ -15662,7 +16613,8 @@
                     "type": "string"
                 },
                 "password": {
-                    "type": "string"
+                    "type": "string",
+                    "format": "password"
                 }
             },
             "required": [
@@ -15676,13 +16628,6 @@
                 "_embedded": {
                     "type": "object",
                     "properties": {
-                        "availableRoles": {
-                            "type": "array",
-                            "items": {
-                                "type": "string",
-                                "format": "string"
-                            }
-                        },
                         "invitation": {
                             "$ref": "#\/definitions\/Invitation"
                         },
@@ -15727,12 +16672,6 @@
                     "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
                     "readOnly": true,
                     "type": "string"
-                },
-                "roles": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
                 },
                 "type": {
                     "format": "string",
@@ -15924,10 +16863,8 @@
                     }
                 },
                 "roles": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
+                    "type": "string",
+                    "format": "string"
                 }
             }
         },
@@ -15947,10 +16884,6 @@
                     "format": "uuid",
                     "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
                     "readOnly": true,
-                    "type": "string"
-                },
-                "key": {
-                    "format": "string",
                     "type": "string"
                 },
                 "name": {
@@ -16299,12 +17232,6 @@
                 "signature": {
                     "$ref": "#\/definitions\/OperationSignature"
                 },
-                "state": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
                 "type": {
                     "format": "string",
                     "readOnly": true,
@@ -16315,10 +17242,7 @@
                     "readOnly": true,
                     "type": "string"
                 }
-            },
-            "required": [
-                "state"
-            ]
+            }
         },
         "OperationCollection": {
             "type": "object",
@@ -17511,7 +18435,6 @@
             },
             "required": [
                 "name",
-                "polygon",
                 "organization"
             ]
         },
@@ -18125,18 +19048,11 @@
                     "type": "string"
                 },
                 "priority": {
-                    "format": "int32",
-                    "type": "integer"
+                    "$ref": "#\/definitions\/ReportPriority"
                 },
                 "reference": {
                     "type": "string",
                     "format": "string"
-                },
-                "state": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
                 },
                 "tags": {
                     "items": {
@@ -18154,11 +19070,7 @@
                     "readOnly": true,
                     "type": "string"
                 }
-            },
-            "required": [
-                "priority",
-                "state"
-            ]
+            }
         },
         "ReportCollection": {
             "type": "object",
@@ -18444,14 +19356,72 @@
                     "type": "string"
                 },
                 "priority": {
-                    "format": "int32",
-                    "type": "integer"
+                    "format": "string",
+                    "type": "string"
                 },
                 "tags": {
                     "items": {
                         "type": "string"
                     },
                     "type": "array"
+                }
+            }
+        },
+        "ReportPriority": {
+            "type": "object",
+            "properties": {
+                "color": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "id": {
+                    "format": "uuid",
+                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "name": {
+                    "format": "string",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "position": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "type": {
+                    "format": "string",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            }
+        },
+        "ReportTypePriority": {
+            "type": "object",
+            "properties": {
+                "color": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "id": {
+                    "format": "uuid",
+                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "name": {
+                    "format": "string",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "position": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "type": {
+                    "format": "string",
+                    "readOnly": true,
+                    "type": "string"
                 }
             }
         },
@@ -18926,10 +19896,6 @@
                     "readOnly": true,
                     "type": "string"
                 },
-                "key": {
-                    "format": "string",
-                    "type": "string"
-                },
                 "name": {
                     "format": "string",
                     "type": "string"
@@ -18952,7 +19918,6 @@
                 }
             },
             "required": [
-                "key",
                 "name"
             ]
         },
@@ -19473,11 +20438,6 @@
                     "readOnly": true,
                     "type": "string"
                 },
-                "key": {
-                    "format": "string",
-                    "maxLength": 255,
-                    "type": "string"
-                },
                 "name": {
                     "format": "string",
                     "maxLength": 255,
@@ -19797,11 +20757,6 @@
                     "readOnly": true,
                     "type": "string"
                 },
-                "key": {
-                    "format": "string",
-                    "maxLength": 255,
-                    "type": "string"
-                },
                 "name": {
                     "format": "string",
                     "maxLength": 255,
@@ -19908,12 +20863,27 @@
             "required": true,
             "default": "com.keyclic.app"
         },
+        "x-keyclic-app-platform": {
+            "name": "x-keyclic-app-platform",
+            "in": "header",
+            "type": "string",
+            "format": "string",
+            "required": false
+        },
         "x-keyclic-app-version": {
             "name": "x-keyclic-app-version",
             "in": "header",
             "type": "string",
             "format": "string",
             "required": false
+        },
+        "BookmarkData": {
+            "name": "BookmarkData",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/BookmarkData"
+            },
+            "required": true
         },
         "after": {
             "enum": [
@@ -20075,6 +21045,18 @@
             },
             "required": true
         },
+        "visibility__": {
+            "collectionFormat": "multi",
+            "default": "VISIBILITY_PUBLIC",
+            "enum": [
+                "VISIBILITY_PUBLIC",
+                "VISIBILITY_PRIVATE"
+            ],
+            "in": "query",
+            "name": "visibility[]",
+            "pattern": "VISIBILITY_PUBLIC|VISIBILITY_PRIVATE",
+            "type": "string"
+        },
         "category": {
             "description": "The identifier of the resource.",
             "format": "uuid",
@@ -20091,17 +21073,6 @@
             "name": "geo_hash[]",
             "pattern": "^.{5}$",
             "type": "array"
-        },
-        "visibility__": {
-            "collectionFormat": "multi",
-            "enum": [
-                "VISIBILITY_PUBLIC",
-                "VISIBILITY_PRIVATE"
-            ],
-            "in": "query",
-            "name": "visibility[]",
-            "pattern": "VISIBILITY_PUBLIC|VISIBILITY_PRIVATE",
-            "type": "string"
         },
         "CommentData": {
             "name": "CommentData",
@@ -20136,9 +21107,10 @@
             "required": true
         },
         "role": {
+            "description": "The identifier of the resource.",
+            "format": "uuid",
             "in": "query",
             "name": "role",
-            "pattern": ".*",
             "type": "string"
         },
         "roles__": {
@@ -20328,6 +21300,13 @@
             "in": "query",
             "name": "operation_state",
             "pattern": ".*",
+            "type": "string"
+        },
+        "priority": {
+            "description": "The identifier of the resource.",
+            "format": "uuid",
+            "in": "query",
+            "name": "priority",
             "type": "string"
         },
         "options_property_": {
