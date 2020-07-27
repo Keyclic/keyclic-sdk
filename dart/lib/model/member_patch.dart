@@ -13,13 +13,13 @@ class MemberPatch {
 
     return MemberPatch(
       contactPoint: MemberPatchContactPoint.fromJson(json['contactPoint']),
-      roles: json['roles'],
+      roles: json['roles'] is List ? List<String>.from(json['roles']) : null,
     );
   }
 
   MemberPatchContactPoint contactPoint;
 
-  String roles;
+  List<String> roles;
 
   @override
   bool operator ==(dynamic other) {
@@ -31,7 +31,7 @@ class MemberPatch {
     return other is MemberPatch &&
         runtimeType == other.runtimeType &&
         contactPoint == other.contactPoint &&
-        roles == other.roles;
+        DeepCollectionEquality.unordered().equals(roles, other.roles);
   }
 
   /// By default hashCode return reference
@@ -39,8 +39,13 @@ class MemberPatch {
   int get hashCode {
     int hashCode = 0;
 
+    if (roles is List && roles.isNotEmpty) {
+      hashCode ^= roles
+          .map((String element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+
     hashCode ^= contactPoint?.hashCode ?? 0;
-    hashCode ^= roles?.hashCode ?? 0;
 
     return hashCode;
   }
