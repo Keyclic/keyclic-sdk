@@ -1,5 +1,10 @@
 part of keyclic_sdk_api.api;
 
+class DeviceDataPlatformEnum {
+  static const String android_ = "android";
+  static const String ios_ = "ios";
+}
+
 class DeviceData {
   DeviceData({
     this.token,
@@ -21,6 +26,7 @@ class DeviceData {
 
   String token;
 
+  /// use DeviceDataPlatformEnum
   String platform;
 
   String person;

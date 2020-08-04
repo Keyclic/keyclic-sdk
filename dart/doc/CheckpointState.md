@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] [default to null]
 **end** | **bool** |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
+**key** | **String** |  | [optional] [default to null]
 **name** | **String** |  | [optional] [default to null]
 **progression** | **double** |  | [optional] [default to null]
 **type** | **String** |  | [optional] [default to null]

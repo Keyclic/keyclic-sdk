@@ -41,7 +41,7 @@ var xKeyclicAppVersion = xKeyclicAppVersion_example; // String |
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var order = order_example; // String | 
-var role = ; // String | The identifier of the resource.
+var role = role_example; // String | 
 var query = query_example; // String | 
 var roles[] = []; // List<String> | 
 var type = type_example; // String | 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **role** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **role** | **String**|  | [optional] 
  **query** | **String**|  | [optional] 
  **roles[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **type** | **String**|  | [optional] 

@@ -9,6 +9,7 @@ class TransitionState {
     this.description,
     this.end,
     this.id,
+    this.key,
     this.name,
     this.progression,
     this.type,
@@ -27,6 +28,7 @@ class TransitionState {
       description: json['description'],
       end: json['end'],
       id: json['id'],
+      key: json['key'],
       name: json['name'],
       progression: json['progression']?.toDouble(),
       type: json['type'],
@@ -46,6 +48,8 @@ class TransitionState {
   bool end;
 
   String id;
+
+  String key;
 
   String name;
 
@@ -69,6 +73,7 @@ class TransitionState {
         description == other.description &&
         end == other.end &&
         id == other.id &&
+        key == other.key &&
         name == other.name &&
         progression == other.progression &&
         type == other.type;
@@ -86,6 +91,7 @@ class TransitionState {
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= end?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
+    hashCode ^= key?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
     hashCode ^= progression?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
@@ -116,6 +122,7 @@ class TransitionState {
       if (description != null) 'description': description,
       if (end != null) 'end': end,
       if (id != null) 'id': id,
+      if (key != null) 'key': key,
       if (name != null) 'name': name,
       if (progression != null) 'progression': progression,
       if (type != null) 'type': type,
@@ -124,6 +131,6 @@ class TransitionState {
 
   @override
   String toString() {
-    return 'TransitionState[allowAdd=$allowAdd, allowDispatch=$allowDispatch, backgroundColor=$backgroundColor, color=$color, description=$description, end=$end, id=$id, name=$name, progression=$progression, type=$type, ]';
+    return 'TransitionState[allowAdd=$allowAdd, allowDispatch=$allowDispatch, backgroundColor=$backgroundColor, color=$color, description=$description, end=$end, id=$id, key=$key, name=$name, progression=$progression, type=$type, ]';
   }
 }
