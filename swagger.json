@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.6.0"
+        "version": "2.6.5-beta1"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -14399,6 +14399,10 @@
                     "readOnly": true,
                     "type": "string"
                 },
+                "key": {
+                    "format": "string",
+                    "type": "string"
+                },
                 "name": {
                     "format": "string",
                     "maxLength": 255,
@@ -15070,7 +15074,11 @@
                     "type": "string"
                 },
                 "platform": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                        "android",
+                        "ios"
+                    ]
                 },
                 "person": {
                     "type": "string"
@@ -20440,6 +20448,10 @@
                     "readOnly": true,
                     "type": "string"
                 },
+                "key": {
+                    "format": "string",
+                    "type": "string"
+                },
                 "name": {
                     "format": "string",
                     "maxLength": 255,
@@ -20757,6 +20769,10 @@
                     "format": "uuid",
                     "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
                     "readOnly": true,
+                    "type": "string"
+                },
+                "key": {
+                    "format": "string",
                     "type": "string"
                 },
                 "name": {
@@ -21109,10 +21125,9 @@
             "required": true
         },
         "role": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "name": "role",
+            "pattern": ".*",
             "type": "string"
         },
         "roles__": {
