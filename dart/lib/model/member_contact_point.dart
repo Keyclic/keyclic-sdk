@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class MemberContactPoint {
   MemberContactPoint({
+    this.description,
     this.email,
     this.name,
     this.telephone,
@@ -13,11 +14,14 @@ class MemberContactPoint {
     }
 
     return MemberContactPoint(
+      description: json['description'],
       email: json['email'],
       name: json['name'],
       telephone: json['telephone'],
     );
   }
+
+  String description;
 
   String email;
 
@@ -34,6 +38,7 @@ class MemberContactPoint {
 
     return other is MemberContactPoint &&
         runtimeType == other.runtimeType &&
+        description == other.description &&
         email == other.email &&
         name == other.name &&
         telephone == other.telephone;
@@ -44,6 +49,7 @@ class MemberContactPoint {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= description?.hashCode ?? 0;
     hashCode ^= email?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
     hashCode ^= telephone?.hashCode ?? 0;
@@ -68,6 +74,7 @@ class MemberContactPoint {
 
   Map<String, dynamic> toJson() {
     return {
+      if (description != null) 'description': description,
       if (email != null) 'email': email,
       if (name != null) 'name': name,
       if (telephone != null) 'telephone': telephone,
@@ -76,6 +83,6 @@ class MemberContactPoint {
 
   @override
   String toString() {
-    return 'MemberContactPoint[email=$email, name=$name, telephone=$telephone, ]';
+    return 'MemberContactPoint[description=$description, email=$email, name=$name, telephone=$telephone, ]';
   }
 }

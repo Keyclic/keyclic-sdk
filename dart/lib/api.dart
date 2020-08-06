@@ -60,6 +60,7 @@ part 'model/agreement_terms_of_service.dart';
 part 'model/application.dart';
 part 'model/application_about.dart';
 part 'model/application_agreement.dart';
+part 'model/application_configuration.dart';
 part 'model/application_contact_point.dart';
 part 'model/application_links.dart';
 part 'model/application_links_knowledge_base.dart';

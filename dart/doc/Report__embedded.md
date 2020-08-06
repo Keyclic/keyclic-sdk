@@ -9,6 +9,8 @@ import 'package:keyclic_sdk_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **category** | [**Category**](Category.md) |  | [optional] [default to null]
+**children** | [**List&lt;Operation&gt;**](Operation.md) |  | [optional] [default to []]
+**documents** | [**List&lt;Document&gt;**](Document.md) |  | [optional] [default to []]
 **feedback** | [**Feedback**](Feedback.md) |  | [optional] [default to null]
 **place** | [**Place**](Place.md) |  | [optional] [default to null]
 **targetGroups** | [**List&lt;ReportEmbeddedTargetGroups&gt;**](ReportEmbeddedTargetGroups.md) |  | [optional] [default to []]

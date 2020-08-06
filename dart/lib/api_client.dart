@@ -138,6 +138,8 @@ class ApiClient {
           return ApplicationAbout.fromJson(value);
         case 'ApplicationAgreement':
           return ApplicationAgreement.fromJson(value);
+        case 'ApplicationConfiguration':
+          return ApplicationConfiguration.fromJson(value);
         case 'ApplicationContactPoint':
           return ApplicationContactPoint.fromJson(value);
         case 'ApplicationLinks':

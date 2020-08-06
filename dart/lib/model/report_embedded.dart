@@ -3,6 +3,8 @@ part of keyclic_sdk_api.api;
 class ReportEmbedded {
   ReportEmbedded({
     this.category,
+    this.children,
+    this.documents,
     this.feedback,
     this.place,
     this.targetGroups,
@@ -16,6 +18,8 @@ class ReportEmbedded {
 
     return ReportEmbedded(
       category: Category.fromJson(json['category']),
+      children: Operation.listFromJson(json['children']),
+      documents: Document.listFromJson(json['documents']),
       feedback: Feedback.fromJson(json['feedback']),
       place: Place.fromJson(json['place']),
       targetGroups:
@@ -25,6 +29,10 @@ class ReportEmbedded {
   }
 
   Category category;
+
+  List<Operation> children;
+
+  List<Document> documents;
 
   Feedback feedback;
 
@@ -44,6 +52,8 @@ class ReportEmbedded {
     return other is ReportEmbedded &&
         runtimeType == other.runtimeType &&
         category == other.category &&
+        DeepCollectionEquality.unordered().equals(children, other.children) &&
+        DeepCollectionEquality.unordered().equals(documents, other.documents) &&
         feedback == other.feedback &&
         place == other.place &&
         DeepCollectionEquality.unordered()
@@ -56,6 +66,16 @@ class ReportEmbedded {
   int get hashCode {
     int hashCode = 0;
 
+    if (children is List && children.isNotEmpty) {
+      hashCode ^= children
+          .map((Operation element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+    if (documents is List && documents.isNotEmpty) {
+      hashCode ^= documents
+          .map((Document element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
     if (targetGroups is List && targetGroups.isNotEmpty) {
       hashCode ^= targetGroups
           .map((ReportEmbeddedTargetGroups element) => element.hashCode)
@@ -87,6 +107,8 @@ class ReportEmbedded {
   Map<String, dynamic> toJson() {
     return {
       if (category != null) 'category': category.toJson(),
+      if (children != null) 'children': children,
+      if (documents != null) 'documents': documents,
       if (feedback != null) 'feedback': feedback.toJson(),
       if (place != null) 'place': place.toJson(),
       if (targetGroups != null) 'targetGroups': targetGroups,
@@ -96,6 +118,6 @@ class ReportEmbedded {
 
   @override
   String toString() {
-    return 'ReportEmbedded[category=$category, feedback=$feedback, place=$place, targetGroups=$targetGroups, workflow=$workflow, ]';
+    return 'ReportEmbedded[category=$category, children=$children, documents=$documents, feedback=$feedback, place=$place, targetGroups=$targetGroups, workflow=$workflow, ]';
   }
 }

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **links** | [**ApplicationLinks**](ApplicationLinks.md) |  | [optional] [default to null]
 **about** | [**ApplicationAbout**](ApplicationAbout.md) |  | [optional] [default to null]
 **agreement** | [**ApplicationAgreement**](ApplicationAgreement.md) |  | [optional] [default to null]
+**configuration** | [**ApplicationConfiguration**](ApplicationConfiguration.md) |  | [optional] [default to null]
 **contactPoints** | [**List&lt;ApplicationContactPoint&gt;**](ApplicationContactPoint.md) |  | [optional] [default to []]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]

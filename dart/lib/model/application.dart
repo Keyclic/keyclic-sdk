@@ -5,6 +5,7 @@ class Application {
     this.links,
     this.about,
     this.agreement,
+    this.configuration,
     this.contactPoints,
     this.createdAt,
     this.id,
@@ -36,6 +37,7 @@ class Application {
       links: ApplicationLinks.fromJson(json['_links']),
       about: ApplicationAbout.fromJson(json['about']),
       agreement: ApplicationAgreement.fromJson(json['agreement']),
+      configuration: ApplicationConfiguration.fromJson(json['configuration']),
       contactPoints:
           ApplicationContactPoint.listFromJson(json['contactPoints']),
       createdAt: createdAt,
@@ -53,6 +55,8 @@ class Application {
   ApplicationAbout about;
 
   ApplicationAgreement agreement;
+
+  ApplicationConfiguration configuration;
 
   List<ApplicationContactPoint> contactPoints;
 
@@ -82,6 +86,7 @@ class Application {
         links == other.links &&
         about == other.about &&
         agreement == other.agreement &&
+        configuration == other.configuration &&
         DeepCollectionEquality.unordered()
             .equals(contactPoints, other.contactPoints) &&
         createdAt == other.createdAt &&
@@ -107,6 +112,7 @@ class Application {
     hashCode ^= links?.hashCode ?? 0;
     hashCode ^= about?.hashCode ?? 0;
     hashCode ^= agreement?.hashCode ?? 0;
+    hashCode ^= configuration?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
@@ -137,6 +143,7 @@ class Application {
       if (links != null) '_links': links.toJson(),
       if (about != null) 'about': about.toJson(),
       if (agreement != null) 'agreement': agreement.toJson(),
+      if (configuration != null) 'configuration': configuration.toJson(),
       if (contactPoints != null) 'contactPoints': contactPoints,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
@@ -150,6 +157,6 @@ class Application {
 
   @override
   String toString() {
-    return 'Application[links=$links, about=$about, agreement=$agreement, contactPoints=$contactPoints, createdAt=$createdAt, id=$id, name=$name, token=$token, type=$type, updatedAt=$updatedAt, version=$version, ]';
+    return 'Application[links=$links, about=$about, agreement=$agreement, configuration=$configuration, contactPoints=$contactPoints, createdAt=$createdAt, id=$id, name=$name, token=$token, type=$type, updatedAt=$updatedAt, version=$version, ]';
   }
 }
