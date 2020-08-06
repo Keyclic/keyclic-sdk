@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.6.5-beta1"
+        "version": "2.6.9"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -13407,6 +13407,9 @@
                 "agreement": {
                     "$ref": "#\/definitions\/ApplicationAgreement"
                 },
+                "configuration": {
+                    "$ref": "#\/definitions\/ApplicationConfiguration"
+                },
                 "contactPoints": {
                     "items": {
                         "$ref": "#\/definitions\/ApplicationContactPoint"
@@ -13482,6 +13485,14 @@
                 },
                 "termsOfService": {
                     "$ref": "#\/definitions\/AgreementTermsOfService"
+                }
+            }
+        },
+        "ApplicationConfiguration": {
+            "type": "object",
+            "properties": {
+                "public": {
+                    "type": "boolean"
                 }
             }
         },
@@ -14138,7 +14149,7 @@
                 "identificationNumber": {
                     "format": "string",
                     "maxLength": 255,
-                    "minLength": 0,
+                    "minLength": 1,
                     "type": "string"
                 },
                 "name": {
@@ -14287,6 +14298,7 @@
                 "identificationNumber": {
                     "format": "string",
                     "maxLength": 255,
+                    "minLength": 1,
                     "type": "string"
                 },
                 "name": {
@@ -15896,7 +15908,8 @@
                     "type": "string",
                     "enum": [
                         "VISIBILITY_PRIVATE",
-                        "VISIBILITY_PUBLIC"
+                        "VISIBILITY_PUBLIC",
+                        "VISIBILITY_RESTRICTED"
                     ]
                 }
             },
@@ -16708,6 +16721,10 @@
         "MemberContactPoint": {
             "type": "object",
             "properties": {
+                "description": {
+                    "format": "string",
+                    "type": "string"
+                },
                 "email": {
                     "format": "string",
                     "type": "string"
@@ -16856,6 +16873,10 @@
                 "contactPoint": {
                     "type": "object",
                     "properties": {
+                        "description": {
+                            "format": "string",
+                            "type": "string"
+                        },
                         "email": {
                             "format": "string",
                             "type": "string"
@@ -17226,13 +17247,13 @@
                 "identificationNumber": {
                     "format": "string",
                     "maxLength": 255,
-                    "minLength": 0,
+                    "minLength": 1,
                     "type": "string"
                 },
                 "name": {
                     "format": "string",
                     "maxLength": 255,
-                    "minLength": 0,
+                    "minLength": 1,
                     "type": "string"
                 },
                 "scheduledAt": {
@@ -17557,11 +17578,13 @@
                 "identificationNumber": {
                     "format": "string",
                     "maxLength": 255,
+                    "minLength": 1,
                     "type": "string"
                 },
                 "name": {
                     "format": "string",
                     "maxLength": 255,
+                    "minLength": 1,
                     "type": "string"
                 },
                 "scheduledAt": {
@@ -17688,7 +17711,7 @@
                 "name": {
                     "format": "string",
                     "maxLength": 255,
-                    "minLength": 0,
+                    "minLength": 1,
                     "type": "string"
                 },
                 "preferences": {
@@ -17898,6 +17921,7 @@
                 "name": {
                     "format": "string",
                     "maxLength": 255,
+                    "minLength": 1,
                     "type": "string"
                 },
                 "alternateName": {
@@ -18069,7 +18093,7 @@
                 "jobTitle": {
                     "format": "string",
                     "maxLength": 255,
-                    "minLength": 0,
+                    "minLength": 1,
                     "type": "string"
                 },
                 "optIn": {
@@ -18287,6 +18311,7 @@
                 "jobTitle": {
                     "format": "string",
                     "maxLength": 255,
+                    "minLength": 1,
                     "type": "string"
                 },
                 "image": {
@@ -18737,7 +18762,7 @@
                 "title": {
                     "format": "string",
                     "maxLength": 255,
-                    "minLength": 0,
+                    "minLength": 1,
                     "type": "string"
                 },
                 "type": {
@@ -18953,6 +18978,18 @@
                         "category": {
                             "$ref": "#\/definitions\/Category"
                         },
+                        "children": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#\/definitions\/Operation"
+                            }
+                        },
+                        "documents": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#\/definitions\/Document"
+                            }
+                        },
                         "feedback": {
                             "$ref": "#\/definitions\/Feedback"
                         },
@@ -19054,7 +19091,7 @@
                 "identificationNumber": {
                     "format": "string",
                     "maxLength": 255,
-                    "minLength": 0,
+                    "minLength": 1,
                     "type": "string"
                 },
                 "priority": {
@@ -19363,6 +19400,7 @@
                 "identificationNumber": {
                     "format": "string",
                     "maxLength": 255,
+                    "minLength": 1,
                     "type": "string"
                 },
                 "priority": {
@@ -19531,7 +19569,7 @@
                 "reviewBody": {
                     "format": "string",
                     "maxLength": 255,
-                    "minLength": 0,
+                    "minLength": 1,
                     "type": "string"
                 },
                 "reviewRating": {
