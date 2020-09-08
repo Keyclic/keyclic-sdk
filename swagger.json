@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.6.9"
+        "version": "2.6.13"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -16745,13 +16745,16 @@
                 "contactPoint": {
                     "type": "object",
                     "properties": {
+                        "description": {
+                            "type": "string"
+                        },
                         "email": {
                             "type": "string"
                         },
-                        "telephone": {
+                        "name": {
                             "type": "string"
                         },
-                        "name": {
+                        "telephone": {
                             "type": "string"
                         }
                     }
@@ -18480,8 +18483,8 @@
                     "$ref": "#\/definitions\/Point"
                 },
                 "elevation": {
-                    "format": "float",
-                    "type": "number"
+                    "format": "int32",
+                    "type": "integer"
                 },
                 "polygon": {
                     "$ref": "#\/definitions\/Polygon"
@@ -20920,6 +20923,10 @@
             "default": "com.keyclic.app"
         },
         "x-keyclic-app-platform": {
+            "enum": [
+                "mobile",
+                "web"
+            ],
             "name": "x-keyclic-app-platform",
             "in": "header",
             "type": "string",
