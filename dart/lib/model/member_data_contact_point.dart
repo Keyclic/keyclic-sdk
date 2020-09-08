@@ -2,9 +2,10 @@ part of keyclic_sdk_api.api;
 
 class MemberDataContactPoint {
   MemberDataContactPoint({
+    this.description,
     this.email,
-    this.telephone,
     this.name,
+    this.telephone,
   });
 
   factory MemberDataContactPoint.fromJson(Map<String, dynamic> json) {
@@ -13,17 +14,20 @@ class MemberDataContactPoint {
     }
 
     return MemberDataContactPoint(
+      description: json['description'],
       email: json['email'],
-      telephone: json['telephone'],
       name: json['name'],
+      telephone: json['telephone'],
     );
   }
 
+  String description;
+
   String email;
 
-  String telephone;
-
   String name;
+
+  String telephone;
 
   @override
   bool operator ==(dynamic other) {
@@ -34,9 +38,10 @@ class MemberDataContactPoint {
 
     return other is MemberDataContactPoint &&
         runtimeType == other.runtimeType &&
+        description == other.description &&
         email == other.email &&
-        telephone == other.telephone &&
-        name == other.name;
+        name == other.name &&
+        telephone == other.telephone;
   }
 
   /// By default hashCode return reference
@@ -44,9 +49,10 @@ class MemberDataContactPoint {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= description?.hashCode ?? 0;
     hashCode ^= email?.hashCode ?? 0;
-    hashCode ^= telephone?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
+    hashCode ^= telephone?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -69,14 +75,15 @@ class MemberDataContactPoint {
 
   Map<String, dynamic> toJson() {
     return {
+      if (description != null) 'description': description,
       if (email != null) 'email': email,
-      if (telephone != null) 'telephone': telephone,
       if (name != null) 'name': name,
+      if (telephone != null) 'telephone': telephone,
     };
   }
 
   @override
   String toString() {
-    return 'MemberDataContactPoint[email=$email, telephone=$telephone, name=$name, ]';
+    return 'MemberDataContactPoint[description=$description, email=$email, name=$name, telephone=$telephone, ]';
   }
 }

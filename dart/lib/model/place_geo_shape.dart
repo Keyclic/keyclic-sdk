@@ -14,14 +14,14 @@ class PlaceGeoShape {
 
     return PlaceGeoShape(
       centroid: Point.fromJson(json['centroid']),
-      elevation: json['elevation']?.toDouble(),
+      elevation: json['elevation'],
       polygon: Polygon.fromJson(json['polygon']),
     );
   }
 
   Point centroid;
 
-  double elevation;
+  int elevation;
 
   Polygon polygon;
 
