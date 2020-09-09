@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.PlacePreferences
+# keyclic_sdk_api.model.PlanLinks
 
 ## Load the model package
 ```dart
@@ -8,8 +8,9 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**public** | **bool** |  | [optional] [default to null]
-**visibility** | **String** |  | [optional] [default to null]
+**image** | [**PlanLinksImage**](PlanLinksImage.md) |  | [optional] [default to null]
+**place** | [**PlanLinksPlace**](PlanLinksPlace.md) |  | [optional] [default to null]
+**self** | [**PlanLinksSelf**](PlanLinksSelf.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

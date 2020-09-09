@@ -6,6 +6,7 @@ class FeedbackLinks {
     this.category,
     this.image,
     this.images,
+    this.plans,
     this.report,
     this.reporter,
     this.self,
@@ -23,6 +24,7 @@ class FeedbackLinks {
       category: FeedbackLinksCategory.fromJson(json['category']),
       image: FeedbackLinksImage.fromJson(json['image']),
       images: FeedbackLinksImages.listFromJson(json['images']),
+      plans: FeedbackLinksPlans.listFromJson(json['plans']),
       report: FeedbackLinksReport.fromJson(json['report']),
       reporter: FeedbackLinksReporter.fromJson(json['reporter']),
       self: FeedbackLinksSelf.fromJson(json['self']),
@@ -37,6 +39,8 @@ class FeedbackLinks {
   FeedbackLinksImage image;
 
   List<FeedbackLinksImages> images;
+
+  List<FeedbackLinksPlans> plans;
 
   FeedbackLinksReport report;
 
@@ -59,6 +63,7 @@ class FeedbackLinks {
         category == other.category &&
         image == other.image &&
         DeepCollectionEquality.unordered().equals(images, other.images) &&
+        DeepCollectionEquality.unordered().equals(plans, other.plans) &&
         report == other.report &&
         reporter == other.reporter &&
         self == other.self &&
@@ -73,6 +78,11 @@ class FeedbackLinks {
     if (images is List && images.isNotEmpty) {
       hashCode ^= images
           .map((FeedbackLinksImages element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+    if (plans is List && plans.isNotEmpty) {
+      hashCode ^= plans
+          .map((FeedbackLinksPlans element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
@@ -108,6 +118,7 @@ class FeedbackLinks {
       if (category != null) 'category': category.toJson(),
       if (image != null) 'image': image.toJson(),
       if (images != null) 'images': images,
+      if (plans != null) 'plans': plans,
       if (report != null) 'report': report.toJson(),
       if (reporter != null) 'reporter': reporter.toJson(),
       if (self != null) 'self': self.toJson(),
@@ -117,6 +128,6 @@ class FeedbackLinks {
 
   @override
   String toString() {
-    return 'FeedbackLinks[businessActivity=$businessActivity, category=$category, image=$image, images=$images, report=$report, reporter=$reporter, self=$self, tracking=$tracking, ]';
+    return 'FeedbackLinks[businessActivity=$businessActivity, category=$category, image=$image, images=$images, plans=$plans, report=$report, reporter=$reporter, self=$self, tracking=$tracking, ]';
   }
 }

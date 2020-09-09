@@ -471,6 +471,12 @@ class ApiClient {
           return FeedbackLinksImages.fromJson(value);
         case 'FeedbackLinksImagesIriTemplate':
           return FeedbackLinksImagesIriTemplate.fromJson(value);
+        case 'FeedbackLinksPlans':
+          return FeedbackLinksPlans.fromJson(value);
+        case 'FeedbackLinksPlansIriTemplate':
+          return FeedbackLinksPlansIriTemplate.fromJson(value);
+        case 'FeedbackLinksPlansIriTemplateMapping':
+          return FeedbackLinksPlansIriTemplateMapping.fromJson(value);
         case 'FeedbackLinksReport':
           return FeedbackLinksReport.fromJson(value);
         case 'FeedbackLinksReportIriTemplate':
@@ -543,6 +549,12 @@ class ApiClient {
           return KnowledgeBaseLinksSelfIriTemplate.fromJson(value);
         case 'LoginData':
           return LoginData.fromJson(value);
+        case 'Marker':
+          return Marker.fromJson(value);
+        case 'MarkerData':
+          return MarkerData.fromJson(value);
+        case 'MarkerDataPoint':
+          return MarkerDataPoint.fromJson(value);
         case 'Member':
           return Member.fromJson(value);
         case 'MemberCollection':
@@ -779,6 +791,30 @@ class ApiClient {
           return PlacePatch.fromJson(value);
         case 'PlacePreferences':
           return PlacePreferences.fromJson(value);
+        case 'Plan':
+          return Plan.fromJson(value);
+        case 'PlanCollection':
+          return PlanCollection.fromJson(value);
+        case 'PlanData':
+          return PlanData.fromJson(value);
+        case 'PlanLinks':
+          return PlanLinks.fromJson(value);
+        case 'PlanLinksImage':
+          return PlanLinksImage.fromJson(value);
+        case 'PlanLinksImageIriTemplate':
+          return PlanLinksImageIriTemplate.fromJson(value);
+        case 'PlanLinksImageIriTemplateMapping':
+          return PlanLinksImageIriTemplateMapping.fromJson(value);
+        case 'PlanLinksPlace':
+          return PlanLinksPlace.fromJson(value);
+        case 'PlanLinksPlaceIriTemplate':
+          return PlanLinksPlaceIriTemplate.fromJson(value);
+        case 'PlanLinksSelf':
+          return PlanLinksSelf.fromJson(value);
+        case 'PlanLinksSelfIriTemplate':
+          return PlanLinksSelfIriTemplate.fromJson(value);
+        case 'PlanPatch':
+          return PlanPatch.fromJson(value);
         case 'Point':
           return Point.fromJson(value);
         case 'Polygon':
@@ -1061,6 +1097,8 @@ class ApiClient {
           return PersonPagination.fromJson(value);
         case 'PlacePagination':
           return PlacePagination.fromJson(value);
+        case 'PlanPagination':
+          return PlanPagination.fromJson(value);
         case 'PublicationPagination':
           return PublicationPagination.fromJson(value);
         case 'ReportPagination':

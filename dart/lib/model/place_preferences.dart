@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class PlacePreferences {
   PlacePreferences({
     this.public,
+    this.visibility,
   });
 
   factory PlacePreferences.fromJson(Map<String, dynamic> json) {
@@ -12,10 +13,13 @@ class PlacePreferences {
 
     return PlacePreferences(
       public: json['public'],
+      visibility: json['visibility'],
     );
   }
 
   bool public;
+
+  String visibility;
 
   @override
   bool operator ==(dynamic other) {
@@ -26,7 +30,8 @@ class PlacePreferences {
 
     return other is PlacePreferences &&
         runtimeType == other.runtimeType &&
-        public == other.public;
+        public == other.public &&
+        visibility == other.visibility;
   }
 
   /// By default hashCode return reference
@@ -35,6 +40,7 @@ class PlacePreferences {
     int hashCode = 0;
 
     hashCode ^= public?.hashCode ?? 0;
+    hashCode ^= visibility?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -56,11 +62,12 @@ class PlacePreferences {
   Map<String, dynamic> toJson() {
     return {
       if (public != null) 'public': public,
+      if (visibility != null) 'visibility': visibility,
     };
   }
 
   @override
   String toString() {
-    return 'PlacePreferences[public=$public, ]';
+    return 'PlacePreferences[public=$public, visibility=$visibility, ]';
   }
 }
