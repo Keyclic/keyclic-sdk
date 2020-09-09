@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.7.1"
+        "version": "2.7.2"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -17391,6 +17391,17 @@
         "Marker": {
             "type": "object",
             "properties": {
+                "_links": {
+                    "type": "object",
+                    "properties": {
+                        "plan": {
+                            "$ref": "#\/definitions\/MarkerLinksPlan"
+                        },
+                        "self": {
+                            "$ref": "#\/definitions\/MarkerLinksSelf"
+                        }
+                    }
+                },
                 "id": {
                     "format": "uuid",
                     "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
@@ -17437,6 +17448,58 @@
                 "plan",
                 "point"
             ]
+        },
+        "MarkerLinksPlan": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the plan associated to the given marker.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/MarkerLinksPlanIriTemplate"
+                }
+            }
+        },
+        "MarkerLinksPlanIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "plan": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "MarkerLinksSelf": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the self associated to the given marker.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/MarkerLinksSelfIriTemplate"
+                }
+            }
+        },
+        "MarkerLinksSelfIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "marker": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
         },
         "Member": {
             "type": "object",
