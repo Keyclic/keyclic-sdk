@@ -1,16 +1,17 @@
 part of keyclic_sdk_api.api;
 
-class PlanLinksImageIriTemplateMapping {
-  PlanLinksImageIriTemplateMapping({
+class MarkerLinksPlanIriTemplateMapping {
+  MarkerLinksPlanIriTemplateMapping({
     this.plan,
   });
 
-  factory PlanLinksImageIriTemplateMapping.fromJson(Map<String, dynamic> json) {
+  factory MarkerLinksPlanIriTemplateMapping.fromJson(
+      Map<String, dynamic> json) {
     if (json == null) {
       return null;
     }
 
-    return PlanLinksImageIriTemplateMapping(
+    return MarkerLinksPlanIriTemplateMapping(
       plan: json['plan'],
     );
   }
@@ -24,7 +25,7 @@ class PlanLinksImageIriTemplateMapping {
       return true;
     }
 
-    return other is PlanLinksImageIriTemplateMapping &&
+    return other is MarkerLinksPlanIriTemplateMapping &&
         runtimeType == other.runtimeType &&
         plan == other.plan;
   }
@@ -39,23 +40,23 @@ class PlanLinksImageIriTemplateMapping {
     return hashCode;
   }
 
-  static List<PlanLinksImageIriTemplateMapping> listFromJson(
+  static List<MarkerLinksPlanIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json
             ?.map((dynamic value) =>
-                PlanLinksImageIriTemplateMapping.fromJson(value))
+                MarkerLinksPlanIriTemplateMapping.fromJson(value))
             ?.toList() ??
-        <PlanLinksImageIriTemplateMapping>[];
+        <MarkerLinksPlanIriTemplateMapping>[];
   }
 
-  static Map<String, PlanLinksImageIriTemplateMapping> mapFromJson(
+  static Map<String, MarkerLinksPlanIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map<String, PlanLinksImageIriTemplateMapping>(
+    return json?.map<String, MarkerLinksPlanIriTemplateMapping>(
             (String key, dynamic value) {
           return MapEntry(
-              key, PlanLinksImageIriTemplateMapping.fromJson(value));
+              key, MarkerLinksPlanIriTemplateMapping.fromJson(value));
         }) ??
-        <String, PlanLinksImageIriTemplateMapping>{};
+        <String, MarkerLinksPlanIriTemplateMapping>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -66,6 +67,6 @@ class PlanLinksImageIriTemplateMapping {
 
   @override
   String toString() {
-    return 'PlanLinksImageIriTemplateMapping[plan=$plan, ]';
+    return 'MarkerLinksPlanIriTemplateMapping[plan=$plan, ]';
   }
 }

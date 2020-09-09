@@ -1,16 +1,16 @@
 part of keyclic_sdk_api.api;
 
-class PlanLinksSelfIriTemplate {
-  PlanLinksSelfIriTemplate({
+class MarkerLinksPlanIriTemplate {
+  MarkerLinksPlanIriTemplate({
     this.mapping,
   });
 
-  factory PlanLinksSelfIriTemplate.fromJson(Map<String, dynamic> json) {
+  factory MarkerLinksPlanIriTemplate.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return null;
     }
 
-    return PlanLinksSelfIriTemplate(
+    return MarkerLinksPlanIriTemplate(
       mapping: MarkerLinksPlanIriTemplateMapping.fromJson(json['mapping']),
     );
   }
@@ -24,7 +24,7 @@ class PlanLinksSelfIriTemplate {
       return true;
     }
 
-    return other is PlanLinksSelfIriTemplate &&
+    return other is MarkerLinksPlanIriTemplate &&
         runtimeType == other.runtimeType &&
         mapping == other.mapping;
   }
@@ -39,20 +39,20 @@ class PlanLinksSelfIriTemplate {
     return hashCode;
   }
 
-  static List<PlanLinksSelfIriTemplate> listFromJson(List<dynamic> json) {
+  static List<MarkerLinksPlanIriTemplate> listFromJson(List<dynamic> json) {
     return json
-            ?.map((dynamic value) => PlanLinksSelfIriTemplate.fromJson(value))
+            ?.map((dynamic value) => MarkerLinksPlanIriTemplate.fromJson(value))
             ?.toList() ??
-        <PlanLinksSelfIriTemplate>[];
+        <MarkerLinksPlanIriTemplate>[];
   }
 
-  static Map<String, PlanLinksSelfIriTemplate> mapFromJson(
+  static Map<String, MarkerLinksPlanIriTemplate> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map<String, PlanLinksSelfIriTemplate>(
+    return json?.map<String, MarkerLinksPlanIriTemplate>(
             (String key, dynamic value) {
-          return MapEntry(key, PlanLinksSelfIriTemplate.fromJson(value));
+          return MapEntry(key, MarkerLinksPlanIriTemplate.fromJson(value));
         }) ??
-        <String, PlanLinksSelfIriTemplate>{};
+        <String, MarkerLinksPlanIriTemplate>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -63,6 +63,6 @@ class PlanLinksSelfIriTemplate {
 
   @override
   String toString() {
-    return 'PlanLinksSelfIriTemplate[mapping=$mapping, ]';
+    return 'MarkerLinksPlanIriTemplate[mapping=$mapping, ]';
   }
 }

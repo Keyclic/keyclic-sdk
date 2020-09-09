@@ -555,6 +555,20 @@ class ApiClient {
           return MarkerData.fromJson(value);
         case 'MarkerDataPoint':
           return MarkerDataPoint.fromJson(value);
+        case 'MarkerLinks':
+          return MarkerLinks.fromJson(value);
+        case 'MarkerLinksPlan':
+          return MarkerLinksPlan.fromJson(value);
+        case 'MarkerLinksPlanIriTemplate':
+          return MarkerLinksPlanIriTemplate.fromJson(value);
+        case 'MarkerLinksPlanIriTemplateMapping':
+          return MarkerLinksPlanIriTemplateMapping.fromJson(value);
+        case 'MarkerLinksSelf':
+          return MarkerLinksSelf.fromJson(value);
+        case 'MarkerLinksSelfIriTemplate':
+          return MarkerLinksSelfIriTemplate.fromJson(value);
+        case 'MarkerLinksSelfIriTemplateMapping':
+          return MarkerLinksSelfIriTemplateMapping.fromJson(value);
         case 'Member':
           return Member.fromJson(value);
         case 'MemberCollection':
@@ -803,8 +817,6 @@ class ApiClient {
           return PlanLinksImage.fromJson(value);
         case 'PlanLinksImageIriTemplate':
           return PlanLinksImageIriTemplate.fromJson(value);
-        case 'PlanLinksImageIriTemplateMapping':
-          return PlanLinksImageIriTemplateMapping.fromJson(value);
         case 'PlanLinksPlace':
           return PlanLinksPlace.fromJson(value);
         case 'PlanLinksPlaceIriTemplate':

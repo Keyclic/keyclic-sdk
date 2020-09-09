@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.PlanLinksImageIriTemplateMapping
+# keyclic_sdk_api.model.MarkerLinksPlanIriTemplateMapping
 
 ## Load the model package
 ```dart

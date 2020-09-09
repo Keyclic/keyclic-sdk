@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class Marker {
   Marker({
+    this.links,
     this.id,
     this.point,
     this.type,
@@ -13,11 +14,14 @@ class Marker {
     }
 
     return Marker(
+      links: MarkerLinks.fromJson(json['_links']),
       id: json['id'],
       point: Point.fromJson(json['point']),
       type: json['type'],
     );
   }
+
+  MarkerLinks links;
 
   String id;
 
@@ -34,6 +38,7 @@ class Marker {
 
     return other is Marker &&
         runtimeType == other.runtimeType &&
+        links == other.links &&
         id == other.id &&
         point == other.point &&
         type == other.type;
@@ -44,6 +49,7 @@ class Marker {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= links?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= point?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
@@ -65,6 +71,7 @@ class Marker {
 
   Map<String, dynamic> toJson() {
     return {
+      if (links != null) '_links': links.toJson(),
       if (id != null) 'id': id,
       if (point != null) 'point': point.toJson(),
       if (type != null) 'type': type,
@@ -73,6 +80,6 @@ class Marker {
 
   @override
   String toString() {
-    return 'Marker[id=$id, point=$point, type=$type, ]';
+    return 'Marker[links=$links, id=$id, point=$point, type=$type, ]';
   }
 }

@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.PlanLinksSelfIriTemplate
+# keyclic_sdk_api.model.MarkerLinksPlanIriTemplate
 
 ## Load the model package
 ```dart

@@ -11,11 +11,11 @@ class PlanLinksImageIriTemplate {
     }
 
     return PlanLinksImageIriTemplate(
-      mapping: PlanLinksImageIriTemplateMapping.fromJson(json['mapping']),
+      mapping: MarkerLinksPlanIriTemplateMapping.fromJson(json['mapping']),
     );
   }
 
-  PlanLinksImageIriTemplateMapping mapping;
+  MarkerLinksPlanIriTemplateMapping mapping;
 
   @override
   bool operator ==(dynamic other) {
