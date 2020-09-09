@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.6.13"
+        "version": "2.7.1"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -5080,6 +5080,605 @@
                         "description": "Returned when the resource is created",
                         "schema": {
                             "$ref": "#\/definitions\/Invitation"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/plans\/{plan}": {
+            "delete": {
+                "tags": [
+                    "Plan"
+                ],
+                "summary": "Remove one Plan resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "deletePlan",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "plan",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": [
+                    "Plan"
+                ],
+                "summary": "Retrieve one Plan resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "getPlan",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "plan",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Plan"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "patch": {
+                "tags": [
+                    "Plan"
+                ],
+                "summary": "Edit one Plan resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "patchPlan",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/PlanPatch"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "plan",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Plan"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/plans": {
+            "post": {
+                "tags": [
+                    "Plan"
+                ],
+                "summary": "Create one Plan resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "postPlan",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/PlanData"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Returned when the resource is created",
+                        "schema": {
+                            "$ref": "#\/definitions\/Plan"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/markers\/{marker}": {
+            "delete": {
+                "tags": [
+                    "Marker"
+                ],
+                "summary": "Remove one Marker resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "deleteMarker",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "marker",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": [
+                    "Marker"
+                ],
+                "summary": "Retrieve one Marker resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "getMarker",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "marker",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Marker"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/markers": {
+            "post": {
+                "tags": [
+                    "Marker"
+                ],
+                "summary": "Create one Marker resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "postMarker",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/MarkerData"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Returned when the resource is created",
+                        "schema": {
+                            "$ref": "#\/definitions\/Marker"
                         }
                     },
                     "400": {
@@ -10348,6 +10947,111 @@
                         "description": "",
                         "schema": {
                             "$ref": "#\/definitions\/OccupantPagination"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/places\/{place}\/plans": {
+            "get": {
+                "tags": [
+                    "Place"
+                ],
+                "summary": "Retrieve all Plan resources.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "cgetPlansByPlace",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/page"
+                    },
+                    {
+                        "$ref": "#\/parameters\/limit"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "place",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/PlanPagination"
                         }
                     },
                     "400": {
@@ -15752,6 +16456,12 @@
                         "category": {
                             "$ref": "#\/definitions\/Category"
                         },
+                        "markers": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#\/definitions\/Marker"
+                            }
+                        },
                         "reporter": {
                             "$ref": "#\/definitions\/Person"
                         },
@@ -15784,6 +16494,12 @@
                             "type": "array",
                             "items": {
                                 "$ref": "#\/definitions\/FeedbackLinksImages"
+                            }
+                        },
+                        "plans": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#\/definitions\/FeedbackLinksPlans"
                             }
                         },
                         "report": {
@@ -16037,6 +16753,35 @@
                             "type": "string"
                         },
                         "image": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "FeedbackLinksPlans": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the plans associated to the given feedback.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/FeedbackLinksPlansIriTemplate"
+                }
+            }
+        },
+        "FeedbackLinksPlansIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "plan": {
+                            "type": "string"
+                        },
+                        "feedback": {
                             "type": "string"
                         }
                     }
@@ -16641,6 +17386,56 @@
             "required": [
                 "login",
                 "password"
+            ]
+        },
+        "Marker": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "format": "uuid",
+                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "point": {
+                    "$ref": "#\/definitions\/Point",
+                    "required": true
+                },
+                "type": {
+                    "format": "string",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "point"
+            ]
+        },
+        "MarkerData": {
+            "type": "object",
+            "properties": {
+                "feedback": {
+                    "type": "string"
+                },
+                "plan": {
+                    "type": "string"
+                },
+                "point": {
+                    "type": "object",
+                    "properties": {
+                        "x": {
+                            "type": "string"
+                        },
+                        "y": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "feedback",
+                "plan",
+                "point"
             ]
         },
         "Member": {
@@ -18634,6 +19429,186 @@
             "properties": {
                 "public": {
                     "type": "boolean"
+                },
+                "visibility": {
+                    "format": "string",
+                    "type": "string"
+                }
+            }
+        },
+        "Plan": {
+            "type": "object",
+            "properties": {
+                "_links": {
+                    "type": "object",
+                    "properties": {
+                        "image": {
+                            "$ref": "#\/definitions\/PlanLinksImage"
+                        },
+                        "place": {
+                            "$ref": "#\/definitions\/PlanLinksPlace"
+                        },
+                        "self": {
+                            "$ref": "#\/definitions\/PlanLinksSelf"
+                        }
+                    }
+                },
+                "createdAt": {
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "id": {
+                    "format": "uuid",
+                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "name": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "type": {
+                    "format": "string",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            }
+        },
+        "PlanCollection": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "$ref": "#\/definitions\/Plan"
+                    }
+                }
+            }
+        },
+        "PlanData": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "place": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "content",
+                "place"
+            ]
+        },
+        "PlanLinksImage": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the image associated to the given plan.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/PlanLinksImageIriTemplate"
+                }
+            }
+        },
+        "PlanLinksImageIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "plan": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "PlanLinksPlace": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the place associated to the given plan.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/PlanLinksPlaceIriTemplate"
+                }
+            }
+        },
+        "PlanLinksPlaceIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "place": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "PlanLinksSelf": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the self associated to the given plan.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/PlanLinksSelfIriTemplate"
+                }
+            }
+        },
+        "PlanLinksSelfIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "plan": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "PlanPagination": {
+            "allOf": [
+                {
+                    "$ref": "#\/definitions\/Pagination"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "_embedded": {
+                            "$ref": "#\/definitions\/PlanCollection"
+                        }
+                    }
+                }
+            ]
+        },
+        "PlanPatch": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "format": "string",
+                    "type": "string"
                 }
             }
         },
@@ -21220,6 +22195,30 @@
             "in": "body",
             "schema": {
                 "$ref": "#\/definitions\/InvitationData"
+            },
+            "required": true
+        },
+        "PlanPatch": {
+            "name": "PlanPatch",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/PlanPatch"
+            },
+            "required": true
+        },
+        "PlanData": {
+            "name": "PlanData",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/PlanData"
+            },
+            "required": true
+        },
+        "MarkerData": {
+            "name": "MarkerData",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/MarkerData"
             },
             "required": true
         },
