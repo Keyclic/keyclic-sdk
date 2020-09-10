@@ -17,9 +17,9 @@ class MarkerDataPoint {
     );
   }
 
-  String x;
+  num x;
 
-  String y;
+  num y;
 
   @override
   bool operator ==(dynamic other) {
