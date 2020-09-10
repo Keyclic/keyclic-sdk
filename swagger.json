@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.7.2"
+        "version": "2.7.3"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -17435,10 +17435,10 @@
                     "type": "object",
                     "properties": {
                         "x": {
-                            "type": "string"
+                            "type": "number"
                         },
                         "y": {
-                            "type": "string"
+                            "type": "number"
                         }
                     }
                 }
