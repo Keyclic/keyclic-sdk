@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.7.3"
+        "version": "2.7.8"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -8937,6 +8937,114 @@
                         "description": "",
                         "schema": {
                             "$ref": "#\/definitions\/ReportPagination"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/organizations\/{organization}\/services": {
+            "get": {
+                "tags": [
+                    "Organization"
+                ],
+                "summary": "Retrieve all Service resources.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "cgetServicesByOrganization",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/query"
+                    },
+                    {
+                        "$ref": "#\/parameters\/page"
+                    },
+                    {
+                        "$ref": "#\/parameters\/limit"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "organization",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/ServicePagination"
                         }
                     },
                     "400": {
@@ -19558,7 +19666,7 @@
         "PlanData": {
             "type": "object",
             "properties": {
-                "content": {
+                "file": {
                     "type": "string"
                 },
                 "name": {
@@ -19569,7 +19677,7 @@
                 }
             },
             "required": [
-                "content",
+                "file",
                 "place"
             ]
         },
@@ -21343,6 +21451,18 @@
                 "name"
             ]
         },
+        "ServiceCollection": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "$ref": "#\/definitions\/Service"
+                    }
+                }
+            }
+        },
         "ServiceContactPoint": {
             "type": "object",
             "properties": {
@@ -21372,6 +21492,21 @@
             },
             "required": [
                 "member"
+            ]
+        },
+        "ServicePagination": {
+            "allOf": [
+                {
+                    "$ref": "#\/definitions\/Pagination"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "_embedded": {
+                            "$ref": "#\/definitions\/ServiceCollection"
+                        }
+                    }
+                }
             ]
         },
         "SignatureData": {
