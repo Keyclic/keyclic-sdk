@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.PlanData
+# keyclic_sdk_api.model.ServiceCollection
 
 ## Load the model package
 ```dart
@@ -8,9 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**file** | **String** |  | [default to null]
-**name** | **String** |  | [optional] [default to null]
-**place** | **String** |  | [default to null]
+**items** | [**List&lt;Service&gt;**](Service.md) |  | [optional] [default to []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

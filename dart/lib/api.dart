@@ -500,6 +500,7 @@ part 'model/section_links.dart';
 part 'model/section_links_self.dart';
 part 'model/section_links_self_iri_template.dart';
 part 'model/service.dart';
+part 'model/service_collection.dart';
 part 'model/service_contact_point.dart';
 part 'model/service_member_data.dart';
 part 'model/signature_data.dart';
@@ -554,6 +555,7 @@ part 'model/review_pagination.dart';
 part 'model/review_request_pagination.dart';
 part 'model/rule_pagination.dart';
 part 'model/section_pagination.dart';
+part 'model/service_pagination.dart';
 part 'model/webhook_pagination.dart';
 
 ApiClient defaultApiClient = ApiClient();

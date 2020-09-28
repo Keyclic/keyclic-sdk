@@ -1015,6 +1015,8 @@ class ApiClient {
           return SectionLinksSelfIriTemplate.fromJson(value);
         case 'Service':
           return Service.fromJson(value);
+        case 'ServiceCollection':
+          return ServiceCollection.fromJson(value);
         case 'ServiceContactPoint':
           return ServiceContactPoint.fromJson(value);
         case 'ServiceMemberData':
@@ -1123,6 +1125,8 @@ class ApiClient {
           return RulePagination.fromJson(value);
         case 'SectionPagination':
           return SectionPagination.fromJson(value);
+        case 'ServicePagination':
+          return ServicePagination.fromJson(value);
         case 'WebhookPagination':
           return WebhookPagination.fromJson(value);
         default:

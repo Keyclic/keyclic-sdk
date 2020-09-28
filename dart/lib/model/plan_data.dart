@@ -2,7 +2,7 @@ part of keyclic_sdk_api.api;
 
 class PlanData {
   PlanData({
-    this.content,
+    this.file,
     this.name,
     this.place,
   });
@@ -13,13 +13,13 @@ class PlanData {
     }
 
     return PlanData(
-      content: json['content'],
+      file: json['file'],
       name: json['name'],
       place: json['place'],
     );
   }
 
-  String content;
+  String file;
 
   String name;
 
@@ -34,7 +34,7 @@ class PlanData {
 
     return other is PlanData &&
         runtimeType == other.runtimeType &&
-        content == other.content &&
+        file == other.file &&
         name == other.name &&
         place == other.place;
   }
@@ -44,7 +44,7 @@ class PlanData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= content?.hashCode ?? 0;
+    hashCode ^= file?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
     hashCode ^= place?.hashCode ?? 0;
 
@@ -65,7 +65,7 @@ class PlanData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (content != null) 'content': content,
+      if (file != null) 'file': file,
       if (name != null) 'name': name,
       if (place != null) 'place': place,
     };
@@ -73,6 +73,6 @@ class PlanData {
 
   @override
   String toString() {
-    return 'PlanData[content=$content, name=$name, place=$place, ]';
+    return 'PlanData[file=$file, name=$name, place=$place, ]';
   }
 }
