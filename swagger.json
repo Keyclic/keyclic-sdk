@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.7.8"
+        "version": "2.7.11"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -20124,6 +20124,9 @@
                 "_embedded": {
                     "type": "object",
                     "properties": {
+                        "assignment": {
+                            "$ref": "#\/definitions\/Delegation"
+                        },
                         "category": {
                             "$ref": "#\/definitions\/Category"
                         },
