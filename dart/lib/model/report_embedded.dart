@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class ReportEmbedded {
   ReportEmbedded({
+    this.assignment,
     this.category,
     this.children,
     this.documents,
@@ -17,6 +18,7 @@ class ReportEmbedded {
     }
 
     return ReportEmbedded(
+      assignment: Delegation.fromJson(json['assignment']),
       category: Category.fromJson(json['category']),
       children: Operation.listFromJson(json['children']),
       documents: Document.listFromJson(json['documents']),
@@ -27,6 +29,8 @@ class ReportEmbedded {
       workflow: DelegationEmbeddedWorkflow.fromJson(json['workflow']),
     );
   }
+
+  Delegation assignment;
 
   Category category;
 
@@ -51,6 +55,7 @@ class ReportEmbedded {
 
     return other is ReportEmbedded &&
         runtimeType == other.runtimeType &&
+        assignment == other.assignment &&
         category == other.category &&
         DeepCollectionEquality.unordered().equals(children, other.children) &&
         DeepCollectionEquality.unordered().equals(documents, other.documents) &&
@@ -82,6 +87,7 @@ class ReportEmbedded {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
+    hashCode ^= assignment?.hashCode ?? 0;
     hashCode ^= category?.hashCode ?? 0;
     hashCode ^= feedback?.hashCode ?? 0;
     hashCode ^= place?.hashCode ?? 0;
@@ -106,6 +112,7 @@ class ReportEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
+      if (assignment != null) 'assignment': assignment.toJson(),
       if (category != null) 'category': category.toJson(),
       if (children != null) 'children': children,
       if (documents != null) 'documents': documents,
@@ -118,6 +125,6 @@ class ReportEmbedded {
 
   @override
   String toString() {
-    return 'ReportEmbedded[category=$category, children=$children, documents=$documents, feedback=$feedback, place=$place, targetGroups=$targetGroups, workflow=$workflow, ]';
+    return 'ReportEmbedded[assignment=$assignment, category=$category, children=$children, documents=$documents, feedback=$feedback, place=$place, targetGroups=$targetGroups, workflow=$workflow, ]';
   }
 }
