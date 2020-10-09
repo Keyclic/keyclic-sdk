@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.7.11"
+        "version": "2.7.15"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -10174,6 +10174,9 @@
                         "$ref": "#\/parameters\/before"
                     },
                     {
+                        "$ref": "#\/parameters\/member"
+                    },
+                    {
                         "$ref": "#\/parameters\/order"
                     },
                     {
@@ -11025,6 +11028,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/member"
                     },
                     {
                         "$ref": "#\/parameters\/order"
@@ -22593,6 +22599,13 @@
                 "$ref": "#\/definitions\/OrganizationPatch"
             },
             "required": true
+        },
+        "member": {
+            "description": "The identifier of the resource.",
+            "format": "uuid",
+            "in": "query",
+            "name": "member",
+            "type": "string"
         },
         "PersonPatch": {
             "name": "PersonPatch",
