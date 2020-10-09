@@ -17,6 +17,7 @@ class PlaceApi {
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
+    String member,
     String order,
     String person,
     String query,
@@ -44,6 +45,8 @@ class PlaceApi {
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)
         ..._convertParametersForCollectionFormat("before", before),
+      if (member != null)
+        ..._convertParametersForCollectionFormat("member", member),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
       if (person != null)

@@ -216,6 +216,7 @@ class PersonApi {
     String xKeyclicAppVersion,
     DateTime after,
     DateTime before,
+    String member,
     String order,
     String query,
     int page,
@@ -242,6 +243,8 @@ class PersonApi {
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)
         ..._convertParametersForCollectionFormat("before", before),
+      if (member != null)
+        ..._convertParametersForCollectionFormat("member", member),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
       if (query != null)
