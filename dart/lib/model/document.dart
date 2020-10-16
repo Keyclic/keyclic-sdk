@@ -7,6 +7,7 @@ class Document {
     this.file,
     this.id,
     this.permission,
+    this.text,
     this.type,
     this.updatedAt,
   });
@@ -34,6 +35,7 @@ class Document {
       file: DocumentFile.fromJson(json['file']),
       id: json['id'],
       permission: DocumentPermission.fromJson(json['permission']),
+      text: json['text'],
       type: json['type'],
       updatedAt: updatedAt,
     );
@@ -48,6 +50,8 @@ class Document {
   String id;
 
   DocumentPermission permission;
+
+  String text;
 
   String type;
 
@@ -67,6 +71,7 @@ class Document {
         file == other.file &&
         id == other.id &&
         permission == other.permission &&
+        text == other.text &&
         type == other.type &&
         updatedAt == other.updatedAt;
   }
@@ -81,6 +86,7 @@ class Document {
     hashCode ^= file?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= permission?.hashCode ?? 0;
+    hashCode ^= text?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
     hashCode ^= updatedAt?.hashCode ?? 0;
 
@@ -106,6 +112,7 @@ class Document {
       if (file != null) 'file': file.toJson(),
       if (id != null) 'id': id,
       if (permission != null) 'permission': permission.toJson(),
+      if (text != null) 'text': text,
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
@@ -113,6 +120,6 @@ class Document {
 
   @override
   String toString() {
-    return 'Document[links=$links, createdAt=$createdAt, file=$file, id=$id, permission=$permission, type=$type, updatedAt=$updatedAt, ]';
+    return 'Document[links=$links, createdAt=$createdAt, file=$file, id=$id, permission=$permission, text=$text, type=$type, updatedAt=$updatedAt, ]';
   }
 }

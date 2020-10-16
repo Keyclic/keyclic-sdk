@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class Organization {
   Organization({
     this.links,
+    this.address,
     this.alternateName,
     this.createdAt,
     this.description,
@@ -33,6 +34,7 @@ class Organization {
 
     return Organization(
       links: OrganizationLinks.fromJson(json['_links']),
+      address: OrganizationPostalAddress.fromJson(json['address']),
       alternateName: json['alternateName'],
       createdAt: createdAt,
       description: json['description'],
@@ -46,6 +48,8 @@ class Organization {
   }
 
   OrganizationLinks links;
+
+  OrganizationPostalAddress address;
 
   String alternateName;
 
@@ -75,6 +79,7 @@ class Organization {
     return other is Organization &&
         runtimeType == other.runtimeType &&
         links == other.links &&
+        address == other.address &&
         alternateName == other.alternateName &&
         createdAt == other.createdAt &&
         description == other.description &&
@@ -92,6 +97,7 @@ class Organization {
     int hashCode = 0;
 
     hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= address?.hashCode ?? 0;
     hashCode ^= alternateName?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
@@ -122,6 +128,7 @@ class Organization {
   Map<String, dynamic> toJson() {
     return {
       if (links != null) '_links': links.toJson(),
+      if (address != null) 'address': address.toJson(),
       if (alternateName != null) 'alternateName': alternateName,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
@@ -136,6 +143,6 @@ class Organization {
 
   @override
   String toString() {
-    return 'Organization[links=$links, alternateName=$alternateName, createdAt=$createdAt, description=$description, enabled=$enabled, id=$id, name=$name, preferences=$preferences, type=$type, updatedAt=$updatedAt, ]';
+    return 'Organization[links=$links, address=$address, alternateName=$alternateName, createdAt=$createdAt, description=$description, enabled=$enabled, id=$id, name=$name, preferences=$preferences, type=$type, updatedAt=$updatedAt, ]';
   }
 }

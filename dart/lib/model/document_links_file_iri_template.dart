@@ -11,11 +11,12 @@ class DocumentLinksFileIriTemplate {
     }
 
     return DocumentLinksFileIriTemplate(
-      mapping: DocumentLinksFileIriTemplateMapping.fromJson(json['mapping']),
+      mapping:
+          DigitalDocumentLinksFileIriTemplateMapping.fromJson(json['mapping']),
     );
   }
 
-  DocumentLinksFileIriTemplateMapping mapping;
+  DigitalDocumentLinksFileIriTemplateMapping mapping;
 
   @override
   bool operator ==(dynamic other) {

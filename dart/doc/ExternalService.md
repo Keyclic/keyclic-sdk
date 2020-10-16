@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **embedded** | [**ExternalServiceEmbedded**](ExternalServiceEmbedded.md) |  | [optional] [default to null]
 **links** | [**ExternalServiceLinks**](ExternalServiceLinks.md) |  | [optional] [default to null]
+**address** | [**ExternalServicePostalAddress**](ExternalServicePostalAddress.md) |  | [optional] [default to null]
 **contactPoint** | [**ExternalServiceContactPoint**](ExternalServiceContactPoint.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]

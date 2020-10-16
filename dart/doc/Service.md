@@ -8,6 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**address** | [**ServicePostalAddress**](ServicePostalAddress.md) |  | [optional] [default to null]
 **contactPoint** | [**ServiceContactPoint**](ServiceContactPoint.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]

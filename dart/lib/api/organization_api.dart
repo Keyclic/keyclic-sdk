@@ -882,6 +882,7 @@ class OrganizationApi {
     String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String assignedTo,
+    String batch,
     String category,
     String createdBy,
     DateTime after,
@@ -917,6 +918,8 @@ class OrganizationApi {
     final List<QueryParam> queryParams = <QueryParam>[
       if (assignedTo != null)
         ..._convertParametersForCollectionFormat("assigned_to", assignedTo),
+      if (batch != null)
+        ..._convertParametersForCollectionFormat("batch", batch),
       if (category != null)
         ..._convertParametersForCollectionFormat("category", category),
       if (createdBy != null)
@@ -1178,6 +1181,7 @@ class OrganizationApi {
     String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String assignedTo,
+    String batch,
     String category,
     String createdBy,
     DateTime after,
@@ -1213,6 +1217,8 @@ class OrganizationApi {
     final List<QueryParam> queryParams = <QueryParam>[
       if (assignedTo != null)
         ..._convertParametersForCollectionFormat("assigned_to", assignedTo),
+      if (batch != null)
+        ..._convertParametersForCollectionFormat("batch", batch),
       if (category != null)
         ..._convertParametersForCollectionFormat("category", category),
       if (createdBy != null)

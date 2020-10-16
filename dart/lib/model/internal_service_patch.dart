@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class InternalServicePatch {
   InternalServicePatch({
+    this.address,
     this.contactPoint,
     this.description,
     this.name,
@@ -13,12 +14,15 @@ class InternalServicePatch {
     }
 
     return InternalServicePatch(
+      address: ExternalServicePatchAddress.fromJson(json['address']),
       contactPoint:
           ExternalServicePatchContactPoint.fromJson(json['contactPoint']),
       description: json['description'],
       name: json['name'],
     );
   }
+
+  ExternalServicePatchAddress address;
 
   ExternalServicePatchContactPoint contactPoint;
 
@@ -35,6 +39,7 @@ class InternalServicePatch {
 
     return other is InternalServicePatch &&
         runtimeType == other.runtimeType &&
+        address == other.address &&
         contactPoint == other.contactPoint &&
         description == other.description &&
         name == other.name;
@@ -45,6 +50,7 @@ class InternalServicePatch {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= address?.hashCode ?? 0;
     hashCode ^= contactPoint?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
@@ -69,6 +75,7 @@ class InternalServicePatch {
 
   Map<String, dynamic> toJson() {
     return {
+      if (address != null) 'address': address.toJson(),
       if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
       if (description != null) 'description': description,
       if (name != null) 'name': name,
@@ -77,6 +84,6 @@ class InternalServicePatch {
 
   @override
   String toString() {
-    return 'InternalServicePatch[contactPoint=$contactPoint, description=$description, name=$name, ]';
+    return 'InternalServicePatch[address=$address, contactPoint=$contactPoint, description=$description, name=$name, ]';
   }
 }

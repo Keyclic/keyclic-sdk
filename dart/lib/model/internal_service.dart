@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class InternalService {
   InternalService({
     this.links,
+    this.address,
     this.contactPoint,
     this.createdAt,
     this.description,
@@ -31,6 +32,7 @@ class InternalService {
 
     return InternalService(
       links: InternalServiceLinks.fromJson(json['_links']),
+      address: InternalServicePostalAddress.fromJson(json['address']),
       contactPoint: InternalServiceContactPoint.fromJson(json['contactPoint']),
       createdAt: createdAt,
       description: json['description'],
@@ -42,6 +44,8 @@ class InternalService {
   }
 
   InternalServiceLinks links;
+
+  InternalServicePostalAddress address;
 
   InternalServiceContactPoint contactPoint;
 
@@ -67,6 +71,7 @@ class InternalService {
     return other is InternalService &&
         runtimeType == other.runtimeType &&
         links == other.links &&
+        address == other.address &&
         contactPoint == other.contactPoint &&
         createdAt == other.createdAt &&
         description == other.description &&
@@ -82,6 +87,7 @@ class InternalService {
     int hashCode = 0;
 
     hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= address?.hashCode ?? 0;
     hashCode ^= contactPoint?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
@@ -110,6 +116,7 @@ class InternalService {
   Map<String, dynamic> toJson() {
     return {
       if (links != null) '_links': links.toJson(),
+      if (address != null) 'address': address.toJson(),
       if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
@@ -122,6 +129,6 @@ class InternalService {
 
   @override
   String toString() {
-    return 'InternalService[links=$links, contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, type=$type, updatedAt=$updatedAt, ]';
+    return 'InternalService[links=$links, address=$address, contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, type=$type, updatedAt=$updatedAt, ]';
   }
 }

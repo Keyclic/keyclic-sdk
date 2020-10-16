@@ -15,6 +15,7 @@ class PersonApi {
     DateTime xDateTime,
     String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
+    String batch,
     String category,
     DateTime after,
     DateTime before,
@@ -43,6 +44,8 @@ class PersonApi {
 
     // query params
     final List<QueryParam> queryParams = <QueryParam>[
+      if (batch != null)
+        ..._convertParametersForCollectionFormat("batch", batch),
       if (category != null)
         ..._convertParametersForCollectionFormat("category", category),
       if (after != null)
@@ -491,6 +494,7 @@ class PersonApi {
     String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String assignedTo,
+    String batch,
     String category,
     String createdBy,
     DateTime after,
@@ -526,6 +530,8 @@ class PersonApi {
     final List<QueryParam> queryParams = <QueryParam>[
       if (assignedTo != null)
         ..._convertParametersForCollectionFormat("assigned_to", assignedTo),
+      if (batch != null)
+        ..._convertParametersForCollectionFormat("batch", batch),
       if (category != null)
         ..._convertParametersForCollectionFormat("category", category),
       if (createdBy != null)

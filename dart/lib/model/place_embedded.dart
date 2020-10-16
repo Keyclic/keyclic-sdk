@@ -3,8 +3,10 @@ part of keyclic_sdk_api.api;
 class PlaceEmbedded {
   PlaceEmbedded({
     this.children,
+    this.documentTypes,
     this.organization,
     this.path,
+    this.workflow,
   });
 
   factory PlaceEmbedded.fromJson(Map<String, dynamic> json) {
@@ -14,16 +16,23 @@ class PlaceEmbedded {
 
     return PlaceEmbedded(
       children: Node.listFromJson(json['children']),
+      documentTypes:
+          PlaceEmbeddedDocumentTypes.listFromJson(json['documentTypes']),
       organization: Organization.fromJson(json['organization']),
       path: NodePath.listFromJson(json['path']),
+      workflow: DelegationEmbeddedWorkflow.fromJson(json['workflow']),
     );
   }
 
   List<Node> children;
 
+  List<PlaceEmbeddedDocumentTypes> documentTypes;
+
   Organization organization;
 
   List<NodePath> path;
+
+  DelegationEmbeddedWorkflow workflow;
 
   @override
   bool operator ==(dynamic other) {
@@ -35,8 +44,11 @@ class PlaceEmbedded {
     return other is PlaceEmbedded &&
         runtimeType == other.runtimeType &&
         DeepCollectionEquality.unordered().equals(children, other.children) &&
+        DeepCollectionEquality.unordered()
+            .equals(documentTypes, other.documentTypes) &&
         organization == other.organization &&
-        DeepCollectionEquality.unordered().equals(path, other.path);
+        DeepCollectionEquality.unordered().equals(path, other.path) &&
+        workflow == other.workflow;
   }
 
   /// By default hashCode return reference
@@ -49,6 +61,11 @@ class PlaceEmbedded {
           .map((Node element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
+    if (documentTypes is List && documentTypes.isNotEmpty) {
+      hashCode ^= documentTypes
+          .map((PlaceEmbeddedDocumentTypes element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
     if (path is List && path.isNotEmpty) {
       hashCode ^= path
           .map((NodePath element) => element.hashCode)
@@ -56,6 +73,7 @@ class PlaceEmbedded {
     }
 
     hashCode ^= organization?.hashCode ?? 0;
+    hashCode ^= workflow?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -77,13 +95,15 @@ class PlaceEmbedded {
   Map<String, dynamic> toJson() {
     return {
       if (children != null) 'children': children,
+      if (documentTypes != null) 'documentTypes': documentTypes,
       if (organization != null) 'organization': organization.toJson(),
       if (path != null) 'path': path,
+      if (workflow != null) 'workflow': workflow.toJson(),
     };
   }
 
   @override
   String toString() {
-    return 'PlaceEmbedded[children=$children, organization=$organization, path=$path, ]';
+    return 'PlaceEmbedded[children=$children, documentTypes=$documentTypes, organization=$organization, path=$path, workflow=$workflow, ]';
   }
 }

@@ -8,6 +8,7 @@ class FeedbackDataVisibilityEnum {
 
 class FeedbackData {
   FeedbackData({
+    this.batch,
     this.businessActivity,
     this.category,
     this.description,
@@ -23,6 +24,7 @@ class FeedbackData {
     }
 
     return FeedbackData(
+      batch: json['batch'],
       businessActivity: json['businessActivity'],
       category: json['category'],
       description: json['description'],
@@ -32,6 +34,8 @@ class FeedbackData {
       visibility: json['visibility'],
     );
   }
+
+  String batch;
 
   String businessActivity;
 
@@ -57,6 +61,7 @@ class FeedbackData {
 
     return other is FeedbackData &&
         runtimeType == other.runtimeType &&
+        batch == other.batch &&
         businessActivity == other.businessActivity &&
         category == other.category &&
         description == other.description &&
@@ -80,6 +85,7 @@ class FeedbackData {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
+    hashCode ^= batch?.hashCode ?? 0;
     hashCode ^= businessActivity?.hashCode ?? 0;
     hashCode ^= category?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
@@ -106,6 +112,7 @@ class FeedbackData {
 
   Map<String, dynamic> toJson() {
     return {
+      if (batch != null) 'batch': batch,
       if (businessActivity != null) 'businessActivity': businessActivity,
       if (category != null) 'category': category,
       if (description != null) 'description': description,
@@ -118,6 +125,6 @@ class FeedbackData {
 
   @override
   String toString() {
-    return 'FeedbackData[businessActivity=$businessActivity, category=$category, description=$description, geo=$geo, metadata=$metadata, place=$place, visibility=$visibility, ]';
+    return 'FeedbackData[batch=$batch, businessActivity=$businessActivity, category=$category, description=$description, geo=$geo, metadata=$metadata, place=$place, visibility=$visibility, ]';
   }
 }

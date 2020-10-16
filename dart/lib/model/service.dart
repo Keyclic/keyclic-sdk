@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class Service {
   Service({
+    this.address,
     this.contactPoint,
     this.createdAt,
     this.description,
@@ -29,6 +30,7 @@ class Service {
     }
 
     return Service(
+      address: ServicePostalAddress.fromJson(json['address']),
       contactPoint: ServiceContactPoint.fromJson(json['contactPoint']),
       createdAt: createdAt,
       description: json['description'],
@@ -38,6 +40,8 @@ class Service {
       updatedAt: updatedAt,
     );
   }
+
+  ServicePostalAddress address;
 
   ServiceContactPoint contactPoint;
 
@@ -62,6 +66,7 @@ class Service {
 
     return other is Service &&
         runtimeType == other.runtimeType &&
+        address == other.address &&
         contactPoint == other.contactPoint &&
         createdAt == other.createdAt &&
         description == other.description &&
@@ -76,6 +81,7 @@ class Service {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= address?.hashCode ?? 0;
     hashCode ^= contactPoint?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
@@ -101,6 +107,7 @@ class Service {
 
   Map<String, dynamic> toJson() {
     return {
+      if (address != null) 'address': address.toJson(),
       if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
@@ -113,6 +120,6 @@ class Service {
 
   @override
   String toString() {
-    return 'Service[contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, type=$type, updatedAt=$updatedAt, ]';
+    return 'Service[address=$address, contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, type=$type, updatedAt=$updatedAt, ]';
   }
 }

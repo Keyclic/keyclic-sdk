@@ -94,6 +94,7 @@ class FeedbackApi {
     String xKeyclicAppVersion,
     String state,
     String visibility__,
+    String batch,
     String category,
     DateTime after,
     DateTime before,
@@ -118,6 +119,8 @@ class FeedbackApi {
         ..._convertParametersForCollectionFormat("state", state),
       if (visibility__ != null)
         ..._convertParametersForCollectionFormat("visibility[]", visibility__),
+      if (batch != null)
+        ..._convertParametersForCollectionFormat("batch", batch),
       if (category != null)
         ..._convertParametersForCollectionFormat("category", category),
       if (after != null)

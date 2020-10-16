@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetFeedback**
-> FeedbackPagination cgetFeedback(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, state, visibility[], category, after, before, geoHash[], order, organization, page, limit)
+> FeedbackPagination cgetFeedback(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, state, visibility[], batch, category, after, before, geoHash[], order, organization, page, limit)
 
 Retrieve all Feedback resources.
 
@@ -100,6 +100,7 @@ var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String |
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var state = state_example; // String | 
 var visibility[] = visibility[]_example; // String | 
+var batch = ; // String | The identifier of the resource.
 var category = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -110,7 +111,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetFeedback(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, state, visibility[], category, after, before, geoHash[], order, organization, page, limit);
+    var result = api_instance.cgetFeedback(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, state, visibility[], batch, category, after, before, geoHash[], order, organization, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling FeedbackApi->cgetFeedback: $e\n");
@@ -128,6 +129,7 @@ Name | Type | Description  | Notes
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **state** | **String**|  | [optional] [default to DELIVERED]
  **visibility[]** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
+ **batch** | [**String**](.md)| The identifier of the resource. | [optional] 
  **category** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 

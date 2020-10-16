@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 
 # **cgetFeedbackByPerson**
-> FeedbackPagination cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, category, after, before, geoHash[], order, organization, state, visibility[], page, limit)
+> FeedbackPagination cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, batch, category, after, before, geoHash[], order, organization, state, visibility[], page, limit)
 
 Retrieve all Feedback resources.
 
@@ -40,6 +40,7 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
+var batch = ; // String | The identifier of the resource.
 var category = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -52,7 +53,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, category, after, before, geoHash[], order, organization, state, visibility[], page, limit);
+    var result = api_instance.cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, batch, category, after, before, geoHash[], order, organization, state, visibility[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetFeedbackByPerson: $e\n");
@@ -69,6 +70,7 @@ Name | Type | Description  | Notes
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
+ **batch** | [**String**](.md)| The identifier of the resource. | [optional] 
  **category** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
@@ -378,7 +380,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetReportsByPerson**
-> ReportPagination cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, priority, query, state, states[], visibility[], page, limit)
+> ReportPagination cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, batch, category, createdBy, after, before, delegatedTo, operationState, order, place, priority, query, state, states[], visibility[], page, limit)
 
 Retrieve all Report resources.
 
@@ -398,6 +400,7 @@ var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime |
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var assignedTo = ; // String | The identifier of the resource.
+var batch = ; // String | The identifier of the resource.
 var category = ; // String | The identifier of the resource.
 var createdBy = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -415,7 +418,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, category, createdBy, after, before, delegatedTo, operationState, order, place, priority, query, state, states[], visibility[], page, limit);
+    var result = api_instance.cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, batch, category, createdBy, after, before, delegatedTo, operationState, order, place, priority, query, state, states[], visibility[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetReportsByPerson: $e\n");
@@ -433,6 +436,7 @@ Name | Type | Description  | Notes
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **batch** | [**String**](.md)| The identifier of the resource. | [optional] 
  **category** | [**String**](.md)| The identifier of the resource. | [optional] 
  **createdBy** | [**String**](.md)| The identifier of the resource. | [optional] 
  **after** | **DateTime**|  | [optional] 

@@ -4,6 +4,7 @@ class Place {
   Place({
     this.embedded,
     this.links,
+    this.address,
     this.branchCode,
     this.createdAt,
     this.description,
@@ -35,6 +36,7 @@ class Place {
     return Place(
       embedded: PlaceEmbedded.fromJson(json['_embedded']),
       links: PlaceLinks.fromJson(json['_links']),
+      address: PlacePostalAddress.fromJson(json['address']),
       branchCode: json['branchCode'],
       createdAt: createdAt,
       description: json['description'],
@@ -50,6 +52,8 @@ class Place {
   PlaceEmbedded embedded;
 
   PlaceLinks links;
+
+  PlacePostalAddress address;
 
   String branchCode;
 
@@ -80,6 +84,7 @@ class Place {
         runtimeType == other.runtimeType &&
         embedded == other.embedded &&
         links == other.links &&
+        address == other.address &&
         branchCode == other.branchCode &&
         createdAt == other.createdAt &&
         description == other.description &&
@@ -98,6 +103,7 @@ class Place {
 
     hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= address?.hashCode ?? 0;
     hashCode ^= branchCode?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
@@ -127,6 +133,7 @@ class Place {
     return {
       if (embedded != null) '_embedded': embedded.toJson(),
       if (links != null) '_links': links.toJson(),
+      if (address != null) 'address': address.toJson(),
       if (branchCode != null) 'branchCode': branchCode,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
@@ -141,6 +148,6 @@ class Place {
 
   @override
   String toString() {
-    return 'Place[embedded=$embedded, links=$links, branchCode=$branchCode, createdAt=$createdAt, description=$description, geo=$geo, id=$id, name=$name, preferences=$preferences, type=$type, updatedAt=$updatedAt, ]';
+    return 'Place[embedded=$embedded, links=$links, address=$address, branchCode=$branchCode, createdAt=$createdAt, description=$description, geo=$geo, id=$id, name=$name, preferences=$preferences, type=$type, updatedAt=$updatedAt, ]';
   }
 }

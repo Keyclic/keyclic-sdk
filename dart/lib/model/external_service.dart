@@ -4,6 +4,7 @@ class ExternalService {
   ExternalService({
     this.embedded,
     this.links,
+    this.address,
     this.contactPoint,
     this.createdAt,
     this.description,
@@ -33,6 +34,7 @@ class ExternalService {
     return ExternalService(
       embedded: ExternalServiceEmbedded.fromJson(json['_embedded']),
       links: ExternalServiceLinks.fromJson(json['_links']),
+      address: ExternalServicePostalAddress.fromJson(json['address']),
       contactPoint: ExternalServiceContactPoint.fromJson(json['contactPoint']),
       createdAt: createdAt,
       description: json['description'],
@@ -46,6 +48,8 @@ class ExternalService {
   ExternalServiceEmbedded embedded;
 
   ExternalServiceLinks links;
+
+  ExternalServicePostalAddress address;
 
   ExternalServiceContactPoint contactPoint;
 
@@ -72,6 +76,7 @@ class ExternalService {
         runtimeType == other.runtimeType &&
         embedded == other.embedded &&
         links == other.links &&
+        address == other.address &&
         contactPoint == other.contactPoint &&
         createdAt == other.createdAt &&
         description == other.description &&
@@ -88,6 +93,7 @@ class ExternalService {
 
     hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= address?.hashCode ?? 0;
     hashCode ^= contactPoint?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
@@ -117,6 +123,7 @@ class ExternalService {
     return {
       if (embedded != null) '_embedded': embedded.toJson(),
       if (links != null) '_links': links.toJson(),
+      if (address != null) 'address': address.toJson(),
       if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (description != null) 'description': description,
@@ -129,6 +136,6 @@ class ExternalService {
 
   @override
   String toString() {
-    return 'ExternalService[embedded=$embedded, links=$links, contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, type=$type, updatedAt=$updatedAt, ]';
+    return 'ExternalService[embedded=$embedded, links=$links, address=$address, contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, type=$type, updatedAt=$updatedAt, ]';
   }
 }

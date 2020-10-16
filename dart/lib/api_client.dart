@@ -361,6 +361,36 @@ class ApiClient {
           return DeviceLinksSelfIriTemplate.fromJson(value);
         case 'DeviceLinksSelfIriTemplateMapping':
           return DeviceLinksSelfIriTemplateMapping.fromJson(value);
+        case 'DigitalDocument':
+          return DigitalDocument.fromJson(value);
+        case 'DigitalDocumentData':
+          return DigitalDocumentData.fromJson(value);
+        case 'DigitalDocumentEmbedded':
+          return DigitalDocumentEmbedded.fromJson(value);
+        case 'DigitalDocumentFile':
+          return DigitalDocumentFile.fromJson(value);
+        case 'DigitalDocumentLinks':
+          return DigitalDocumentLinks.fromJson(value);
+        case 'DigitalDocumentLinksCreatedBy':
+          return DigitalDocumentLinksCreatedBy.fromJson(value);
+        case 'DigitalDocumentLinksCreatedByIriTemplate':
+          return DigitalDocumentLinksCreatedByIriTemplate.fromJson(value);
+        case 'DigitalDocumentLinksFile':
+          return DigitalDocumentLinksFile.fromJson(value);
+        case 'DigitalDocumentLinksFileIriTemplate':
+          return DigitalDocumentLinksFileIriTemplate.fromJson(value);
+        case 'DigitalDocumentLinksFileIriTemplateMapping':
+          return DigitalDocumentLinksFileIriTemplateMapping.fromJson(value);
+        case 'DigitalDocumentLinksSelf':
+          return DigitalDocumentLinksSelf.fromJson(value);
+        case 'DigitalDocumentLinksSelfIriTemplate':
+          return DigitalDocumentLinksSelfIriTemplate.fromJson(value);
+        case 'DigitalDocumentLinksSelfIriTemplateMapping':
+          return DigitalDocumentLinksSelfIriTemplateMapping.fromJson(value);
+        case 'DigitalDocumentPatch':
+          return DigitalDocumentPatch.fromJson(value);
+        case 'DigitalDocumentPermission':
+          return DigitalDocumentPermission.fromJson(value);
         case 'Dispatcher':
           return Dispatcher.fromJson(value);
         case 'Document':
@@ -385,8 +415,6 @@ class ApiClient {
           return DocumentLinksFile.fromJson(value);
         case 'DocumentLinksFileIriTemplate':
           return DocumentLinksFileIriTemplate.fromJson(value);
-        case 'DocumentLinksFileIriTemplateMapping':
-          return DocumentLinksFileIriTemplateMapping.fromJson(value);
         case 'DocumentLinksSelf':
           return DocumentLinksSelf.fromJson(value);
         case 'DocumentLinksSelfIriTemplate':
@@ -399,6 +427,8 @@ class ApiClient {
           return DocumentPatchPermission.fromJson(value);
         case 'DocumentPermission':
           return DocumentPermission.fromJson(value);
+        case 'DocumentWorkflowData':
+          return DocumentWorkflowData.fromJson(value);
         case 'Duration':
           return Duration.fromJson(value);
         case 'Error':
@@ -427,8 +457,12 @@ class ApiClient {
           return ExternalServiceLinksSelfIriTemplate.fromJson(value);
         case 'ExternalServicePatch':
           return ExternalServicePatch.fromJson(value);
+        case 'ExternalServicePatchAddress':
+          return ExternalServicePatchAddress.fromJson(value);
         case 'ExternalServicePatchContactPoint':
           return ExternalServicePatchContactPoint.fromJson(value);
+        case 'ExternalServicePostalAddress':
+          return ExternalServicePostalAddress.fromJson(value);
         case 'Feature':
           return Feature.fromJson(value);
         case 'FeatureGeometry':
@@ -519,6 +553,8 @@ class ApiClient {
           return InternalServiceLinksSelfIriTemplateMapping.fromJson(value);
         case 'InternalServicePatch':
           return InternalServicePatch.fromJson(value);
+        case 'InternalServicePostalAddress':
+          return InternalServicePostalAddress.fromJson(value);
         case 'Invitation':
           return Invitation.fromJson(value);
         case 'InvitationData':
@@ -727,6 +763,8 @@ class ApiClient {
           return OrganizationPatchPreferences.fromJson(value);
         case 'OrganizationPatchPreferencesReference':
           return OrganizationPatchPreferencesReference.fromJson(value);
+        case 'OrganizationPostalAddress':
+          return OrganizationPostalAddress.fromJson(value);
         case 'OrganizationPreferences':
           return OrganizationPreferences.fromJson(value);
         case 'Pagination':
@@ -779,6 +817,8 @@ class ApiClient {
           return PlaceData.fromJson(value);
         case 'PlaceEmbedded':
           return PlaceEmbedded.fromJson(value);
+        case 'PlaceEmbeddedDocumentTypes':
+          return PlaceEmbeddedDocumentTypes.fromJson(value);
         case 'PlaceGeoShape':
           return PlaceGeoShape.fromJson(value);
         case 'PlaceLinks':
@@ -803,6 +843,8 @@ class ApiClient {
           return PlaceLinksSelfIriTemplate.fromJson(value);
         case 'PlacePatch':
           return PlacePatch.fromJson(value);
+        case 'PlacePostalAddress':
+          return PlacePostalAddress.fromJson(value);
         case 'PlacePreferences':
           return PlacePreferences.fromJson(value);
         case 'Plan':
@@ -1021,12 +1063,22 @@ class ApiClient {
           return ServiceContactPoint.fromJson(value);
         case 'ServiceMemberData':
           return ServiceMemberData.fromJson(value);
+        case 'ServicePostalAddress':
+          return ServicePostalAddress.fromJson(value);
         case 'SignatureData':
           return SignatureData.fromJson(value);
         case 'SignatureDataSigner':
           return SignatureDataSigner.fromJson(value);
         case 'SignatureSigner':
           return SignatureSigner.fromJson(value);
+        case 'Signer':
+          return Signer.fromJson(value);
+        case 'SignerContactPoint':
+          return SignerContactPoint.fromJson(value);
+        case 'SignerData':
+          return SignerData.fromJson(value);
+        case 'SignerSignature':
+          return SignerSignature.fromJson(value);
         case 'State':
           return State.fromJson(value);
         case 'SuccessLogin':

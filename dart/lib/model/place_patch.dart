@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class PlacePatch {
   PlacePatch({
+    this.address,
     this.branchCode,
     this.description,
     this.name,
@@ -13,11 +14,14 @@ class PlacePatch {
     }
 
     return PlacePatch(
+      address: ExternalServicePatchAddress.fromJson(json['address']),
       branchCode: json['branchCode'],
       description: json['description'],
       name: json['name'],
     );
   }
+
+  ExternalServicePatchAddress address;
 
   String branchCode;
 
@@ -34,6 +38,7 @@ class PlacePatch {
 
     return other is PlacePatch &&
         runtimeType == other.runtimeType &&
+        address == other.address &&
         branchCode == other.branchCode &&
         description == other.description &&
         name == other.name;
@@ -44,6 +49,7 @@ class PlacePatch {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= address?.hashCode ?? 0;
     hashCode ^= branchCode?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
@@ -65,6 +71,7 @@ class PlacePatch {
 
   Map<String, dynamic> toJson() {
     return {
+      if (address != null) 'address': address.toJson(),
       if (branchCode != null) 'branchCode': branchCode,
       if (description != null) 'description': description,
       if (name != null) 'name': name,
@@ -73,6 +80,6 @@ class PlacePatch {
 
   @override
   String toString() {
-    return 'PlacePatch[branchCode=$branchCode, description=$description, name=$name, ]';
+    return 'PlacePatch[address=$address, branchCode=$branchCode, description=$description, name=$name, ]';
   }
 }

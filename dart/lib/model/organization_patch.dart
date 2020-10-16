@@ -2,10 +2,11 @@ part of keyclic_sdk_api.api;
 
 class OrganizationPatch {
   OrganizationPatch({
-    this.name,
+    this.address,
     this.alternateName,
     this.description,
     this.logo,
+    this.name,
     this.preferences,
   });
 
@@ -15,21 +16,24 @@ class OrganizationPatch {
     }
 
     return OrganizationPatch(
-      name: json['name'],
+      address: ExternalServicePatchAddress.fromJson(json['address']),
       alternateName: json['alternateName'],
       description: json['description'],
       logo: json['logo'],
+      name: json['name'],
       preferences: OrganizationPatchPreferences.fromJson(json['preferences']),
     );
   }
 
-  String name;
+  ExternalServicePatchAddress address;
 
   String alternateName;
 
   String description;
 
   String logo;
+
+  String name;
 
   OrganizationPatchPreferences preferences;
 
@@ -42,10 +46,11 @@ class OrganizationPatch {
 
     return other is OrganizationPatch &&
         runtimeType == other.runtimeType &&
-        name == other.name &&
+        address == other.address &&
         alternateName == other.alternateName &&
         description == other.description &&
         logo == other.logo &&
+        name == other.name &&
         preferences == other.preferences;
   }
 
@@ -54,10 +59,11 @@ class OrganizationPatch {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= name?.hashCode ?? 0;
+    hashCode ^= address?.hashCode ?? 0;
     hashCode ^= alternateName?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= logo?.hashCode ?? 0;
+    hashCode ^= name?.hashCode ?? 0;
     hashCode ^= preferences?.hashCode ?? 0;
 
     return hashCode;
@@ -79,16 +85,17 @@ class OrganizationPatch {
 
   Map<String, dynamic> toJson() {
     return {
-      if (name != null) 'name': name,
+      if (address != null) 'address': address.toJson(),
       if (alternateName != null) 'alternateName': alternateName,
       if (description != null) 'description': description,
       if (logo != null) 'logo': logo,
+      if (name != null) 'name': name,
       if (preferences != null) 'preferences': preferences.toJson(),
     };
   }
 
   @override
   String toString() {
-    return 'OrganizationPatch[name=$name, alternateName=$alternateName, description=$description, logo=$logo, preferences=$preferences, ]';
+    return 'OrganizationPatch[address=$address, alternateName=$alternateName, description=$description, logo=$logo, name=$name, preferences=$preferences, ]';
   }
 }

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **embedded** | [**PlaceEmbedded**](PlaceEmbedded.md) |  | [optional] [default to null]
 **links** | [**PlaceLinks**](PlaceLinks.md) |  | [optional] [default to null]
+**address** | [**PlacePostalAddress**](PlacePostalAddress.md) |  | [optional] [default to null]
 **branchCode** | **String** |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]

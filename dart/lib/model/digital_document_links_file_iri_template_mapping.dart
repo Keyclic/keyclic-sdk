@@ -1,17 +1,17 @@
 part of keyclic_sdk_api.api;
 
-class DocumentLinksFileIriTemplateMapping {
-  DocumentLinksFileIriTemplateMapping({
+class DigitalDocumentLinksFileIriTemplateMapping {
+  DigitalDocumentLinksFileIriTemplateMapping({
     this.document,
   });
 
-  factory DocumentLinksFileIriTemplateMapping.fromJson(
+  factory DigitalDocumentLinksFileIriTemplateMapping.fromJson(
       Map<String, dynamic> json) {
     if (json == null) {
       return null;
     }
 
-    return DocumentLinksFileIriTemplateMapping(
+    return DigitalDocumentLinksFileIriTemplateMapping(
       document: json['document'],
     );
   }
@@ -25,7 +25,7 @@ class DocumentLinksFileIriTemplateMapping {
       return true;
     }
 
-    return other is DocumentLinksFileIriTemplateMapping &&
+    return other is DigitalDocumentLinksFileIriTemplateMapping &&
         runtimeType == other.runtimeType &&
         document == other.document;
   }
@@ -40,23 +40,23 @@ class DocumentLinksFileIriTemplateMapping {
     return hashCode;
   }
 
-  static List<DocumentLinksFileIriTemplateMapping> listFromJson(
+  static List<DigitalDocumentLinksFileIriTemplateMapping> listFromJson(
       List<dynamic> json) {
     return json
             ?.map((dynamic value) =>
-                DocumentLinksFileIriTemplateMapping.fromJson(value))
+                DigitalDocumentLinksFileIriTemplateMapping.fromJson(value))
             ?.toList() ??
-        <DocumentLinksFileIriTemplateMapping>[];
+        <DigitalDocumentLinksFileIriTemplateMapping>[];
   }
 
-  static Map<String, DocumentLinksFileIriTemplateMapping> mapFromJson(
+  static Map<String, DigitalDocumentLinksFileIriTemplateMapping> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map<String, DocumentLinksFileIriTemplateMapping>(
+    return json?.map<String, DigitalDocumentLinksFileIriTemplateMapping>(
             (String key, dynamic value) {
           return MapEntry(
-              key, DocumentLinksFileIriTemplateMapping.fromJson(value));
+              key, DigitalDocumentLinksFileIriTemplateMapping.fromJson(value));
         }) ??
-        <String, DocumentLinksFileIriTemplateMapping>{};
+        <String, DigitalDocumentLinksFileIriTemplateMapping>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -67,6 +67,6 @@ class DocumentLinksFileIriTemplateMapping {
 
   @override
   String toString() {
-    return 'DocumentLinksFileIriTemplateMapping[document=$document, ]';
+    return 'DigitalDocumentLinksFileIriTemplateMapping[document=$document, ]';
   }
 }
