@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.7.15"
+        "version": "2.8.3"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -2031,6 +2031,351 @@
                 ]
             }
         },
+        "\/digital-documents\/{digitalDocument}": {
+            "delete": {
+                "tags": [
+                    "DigitalDocument"
+                ],
+                "summary": "Remove one DigitalDocument resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "deleteDigitalDocument",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "digitalDocument",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": [
+                    "DigitalDocument"
+                ],
+                "summary": "Retrieve one DigitalDocument resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "getDigitalDocument",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "digitalDocument",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/DigitalDocument"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "patch": {
+                "tags": [
+                    "DigitalDocument"
+                ],
+                "summary": "Edit one DigitalDocument resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "patchDigitalDocument",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/DigitalDocumentPatch"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "digitalDocument",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/DigitalDocument"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/digital-documents": {
+            "post": {
+                "tags": [
+                    "DigitalDocument"
+                ],
+                "summary": "Create one DigitalDocument resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "postDigitalDocument",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/DigitalDocumentData"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Returned when the resource is created",
+                        "schema": {
+                            "$ref": "#\/definitions\/DigitalDocument"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
         "\/dispatchers\/{dispatcher}": {
             "get": {
                 "tags": [
@@ -2434,6 +2779,99 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "document",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Document"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/documents\/{document}\/workflow": {
+            "post": {
+                "tags": [
+                    "Document"
+                ],
+                "summary": "Create one Workflow resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "postWorkflowByDocument",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/DocumentWorkflowData"
                     },
                     {
                         "description": "The identifier of the resource.",
@@ -3410,6 +3848,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/visibility__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/batch"
                     },
                     {
                         "$ref": "#\/parameters\/category"
@@ -8876,6 +9317,9 @@
                         "$ref": "#\/parameters\/assigned_to"
                     },
                     {
+                        "$ref": "#\/parameters\/batch"
+                    },
+                    {
                         "$ref": "#\/parameters\/category"
                     },
                     {
@@ -9699,6 +10143,9 @@
                         "$ref": "#\/parameters\/assigned_to"
                     },
                     {
+                        "$ref": "#\/parameters\/batch"
+                    },
+                    {
                         "$ref": "#\/parameters\/category"
                     },
                     {
@@ -9926,6 +10373,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/batch"
                     },
                     {
                         "$ref": "#\/parameters\/category"
@@ -10403,6 +10853,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/assigned_to"
+                    },
+                    {
+                        "$ref": "#\/parameters\/batch"
                     },
                     {
                         "$ref": "#\/parameters\/category"
@@ -13597,6 +14050,353 @@
                 ]
             }
         },
+        "\/signers\/{signer}": {
+            "delete": {
+                "tags": [
+                    "Signer"
+                ],
+                "summary": "Remove one Signer resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "deleteSigner",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "signer",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "get": {
+                "tags": [
+                    "Signer"
+                ],
+                "summary": "Retrieve one Signer resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "getSigner",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "signer",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Signer"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/signers": {
+            "post": {
+                "tags": [
+                    "Signer"
+                ],
+                "summary": "Create one Signer resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "postSigner",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/SignerData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Signer"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/signers\/{signer}\/sign": {
+            "post": {
+                "tags": [
+                    "Signer"
+                ],
+                "summary": "Create one Sign resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "postSignBySigner",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/SignatureData"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "signer",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Signer"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
         "\/webhooks\/{webhook}": {
             "delete": {
                 "tags": [
@@ -14107,7 +14907,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 }
             }
@@ -14259,7 +15058,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -14337,7 +15135,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 }
             }
@@ -14430,7 +15227,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -14574,7 +15370,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -14750,7 +15545,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -14978,7 +15772,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -15244,7 +16037,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 }
             }
@@ -15279,7 +16071,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "value": {
@@ -15335,7 +16126,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -15356,7 +16146,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "workflow": {
@@ -15407,7 +16196,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 }
             }
@@ -15423,7 +16211,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "workflow": {
@@ -15448,7 +16235,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "workflow": {
@@ -15483,7 +16269,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -15648,7 +16433,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -15850,7 +16634,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -15887,7 +16670,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -15972,6 +16754,210 @@
                 }
             }
         },
+        "DigitalDocument": {
+            "type": "object",
+            "properties": {
+                "_embedded": {
+                    "type": "object",
+                    "properties": {
+                        "signers": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#\/definitions\/Signer"
+                            }
+                        },
+                        "stateTransitions": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "format": "string"
+                            }
+                        }
+                    }
+                },
+                "_links": {
+                    "type": "object",
+                    "properties": {
+                        "createdBy": {
+                            "$ref": "#\/definitions\/DigitalDocumentLinksCreatedBy"
+                        },
+                        "file": {
+                            "$ref": "#\/definitions\/DigitalDocumentLinksFile"
+                        },
+                        "self": {
+                            "$ref": "#\/definitions\/DigitalDocumentLinksSelf"
+                        }
+                    }
+                },
+                "createdAt": {
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "file": {
+                    "$ref": "#\/definitions\/DigitalDocumentFile"
+                },
+                "id": {
+                    "format": "uuid",
+                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "permission": {
+                    "$ref": "#\/definitions\/DigitalDocumentPermission"
+                },
+                "text": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "type": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            }
+        },
+        "DigitalDocumentData": {
+            "type": "object",
+            "properties": {
+                "container": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "container",
+                "type"
+            ]
+        },
+        "DigitalDocumentFile": {
+            "type": "object",
+            "properties": {
+                "contentType": {
+                    "enum": [
+                        "text\/csv",
+                        "application\/msword",
+                        "application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                        "image\/jpeg",
+                        "image\/jpg",
+                        "application\/pdf",
+                        "image\/png",
+                        "text\/plain",
+                        "application\/vnd.ms-excel",
+                        "application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        "application\/zip"
+                    ],
+                    "format": "string",
+                    "type": "string"
+                },
+                "name": {
+                    "format": "string",
+                    "type": "string"
+                }
+            }
+        },
+        "DigitalDocumentLinksCreatedBy": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the createdBy associated to the given digitaldocument.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/DigitalDocumentLinksCreatedByIriTemplate"
+                }
+            }
+        },
+        "DigitalDocumentLinksCreatedByIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "person": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "DigitalDocumentLinksFile": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the file associated to the given digitaldocument.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/DigitalDocumentLinksFileIriTemplate"
+                }
+            }
+        },
+        "DigitalDocumentLinksFileIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "document": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "DigitalDocumentLinksSelf": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the self associated to the given digitaldocument.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/DigitalDocumentLinksSelfIriTemplate"
+                }
+            }
+        },
+        "DigitalDocumentLinksSelfIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "digitalDocument": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "DigitalDocumentPatch": {
+            "type": "object",
+            "properties": {
+                "text": {
+                    "format": "string",
+                    "type": "string"
+                }
+            }
+        },
+        "DigitalDocumentPermission": {
+            "type": "object",
+            "properties": {
+                "targetGroup": {
+                    "format": "string",
+                    "type": "string"
+                }
+            }
+        },
         "Dispatcher": {
             "type": "object",
             "properties": {
@@ -15983,7 +16969,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 }
             }
@@ -16022,9 +17007,12 @@
                 "permission": {
                     "$ref": "#\/definitions\/DocumentPermission"
                 },
+                "text": {
+                    "format": "string",
+                    "type": "string"
+                },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -16228,6 +17216,21 @@
                 }
             }
         },
+        "DocumentWorkflowData": {
+            "type": "object",
+            "properties": {
+                "transition": {
+                    "type": "string",
+                    "enum": [
+                        "publish",
+                        "review"
+                    ]
+                }
+            },
+            "required": [
+                "transition"
+            ]
+        },
         "Duration": {
             "type": "object",
             "properties": {
@@ -16290,6 +17293,9 @@
                         }
                     }
                 },
+                "address": {
+                    "$ref": "#\/definitions\/ExternalServicePostalAddress"
+                },
                 "contactPoint": {
                     "$ref": "#\/definitions\/ExternalServiceContactPoint"
                 },
@@ -16314,7 +17320,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -16451,6 +17456,23 @@
         "ExternalServicePatch": {
             "type": "object",
             "properties": {
+                "address": {
+                    "type": "object",
+                    "properties": {
+                        "locality": {
+                            "format": "string",
+                            "type": "string"
+                        },
+                        "postalCode": {
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "streetAddress": {
+                            "format": "string",
+                            "type": "string"
+                        }
+                    }
+                },
                 "contactPoint": {
                     "type": "object",
                     "properties": {
@@ -16473,6 +17495,23 @@
                     "type": "string"
                 },
                 "name": {
+                    "format": "string",
+                    "type": "string"
+                }
+            }
+        },
+        "ExternalServicePostalAddress": {
+            "type": "object",
+            "properties": {
+                "locality": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "postalCode": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "streetAddress": {
                     "format": "string",
                     "type": "string"
                 }
@@ -16666,7 +17705,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -16694,6 +17732,9 @@
         "FeedbackData": {
             "type": "object",
             "properties": {
+                "batch": {
+                    "type": "string"
+                },
                 "businessActivity": {
                     "type": "string"
                 },
@@ -17061,6 +18102,9 @@
                         }
                     }
                 },
+                "address": {
+                    "$ref": "#\/definitions\/InternalServicePostalAddress"
+                },
                 "contactPoint": {
                     "$ref": "#\/definitions\/InternalServiceContactPoint"
                 },
@@ -17085,7 +18129,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -17218,6 +18261,23 @@
         "InternalServicePatch": {
             "type": "object",
             "properties": {
+                "address": {
+                    "type": "object",
+                    "properties": {
+                        "locality": {
+                            "format": "string",
+                            "type": "string"
+                        },
+                        "postalCode": {
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "streetAddress": {
+                            "format": "string",
+                            "type": "string"
+                        }
+                    }
+                },
                 "contactPoint": {
                     "type": "object",
                     "properties": {
@@ -17240,6 +18300,23 @@
                     "type": "string"
                 },
                 "name": {
+                    "format": "string",
+                    "type": "string"
+                }
+            }
+        },
+        "InternalServicePostalAddress": {
+            "type": "object",
+            "properties": {
+                "locality": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "postalCode": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "streetAddress": {
                     "format": "string",
                     "type": "string"
                 }
@@ -17284,7 +18361,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -17408,7 +18484,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 }
             }
@@ -17447,7 +18522,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -17528,7 +18602,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 }
             },
@@ -17668,7 +18741,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -17904,7 +18976,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -18008,7 +19079,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -18240,7 +19310,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -18623,7 +19692,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -18658,6 +19726,9 @@
                             "$ref": "#\/definitions\/OrganizationLinksSelf"
                         }
                     }
+                },
+                "address": {
+                    "$ref": "#\/definitions\/OrganizationPostalAddress"
                 },
                 "alternateName": {
                     "format": "string",
@@ -18694,7 +19765,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -18893,11 +19963,22 @@
         "OrganizationPatch": {
             "type": "object",
             "properties": {
-                "name": {
-                    "format": "string",
-                    "maxLength": 255,
-                    "minLength": 1,
-                    "type": "string"
+                "address": {
+                    "type": "object",
+                    "properties": {
+                        "locality": {
+                            "format": "string",
+                            "type": "string"
+                        },
+                        "postalCode": {
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "streetAddress": {
+                            "format": "string",
+                            "type": "string"
+                        }
+                    }
                 },
                 "alternateName": {
                     "format": "string",
@@ -18913,6 +19994,12 @@
                     "type": "string",
                     "format": "string"
                 },
+                "name": {
+                    "format": "string",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "type": "string"
+                },
                 "preferences": {
                     "type": "object",
                     "properties": {
@@ -18926,6 +20013,23 @@
                             }
                         }
                     }
+                }
+            }
+        },
+        "OrganizationPostalAddress": {
+            "type": "object",
+            "properties": {
+                "locality": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "postalCode": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "streetAddress": {
+                    "format": "string",
+                    "type": "string"
                 }
             }
         },
@@ -19084,7 +20188,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -19339,6 +20442,26 @@
                                 "$ref": "#\/definitions\/Node"
                             }
                         },
+                        "documentTypes": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
                         "organization": {
                             "$ref": "#\/definitions\/Organization"
                         },
@@ -19346,6 +20469,26 @@
                             "type": "array",
                             "items": {
                                 "$ref": "#\/definitions\/NodePath"
+                            }
+                        },
+                        "workflow": {
+                            "type": "object",
+                            "properties": {
+                                "metrics": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#\/definitions\/Metric"
+                                    }
+                                },
+                                "state": {
+                                    "$ref": "#\/definitions\/WorkflowState"
+                                },
+                                "transitions": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#\/definitions\/WorkflowTransition"
+                                    }
+                                }
                             }
                         }
                     }
@@ -19366,6 +20509,9 @@
                             "$ref": "#\/definitions\/PlaceLinksSelf"
                         }
                     }
+                },
+                "address": {
+                    "$ref": "#\/definitions\/PlacePostalAddress"
                 },
                 "branchCode": {
                     "format": "string",
@@ -19400,7 +20546,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -19585,6 +20730,23 @@
         "PlacePatch": {
             "type": "object",
             "properties": {
+                "address": {
+                    "type": "object",
+                    "properties": {
+                        "locality": {
+                            "format": "string",
+                            "type": "string"
+                        },
+                        "postalCode": {
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "streetAddress": {
+                            "format": "string",
+                            "type": "string"
+                        }
+                    }
+                },
                 "branchCode": {
                     "format": "string",
                     "maxLength": 255,
@@ -19597,6 +20759,23 @@
                 "name": {
                     "format": "string",
                     "maxLength": 255,
+                    "type": "string"
+                }
+            }
+        },
+        "PlacePostalAddress": {
+            "type": "object",
+            "properties": {
+                "locality": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "postalCode": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "streetAddress": {
+                    "format": "string",
                     "type": "string"
                 }
             }
@@ -19647,7 +20826,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -19922,7 +21100,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -20267,7 +21444,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -20597,7 +21773,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 }
             }
@@ -20626,7 +21801,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 }
             }
@@ -20674,7 +21848,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -20740,7 +21913,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -20917,7 +22089,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -21114,7 +22285,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -21157,7 +22327,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 }
             }
@@ -21316,7 +22485,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 }
             }
@@ -21354,7 +22522,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -21423,6 +22590,9 @@
         "Service": {
             "type": "object",
             "properties": {
+                "address": {
+                    "$ref": "#\/definitions\/ServicePostalAddress"
+                },
                 "contactPoint": {
                     "$ref": "#\/definitions\/ServiceContactPoint"
                 },
@@ -21447,7 +22617,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -21518,6 +22687,23 @@
                 }
             ]
         },
+        "ServicePostalAddress": {
+            "type": "object",
+            "properties": {
+                "locality": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "postalCode": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "streetAddress": {
+                    "format": "string",
+                    "type": "string"
+                }
+            }
+        },
         "SignatureData": {
             "type": "object",
             "properties": {
@@ -21548,6 +22734,76 @@
                     "type": "string"
                 },
                 "givenName": {
+                    "format": "string",
+                    "type": "string"
+                }
+            }
+        },
+        "Signer": {
+            "type": "object",
+            "properties": {
+                "contactPoint": {
+                    "$ref": "#\/definitions\/SignerContactPoint"
+                },
+                "id": {
+                    "format": "uuid",
+                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "signature": {
+                    "$ref": "#\/definitions\/SignerSignature"
+                },
+                "type": {
+                    "format": "string",
+                    "type": "string"
+                }
+            }
+        },
+        "SignerContactPoint": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "email": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "name": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "telephone": {
+                    "format": "string",
+                    "type": "string"
+                }
+            }
+        },
+        "SignerData": {
+            "type": "object",
+            "properties": {
+                "document": {
+                    "type": "string"
+                },
+                "person": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "document",
+                "person"
+            ]
+        },
+        "SignerSignature": {
+            "type": "object",
+            "properties": {
+                "signedAt": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "text": {
                     "format": "string",
                     "type": "string"
                 }
@@ -21686,7 +22942,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 }
             }
@@ -21729,7 +22984,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -21912,7 +23166,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 },
                 "updatedAt": {
@@ -22009,7 +23262,6 @@
                 },
                 "type": {
                     "format": "string",
-                    "readOnly": true,
                     "type": "string"
                 }
             }
@@ -22266,11 +23518,35 @@
             },
             "required": true
         },
+        "DigitalDocumentPatch": {
+            "name": "DigitalDocumentPatch",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/DigitalDocumentPatch"
+            },
+            "required": true
+        },
+        "DigitalDocumentData": {
+            "name": "DigitalDocumentData",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/DigitalDocumentData"
+            },
+            "required": true
+        },
         "DocumentPatch": {
             "name": "DocumentPatch",
             "in": "body",
             "schema": {
                 "$ref": "#\/definitions\/DocumentPatch"
+            },
+            "required": true
+        },
+        "DocumentWorkflowData": {
+            "name": "DocumentWorkflowData",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/DocumentWorkflowData"
             },
             "required": true
         },
@@ -22300,6 +23576,13 @@
             "in": "query",
             "name": "visibility[]",
             "pattern": "VISIBILITY_PUBLIC|VISIBILITY_PRIVATE",
+            "type": "string"
+        },
+        "batch": {
+            "description": "The identifier of the resource.",
+            "format": "uuid",
+            "in": "query",
+            "name": "batch",
             "type": "string"
         },
         "category": {
@@ -22715,6 +23998,14 @@
             "in": "body",
             "schema": {
                 "$ref": "#\/definitions\/PasswordChangeData"
+            },
+            "required": true
+        },
+        "SignerData": {
+            "name": "SignerData",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/SignerData"
             },
             "required": true
         },
