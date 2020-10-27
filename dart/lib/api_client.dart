@@ -1073,10 +1073,18 @@ class ApiClient {
           return SignatureSigner.fromJson(value);
         case 'Signer':
           return Signer.fromJson(value);
-        case 'SignerContactPoint':
-          return SignerContactPoint.fromJson(value);
         case 'SignerData':
           return SignerData.fromJson(value);
+        case 'SignerEmbedded':
+          return SignerEmbedded.fromJson(value);
+        case 'SignerLinks':
+          return SignerLinks.fromJson(value);
+        case 'SignerLinksSelf':
+          return SignerLinksSelf.fromJson(value);
+        case 'SignerLinksSelfIriTemplate':
+          return SignerLinksSelfIriTemplate.fromJson(value);
+        case 'SignerLinksSelfIriTemplateMapping':
+          return SignerLinksSelfIriTemplateMapping.fromJson(value);
         case 'SignerSignature':
           return SignerSignature.fromJson(value);
         case 'State':

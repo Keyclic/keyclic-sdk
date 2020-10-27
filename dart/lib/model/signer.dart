@@ -2,7 +2,8 @@ part of keyclic_sdk_api.api;
 
 class Signer {
   Signer({
-    this.contactPoint,
+    this.embedded,
+    this.links,
     this.id,
     this.signature,
     this.type,
@@ -14,14 +15,17 @@ class Signer {
     }
 
     return Signer(
-      contactPoint: SignerContactPoint.fromJson(json['contactPoint']),
+      embedded: SignerEmbedded.fromJson(json['_embedded']),
+      links: SignerLinks.fromJson(json['_links']),
       id: json['id'],
       signature: SignerSignature.fromJson(json['signature']),
       type: json['type'],
     );
   }
 
-  SignerContactPoint contactPoint;
+  SignerEmbedded embedded;
+
+  SignerLinks links;
 
   String id;
 
@@ -38,7 +42,8 @@ class Signer {
 
     return other is Signer &&
         runtimeType == other.runtimeType &&
-        contactPoint == other.contactPoint &&
+        embedded == other.embedded &&
+        links == other.links &&
         id == other.id &&
         signature == other.signature &&
         type == other.type;
@@ -49,7 +54,8 @@ class Signer {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= contactPoint?.hashCode ?? 0;
+    hashCode ^= embedded?.hashCode ?? 0;
+    hashCode ^= links?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= signature?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
@@ -71,7 +77,8 @@ class Signer {
 
   Map<String, dynamic> toJson() {
     return {
-      if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
+      if (embedded != null) '_embedded': embedded.toJson(),
+      if (links != null) '_links': links.toJson(),
       if (id != null) 'id': id,
       if (signature != null) 'signature': signature.toJson(),
       if (type != null) 'type': type,
@@ -80,6 +87,6 @@ class Signer {
 
   @override
   String toString() {
-    return 'Signer[contactPoint=$contactPoint, id=$id, signature=$signature, type=$type, ]';
+    return 'Signer[embedded=$embedded, links=$links, id=$id, signature=$signature, type=$type, ]';
   }
 }

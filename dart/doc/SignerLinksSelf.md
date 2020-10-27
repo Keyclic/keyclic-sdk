@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.SignerContactPoint
+# keyclic_sdk_api.model.SignerLinksSelf
 
 ## Load the model package
 ```dart
@@ -8,10 +8,8 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | **String** |  | [optional] [default to null]
-**email** | **String** |  | [optional] [default to null]
-**name** | **String** |  | [optional] [default to null]
-**telephone** | **String** |  | [optional] [default to null]
+**href** | **String** | The URI of the self associated to the given signer. | [optional] [default to null]
+**iriTemplate** | [**SignerLinksSelfIriTemplate**](SignerLinksSelfIriTemplate.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

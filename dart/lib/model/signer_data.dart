@@ -3,7 +3,7 @@ part of keyclic_sdk_api.api;
 class SignerData {
   SignerData({
     this.document,
-    this.person,
+    this.member,
   });
 
   factory SignerData.fromJson(Map<String, dynamic> json) {
@@ -13,13 +13,13 @@ class SignerData {
 
     return SignerData(
       document: json['document'],
-      person: json['person'],
+      member: json['member'],
     );
   }
 
   String document;
 
-  String person;
+  String member;
 
   @override
   bool operator ==(dynamic other) {
@@ -31,7 +31,7 @@ class SignerData {
     return other is SignerData &&
         runtimeType == other.runtimeType &&
         document == other.document &&
-        person == other.person;
+        member == other.member;
   }
 
   /// By default hashCode return reference
@@ -40,7 +40,7 @@ class SignerData {
     int hashCode = 0;
 
     hashCode ^= document?.hashCode ?? 0;
-    hashCode ^= person?.hashCode ?? 0;
+    hashCode ^= member?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -60,12 +60,12 @@ class SignerData {
   Map<String, dynamic> toJson() {
     return {
       if (document != null) 'document': document,
-      if (person != null) 'person': person,
+      if (member != null) 'member': member,
     };
   }
 
   @override
   String toString() {
-    return 'SignerData[document=$document, person=$person, ]';
+    return 'SignerData[document=$document, member=$member, ]';
   }
 }
