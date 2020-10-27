@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.8.5"
+        "version": "2.8.6-beta1"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -4212,6 +4212,91 @@
             }
         },
         "\/feedbacks\/{feedback}": {
+            "delete": {
+                "tags": [
+                    "Feedback"
+                ],
+                "summary": "Remove one Feedback resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "deleteFeedback",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "feedback",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
             "get": {
                 "tags": [
                     "Feedback"
@@ -22742,8 +22827,21 @@
         "Signer": {
             "type": "object",
             "properties": {
-                "contactPoint": {
-                    "$ref": "#\/definitions\/SignerContactPoint"
+                "_embedded": {
+                    "type": "object",
+                    "properties": {
+                        "member": {
+                            "$ref": "#\/definitions\/Member"
+                        }
+                    }
+                },
+                "_links": {
+                    "type": "object",
+                    "properties": {
+                        "self": {
+                            "$ref": "#\/definitions\/SignerLinksSelf"
+                        }
+                    }
                 },
                 "id": {
                     "format": "uuid",
@@ -22760,41 +22858,46 @@
                 }
             }
         },
-        "SignerContactPoint": {
-            "type": "object",
-            "properties": {
-                "description": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "email": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "name": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "telephone": {
-                    "format": "string",
-                    "type": "string"
-                }
-            }
-        },
         "SignerData": {
             "type": "object",
             "properties": {
                 "document": {
                     "type": "string"
                 },
-                "person": {
+                "member": {
                     "type": "string"
                 }
             },
             "required": [
                 "document",
-                "person"
+                "member"
             ]
+        },
+        "SignerLinksSelf": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the self associated to the given signer.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/SignerLinksSelfIriTemplate"
+                }
+            }
+        },
+        "SignerLinksSelfIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "signer": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
         },
         "SignerSignature": {
             "type": "object",
