@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**cgetMembershipsByPerson**](PersonApi.md#cgetMembershipsByPerson) | **GET** /people/{person}/memberships | Retrieve all Membership resources.
 [**cgetOccupantsByPerson**](PersonApi.md#cgetOccupantsByPerson) | **GET** /people/{person}/occupants | Retrieve all Occupant resources.
 [**cgetOperationsByPerson**](PersonApi.md#cgetOperationsByPerson) | **GET** /people/{person}/operations | Retrieve all Operation resources.
-[**cgetPeople**](PersonApi.md#cgetPeople) | **GET** /people | Retrieve all Person resources.
 [**cgetReportsByPerson**](PersonApi.md#cgetReportsByPerson) | **GET** /people/{person}/reports | Retrieve all Report resources.
 [**cgetReviewRequestsByPerson**](PersonApi.md#cgetReviewRequestsByPerson) | **GET** /people/{person}/review-requests | Retrieve all ReviewRequest resources.
 [**getPerson**](PersonApi.md#getPerson) | **GET** /people/{person} | Retrieve one Person resource.
@@ -302,71 +301,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationPagination**](OperationPagination.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=UTF-8
- - **Accept**: application/hal+json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **cgetPeople**
-> PersonPagination cgetPeople(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, query, page, limit)
-
-Retrieve all Person resources.
-
-### Example 
-```dart
-import 'package:keyclic_sdk_api/api.dart';
-// TODO Configure API key authorization: bearer
-//keyclic_sdk_api.api.Configuration.apiKey{'Authorization'} = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//keyclic_sdk_api.api.Configuration.apiKeyPrefix{'Authorization'} = "Bearer";
-
-var api_instance = PersonApi();
-var xKeyclicApp = xKeyclicApp_example; // String | 
-var acceptLanguage = acceptLanguage_example; // String | 
-var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
-var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
-var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var after = 2013-10-20T19:20:30+01:00; // DateTime | 
-var before = 2013-10-20T19:20:30+01:00; // DateTime | 
-var order = order_example; // String | 
-var query = query_example; // String | 
-var page = 56; // int | Page of the overview.
-var limit = 56; // int | Page of the overview.
-
-try { 
-    var result = api_instance.cgetPeople(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, query, page, limit);
-    print(result);
-} catch (e) {
-    print("Exception when calling PersonApi->cgetPeople: $e\n");
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
- **xDateTime** | **DateTime**|  | [optional] 
- **xKeyclicAppPlatform** | **String**|  | [optional] 
- **xKeyclicAppVersion** | **String**|  | [optional] 
- **after** | **DateTime**|  | [optional] 
- **before** | **DateTime**|  | [optional] 
- **order** | **String**|  | [optional] [default to desc]
- **query** | **String**|  | [optional] 
- **page** | **int**| Page of the overview. | [optional] [default to 1]
- **limit** | **int**| Page of the overview. | [optional] [default to 10]
-
-### Return type
-
-[**PersonPagination**](PersonPagination.md)
 
 ### Authorization
 

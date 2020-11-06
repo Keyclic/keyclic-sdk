@@ -779,8 +779,6 @@ class ApiClient {
           return Person.fromJson(value);
         case 'PersonAgreement':
           return PersonAgreement.fromJson(value);
-        case 'PersonCollection':
-          return PersonCollection.fromJson(value);
         case 'PersonLinks':
           return PersonLinks.fromJson(value);
         case 'PersonLinksApplication':
@@ -1167,8 +1165,6 @@ class ApiClient {
           return OperationPagination.fromJson(value);
         case 'OrganizationPagination':
           return OrganizationPagination.fromJson(value);
-        case 'PersonPagination':
-          return PersonPagination.fromJson(value);
         case 'PlacePagination':
           return PlacePagination.fromJson(value);
         case 'PlanPagination':
