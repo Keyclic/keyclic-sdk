@@ -586,7 +586,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postSignByOperation**
-> Operation postSignByOperation(xKeyclicApp, signatureData, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
+> Operation postSignByOperation(xKeyclicApp, legacySignatureData, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one Sign resource.
 
@@ -600,7 +600,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = OperationApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var signatureData = SignatureData(); // SignatureData | 
+var legacySignatureData = LegacySignatureData(); // LegacySignatureData | 
 var operation = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -608,7 +608,7 @@ var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String |
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postSignByOperation(xKeyclicApp, signatureData, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
+    var result = api_instance.postSignByOperation(xKeyclicApp, legacySignatureData, operation, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling OperationApi->postSignByOperation: $e\n");
@@ -620,7 +620,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **signatureData** | [**SignatureData**](SignatureData.md)|  | 
+ **legacySignatureData** | [**LegacySignatureData**](LegacySignatureData.md)|  | 
  **operation** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 

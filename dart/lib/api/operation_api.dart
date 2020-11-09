@@ -747,7 +747,7 @@ class OperationApi {
   ///
   Future<Operation> postSignByOperation(
     String xKeyclicApp,
-    SignatureData signatureData,
+    LegacySignatureData legacySignatureData,
     String operation, {
     String acceptLanguage,
     DateTime xDateTime,
@@ -760,8 +760,8 @@ class OperationApi {
       throw ApiException(0, "Missing required param: xKeyclicApp");
     }
 
-    if (signatureData == null) {
-      throw ApiException(0, "Missing required param: signatureData");
+    if (legacySignatureData == null) {
+      throw ApiException(0, "Missing required param: legacySignatureData");
     }
 
     if (operation == null) {
@@ -801,7 +801,7 @@ class OperationApi {
       path: path,
       method: 'POST',
       queryParams: queryParams,
-      body: signatureData,
+      body: legacySignatureData,
       headerParams: headerParams,
       contentType: contentTypes[0],
       authNames: authNames,

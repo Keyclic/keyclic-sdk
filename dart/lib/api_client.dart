@@ -583,6 +583,10 @@ class ApiClient {
           return KnowledgeBaseLinksSelf.fromJson(value);
         case 'KnowledgeBaseLinksSelfIriTemplate':
           return KnowledgeBaseLinksSelfIriTemplate.fromJson(value);
+        case 'LegacySignatureData':
+          return LegacySignatureData.fromJson(value);
+        case 'LegacySignatureDataSigner':
+          return LegacySignatureDataSigner.fromJson(value);
         case 'LoginData':
           return LoginData.fromJson(value);
         case 'Marker':
@@ -1065,8 +1069,6 @@ class ApiClient {
           return ServicePostalAddress.fromJson(value);
         case 'SignatureData':
           return SignatureData.fromJson(value);
-        case 'SignatureDataSigner':
-          return SignatureDataSigner.fromJson(value);
         case 'SignatureSigner':
           return SignatureSigner.fromJson(value);
         case 'Signer':

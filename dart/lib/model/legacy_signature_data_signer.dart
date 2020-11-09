@@ -1,17 +1,17 @@
 part of keyclic_sdk_api.api;
 
-class SignatureDataSigner {
-  SignatureDataSigner({
+class LegacySignatureDataSigner {
+  LegacySignatureDataSigner({
     this.familyName,
     this.givenName,
   });
 
-  factory SignatureDataSigner.fromJson(Map<String, dynamic> json) {
+  factory LegacySignatureDataSigner.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return null;
     }
 
-    return SignatureDataSigner(
+    return LegacySignatureDataSigner(
       familyName: json['familyName'],
       givenName: json['givenName'],
     );
@@ -28,7 +28,7 @@ class SignatureDataSigner {
       return true;
     }
 
-    return other is SignatureDataSigner &&
+    return other is LegacySignatureDataSigner &&
         runtimeType == other.runtimeType &&
         familyName == other.familyName &&
         givenName == other.givenName;
@@ -45,19 +45,20 @@ class SignatureDataSigner {
     return hashCode;
   }
 
-  static List<SignatureDataSigner> listFromJson(List<dynamic> json) {
+  static List<LegacySignatureDataSigner> listFromJson(List<dynamic> json) {
     return json
-            ?.map((dynamic value) => SignatureDataSigner.fromJson(value))
+            ?.map((dynamic value) => LegacySignatureDataSigner.fromJson(value))
             ?.toList() ??
-        <SignatureDataSigner>[];
+        <LegacySignatureDataSigner>[];
   }
 
-  static Map<String, SignatureDataSigner> mapFromJson(
+  static Map<String, LegacySignatureDataSigner> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map<String, SignatureDataSigner>((String key, dynamic value) {
-          return MapEntry(key, SignatureDataSigner.fromJson(value));
+    return json?.map<String, LegacySignatureDataSigner>(
+            (String key, dynamic value) {
+          return MapEntry(key, LegacySignatureDataSigner.fromJson(value));
         }) ??
-        <String, SignatureDataSigner>{};
+        <String, LegacySignatureDataSigner>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -69,6 +70,6 @@ class SignatureDataSigner {
 
   @override
   String toString() {
-    return 'SignatureDataSigner[familyName=$familyName, givenName=$givenName, ]';
+    return 'LegacySignatureDataSigner[familyName=$familyName, givenName=$givenName, ]';
   }
 }

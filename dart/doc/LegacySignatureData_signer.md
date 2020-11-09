@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.SignatureDataSigner
+# keyclic_sdk_api.model.LegacySignatureDataSigner
 
 ## Load the model package
 ```dart

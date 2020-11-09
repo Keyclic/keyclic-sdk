@@ -2,8 +2,8 @@ part of keyclic_sdk_api.api;
 
 class SignatureData {
   SignatureData({
-    this.signer,
     this.image,
+    this.text,
   });
 
   factory SignatureData.fromJson(Map<String, dynamic> json) {
@@ -12,14 +12,14 @@ class SignatureData {
     }
 
     return SignatureData(
-      signer: SignatureDataSigner.fromJson(json['signer']),
       image: json['image'],
+      text: json['text'],
     );
   }
 
-  SignatureDataSigner signer;
-
   String image;
+
+  String text;
 
   @override
   bool operator ==(dynamic other) {
@@ -30,8 +30,8 @@ class SignatureData {
 
     return other is SignatureData &&
         runtimeType == other.runtimeType &&
-        signer == other.signer &&
-        image == other.image;
+        image == other.image &&
+        text == other.text;
   }
 
   /// By default hashCode return reference
@@ -39,8 +39,8 @@ class SignatureData {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= signer?.hashCode ?? 0;
     hashCode ^= image?.hashCode ?? 0;
+    hashCode ^= text?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -61,13 +61,13 @@ class SignatureData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (signer != null) 'signer': signer.toJson(),
       if (image != null) 'image': image,
+      if (text != null) 'text': text,
     };
   }
 
   @override
   String toString() {
-    return 'SignatureData[signer=$signer, image=$image, ]';
+    return 'SignatureData[image=$image, text=$text, ]';
   }
 }
