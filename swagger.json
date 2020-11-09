@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.8.14-beta1"
+        "version": "2.8.15"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -8186,7 +8186,7 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "$ref": "#\/parameters\/SignatureData"
+                        "$ref": "#\/parameters\/LegacySignatureData"
                     },
                     {
                         "description": "The identifier of the resource.",
@@ -18656,6 +18656,28 @@
                 }
             }
         },
+        "LegacySignatureData": {
+            "type": "object",
+            "properties": {
+                "signer": {
+                    "type": "object",
+                    "properties": {
+                        "familyName": {
+                            "type": "string"
+                        },
+                        "givenName": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "image": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "image"
+            ]
+        },
         "LoginData": {
             "type": "object",
             "properties": {
@@ -22776,18 +22798,10 @@
         "SignatureData": {
             "type": "object",
             "properties": {
-                "signer": {
-                    "type": "object",
-                    "properties": {
-                        "familyName": {
-                            "type": "string"
-                        },
-                        "givenName": {
-                            "type": "string"
-                        }
-                    }
-                },
                 "image": {
+                    "type": "string"
+                },
+                "text": {
                     "type": "string"
                 }
             },
@@ -23854,11 +23868,11 @@
             },
             "required": true
         },
-        "SignatureData": {
-            "name": "SignatureData",
+        "LegacySignatureData": {
+            "name": "LegacySignatureData",
             "in": "body",
             "schema": {
-                "$ref": "#\/definitions\/SignatureData"
+                "$ref": "#\/definitions\/LegacySignatureData"
             },
             "required": true
         },
@@ -24093,6 +24107,14 @@
             "in": "body",
             "schema": {
                 "$ref": "#\/definitions\/SignerData"
+            },
+            "required": true
+        },
+        "SignatureData": {
+            "name": "SignatureData",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/SignatureData"
             },
             "required": true
         },
