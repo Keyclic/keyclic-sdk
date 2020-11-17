@@ -3,9 +3,10 @@ part of keyclic_sdk_api.api;
 class OperationData {
   OperationData({
     this.description,
-    this.name,
     this.identificationNumber,
     this.report,
+    this.member,
+    this.name,
     this.organization,
     this.scheduledAt,
   });
@@ -17,9 +18,10 @@ class OperationData {
 
     return OperationData(
       description: json['description'],
-      name: json['name'],
       identificationNumber: json['identificationNumber'],
       report: json['report'],
+      member: json['member'],
+      name: json['name'],
       organization: json['organization'],
       scheduledAt: json['scheduledAt'],
     );
@@ -27,11 +29,13 @@ class OperationData {
 
   String description;
 
-  String name;
-
   String identificationNumber;
 
   String report;
+
+  String member;
+
+  String name;
 
   String organization;
 
@@ -47,9 +51,10 @@ class OperationData {
     return other is OperationData &&
         runtimeType == other.runtimeType &&
         description == other.description &&
-        name == other.name &&
         identificationNumber == other.identificationNumber &&
         report == other.report &&
+        member == other.member &&
+        name == other.name &&
         organization == other.organization &&
         scheduledAt == other.scheduledAt;
   }
@@ -60,9 +65,10 @@ class OperationData {
     int hashCode = 0;
 
     hashCode ^= description?.hashCode ?? 0;
-    hashCode ^= name?.hashCode ?? 0;
     hashCode ^= identificationNumber?.hashCode ?? 0;
     hashCode ^= report?.hashCode ?? 0;
+    hashCode ^= member?.hashCode ?? 0;
+    hashCode ^= name?.hashCode ?? 0;
     hashCode ^= organization?.hashCode ?? 0;
     hashCode ^= scheduledAt?.hashCode ?? 0;
 
@@ -86,10 +92,11 @@ class OperationData {
   Map<String, dynamic> toJson() {
     return {
       if (description != null) 'description': description,
-      if (name != null) 'name': name,
       if (identificationNumber != null)
         'identificationNumber': identificationNumber,
       if (report != null) 'report': report,
+      if (member != null) 'member': member,
+      if (name != null) 'name': name,
       if (organization != null) 'organization': organization,
       if (scheduledAt != null) 'scheduledAt': scheduledAt,
     };
@@ -97,6 +104,6 @@ class OperationData {
 
   @override
   String toString() {
-    return 'OperationData[description=$description, name=$name, identificationNumber=$identificationNumber, report=$report, organization=$organization, scheduledAt=$scheduledAt, ]';
+    return 'OperationData[description=$description, identificationNumber=$identificationNumber, report=$report, member=$member, name=$name, organization=$organization, scheduledAt=$scheduledAt, ]';
   }
 }

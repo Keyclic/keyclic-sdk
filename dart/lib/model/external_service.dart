@@ -10,6 +10,7 @@ class ExternalService {
     this.description,
     this.id,
     this.name,
+    this.onCall,
     this.type,
     this.updatedAt,
   });
@@ -40,6 +41,7 @@ class ExternalService {
       description: json['description'],
       id: json['id'],
       name: json['name'],
+      onCall: ExternalServiceOnCall.fromJson(json['onCall']),
       type: json['type'],
       updatedAt: updatedAt,
     );
@@ -60,6 +62,8 @@ class ExternalService {
   String id;
 
   String name;
+
+  ExternalServiceOnCall onCall;
 
   String type;
 
@@ -82,6 +86,7 @@ class ExternalService {
         description == other.description &&
         id == other.id &&
         name == other.name &&
+        onCall == other.onCall &&
         type == other.type &&
         updatedAt == other.updatedAt;
   }
@@ -99,6 +104,7 @@ class ExternalService {
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
+    hashCode ^= onCall?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
     hashCode ^= updatedAt?.hashCode ?? 0;
 
@@ -129,6 +135,7 @@ class ExternalService {
       if (description != null) 'description': description,
       if (id != null) 'id': id,
       if (name != null) 'name': name,
+      if (onCall != null) 'onCall': onCall.toJson(),
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
@@ -136,6 +143,6 @@ class ExternalService {
 
   @override
   String toString() {
-    return 'ExternalService[embedded=$embedded, links=$links, address=$address, contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, type=$type, updatedAt=$updatedAt, ]';
+    return 'ExternalService[embedded=$embedded, links=$links, address=$address, contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, onCall=$onCall, type=$type, updatedAt=$updatedAt, ]';
   }
 }

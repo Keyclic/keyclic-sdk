@@ -9,6 +9,7 @@ class InternalService {
     this.description,
     this.id,
     this.name,
+    this.onCall,
     this.type,
     this.updatedAt,
   });
@@ -38,6 +39,7 @@ class InternalService {
       description: json['description'],
       id: json['id'],
       name: json['name'],
+      onCall: InternalServiceOnCall.fromJson(json['onCall']),
       type: json['type'],
       updatedAt: updatedAt,
     );
@@ -56,6 +58,8 @@ class InternalService {
   String id;
 
   String name;
+
+  InternalServiceOnCall onCall;
 
   String type;
 
@@ -77,6 +81,7 @@ class InternalService {
         description == other.description &&
         id == other.id &&
         name == other.name &&
+        onCall == other.onCall &&
         type == other.type &&
         updatedAt == other.updatedAt;
   }
@@ -93,6 +98,7 @@ class InternalService {
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
+    hashCode ^= onCall?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
     hashCode ^= updatedAt?.hashCode ?? 0;
 
@@ -122,6 +128,7 @@ class InternalService {
       if (description != null) 'description': description,
       if (id != null) 'id': id,
       if (name != null) 'name': name,
+      if (onCall != null) 'onCall': onCall.toJson(),
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
@@ -129,6 +136,6 @@ class InternalService {
 
   @override
   String toString() {
-    return 'InternalService[links=$links, address=$address, contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, type=$type, updatedAt=$updatedAt, ]';
+    return 'InternalService[links=$links, address=$address, contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, onCall=$onCall, type=$type, updatedAt=$updatedAt, ]';
   }
 }

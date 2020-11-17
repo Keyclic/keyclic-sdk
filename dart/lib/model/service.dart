@@ -8,6 +8,7 @@ class Service {
     this.description,
     this.id,
     this.name,
+    this.onCall,
     this.type,
     this.updatedAt,
   });
@@ -36,6 +37,7 @@ class Service {
       description: json['description'],
       id: json['id'],
       name: json['name'],
+      onCall: ServiceOnCall.fromJson(json['onCall']),
       type: json['type'],
       updatedAt: updatedAt,
     );
@@ -52,6 +54,8 @@ class Service {
   String id;
 
   String name;
+
+  ServiceOnCall onCall;
 
   String type;
 
@@ -72,6 +76,7 @@ class Service {
         description == other.description &&
         id == other.id &&
         name == other.name &&
+        onCall == other.onCall &&
         type == other.type &&
         updatedAt == other.updatedAt;
   }
@@ -87,6 +92,7 @@ class Service {
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
+    hashCode ^= onCall?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
     hashCode ^= updatedAt?.hashCode ?? 0;
 
@@ -113,6 +119,7 @@ class Service {
       if (description != null) 'description': description,
       if (id != null) 'id': id,
       if (name != null) 'name': name,
+      if (onCall != null) 'onCall': onCall.toJson(),
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
@@ -120,6 +127,6 @@ class Service {
 
   @override
   String toString() {
-    return 'Service[address=$address, contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, type=$type, updatedAt=$updatedAt, ]';
+    return 'Service[address=$address, contactPoint=$contactPoint, createdAt=$createdAt, description=$description, id=$id, name=$name, onCall=$onCall, type=$type, updatedAt=$updatedAt, ]';
   }
 }
