@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.8.15"
+        "version": "2.8.18"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -10575,117 +10575,6 @@
                 ]
             }
         },
-        "\/people\/{person}\/occupants": {
-            "get": {
-                "tags": [
-                    "Person"
-                ],
-                "summary": "Retrieve all Occupant resources.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "cgetOccupantsByPerson",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-date-time"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-platform"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
-                    },
-                    {
-                        "$ref": "#\/parameters\/member"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "$ref": "#\/parameters\/query"
-                    },
-                    {
-                        "$ref": "#\/parameters\/page"
-                    },
-                    {
-                        "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "description": "The identifier of the resource.",
-                        "format": "uuid",
-                        "in": "path",
-                        "name": "person",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/OccupantPagination"
-                        }
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "404": {
-                        "description": "Returned when the resource is not found",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            }
-        },
         "\/people\/{person}\/operations": {
             "get": {
                 "tags": [
@@ -17414,6 +17303,9 @@
                     "format": "string",
                     "type": "string"
                 },
+                "onCall": {
+                    "$ref": "#\/definitions\/ExternalServiceOnCall"
+                },
                 "type": {
                     "format": "string",
                     "type": "string"
@@ -17531,6 +17423,19 @@
                             "type": "string"
                         }
                     }
+                }
+            }
+        },
+        "ExternalServiceOnCall": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "name": {
+                    "format": "string",
+                    "type": "string"
                 }
             }
         },
@@ -18223,6 +18128,9 @@
                     "format": "string",
                     "type": "string"
                 },
+                "onCall": {
+                    "$ref": "#\/definitions\/InternalServiceOnCall"
+                },
                 "type": {
                     "format": "string",
                     "type": "string"
@@ -18336,6 +18244,19 @@
                             "type": "string"
                         }
                     }
+                }
+            }
+        },
+        "InternalServiceOnCall": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "name": {
+                    "format": "string",
+                    "type": "string"
                 }
             }
         },
@@ -19455,13 +19376,16 @@
                 "description": {
                     "type": "string"
                 },
-                "name": {
-                    "type": "string"
-                },
                 "identificationNumber": {
                     "type": "string"
                 },
                 "report": {
+                    "type": "string"
+                },
+                "member": {
+                    "type": "string"
+                },
+                "name": {
                     "type": "string"
                 },
                 "organization": {
@@ -22706,6 +22630,9 @@
                     "format": "string",
                     "type": "string"
                 },
+                "onCall": {
+                    "$ref": "#\/definitions\/ServiceOnCall"
+                },
                 "type": {
                     "format": "string",
                     "type": "string"
@@ -22762,6 +22689,19 @@
             "required": [
                 "member"
             ]
+        },
+        "ServiceOnCall": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "name": {
+                    "format": "string",
+                    "type": "string"
+                }
+            }
         },
         "ServicePagination": {
             "allOf": [
@@ -23984,13 +23924,6 @@
             },
             "required": true
         },
-        "member": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
-            "in": "query",
-            "name": "member",
-            "type": "string"
-        },
         "PersonPatch": {
             "name": "PersonPatch",
             "in": "body",
@@ -23998,6 +23931,13 @@
                 "$ref": "#\/definitions\/PersonPatch"
             },
             "required": true
+        },
+        "member": {
+            "description": "The identifier of the resource.",
+            "format": "uuid",
+            "in": "query",
+            "name": "member",
+            "type": "string"
         },
         "person": {
             "description": "The identifier of the resource.",
