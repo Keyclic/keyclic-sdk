@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.8.18"
+        "version": "2.8.19"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -17304,7 +17304,7 @@
                     "type": "string"
                 },
                 "onCall": {
-                    "$ref": "#\/definitions\/ExternalServiceOnCall"
+                    "$ref": "#\/definitions\/ExternalServiceContactPoint"
                 },
                 "type": {
                     "format": "string",
@@ -17335,6 +17335,10 @@
         "ExternalServiceContactPoint": {
             "type": "object",
             "properties": {
+                "description": {
+                    "format": "string",
+                    "type": "string"
+                },
                 "email": {
                     "format": "string",
                     "type": "string"
@@ -17423,19 +17427,6 @@
                             "type": "string"
                         }
                     }
-                }
-            }
-        },
-        "ExternalServiceOnCall": {
-            "type": "object",
-            "properties": {
-                "description": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "name": {
-                    "format": "string",
-                    "type": "string"
                 }
             }
         },
@@ -18129,7 +18120,7 @@
                     "type": "string"
                 },
                 "onCall": {
-                    "$ref": "#\/definitions\/InternalServiceOnCall"
+                    "$ref": "#\/definitions\/InternalServiceContactPoint"
                 },
                 "type": {
                     "format": "string",
@@ -18160,6 +18151,10 @@
         "InternalServiceContactPoint": {
             "type": "object",
             "properties": {
+                "description": {
+                    "format": "string",
+                    "type": "string"
+                },
                 "email": {
                     "format": "string",
                     "type": "string"
@@ -18180,6 +18175,37 @@
         "InternalServiceData": {
             "type": "object",
             "properties": {
+                "address": {
+                    "type": "object",
+                    "properties": {
+                        "locality": {
+                            "type": "string"
+                        },
+                        "postalCode": {
+                            "type": "number"
+                        },
+                        "streetAddress": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "contactPoint": {
+                    "type": "object",
+                    "properties": {
+                        "description": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "telephone": {
+                            "type": "string"
+                        }
+                    }
+                },
                 "organization": {
                     "type": "string"
                 },
@@ -18244,19 +18270,6 @@
                             "type": "string"
                         }
                     }
-                }
-            }
-        },
-        "InternalServiceOnCall": {
-            "type": "object",
-            "properties": {
-                "description": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "name": {
-                    "format": "string",
-                    "type": "string"
                 }
             }
         },
@@ -18811,6 +18824,9 @@
                 "email": {
                     "format": "string",
                     "type": "string"
+                },
+                "isOpen": {
+                    "type": "boolean"
                 },
                 "name": {
                     "format": "string",
@@ -22631,7 +22647,7 @@
                     "type": "string"
                 },
                 "onCall": {
-                    "$ref": "#\/definitions\/ServiceOnCall"
+                    "$ref": "#\/definitions\/ServiceContactPoint"
                 },
                 "type": {
                     "format": "string",
@@ -22662,6 +22678,10 @@
         "ServiceContactPoint": {
             "type": "object",
             "properties": {
+                "description": {
+                    "format": "string",
+                    "type": "string"
+                },
                 "email": {
                     "format": "string",
                     "type": "string"
@@ -22689,19 +22709,6 @@
             "required": [
                 "member"
             ]
-        },
-        "ServiceOnCall": {
-            "type": "object",
-            "properties": {
-                "description": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "name": {
-                    "format": "string",
-                    "type": "string"
-                }
-            }
         },
         "ServicePagination": {
             "allOf": [
