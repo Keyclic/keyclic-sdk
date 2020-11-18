@@ -2,6 +2,8 @@ part of keyclic_sdk_api.api;
 
 class InternalServiceData {
   InternalServiceData({
+    this.address,
+    this.contactPoint,
     this.organization,
     this.name,
     this.description,
@@ -13,11 +15,18 @@ class InternalServiceData {
     }
 
     return InternalServiceData(
+      address: InternalServiceDataAddress.fromJson(json['address']),
+      contactPoint:
+          InternalServiceDataContactPoint.fromJson(json['contactPoint']),
       organization: json['organization'],
       name: json['name'],
       description: json['description'],
     );
   }
+
+  InternalServiceDataAddress address;
+
+  InternalServiceDataContactPoint contactPoint;
 
   String organization;
 
@@ -34,6 +43,8 @@ class InternalServiceData {
 
     return other is InternalServiceData &&
         runtimeType == other.runtimeType &&
+        address == other.address &&
+        contactPoint == other.contactPoint &&
         organization == other.organization &&
         name == other.name &&
         description == other.description;
@@ -44,6 +55,8 @@ class InternalServiceData {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= address?.hashCode ?? 0;
+    hashCode ^= contactPoint?.hashCode ?? 0;
     hashCode ^= organization?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
@@ -68,6 +81,8 @@ class InternalServiceData {
 
   Map<String, dynamic> toJson() {
     return {
+      if (address != null) 'address': address.toJson(),
+      if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
       if (organization != null) 'organization': organization,
       if (name != null) 'name': name,
       if (description != null) 'description': description,
@@ -76,6 +91,6 @@ class InternalServiceData {
 
   @override
   String toString() {
-    return 'InternalServiceData[organization=$organization, name=$name, description=$description, ]';
+    return 'InternalServiceData[address=$address, contactPoint=$contactPoint, organization=$organization, name=$name, description=$description, ]';
   }
 }

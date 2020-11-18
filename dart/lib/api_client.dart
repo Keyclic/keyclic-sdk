@@ -455,8 +455,6 @@ class ApiClient {
           return ExternalServiceLinksSelf.fromJson(value);
         case 'ExternalServiceLinksSelfIriTemplate':
           return ExternalServiceLinksSelfIriTemplate.fromJson(value);
-        case 'ExternalServiceOnCall':
-          return ExternalServiceOnCall.fromJson(value);
         case 'ExternalServicePatch':
           return ExternalServicePatch.fromJson(value);
         case 'ExternalServicePatchAddress':
@@ -541,6 +539,10 @@ class ApiClient {
           return InternalServiceContactPoint.fromJson(value);
         case 'InternalServiceData':
           return InternalServiceData.fromJson(value);
+        case 'InternalServiceDataAddress':
+          return InternalServiceDataAddress.fromJson(value);
+        case 'InternalServiceDataContactPoint':
+          return InternalServiceDataContactPoint.fromJson(value);
         case 'InternalServiceLinks':
           return InternalServiceLinks.fromJson(value);
         case 'InternalServiceLinksOrganization':
@@ -553,8 +555,6 @@ class ApiClient {
           return InternalServiceLinksSelfIriTemplate.fromJson(value);
         case 'InternalServiceLinksSelfIriTemplateMapping':
           return InternalServiceLinksSelfIriTemplateMapping.fromJson(value);
-        case 'InternalServiceOnCall':
-          return InternalServiceOnCall.fromJson(value);
         case 'InternalServicePatch':
           return InternalServicePatch.fromJson(value);
         case 'InternalServicePostalAddress':
@@ -621,8 +621,6 @@ class ApiClient {
           return MemberContactPoint.fromJson(value);
         case 'MemberData':
           return MemberData.fromJson(value);
-        case 'MemberDataContactPoint':
-          return MemberDataContactPoint.fromJson(value);
         case 'MemberEmbedded':
           return MemberEmbedded.fromJson(value);
         case 'MemberLinks':
@@ -1069,8 +1067,6 @@ class ApiClient {
           return ServiceContactPoint.fromJson(value);
         case 'ServiceMemberData':
           return ServiceMemberData.fromJson(value);
-        case 'ServiceOnCall':
-          return ServiceOnCall.fromJson(value);
         case 'ServicePostalAddress':
           return ServicePostalAddress.fromJson(value);
         case 'SignatureData':

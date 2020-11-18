@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class ExternalServiceContactPoint {
   ExternalServiceContactPoint({
+    this.description,
     this.email,
     this.isOpen,
     this.name,
@@ -14,12 +15,15 @@ class ExternalServiceContactPoint {
     }
 
     return ExternalServiceContactPoint(
+      description: json['description'],
       email: json['email'],
       isOpen: json['isOpen'],
       name: json['name'],
       telephone: json['telephone'],
     );
   }
+
+  String description;
 
   String email;
 
@@ -38,6 +42,7 @@ class ExternalServiceContactPoint {
 
     return other is ExternalServiceContactPoint &&
         runtimeType == other.runtimeType &&
+        description == other.description &&
         email == other.email &&
         isOpen == other.isOpen &&
         name == other.name &&
@@ -49,6 +54,7 @@ class ExternalServiceContactPoint {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= description?.hashCode ?? 0;
     hashCode ^= email?.hashCode ?? 0;
     hashCode ^= isOpen?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
@@ -76,6 +82,7 @@ class ExternalServiceContactPoint {
 
   Map<String, dynamic> toJson() {
     return {
+      if (description != null) 'description': description,
       if (email != null) 'email': email,
       if (isOpen != null) 'isOpen': isOpen,
       if (name != null) 'name': name,
@@ -85,6 +92,6 @@ class ExternalServiceContactPoint {
 
   @override
   String toString() {
-    return 'ExternalServiceContactPoint[email=$email, isOpen=$isOpen, name=$name, telephone=$telephone, ]';
+    return 'ExternalServiceContactPoint[description=$description, email=$email, isOpen=$isOpen, name=$name, telephone=$telephone, ]';
   }
 }

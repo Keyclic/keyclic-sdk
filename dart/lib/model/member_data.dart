@@ -19,14 +19,15 @@ class MemberData {
     }
 
     return MemberData(
-      contactPoint: MemberDataContactPoint.fromJson(json['contactPoint']),
+      contactPoint:
+          InternalServiceDataContactPoint.fromJson(json['contactPoint']),
       organization: json['organization'],
       person: json['person'],
       type: json['type'],
     );
   }
 
-  MemberDataContactPoint contactPoint;
+  InternalServiceDataContactPoint contactPoint;
 
   String organization;
 

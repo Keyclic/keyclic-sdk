@@ -39,7 +39,7 @@ class InternalService {
       description: json['description'],
       id: json['id'],
       name: json['name'],
-      onCall: InternalServiceOnCall.fromJson(json['onCall']),
+      onCall: InternalServiceContactPoint.fromJson(json['onCall']),
       type: json['type'],
       updatedAt: updatedAt,
     );
@@ -59,7 +59,7 @@ class InternalService {
 
   String name;
 
-  InternalServiceOnCall onCall;
+  InternalServiceContactPoint onCall;
 
   String type;
 

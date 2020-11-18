@@ -8,6 +8,8 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**address** | [**InternalServiceDataAddress**](InternalServiceDataAddress.md) |  | [optional] [default to null]
+**contactPoint** | [**InternalServiceDataContactPoint**](InternalServiceDataContactPoint.md) |  | [optional] [default to null]
 **organization** | **String** |  | [default to null]
 **name** | **String** |  | [default to null]
 **description** | **String** |  | [optional] [default to null]

@@ -8,7 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**contactPoint** | [**MemberDataContactPoint**](MemberDataContactPoint.md) |  | [optional] [default to null]
+**contactPoint** | [**InternalServiceDataContactPoint**](InternalServiceDataContactPoint.md) |  | [optional] [default to null]
 **organization** | **String** |  | [default to null]
 **person** | **String** |  | [optional] [default to null]
 **type** | **String** |  | [optional] [default to null]

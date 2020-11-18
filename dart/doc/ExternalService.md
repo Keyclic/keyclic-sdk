@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
 **name** | **String** |  | [default to null]
-**onCall** | [**ExternalServiceOnCall**](ExternalServiceOnCall.md) |  | [optional] [default to null]
+**onCall** | [**ExternalServiceContactPoint**](ExternalServiceContactPoint.md) |  | [optional] [default to null]
 **type** | **String** |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 

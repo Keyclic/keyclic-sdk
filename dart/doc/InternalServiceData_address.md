@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.InternalServiceOnCall
+# keyclic_sdk_api.model.InternalServiceDataAddress
 
 ## Load the model package
 ```dart
@@ -8,8 +8,9 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | **String** |  | [optional] [default to null]
-**name** | **String** |  | [optional] [default to null]
+**locality** | **String** |  | [optional] [default to null]
+**postalCode** | **num** |  | [optional] [default to null]
+**streetAddress** | **String** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

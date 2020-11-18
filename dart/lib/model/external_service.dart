@@ -41,7 +41,7 @@ class ExternalService {
       description: json['description'],
       id: json['id'],
       name: json['name'],
-      onCall: ExternalServiceOnCall.fromJson(json['onCall']),
+      onCall: ExternalServiceContactPoint.fromJson(json['onCall']),
       type: json['type'],
       updatedAt: updatedAt,
     );
@@ -63,7 +63,7 @@ class ExternalService {
 
   String name;
 
-  ExternalServiceOnCall onCall;
+  ExternalServiceContactPoint onCall;
 
   String type;
 

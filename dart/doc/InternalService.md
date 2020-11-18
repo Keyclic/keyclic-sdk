@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
 **name** | **String** |  | [default to null]
-**onCall** | [**InternalServiceOnCall**](InternalServiceOnCall.md) |  | [optional] [default to null]
+**onCall** | [**InternalServiceContactPoint**](InternalServiceContactPoint.md) |  | [optional] [default to null]
 **type** | **String** |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 

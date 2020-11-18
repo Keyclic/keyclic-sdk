@@ -1,19 +1,19 @@
 part of keyclic_sdk_api.api;
 
-class MemberDataContactPoint {
-  MemberDataContactPoint({
+class InternalServiceDataContactPoint {
+  InternalServiceDataContactPoint({
     this.description,
     this.email,
     this.name,
     this.telephone,
   });
 
-  factory MemberDataContactPoint.fromJson(Map<String, dynamic> json) {
+  factory InternalServiceDataContactPoint.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return null;
     }
 
-    return MemberDataContactPoint(
+    return InternalServiceDataContactPoint(
       description: json['description'],
       email: json['email'],
       name: json['name'],
@@ -36,7 +36,7 @@ class MemberDataContactPoint {
       return true;
     }
 
-    return other is MemberDataContactPoint &&
+    return other is InternalServiceDataContactPoint &&
         runtimeType == other.runtimeType &&
         description == other.description &&
         email == other.email &&
@@ -57,20 +57,22 @@ class MemberDataContactPoint {
     return hashCode;
   }
 
-  static List<MemberDataContactPoint> listFromJson(List<dynamic> json) {
+  static List<InternalServiceDataContactPoint> listFromJson(
+      List<dynamic> json) {
     return json
-            ?.map((dynamic value) => MemberDataContactPoint.fromJson(value))
+            ?.map((dynamic value) =>
+                InternalServiceDataContactPoint.fromJson(value))
             ?.toList() ??
-        <MemberDataContactPoint>[];
+        <InternalServiceDataContactPoint>[];
   }
 
-  static Map<String, MemberDataContactPoint> mapFromJson(
+  static Map<String, InternalServiceDataContactPoint> mapFromJson(
       Map<String, dynamic> json) {
-    return json
-            ?.map<String, MemberDataContactPoint>((String key, dynamic value) {
-          return MapEntry(key, MemberDataContactPoint.fromJson(value));
+    return json?.map<String, InternalServiceDataContactPoint>(
+            (String key, dynamic value) {
+          return MapEntry(key, InternalServiceDataContactPoint.fromJson(value));
         }) ??
-        <String, MemberDataContactPoint>{};
+        <String, InternalServiceDataContactPoint>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -84,6 +86,6 @@ class MemberDataContactPoint {
 
   @override
   String toString() {
-    return 'MemberDataContactPoint[description=$description, email=$email, name=$name, telephone=$telephone, ]';
+    return 'InternalServiceDataContactPoint[description=$description, email=$email, name=$name, telephone=$telephone, ]';
   }
 }

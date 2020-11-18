@@ -37,7 +37,7 @@ class Service {
       description: json['description'],
       id: json['id'],
       name: json['name'],
-      onCall: ServiceOnCall.fromJson(json['onCall']),
+      onCall: ServiceContactPoint.fromJson(json['onCall']),
       type: json['type'],
       updatedAt: updatedAt,
     );
@@ -55,7 +55,7 @@ class Service {
 
   String name;
 
-  ServiceOnCall onCall;
+  ServiceContactPoint onCall;
 
   String type;
 
