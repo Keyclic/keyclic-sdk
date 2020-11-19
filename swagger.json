@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.8.19"
+        "version": "2.8.20"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -9420,6 +9420,9 @@
                         "$ref": "#\/parameters\/delegated_to"
                     },
                     {
+                        "$ref": "#\/parameters\/managed_by"
+                    },
+                    {
                         "$ref": "#\/parameters\/operation_state"
                     },
                     {
@@ -10246,6 +10249,9 @@
                         "$ref": "#\/parameters\/delegated_to"
                     },
                     {
+                        "$ref": "#\/parameters\/managed_by"
+                    },
+                    {
                         "$ref": "#\/parameters\/operation_state"
                     },
                     {
@@ -10751,6 +10757,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/delegated_to"
+                    },
+                    {
+                        "$ref": "#\/parameters\/managed_by"
                     },
                     {
                         "$ref": "#\/parameters\/operation_state"
@@ -16554,7 +16563,7 @@
                 "mapping": {
                     "type": "object",
                     "properties": {
-                        "externalService": {
+                        "service": {
                             "type": "string"
                         }
                     }
@@ -18083,6 +18092,14 @@
         "InternalService": {
             "type": "object",
             "properties": {
+                "_embedded": {
+                    "type": "object",
+                    "properties": {
+                        "manager": {
+                            "$ref": "#\/definitions\/Member"
+                        }
+                    }
+                },
                 "_links": {
                     "type": "object",
                     "properties": {
@@ -18206,19 +18223,22 @@
                         }
                     }
                 },
-                "organization": {
+                "description": {
+                    "type": "string"
+                },
+                "manager": {
                     "type": "string"
                 },
                 "name": {
                     "type": "string"
                 },
-                "description": {
+                "organization": {
                     "type": "string"
                 }
             },
             "required": [
-                "organization",
-                "name"
+                "name",
+                "organization"
             ]
         },
         "InternalServiceLinksOrganization": {
@@ -18328,6 +18348,10 @@
                 "description": {
                     "format": "string",
                     "type": "string"
+                },
+                "manager": {
+                    "type": "string",
+                    "format": "string"
                 },
                 "name": {
                     "format": "string",
@@ -23893,6 +23917,13 @@
             "format": "uuid",
             "in": "query",
             "name": "delegated_to",
+            "type": "string"
+        },
+        "managed_by": {
+            "description": "The identifier of the resource.",
+            "format": "uuid",
+            "in": "query",
+            "name": "managed_by",
             "type": "string"
         },
         "operation_state": {
