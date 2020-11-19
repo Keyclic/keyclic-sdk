@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetReportsByPerson**
-> ReportPagination cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, batch, category, createdBy, after, before, delegatedTo, operationState, order, place, priority, query, state, states[], visibility[], page, limit)
+> ReportPagination cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, batch, category, createdBy, after, before, delegatedTo, managedBy, operationState, order, place, priority, query, state, states[], visibility[], page, limit)
 
 Retrieve all Report resources.
 
@@ -270,6 +270,7 @@ var createdBy = ; // String | The identifier of the resource.
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var delegatedTo = ; // String | The identifier of the resource.
+var managedBy = ; // String | The identifier of the resource.
 var operationState = operationState_example; // String | 
 var order = order_example; // String | 
 var place = ; // String | The identifier of the resource.
@@ -282,7 +283,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, batch, category, createdBy, after, before, delegatedTo, operationState, order, place, priority, query, state, states[], visibility[], page, limit);
+    var result = api_instance.cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, batch, category, createdBy, after, before, delegatedTo, managedBy, operationState, order, place, priority, query, state, states[], visibility[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetReportsByPerson: $e\n");
@@ -306,6 +307,7 @@ Name | Type | Description  | Notes
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **delegatedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **managedBy** | [**String**](.md)| The identifier of the resource. | [optional] 
  **operationState** | **String**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
  **place** | [**String**](.md)| The identifier of the resource. | [optional] 

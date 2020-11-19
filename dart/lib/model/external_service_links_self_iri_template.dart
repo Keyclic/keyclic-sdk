@@ -13,11 +13,11 @@ class ExternalServiceLinksSelfIriTemplate {
 
     return ExternalServiceLinksSelfIriTemplate(
       mapping:
-          DelegationLinksServiceIriTemplateMapping.fromJson(json['mapping']),
+          ExternalServiceLinksSelfIriTemplateMapping.fromJson(json['mapping']),
     );
   }
 
-  DelegationLinksServiceIriTemplateMapping mapping;
+  ExternalServiceLinksSelfIriTemplateMapping mapping;
 
   @override
   bool operator ==(dynamic other) {

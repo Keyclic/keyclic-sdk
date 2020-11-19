@@ -2,7 +2,7 @@ part of keyclic_sdk_api.api;
 
 class DelegationLinksServiceIriTemplateMapping {
   DelegationLinksServiceIriTemplateMapping({
-    this.externalService,
+    this.service,
   });
 
   factory DelegationLinksServiceIriTemplateMapping.fromJson(
@@ -12,11 +12,11 @@ class DelegationLinksServiceIriTemplateMapping {
     }
 
     return DelegationLinksServiceIriTemplateMapping(
-      externalService: json['externalService'],
+      service: json['service'],
     );
   }
 
-  String externalService;
+  String service;
 
   @override
   bool operator ==(dynamic other) {
@@ -27,7 +27,7 @@ class DelegationLinksServiceIriTemplateMapping {
 
     return other is DelegationLinksServiceIriTemplateMapping &&
         runtimeType == other.runtimeType &&
-        externalService == other.externalService;
+        service == other.service;
   }
 
   /// By default hashCode return reference
@@ -35,7 +35,7 @@ class DelegationLinksServiceIriTemplateMapping {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= externalService?.hashCode ?? 0;
+    hashCode ^= service?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -61,12 +61,12 @@ class DelegationLinksServiceIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (externalService != null) 'externalService': externalService,
+      if (service != null) 'service': service,
     };
   }
 
   @override
   String toString() {
-    return 'DelegationLinksServiceIriTemplateMapping[externalService=$externalService, ]';
+    return 'DelegationLinksServiceIriTemplateMapping[service=$service, ]';
   }
 }

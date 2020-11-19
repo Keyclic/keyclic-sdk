@@ -5,6 +5,7 @@ class InternalServicePatch {
     this.address,
     this.contactPoint,
     this.description,
+    this.manager,
     this.name,
   });
 
@@ -18,6 +19,7 @@ class InternalServicePatch {
       contactPoint:
           ExternalServicePatchContactPoint.fromJson(json['contactPoint']),
       description: json['description'],
+      manager: json['manager'],
       name: json['name'],
     );
   }
@@ -27,6 +29,8 @@ class InternalServicePatch {
   ExternalServicePatchContactPoint contactPoint;
 
   String description;
+
+  String manager;
 
   String name;
 
@@ -42,6 +46,7 @@ class InternalServicePatch {
         address == other.address &&
         contactPoint == other.contactPoint &&
         description == other.description &&
+        manager == other.manager &&
         name == other.name;
   }
 
@@ -53,6 +58,7 @@ class InternalServicePatch {
     hashCode ^= address?.hashCode ?? 0;
     hashCode ^= contactPoint?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= manager?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
 
     return hashCode;
@@ -78,12 +84,13 @@ class InternalServicePatch {
       if (address != null) 'address': address.toJson(),
       if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
       if (description != null) 'description': description,
+      if (manager != null) 'manager': manager,
       if (name != null) 'name': name,
     };
   }
 
   @override
   String toString() {
-    return 'InternalServicePatch[address=$address, contactPoint=$contactPoint, description=$description, name=$name, ]';
+    return 'InternalServicePatch[address=$address, contactPoint=$contactPoint, description=$description, manager=$manager, name=$name, ]';
   }
 }

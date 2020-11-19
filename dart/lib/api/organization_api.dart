@@ -888,6 +888,7 @@ class OrganizationApi {
     DateTime after,
     DateTime before,
     String delegatedTo,
+    String managedBy,
     String operationState,
     String order,
     String place,
@@ -930,6 +931,8 @@ class OrganizationApi {
         ..._convertParametersForCollectionFormat("before", before),
       if (delegatedTo != null)
         ..._convertParametersForCollectionFormat("delegated_to", delegatedTo),
+      if (managedBy != null)
+        ..._convertParametersForCollectionFormat("managed_by", managedBy),
       if (operationState != null)
         ..._convertParametersForCollectionFormat(
             "operation_state", operationState),
@@ -1187,6 +1190,7 @@ class OrganizationApi {
     DateTime after,
     DateTime before,
     String delegatedTo,
+    String managedBy,
     String operationState,
     String order,
     String place,
@@ -1229,6 +1233,8 @@ class OrganizationApi {
         ..._convertParametersForCollectionFormat("before", before),
       if (delegatedTo != null)
         ..._convertParametersForCollectionFormat("delegated_to", delegatedTo),
+      if (managedBy != null)
+        ..._convertParametersForCollectionFormat("managed_by", managedBy),
       if (operationState != null)
         ..._convertParametersForCollectionFormat(
             "operation_state", operationState),

@@ -4,9 +4,10 @@ class InternalServiceData {
   InternalServiceData({
     this.address,
     this.contactPoint,
-    this.organization,
-    this.name,
     this.description,
+    this.manager,
+    this.name,
+    this.organization,
   });
 
   factory InternalServiceData.fromJson(Map<String, dynamic> json) {
@@ -18,9 +19,10 @@ class InternalServiceData {
       address: InternalServiceDataAddress.fromJson(json['address']),
       contactPoint:
           InternalServiceDataContactPoint.fromJson(json['contactPoint']),
-      organization: json['organization'],
-      name: json['name'],
       description: json['description'],
+      manager: json['manager'],
+      name: json['name'],
+      organization: json['organization'],
     );
   }
 
@@ -28,11 +30,13 @@ class InternalServiceData {
 
   InternalServiceDataContactPoint contactPoint;
 
-  String organization;
+  String description;
+
+  String manager;
 
   String name;
 
-  String description;
+  String organization;
 
   @override
   bool operator ==(dynamic other) {
@@ -45,9 +49,10 @@ class InternalServiceData {
         runtimeType == other.runtimeType &&
         address == other.address &&
         contactPoint == other.contactPoint &&
-        organization == other.organization &&
+        description == other.description &&
+        manager == other.manager &&
         name == other.name &&
-        description == other.description;
+        organization == other.organization;
   }
 
   /// By default hashCode return reference
@@ -57,9 +62,10 @@ class InternalServiceData {
 
     hashCode ^= address?.hashCode ?? 0;
     hashCode ^= contactPoint?.hashCode ?? 0;
-    hashCode ^= organization?.hashCode ?? 0;
-    hashCode ^= name?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
+    hashCode ^= manager?.hashCode ?? 0;
+    hashCode ^= name?.hashCode ?? 0;
+    hashCode ^= organization?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -83,14 +89,15 @@ class InternalServiceData {
     return {
       if (address != null) 'address': address.toJson(),
       if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
-      if (organization != null) 'organization': organization,
-      if (name != null) 'name': name,
       if (description != null) 'description': description,
+      if (manager != null) 'manager': manager,
+      if (name != null) 'name': name,
+      if (organization != null) 'organization': organization,
     };
   }
 
   @override
   String toString() {
-    return 'InternalServiceData[address=$address, contactPoint=$contactPoint, organization=$organization, name=$name, description=$description, ]';
+    return 'InternalServiceData[address=$address, contactPoint=$contactPoint, description=$description, manager=$manager, name=$name, organization=$organization, ]';
   }
 }

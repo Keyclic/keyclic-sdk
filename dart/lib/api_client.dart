@@ -455,6 +455,8 @@ class ApiClient {
           return ExternalServiceLinksSelf.fromJson(value);
         case 'ExternalServiceLinksSelfIriTemplate':
           return ExternalServiceLinksSelfIriTemplate.fromJson(value);
+        case 'ExternalServiceLinksSelfIriTemplateMapping':
+          return ExternalServiceLinksSelfIriTemplateMapping.fromJson(value);
         case 'ExternalServicePatch':
           return ExternalServicePatch.fromJson(value);
         case 'ExternalServicePatchAddress':
@@ -543,6 +545,8 @@ class ApiClient {
           return InternalServiceDataAddress.fromJson(value);
         case 'InternalServiceDataContactPoint':
           return InternalServiceDataContactPoint.fromJson(value);
+        case 'InternalServiceEmbedded':
+          return InternalServiceEmbedded.fromJson(value);
         case 'InternalServiceLinks':
           return InternalServiceLinks.fromJson(value);
         case 'InternalServiceLinksOrganization':
