@@ -13,13 +13,13 @@ class RuleEmbedded {
 
     return RuleEmbedded(
       category: Category.fromJson(json['category']),
-      service: Service.fromJson(json['service']),
+      service: InternalService.fromJson(json['service']),
     );
   }
 
   Category category;
 
-  Service service;
+  InternalService service;
 
   @override
   bool operator ==(dynamic other) {

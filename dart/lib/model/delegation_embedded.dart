@@ -12,12 +12,12 @@ class DelegationEmbedded {
     }
 
     return DelegationEmbedded(
-      service: Service.fromJson(json['service']),
+      service: InternalService.fromJson(json['service']),
       workflow: DelegationEmbeddedWorkflow.fromJson(json['workflow']),
     );
   }
 
-  Service service;
+  InternalService service;
 
   DelegationEmbeddedWorkflow workflow;
 
