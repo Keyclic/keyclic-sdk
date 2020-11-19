@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.8.20"
+        "version": "2.8.22"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -16369,7 +16369,7 @@
                     "type": "object",
                     "properties": {
                         "service": {
-                            "$ref": "#\/definitions\/Service"
+                            "$ref": "#\/definitions\/InternalService"
                         },
                         "workflow": {
                             "type": "object",
@@ -22362,7 +22362,7 @@
                             "$ref": "#\/definitions\/Category"
                         },
                         "service": {
-                            "$ref": "#\/definitions\/Service"
+                            "$ref": "#\/definitions\/InternalService"
                         }
                     }
                 },

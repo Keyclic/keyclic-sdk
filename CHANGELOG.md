@@ -1,3 +1,3 @@
-# 2.0.0
+# latest
 
-**BC**: Javascript doesn't include fetch polyfill anymore. You need to include it yourself. For example this one: [github fetch](https://github.com/github/fetch) !
+Synchronize SDK with the new features of API. 
