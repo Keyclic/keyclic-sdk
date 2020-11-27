@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.8.23"
+        "version": "2.8.28"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -15708,7 +15708,7 @@
                         "children": {
                             "type": "array",
                             "items": {
-                                "$ref": "#\/definitions\/Node"
+                                "$ref": "#\/definitions\/Category"
                             }
                         },
                         "path": {
@@ -19075,37 +19075,6 @@
                 }
             }
         },
-        "Node": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string"
-                },
-                "type": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "_embedded": {
-                    "type": "object",
-                    "properties": {
-                        "path": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#\/definitions\/NodePath"
-                            }
-                        },
-                        "children": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#\/definitions\/Node"
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "NodePath": {
             "type": "object",
             "properties": {
@@ -20494,7 +20463,7 @@
                         "children": {
                             "type": "array",
                             "items": {
-                                "$ref": "#\/definitions\/Node"
+                                "$ref": "#\/definitions\/Place"
                             }
                         },
                         "documentTypes": {
