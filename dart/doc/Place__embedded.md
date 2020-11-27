@@ -8,7 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**children** | [**List&lt;Node&gt;**](Node.md) |  | [optional] [default to []]
+**children** | [**List&lt;Place&gt;**](Place.md) |  | [optional] [default to []]
 **documentTypes** | [**List&lt;PlaceEmbeddedDocumentTypes&gt;**](PlaceEmbeddedDocumentTypes.md) |  | [optional] [default to []]
 **organization** | [**Organization**](Organization.md) |  | [optional] [default to null]
 **path** | [**List&lt;NodePath&gt;**](NodePath.md) |  | [optional] [default to []]

@@ -12,12 +12,12 @@ class CategoryEmbedded {
     }
 
     return CategoryEmbedded(
-      children: Node.listFromJson(json['children']),
+      children: Category.listFromJson(json['children']),
       path: NodePath.listFromJson(json['path']),
     );
   }
 
-  List<Node> children;
+  List<Category> children;
 
   List<NodePath> path;
 
@@ -41,7 +41,7 @@ class CategoryEmbedded {
 
     if (children is List && children.isNotEmpty) {
       hashCode ^= children
-          .map((Node element) => element.hashCode)
+          .map((Category element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
     if (path is List && path.isNotEmpty) {

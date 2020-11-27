@@ -15,7 +15,7 @@ class PlaceEmbedded {
     }
 
     return PlaceEmbedded(
-      children: Node.listFromJson(json['children']),
+      children: Place.listFromJson(json['children']),
       documentTypes:
           PlaceEmbeddedDocumentTypes.listFromJson(json['documentTypes']),
       organization: Organization.fromJson(json['organization']),
@@ -24,7 +24,7 @@ class PlaceEmbedded {
     );
   }
 
-  List<Node> children;
+  List<Place> children;
 
   List<PlaceEmbeddedDocumentTypes> documentTypes;
 
@@ -58,7 +58,7 @@ class PlaceEmbedded {
 
     if (children is List && children.isNotEmpty) {
       hashCode ^= children
-          .map((Node element) => element.hashCode)
+          .map((Place element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
     if (documentTypes is List && documentTypes.isNotEmpty) {

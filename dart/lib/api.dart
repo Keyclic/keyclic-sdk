@@ -319,8 +319,6 @@ part 'model/member_patch.dart';
 part 'model/member_patch_contact_point.dart';
 part 'model/member_type_role.dart';
 part 'model/metric.dart';
-part 'model/node.dart';
-part 'model/node_embedded.dart';
 part 'model/node_path.dart';
 part 'model/occupant.dart';
 part 'model/occupant_collection.dart';

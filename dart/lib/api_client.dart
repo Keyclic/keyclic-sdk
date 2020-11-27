@@ -649,10 +649,6 @@ class ApiClient {
           return MemberTypeRole.fromJson(value);
         case 'Metric':
           return Metric.fromJson(value);
-        case 'Node':
-          return Node.fromJson(value);
-        case 'NodeEmbedded':
-          return NodeEmbedded.fromJson(value);
         case 'NodePath':
           return NodePath.fromJson(value);
         case 'Occupant':
