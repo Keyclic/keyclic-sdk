@@ -327,7 +327,9 @@ class PersonApi {
     DateTime before,
     String delegatedTo,
     String managedBy,
+    String operationStateAll,
     String operationState,
+    List<String> operationStates__,
     String order,
     String place,
     String priority,
@@ -371,9 +373,16 @@ class PersonApi {
         ..._convertParametersForCollectionFormat("delegated_to", delegatedTo),
       if (managedBy != null)
         ..._convertParametersForCollectionFormat("managed_by", managedBy),
+      if (operationStateAll != null)
+        ..._convertParametersForCollectionFormat(
+            "operation_state_all", operationStateAll),
       if (operationState != null)
         ..._convertParametersForCollectionFormat(
             "operation_state", operationState),
+      if (operationStates__ != null)
+        ..._convertParametersForCollectionFormat(
+            "operation_states[]", operationStates__,
+            collectionFormat: "multi"),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
       if (place != null)
