@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.8.28"
+        "version": "2.9.0"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -9423,7 +9423,13 @@
                         "$ref": "#\/parameters\/managed_by"
                     },
                     {
+                        "$ref": "#\/parameters\/operation_state_all"
+                    },
+                    {
                         "$ref": "#\/parameters\/operation_state"
+                    },
+                    {
+                        "$ref": "#\/parameters\/operation_states__"
                     },
                     {
                         "$ref": "#\/parameters\/order"
@@ -10252,7 +10258,13 @@
                         "$ref": "#\/parameters\/managed_by"
                     },
                     {
+                        "$ref": "#\/parameters\/operation_state_all"
+                    },
+                    {
                         "$ref": "#\/parameters\/operation_state"
+                    },
+                    {
+                        "$ref": "#\/parameters\/operation_states__"
                     },
                     {
                         "$ref": "#\/parameters\/order"
@@ -10762,7 +10774,13 @@
                         "$ref": "#\/parameters\/managed_by"
                     },
                     {
+                        "$ref": "#\/parameters\/operation_state_all"
+                    },
+                    {
                         "$ref": "#\/parameters\/operation_state"
+                    },
+                    {
+                        "$ref": "#\/parameters\/operation_states__"
                     },
                     {
                         "$ref": "#\/parameters\/order"
@@ -17607,9 +17625,6 @@
                 "_embedded": {
                     "type": "object",
                     "properties": {
-                        "category": {
-                            "$ref": "#\/definitions\/Category"
-                        },
                         "markers": {
                             "type": "array",
                             "items": {
@@ -23895,11 +23910,27 @@
             "name": "managed_by",
             "type": "string"
         },
+        "operation_state_all": {
+            "in": "query",
+            "name": "operation_state_all",
+            "pattern": ".*",
+            "type": "string"
+        },
         "operation_state": {
             "in": "query",
             "name": "operation_state",
             "pattern": ".*",
             "type": "string"
+        },
+        "operation_states__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "operation_states[]",
+            "pattern": ".*",
+            "type": "array"
         },
         "priority": {
             "description": "The identifier of the resource.",
