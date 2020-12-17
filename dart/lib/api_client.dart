@@ -827,16 +827,6 @@ class ApiClient {
           return PlaceGeoShape.fromJson(value);
         case 'PlaceLinks':
           return PlaceLinks.fromJson(value);
-        case 'PlaceLinksContainedInPlace':
-          return PlaceLinksContainedInPlace.fromJson(value);
-        case 'PlaceLinksContainedInPlaceIriTemplate':
-          return PlaceLinksContainedInPlaceIriTemplate.fromJson(value);
-        case 'PlaceLinksContainsPlaces':
-          return PlaceLinksContainsPlaces.fromJson(value);
-        case 'PlaceLinksContainsPlacesIriTemplate':
-          return PlaceLinksContainsPlacesIriTemplate.fromJson(value);
-        case 'PlaceLinksContainsPlacesIriTemplateMapping':
-          return PlaceLinksContainsPlacesIriTemplateMapping.fromJson(value);
         case 'PlaceLinksOrganization':
           return PlaceLinksOrganization.fromJson(value);
         case 'PlaceLinksOrganizationIriTemplate':
