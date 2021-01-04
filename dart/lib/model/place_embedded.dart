@@ -16,8 +16,7 @@ class PlaceEmbedded {
 
     return PlaceEmbedded(
       children: Place.listFromJson(json['children']),
-      documentTypes:
-          PlaceEmbeddedDocumentTypes.listFromJson(json['documentTypes']),
+      documentTypes: DocumentType.listFromJson(json['documentTypes']),
       organization: Organization.fromJson(json['organization']),
       path: NodePath.listFromJson(json['path']),
       workflow: DelegationEmbeddedWorkflow.fromJson(json['workflow']),
@@ -26,7 +25,7 @@ class PlaceEmbedded {
 
   List<Place> children;
 
-  List<PlaceEmbeddedDocumentTypes> documentTypes;
+  List<DocumentType> documentTypes;
 
   Organization organization;
 
@@ -63,7 +62,7 @@ class PlaceEmbedded {
     }
     if (documentTypes is List && documentTypes.isNotEmpty) {
       hashCode ^= documentTypes
-          .map((PlaceEmbeddedDocumentTypes element) => element.hashCode)
+          .map((DocumentType element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
     if (path is List && path.isNotEmpty) {

@@ -1,19 +1,19 @@
 part of keyclic_sdk_api.api;
 
-class PlaceEmbeddedDocumentTypes {
-  PlaceEmbeddedDocumentTypes({
+class DocumentType {
+  DocumentType({
     this.id,
     this.type,
     this.name,
     this.description,
   });
 
-  factory PlaceEmbeddedDocumentTypes.fromJson(Map<String, dynamic> json) {
+  factory DocumentType.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return null;
     }
 
-    return PlaceEmbeddedDocumentTypes(
+    return DocumentType(
       id: json['id'],
       type: json['type'],
       name: json['name'],
@@ -36,7 +36,7 @@ class PlaceEmbeddedDocumentTypes {
       return true;
     }
 
-    return other is PlaceEmbeddedDocumentTypes &&
+    return other is DocumentType &&
         runtimeType == other.runtimeType &&
         id == other.id &&
         type == other.type &&
@@ -57,20 +57,18 @@ class PlaceEmbeddedDocumentTypes {
     return hashCode;
   }
 
-  static List<PlaceEmbeddedDocumentTypes> listFromJson(List<dynamic> json) {
+  static List<DocumentType> listFromJson(List<dynamic> json) {
     return json
-            ?.map((dynamic value) => PlaceEmbeddedDocumentTypes.fromJson(value))
+            ?.map((dynamic value) => DocumentType.fromJson(value))
             ?.toList() ??
-        <PlaceEmbeddedDocumentTypes>[];
+        <DocumentType>[];
   }
 
-  static Map<String, PlaceEmbeddedDocumentTypes> mapFromJson(
-      Map<String, dynamic> json) {
-    return json?.map<String, PlaceEmbeddedDocumentTypes>(
-            (String key, dynamic value) {
-          return MapEntry(key, PlaceEmbeddedDocumentTypes.fromJson(value));
+  static Map<String, DocumentType> mapFromJson(Map<String, dynamic> json) {
+    return json?.map<String, DocumentType>((String key, dynamic value) {
+          return MapEntry(key, DocumentType.fromJson(value));
         }) ??
-        <String, PlaceEmbeddedDocumentTypes>{};
+        <String, DocumentType>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -84,6 +82,6 @@ class PlaceEmbeddedDocumentTypes {
 
   @override
   String toString() {
-    return 'PlaceEmbeddedDocumentTypes[id=$id, type=$type, name=$name, description=$description, ]';
+    return 'DocumentType[id=$id, type=$type, name=$name, description=$description, ]';
   }
 }

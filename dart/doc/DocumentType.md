@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.PlaceEmbeddedDocumentTypes
+# keyclic_sdk_api.model.DocumentType
 
 ## Load the model package
 ```dart

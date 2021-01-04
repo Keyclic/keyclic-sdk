@@ -9,7 +9,7 @@ import 'package:keyclic_sdk_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **children** | [**List&lt;Place&gt;**](Place.md) |  | [optional] [default to []]
-**documentTypes** | [**List&lt;PlaceEmbeddedDocumentTypes&gt;**](PlaceEmbeddedDocumentTypes.md) |  | [optional] [default to []]
+**documentTypes** | [**List&lt;DocumentType&gt;**](DocumentType.md) |  | [optional] [default to []]
 **organization** | [**Organization**](Organization.md) |  | [optional] [default to null]
 **path** | [**List&lt;NodePath&gt;**](NodePath.md) |  | [optional] [default to []]
 **workflow** | [**DelegationEmbeddedWorkflow**](DelegationEmbeddedWorkflow.md) |  | [optional] [default to null]

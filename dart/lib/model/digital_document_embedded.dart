@@ -4,6 +4,7 @@ class DigitalDocumentEmbedded {
   DigitalDocumentEmbedded({
     this.signers,
     this.stateTransitions,
+    this.type,
   });
 
   factory DigitalDocumentEmbedded.fromJson(Map<String, dynamic> json) {
@@ -16,12 +17,15 @@ class DigitalDocumentEmbedded {
       stateTransitions: json['stateTransitions'] is List
           ? List<String>.from(json['stateTransitions'])
           : null,
+      type: DocumentType.fromJson(json['type']),
     );
   }
 
   List<Signer> signers;
 
   List<String> stateTransitions;
+
+  DocumentType type;
 
   @override
   bool operator ==(dynamic other) {
@@ -34,7 +38,8 @@ class DigitalDocumentEmbedded {
         runtimeType == other.runtimeType &&
         DeepCollectionEquality.unordered().equals(signers, other.signers) &&
         DeepCollectionEquality.unordered()
-            .equals(stateTransitions, other.stateTransitions);
+            .equals(stateTransitions, other.stateTransitions) &&
+        type == other.type;
   }
 
   /// By default hashCode return reference
@@ -52,6 +57,8 @@ class DigitalDocumentEmbedded {
           .map((String element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
+
+    hashCode ^= type?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -76,11 +83,12 @@ class DigitalDocumentEmbedded {
     return {
       if (signers != null) 'signers': signers,
       if (stateTransitions != null) 'stateTransitions': stateTransitions,
+      if (type != null) 'type': type.toJson(),
     };
   }
 
   @override
   String toString() {
-    return 'DigitalDocumentEmbedded[signers=$signers, stateTransitions=$stateTransitions, ]';
+    return 'DigitalDocumentEmbedded[signers=$signers, stateTransitions=$stateTransitions, type=$type, ]';
   }
 }

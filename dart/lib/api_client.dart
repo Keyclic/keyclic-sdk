@@ -427,6 +427,8 @@ class ApiClient {
           return DocumentPatchPermission.fromJson(value);
         case 'DocumentPermission':
           return DocumentPermission.fromJson(value);
+        case 'DocumentType':
+          return DocumentType.fromJson(value);
         case 'DocumentWorkflowData':
           return DocumentWorkflowData.fromJson(value);
         case 'Duration':
@@ -821,8 +823,6 @@ class ApiClient {
           return PlaceData.fromJson(value);
         case 'PlaceEmbedded':
           return PlaceEmbedded.fromJson(value);
-        case 'PlaceEmbeddedDocumentTypes':
-          return PlaceEmbeddedDocumentTypes.fromJson(value);
         case 'PlaceGeoShape':
           return PlaceGeoShape.fromJson(value);
         case 'PlaceLinks':
