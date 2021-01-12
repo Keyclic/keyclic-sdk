@@ -43,5 +43,9 @@ String _parameterToString(dynamic value) {
     return value.toUtc().toIso8601String();
   }
 
+  if (value is String) {
+    return Uri.encodeQueryComponent(value);
+  }
+
   return value.toString();
 }

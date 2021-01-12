@@ -47,5 +47,9 @@ String _parameterToString(dynamic value) {
   }
   {{/isEnum}}{{/model}}{{/models}}
 
+  if (value is String) {
+    return Uri.encodeQueryComponent(value);
+  }
+
   return value.toString();
 }
