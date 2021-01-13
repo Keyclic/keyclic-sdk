@@ -4,6 +4,7 @@ class FeedbackDataVisibilityEnum {
   static const String pRIVATE_ = "VISIBILITY_PRIVATE";
   static const String pUBLIC_ = "VISIBILITY_PUBLIC";
   static const String rESTRICTED_ = "VISIBILITY_RESTRICTED";
+  static const String sHARED_ = "VISIBILITY_SHARED";
 }
 
 class FeedbackData {
