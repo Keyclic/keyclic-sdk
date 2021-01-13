@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.9.11"
+        "version": "2.9.14"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -17817,7 +17817,8 @@
                     "enum": [
                         "VISIBILITY_PRIVATE",
                         "VISIBILITY_PUBLIC",
-                        "VISIBILITY_RESTRICTED"
+                        "VISIBILITY_RESTRICTED",
+                        "VISIBILITY_SHARED"
                     ]
                 }
             },
