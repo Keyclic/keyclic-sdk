@@ -42,7 +42,7 @@ pana() {
     check pana "pub global activate pana"
 
     # scores package
-    pana --source path dart --scores --verbosity compact
+    pana --source path dart
 }
 
 generate() {
