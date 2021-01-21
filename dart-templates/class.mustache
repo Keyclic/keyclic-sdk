@@ -1,174 +1,50 @@
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
+
+part '{{classFilename}}.g.dart';
+
+abstract class {{classname}} implements Built<{{classname}}, {{classname}}Builder> {
+
 {{#vars}}
-  {{#allowableValues}}
-    {{^min}}
-      class {{classname}}{{datatypeWithEnum}} {
-        {{#enumVars}}
-          static const String {{name}} = {{{value}}};
-        {{/enumVars}}
-      }
-    {{/min}}
-  {{/allowableValues}}
-{{/vars}}
-
-class {{classname}} {{#interfaces}}extends {{interfaces.0}} {{/interfaces}}{
-{{classname}}({{#hasVars}}{ {{#vars}}this.{{name}},{{/vars}} }{{/hasVars}});
-
-  factory {{classname}}.fromJson(Map<String, dynamic> json) {
-    if (json == null) {
-      return null;
-    }
-
-    {{#vars}}
-    {{#isDateTime}}
-        {{{datatype}}} {{name}} = json['{{baseName}}'] == null ? null : DateTime.parse(json['{{baseName}}']);
-        if ({{name}} is DateTime && {{name}}.isUtc == false) {
-          {{=<< >>=}}
-            <<name>> = DateTime.parse('${<<name>>.toIso8601String()}Z');
-          <<={{ }}=>>
-        }
-
-      {{/isDateTime}}
-    {{/vars}}
-
-    return {{classname}}(
-      {{#vars}}
-      {{#isDateTime}}
-        {{name}}: {{name}},
-      {{/isDateTime}}
-      {{^isDateTime}}
-        {{#complexType}}
-          {{#isListContainer}}
-            {{name}}: {{complexType}}.listFromJson(json['{{baseName}}']),
-          {{/isListContainer}}
-          {{^isListContainer}}
-            {{#isMapContainer}}
-              {{name}}: {{complexType}}.mapFromJson(json['{{baseName}}']),
-            {{/isMapContainer}}
-            {{^isMapContainer}}
-              {{name}}: {{complexType}}.fromJson(json['{{baseName}}']),
-            {{/isMapContainer}}
-          {{/isListContainer}}
-        {{/complexType}}
-        {{^complexType}}
-          {{#isListContainer}}
-            {{name}}: json['{{baseName}}'] is List ? List<{{{items.datatype}}}>.from(json['{{baseName}}']) : null,
-          {{/isListContainer}}
-          {{^isListContainer}}
-            {{! Double type in dart must have a point separator (0 must be cast in 0.0) }}
-            {{#isFloat}}
-              {{name}}: json['{{baseName}}']?.toDouble(),
-            {{/isFloat}}
-            {{^isFloat}}
-              {{name}}: json['{{baseName}}'],
-            {{/isFloat}}
-          {{/isListContainer}}
-        {{/complexType}}
-      {{/isDateTime}}
-    {{/vars}}
-    );
-  }
-
-  {{#vars}}
-    {{#description}}/* {{{description}}} */{{/description}}
+    {{#description}}
+    /// {{{description}}}
+    {{/description}}
+    {{#isNullable}}
+    @nullable
+    {{/isNullable}}
+    @BuiltValueField(wireName: r'{{baseName}}')
+    {{{datatypeWithEnum}}} get {{name}};
     {{#allowableValues}}
-      {{#min}}
-        /// range from {{min}} to {{max}}
-      {{/min}}
-      {{^min}}
-        /// use {{classname}}{{datatypeWithEnum}}
-      {{/min}}
+    // {{#min}}range from {{{min}}} to {{{max}}}{{/min}}{{^min}}enum {{name}}Enum { {{#values}} {{{.}}}, {{/values}} };{{/min}}
     {{/allowableValues}}
-    {{{datatype}}} {{name}};
-  {{/vars}}
 
-  @override
-  bool operator==(dynamic other) {
-    // Same reference
-    if (identical(this, other)) {
-      return true;
-    }
+{{/vars}}
+    // Boilerplate code needed to wire-up generated code
+    {{classname}}._();
 
-    return other is {{classname}} && runtimeType == other.runtimeType
-      {{#vars}}
-        {{#isContainer}}
-          && DeepCollectionEquality.unordered().equals({{name}}, other.{{name}})
-        {{/isContainer}}
-        {{^isContainer}}
-          && {{name}} == other.{{name}}
-        {{/isContainer}}
-      {{/vars}}
-    ;
-  }
+    static void _initializeBuilder({{{classname}}}Builder b) => b{{#vars}}{{#defaultValue}}
+        ..{{{name}}} = {{#isEnum}}{{^isContainer}}const {{{classname}}}{{{enumName}}}._({{/isContainer}}{{/isEnum}}{{{defaultValue}}}{{#isEnum}}{{^isContainer}}){{/isContainer}}{{/isEnum}}{{/defaultValue}}{{/vars}};
 
-  /// By default hashCode return reference
-  @override
-  int get hashCode {
-    int hashCode = 0;
-
-    {{#vars}}
-      {{#isListContainer}}
-        if ({{name}} is List && {{name}}.isNotEmpty) {
-          hashCode ^= {{name}}.map(({{{items.datatype}}} element) => element.hashCode).reduce((int value, int cursor) => value ^ cursor);
-        }
-      {{/isListContainer}}
-    {{/vars}}
-
-    {{#vars}}
-      {{#isMapContainer}}
-        if ({{name}} is Map && {{name}}.isNotEmpty) {
-          hashCode ^= {{name}}.keys.map((dynamic element) => element.hashCode).reduce((int value, int cursor) => value ^ cursor);
-          hashCode ^= {{name}}.values.map((dynamic element) => element.hashCode).reduce((int value, int cursor) => value ^ cursor);
-        }
-      {{/isMapContainer}}
-    {{/vars}}
-
-    {{#vars}}
-      {{^isListContainer}}
-        {{^isMapContainer}}
-          hashCode ^= {{name}}?.hashCode ?? 0;
-        {{/isMapContainer}}
-      {{/isListContainer}}
-    {{/vars}}
-
-    return hashCode;
-  }
-
-  static List<{{classname}}> listFromJson(List<dynamic> json) {
-    return json?.map((dynamic value) => {{classname}}.fromJson(value))?.toList() ?? <{{classname}}>[];
-  }
-
-  static Map<String, {{classname}}> mapFromJson(Map<String, dynamic> json) {
-    return json?.map<String, {{classname}}>((String key, dynamic value) {
-      return MapEntry(key, {{classname}}.fromJson(value));
-    }) ?? <String, {{classname}}>{};
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      {{#vars}}
-      if ({{name}} != null)
-        {{#isDateTime}}
-          '{{{baseName}}}': {{name}}.toUtc().toIso8601String(),
-        {{/isDateTime}}
-        {{^isDateTime}}
-          {{#complexType}}
-            {{#isContainer}}
-              '{{{baseName}}}': {{name}},
-            {{/isContainer}}
-            {{^isContainer}}
-              '{{{baseName}}}': {{name}}.toJson(),
-            {{/isContainer}}
-          {{/complexType}}
-          {{^complexType}}
-            '{{{baseName}}}': {{name}},
-          {{/complexType}}
-        {{/isDateTime}}
-      {{/vars}}
-    };
-  }
-
-  @override
-  String toString() {
-    return '{{classname}}[{{#vars}}{{name}}=${{name}}, {{/vars}}]';
-  }
+    factory {{classname}}([void Function({{classname}}Builder b) updates]) = _${{classname}};
+    static Serializer<{{classname}}> get serializer => _${{#lambda.camelcase}}{{{classname}}}{{/lambda.camelcase}}Serializer;
 }
+{{!
+    Generate an enum for any variables that are declared as inline enums
+    isEnum is only true for inline variables that are enums.
+    If an enum is declared as a definition, isEnum is false and the enum is generated from the
+    enum.mustache template.
+}}
+{{#vars}}
+    {{#isEnum}}
+        {{^isContainer}}
+
+{{>enum_inline}}
+        {{/isContainer}}
+        {{#isContainer}}
+            {{#mostInnerItems}}
+
+{{>enum_inline}}
+            {{/mostInnerItems}}
+        {{/isContainer}}
+    {{/isEnum}}
+{{/vars}}

@@ -1,7 +1,9 @@
-part of {{pubName}}.api;
-
+{{>header}}
 {{#models}}
-{{#model}}
+    {{#model}}
+        {{#imports}}
+import '{{.}}';
+        {{/imports}}
 {{#isEnum}}{{>enum}}{{/isEnum}}{{^isEnum}}{{>class}}{{/isEnum}}
-{{/model}}
+    {{/model}}
 {{/models}}

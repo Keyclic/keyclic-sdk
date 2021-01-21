@@ -1,22 +1,62 @@
+{{>header}}
 library {{pubName}}.api;
 
-import 'dart:async';
-import 'dart:convert';
-import 'package:collection/collection.dart';
-import 'package:http/http.dart';
-import 'package:logging/logging.dart';
-
-part 'api_client.dart';
-part 'api_helper.dart';
-part 'api_exception.dart';
-part 'auth/authentication.dart';
-part 'auth/api_key_auth.dart';
-part 'auth/oauth.dart';
-part 'auth/http_basic_auth.dart';
-
-{{#apiInfo}}{{#apis}}part 'api/{{classFilename}}.dart';
+import 'package:dio/dio.dart';
+import 'package:built_value/serializer.dart';
+import 'package:{{pubName}}/serializers.dart';
+import 'package:{{pubName}}/auth/api_key_auth.dart';
+import 'package:{{pubName}}/auth/basic_auth.dart';
+import 'package:{{pubName}}/auth/oauth.dart';
+{{#apiInfo}}{{#apis}}import 'package:{{pubName}}/api/{{classFilename}}.dart';
 {{/apis}}{{/apiInfo}}
-{{#models}}{{#model}}part 'model/{{classFilename}}.dart';
-{{/model}}{{/models}}
 
-ApiClient defaultApiClient = ApiClient();
+final _defaultInterceptors = [OAuthInterceptor(), BasicAuthInterceptor(), ApiKeyAuthInterceptor()];
+
+class {{clientName}} {
+
+    Dio dio;
+    Serializers serializers;
+    String basePath = '{{{basePath}}}';
+
+    {{clientName}}({this.dio, Serializers serializers, String basePath, List<Interceptor> interceptors}) {
+        if (dio == null) {
+            final options = new BaseOptions(
+                baseUrl: basePath ?? this.basePath,
+                connectTimeout: 5000,
+                receiveTimeout: 3000,
+            );
+            dio = Dio(options);
+        }
+
+        if (interceptors == null) {
+            dio.interceptors.addAll(_defaultInterceptors);
+        } else {
+            dio.interceptors.addAll(interceptors);
+        }
+
+        this.serializers = serializers ?? standardSerializers;
+    }
+
+    void setOAuthToken(String name, String token) {
+        (dio.interceptors.firstWhere((element) => element is OAuthInterceptor, orElse: () => null) as OAuthInterceptor)?.tokens[name] = token;
+    }
+
+    void setBasicAuth(String name, String username, String password) {
+        (dio.interceptors.firstWhere((element) => element is BasicAuthInterceptor, orElse: () => null) as BasicAuthInterceptor)?.authInfo[name] = BasicAuthInfo(username, password);
+    }
+
+    void setApiKey(String name, String apiKey) {
+        (dio.interceptors.firstWhere((element) => element is ApiKeyAuthInterceptor, orElse: () => null) as ApiKeyAuthInterceptor)?.apiKeys[name] = apiKey;
+    }
+
+{{#apiInfo}}{{#apis}}
+    /**
+    * Get {{classname}} instance, base route and serializer can be overridden by a given but be careful,
+    * by doing that all interceptors will not be executed
+    */
+    {{classname}} get{{classname}}() {
+    return {{classname}}(dio, serializers);
+    }
+
+{{/apis}}{{/apiInfo}}
+}
