@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.9.14"
+        "version": "2.9.19"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -8905,6 +8905,9 @@
                         "$ref": "#\/parameters\/delegated_to"
                     },
                     {
+                        "$ref": "#\/parameters\/has_documents"
+                    },
+                    {
                         "$ref": "#\/parameters\/managed_by"
                     },
                     {
@@ -9740,6 +9743,9 @@
                         "$ref": "#\/parameters\/delegated_to"
                     },
                     {
+                        "$ref": "#\/parameters\/has_documents"
+                    },
+                    {
                         "$ref": "#\/parameters\/managed_by"
                     },
                     {
@@ -9793,6 +9799,120 @@
                 "responses": {
                     "204": {
                         "description": ""
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/people\/{person}\/documents": {
+            "get": {
+                "tags": [
+                    "Person"
+                ],
+                "summary": "Retrieve all Document resources.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "cgetDocumentsByPerson",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organization"
+                    },
+                    {
+                        "in": "query",
+                        "name": "state",
+                        "pattern": ".*",
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "#\/parameters\/page"
+                    },
+                    {
+                        "$ref": "#\/parameters\/limit"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "person",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/DocumentPagination"
+                        }
                     },
                     "400": {
                         "description": "Returned when the request is invalid.",
@@ -10254,6 +10374,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/delegated_to"
+                    },
+                    {
+                        "$ref": "#\/parameters\/has_documents"
                     },
                     {
                         "$ref": "#\/parameters\/managed_by"
@@ -10876,6 +10999,15 @@
                     },
                     {
                         "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organization"
+                    },
+                    {
+                        "in": "query",
+                        "name": "state",
+                        "pattern": ".*",
+                        "type": "string"
                     },
                     {
                         "$ref": "#\/parameters\/page"
@@ -12091,6 +12223,15 @@
                     },
                     {
                         "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organization"
+                    },
+                    {
+                        "in": "query",
+                        "name": "state",
+                        "pattern": ".*",
+                        "type": "string"
                     },
                     {
                         "$ref": "#\/parameters\/page"
@@ -21422,8 +21563,8 @@
                     "$ref": "#\/definitions\/ReportPriority"
                 },
                 "reference": {
-                    "type": "string",
-                    "format": "string"
+                    "format": "string",
+                    "type": "string"
                 },
                 "tags": {
                     "items": {
@@ -23835,6 +23976,12 @@
             "format": "uuid",
             "in": "query",
             "name": "delegated_to",
+            "type": "string"
+        },
+        "has_documents": {
+            "in": "query",
+            "name": "has_documents",
+            "pattern": ".*",
             "type": "string"
         },
         "managed_by": {
