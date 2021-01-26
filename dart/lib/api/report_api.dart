@@ -107,6 +107,8 @@ class ReportApi {
     DateTime after,
     DateTime before,
     String order,
+    String organization,
+    String state,
     int page,
     int limit,
   }) async {
@@ -133,6 +135,10 @@ class ReportApi {
         ..._convertParametersForCollectionFormat("before", before),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
+      if (organization != null)
+        ..._convertParametersForCollectionFormat("organization", organization),
+      if (state != null)
+        ..._convertParametersForCollectionFormat("state", state),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),
