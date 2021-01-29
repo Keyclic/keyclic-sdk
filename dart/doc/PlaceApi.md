@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **cgetDocumentsByPlace**
-> DocumentPagination cgetDocumentsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, organization, state, page, limit)
+> DocumentPagination cgetDocumentsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, organization, state, states[], page, limit)
 
 Retrieve all Document resources.
 
@@ -43,11 +43,12 @@ var before = 2013-10-20T19:20:30+01:00; // DateTime |
 var order = order_example; // String | 
 var organization = ; // String | The identifier of the resource.
 var state = state_example; // String | 
+var states[] = []; // List<String> | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetDocumentsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, organization, state, page, limit);
+    var result = api_instance.cgetDocumentsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, organization, state, states[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PlaceApi->cgetDocumentsByPlace: $e\n");
@@ -69,6 +70,7 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
  **state** | **String**|  | [optional] 
+ **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 
