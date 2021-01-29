@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.9.19"
+        "version": "2.9.20"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -9893,6 +9893,9 @@
                         "type": "string"
                     },
                     {
+                        "$ref": "#\/parameters\/states__"
+                    },
+                    {
                         "$ref": "#\/parameters\/page"
                     },
                     {
@@ -11008,6 +11011,9 @@
                         "name": "state",
                         "pattern": ".*",
                         "type": "string"
+                    },
+                    {
+                        "$ref": "#\/parameters\/states__"
                     },
                     {
                         "$ref": "#\/parameters\/page"
@@ -12232,6 +12238,9 @@
                         "name": "state",
                         "pattern": ".*",
                         "type": "string"
+                    },
+                    {
+                        "$ref": "#\/parameters\/states__"
                     },
                     {
                         "$ref": "#\/parameters\/page"
