@@ -70,7 +70,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDigitalDocument**
-> DigitalDocument getDigitalDocument(xKeyclicApp, digitalDocument, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
+> Document getDigitalDocument(xKeyclicApp, digitalDocument, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Retrieve one DigitalDocument resource.
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DigitalDocument**](DigitalDocument.md)
+[**Document**](Document.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchDigitalDocument**
-> DigitalDocument patchDigitalDocument(xKeyclicApp, digitalDocumentPatch, digitalDocument, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
+> Document patchDigitalDocument(xKeyclicApp, documentPatch, digitalDocument, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Edit one DigitalDocument resource.
 
@@ -139,7 +139,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = DigitalDocumentApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var digitalDocumentPatch = DigitalDocumentPatch(); // DigitalDocumentPatch | 
+var documentPatch = DocumentPatch(); // DocumentPatch | 
 var digitalDocument = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -147,7 +147,7 @@ var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String |
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.patchDigitalDocument(xKeyclicApp, digitalDocumentPatch, digitalDocument, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
+    var result = api_instance.patchDigitalDocument(xKeyclicApp, documentPatch, digitalDocument, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling DigitalDocumentApi->patchDigitalDocument: $e\n");
@@ -159,7 +159,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **digitalDocumentPatch** | [**DigitalDocumentPatch**](DigitalDocumentPatch.md)|  | 
+ **documentPatch** | [**DocumentPatch**](DocumentPatch.md)|  | 
  **digitalDocument** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DigitalDocument**](DigitalDocument.md)
+[**Document**](Document.md)
 
 ### Authorization
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postDigitalDocument**
-> DigitalDocument postDigitalDocument(xKeyclicApp, digitalDocumentData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
+> Document postDigitalDocument(xKeyclicApp, documentData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
 
 Create one DigitalDocument resource.
 
@@ -196,14 +196,14 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = DigitalDocumentApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
-var digitalDocumentData = DigitalDocumentData(); // DigitalDocumentData | 
+var documentData = DocumentData(); // DocumentData | 
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 
 try { 
-    var result = api_instance.postDigitalDocument(xKeyclicApp, digitalDocumentData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
+    var result = api_instance.postDigitalDocument(xKeyclicApp, documentData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
     print(result);
 } catch (e) {
     print("Exception when calling DigitalDocumentApi->postDigitalDocument: $e\n");
@@ -215,7 +215,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
- **digitalDocumentData** | [**DigitalDocumentData**](DigitalDocumentData.md)|  | 
+ **documentData** | [**DocumentData**](DocumentData.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DigitalDocument**](DigitalDocument.md)
+[**Document**](Document.md)
 
 ### Authorization
 

@@ -16402,18 +16402,6 @@
                 }
             }
         },
-        "Container": {
-            "type": "object",
-            "properties": {
-                "identifier": {
-                    "format": "uuid",
-                    "type": "string"
-                },
-                "type": {
-                    "type": "string"
-                }
-            }
-        },
         "Contribution": {
             "type": "object",
             "properties": {
@@ -16948,7 +16936,8 @@
                     "type": "object",
                     "properties": {
                         "container": {
-                            "$ref": "#\/definitions\/Container"
+                            "type": "object",
+                            "additionalProperties": true
                         },
                         "signers": {
                             "type": "array",

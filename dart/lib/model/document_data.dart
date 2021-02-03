@@ -2,6 +2,8 @@ part of keyclic_sdk_api.api;
 
 class DocumentData {
   DocumentData({
+    this.container,
+    this.type,
     this.file,
     this.permission,
   });
@@ -12,10 +14,16 @@ class DocumentData {
     }
 
     return DocumentData(
+      container: json['container'],
+      type: json['type'],
       file: DocumentDataFile.fromJson(json['file']),
       permission: DocumentDataPermission.fromJson(json['permission']),
     );
   }
+
+  String container;
+
+  String type;
 
   DocumentDataFile file;
 
@@ -30,6 +38,8 @@ class DocumentData {
 
     return other is DocumentData &&
         runtimeType == other.runtimeType &&
+        container == other.container &&
+        type == other.type &&
         file == other.file &&
         permission == other.permission;
   }
@@ -39,6 +49,8 @@ class DocumentData {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= container?.hashCode ?? 0;
+    hashCode ^= type?.hashCode ?? 0;
     hashCode ^= file?.hashCode ?? 0;
     hashCode ^= permission?.hashCode ?? 0;
 
@@ -61,6 +73,8 @@ class DocumentData {
 
   Map<String, dynamic> toJson() {
     return {
+      if (container != null) 'container': container,
+      if (type != null) 'type': type,
       if (file != null) 'file': file.toJson(),
       if (permission != null) 'permission': permission.toJson(),
     };
@@ -68,6 +82,6 @@ class DocumentData {
 
   @override
   String toString() {
-    return 'DocumentData[file=$file, permission=$permission, ]';
+    return 'DocumentData[container=$container, type=$type, file=$file, permission=$permission, ]';
   }
 }
