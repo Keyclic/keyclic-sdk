@@ -361,36 +361,6 @@ class ApiClient {
           return DeviceLinksSelfIriTemplate.fromJson(value);
         case 'DeviceLinksSelfIriTemplateMapping':
           return DeviceLinksSelfIriTemplateMapping.fromJson(value);
-        case 'DigitalDocument':
-          return DigitalDocument.fromJson(value);
-        case 'DigitalDocumentData':
-          return DigitalDocumentData.fromJson(value);
-        case 'DigitalDocumentEmbedded':
-          return DigitalDocumentEmbedded.fromJson(value);
-        case 'DigitalDocumentFile':
-          return DigitalDocumentFile.fromJson(value);
-        case 'DigitalDocumentLinks':
-          return DigitalDocumentLinks.fromJson(value);
-        case 'DigitalDocumentLinksCreatedBy':
-          return DigitalDocumentLinksCreatedBy.fromJson(value);
-        case 'DigitalDocumentLinksCreatedByIriTemplate':
-          return DigitalDocumentLinksCreatedByIriTemplate.fromJson(value);
-        case 'DigitalDocumentLinksFile':
-          return DigitalDocumentLinksFile.fromJson(value);
-        case 'DigitalDocumentLinksFileIriTemplate':
-          return DigitalDocumentLinksFileIriTemplate.fromJson(value);
-        case 'DigitalDocumentLinksFileIriTemplateMapping':
-          return DigitalDocumentLinksFileIriTemplateMapping.fromJson(value);
-        case 'DigitalDocumentLinksSelf':
-          return DigitalDocumentLinksSelf.fromJson(value);
-        case 'DigitalDocumentLinksSelfIriTemplate':
-          return DigitalDocumentLinksSelfIriTemplate.fromJson(value);
-        case 'DigitalDocumentLinksSelfIriTemplateMapping':
-          return DigitalDocumentLinksSelfIriTemplateMapping.fromJson(value);
-        case 'DigitalDocumentPatch':
-          return DigitalDocumentPatch.fromJson(value);
-        case 'DigitalDocumentPermission':
-          return DigitalDocumentPermission.fromJson(value);
         case 'Dispatcher':
           return Dispatcher.fromJson(value);
         case 'Document':
@@ -403,6 +373,8 @@ class ApiClient {
           return DocumentDataFile.fromJson(value);
         case 'DocumentDataPermission':
           return DocumentDataPermission.fromJson(value);
+        case 'DocumentEmbedded':
+          return DocumentEmbedded.fromJson(value);
         case 'DocumentFile':
           return DocumentFile.fromJson(value);
         case 'DocumentLinks':
@@ -415,6 +387,8 @@ class ApiClient {
           return DocumentLinksFile.fromJson(value);
         case 'DocumentLinksFileIriTemplate':
           return DocumentLinksFileIriTemplate.fromJson(value);
+        case 'DocumentLinksFileIriTemplateMapping':
+          return DocumentLinksFileIriTemplateMapping.fromJson(value);
         case 'DocumentLinksSelf':
           return DocumentLinksSelf.fromJson(value);
         case 'DocumentLinksSelfIriTemplate':

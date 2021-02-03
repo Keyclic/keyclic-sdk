@@ -4,6 +4,7 @@ class DocumentPatch {
   DocumentPatch({
     this.file,
     this.permission,
+    this.text,
   });
 
   factory DocumentPatch.fromJson(Map<String, dynamic> json) {
@@ -14,12 +15,15 @@ class DocumentPatch {
     return DocumentPatch(
       file: DocumentPatchFile.fromJson(json['file']),
       permission: DocumentPatchPermission.fromJson(json['permission']),
+      text: json['text'],
     );
   }
 
   DocumentPatchFile file;
 
   DocumentPatchPermission permission;
+
+  String text;
 
   @override
   bool operator ==(dynamic other) {
@@ -31,7 +35,8 @@ class DocumentPatch {
     return other is DocumentPatch &&
         runtimeType == other.runtimeType &&
         file == other.file &&
-        permission == other.permission;
+        permission == other.permission &&
+        text == other.text;
   }
 
   /// By default hashCode return reference
@@ -41,6 +46,7 @@ class DocumentPatch {
 
     hashCode ^= file?.hashCode ?? 0;
     hashCode ^= permission?.hashCode ?? 0;
+    hashCode ^= text?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -63,11 +69,12 @@ class DocumentPatch {
     return {
       if (file != null) 'file': file.toJson(),
       if (permission != null) 'permission': permission.toJson(),
+      if (text != null) 'text': text,
     };
   }
 
   @override
   String toString() {
-    return 'DocumentPatch[file=$file, permission=$permission, ]';
+    return 'DocumentPatch[file=$file, permission=$permission, text=$text, ]';
   }
 }

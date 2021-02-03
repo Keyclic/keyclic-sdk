@@ -79,7 +79,7 @@ class DigitalDocumentApi {
   /// Retrieve one DigitalDocument resource.
   ///
   ///
-  Future<DigitalDocument> getDigitalDocument(
+  Future<Document> getDigitalDocument(
     String xKeyclicApp,
     String digitalDocument, {
     String acceptLanguage,
@@ -143,16 +143,15 @@ class DigitalDocumentApi {
       return null;
     }
 
-    return apiClient.deserialize(response.body, 'DigitalDocument')
-        as DigitalDocument;
+    return apiClient.deserialize(response.body, 'Document') as Document;
   }
 
   /// Edit one DigitalDocument resource.
   ///
   ///
-  Future<DigitalDocument> patchDigitalDocument(
+  Future<Document> patchDigitalDocument(
     String xKeyclicApp,
-    DigitalDocumentPatch digitalDocumentPatch,
+    DocumentPatch documentPatch,
     String digitalDocument, {
     String acceptLanguage,
     DateTime xDateTime,
@@ -165,8 +164,8 @@ class DigitalDocumentApi {
       throw ApiException(0, "Missing required param: xKeyclicApp");
     }
 
-    if (digitalDocumentPatch == null) {
-      throw ApiException(0, "Missing required param: digitalDocumentPatch");
+    if (documentPatch == null) {
+      throw ApiException(0, "Missing required param: documentPatch");
     }
 
     if (digitalDocument == null) {
@@ -206,7 +205,7 @@ class DigitalDocumentApi {
       path: path,
       method: 'PATCH',
       queryParams: queryParams,
-      body: digitalDocumentPatch,
+      body: documentPatch,
       headerParams: headerParams,
       contentType: contentTypes[0],
       authNames: authNames,
@@ -220,16 +219,15 @@ class DigitalDocumentApi {
       return null;
     }
 
-    return apiClient.deserialize(response.body, 'DigitalDocument')
-        as DigitalDocument;
+    return apiClient.deserialize(response.body, 'Document') as Document;
   }
 
   /// Create one DigitalDocument resource.
   ///
   ///
-  Future<DigitalDocument> postDigitalDocument(
+  Future<Document> postDigitalDocument(
     String xKeyclicApp,
-    DigitalDocumentData digitalDocumentData, {
+    DocumentData documentData, {
     String acceptLanguage,
     DateTime xDateTime,
     String xKeyclicAppPlatform,
@@ -241,8 +239,8 @@ class DigitalDocumentApi {
       throw ApiException(0, "Missing required param: xKeyclicApp");
     }
 
-    if (digitalDocumentData == null) {
-      throw ApiException(0, "Missing required param: digitalDocumentData");
+    if (documentData == null) {
+      throw ApiException(0, "Missing required param: documentData");
     }
 
     // create path and map variables
@@ -276,7 +274,7 @@ class DigitalDocumentApi {
       path: path,
       method: 'POST',
       queryParams: queryParams,
-      body: digitalDocumentData,
+      body: documentData,
       headerParams: headerParams,
       contentType: contentTypes[0],
       authNames: authNames,
@@ -290,7 +288,6 @@ class DigitalDocumentApi {
       return null;
     }
 
-    return apiClient.deserialize(response.body, 'DigitalDocument')
-        as DigitalDocument;
+    return apiClient.deserialize(response.body, 'Document') as Document;
   }
 }

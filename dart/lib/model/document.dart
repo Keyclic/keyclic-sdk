@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class Document {
   Document({
+    this.embedded,
     this.links,
     this.createdAt,
     this.file,
@@ -30,6 +31,7 @@ class Document {
     }
 
     return Document(
+      embedded: DocumentEmbedded.fromJson(json['_embedded']),
       links: DocumentLinks.fromJson(json['_links']),
       createdAt: createdAt,
       file: DocumentFile.fromJson(json['file']),
@@ -40,6 +42,8 @@ class Document {
       updatedAt: updatedAt,
     );
   }
+
+  DocumentEmbedded embedded;
 
   DocumentLinks links;
 
@@ -66,6 +70,7 @@ class Document {
 
     return other is Document &&
         runtimeType == other.runtimeType &&
+        embedded == other.embedded &&
         links == other.links &&
         createdAt == other.createdAt &&
         file == other.file &&
@@ -81,6 +86,7 @@ class Document {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= file?.hashCode ?? 0;
@@ -107,6 +113,7 @@ class Document {
 
   Map<String, dynamic> toJson() {
     return {
+      if (embedded != null) '_embedded': embedded.toJson(),
       if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (file != null) 'file': file.toJson(),
@@ -120,6 +127,6 @@ class Document {
 
   @override
   String toString() {
-    return 'Document[links=$links, createdAt=$createdAt, file=$file, id=$id, permission=$permission, text=$text, type=$type, updatedAt=$updatedAt, ]';
+    return 'Document[embedded=$embedded, links=$links, createdAt=$createdAt, file=$file, id=$id, permission=$permission, text=$text, type=$type, updatedAt=$updatedAt, ]';
   }
 }

@@ -1,18 +1,20 @@
 part of keyclic_sdk_api.api;
 
-class DigitalDocumentEmbedded {
-  DigitalDocumentEmbedded({
+class DocumentEmbedded {
+  DocumentEmbedded({
+    this.container,
     this.signers,
     this.stateTransitions,
     this.type,
   });
 
-  factory DigitalDocumentEmbedded.fromJson(Map<String, dynamic> json) {
+  factory DocumentEmbedded.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return null;
     }
 
-    return DigitalDocumentEmbedded(
+    return DocumentEmbedded(
+      container: Map<String, dynamic>.from(json['container']),
       signers: Signer.listFromJson(json['signers']),
       stateTransitions: json['stateTransitions'] is List
           ? List<String>.from(json['stateTransitions'])
@@ -20,6 +22,8 @@ class DigitalDocumentEmbedded {
       type: DocumentType.fromJson(json['type']),
     );
   }
+
+  Map<String, dynamic> container;
 
   List<Signer> signers;
 
@@ -34,8 +38,9 @@ class DigitalDocumentEmbedded {
       return true;
     }
 
-    return other is DigitalDocumentEmbedded &&
+    return other is DocumentEmbedded &&
         runtimeType == other.runtimeType &&
+        container == other.container &&
         DeepCollectionEquality.unordered().equals(signers, other.signers) &&
         DeepCollectionEquality.unordered()
             .equals(stateTransitions, other.stateTransitions) &&
@@ -58,29 +63,29 @@ class DigitalDocumentEmbedded {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
+    hashCode ^= container?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
 
     return hashCode;
   }
 
-  static List<DigitalDocumentEmbedded> listFromJson(List<dynamic> json) {
+  static List<DocumentEmbedded> listFromJson(List<dynamic> json) {
     return json
-            ?.map((dynamic value) => DigitalDocumentEmbedded.fromJson(value))
+            ?.map((dynamic value) => DocumentEmbedded.fromJson(value))
             ?.toList() ??
-        <DigitalDocumentEmbedded>[];
+        <DocumentEmbedded>[];
   }
 
-  static Map<String, DigitalDocumentEmbedded> mapFromJson(
-      Map<String, dynamic> json) {
-    return json
-            ?.map<String, DigitalDocumentEmbedded>((String key, dynamic value) {
-          return MapEntry(key, DigitalDocumentEmbedded.fromJson(value));
+  static Map<String, DocumentEmbedded> mapFromJson(Map<String, dynamic> json) {
+    return json?.map<String, DocumentEmbedded>((String key, dynamic value) {
+          return MapEntry(key, DocumentEmbedded.fromJson(value));
         }) ??
-        <String, DigitalDocumentEmbedded>{};
+        <String, DocumentEmbedded>{};
   }
 
   Map<String, dynamic> toJson() {
     return {
+      if (container != null) 'container': container,
       if (signers != null) 'signers': signers,
       if (stateTransitions != null) 'stateTransitions': stateTransitions,
       if (type != null) 'type': type.toJson(),
@@ -89,6 +94,6 @@ class DigitalDocumentEmbedded {
 
   @override
   String toString() {
-    return 'DigitalDocumentEmbedded[signers=$signers, stateTransitions=$stateTransitions, type=$type, ]';
+    return 'DocumentEmbedded[container=$container, signers=$signers, stateTransitions=$stateTransitions, type=$type, ]';
   }
 }

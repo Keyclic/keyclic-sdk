@@ -48,6 +48,10 @@ sed -i -r 's/"([a-zA-Z0-9]+)__"/"\1\[]"/g' lib/api/*
 
 # fix metadata type
 sed -i 's/Map<String, String> metadata/Map<String, dynamic> metadata/g' lib/model/*
+# fix object type
+sed -i 's/Object.fromJson(\(.*\))/Map<String, dynamic>.from(\1)/g' lib/model/document_embedded.dart
+sed -i 's/Object/Map<String, dynamic>/g' lib/model/document_embedded.dart
+sed -i 's/container.toJson()/container/g' lib/model/document_embedded.dart
 # fix coordinates
 sed -i 's/List<List<num>> coordinates/List<dynamic> coordinates/g' lib/model/*
 # replace coordinates type when mapping
