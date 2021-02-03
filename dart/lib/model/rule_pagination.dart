@@ -1,6 +1,6 @@
 part of keyclic_sdk_api.api;
 
-class RulePagination extends Pagination {
+class RulePagination {
   RulePagination({
     this.limit,
     this.page,

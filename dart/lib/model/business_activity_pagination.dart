@@ -1,6 +1,6 @@
 part of keyclic_sdk_api.api;
 
-class BusinessActivityPagination extends Pagination {
+class BusinessActivityPagination {
   BusinessActivityPagination({
     this.limit,
     this.page,

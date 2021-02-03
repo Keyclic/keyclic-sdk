@@ -1,6 +1,6 @@
 part of keyclic_sdk_api.api;
 
-class FeedPagination extends Pagination {
+class FeedPagination {
   FeedPagination({
     this.limit,
     this.page,

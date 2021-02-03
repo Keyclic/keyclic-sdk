@@ -1,6 +1,6 @@
 part of keyclic_sdk_api.api;
 
-class PlanPagination extends Pagination {
+class PlanPagination {
   PlanPagination({
     this.limit,
     this.page,

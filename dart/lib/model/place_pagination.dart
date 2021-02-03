@@ -1,6 +1,6 @@
 part of keyclic_sdk_api.api;
 
-class PlacePagination extends Pagination {
+class PlacePagination {
   PlacePagination({
     this.limit,
     this.page,

@@ -1,6 +1,6 @@
 part of keyclic_sdk_api.api;
 
-class InternalServicePagination extends Pagination {
+class InternalServicePagination {
   InternalServicePagination({
     this.limit,
     this.page,

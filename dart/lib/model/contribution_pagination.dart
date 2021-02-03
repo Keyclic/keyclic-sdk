@@ -1,6 +1,6 @@
 part of keyclic_sdk_api.api;
 
-class ContributionPagination extends Pagination {
+class ContributionPagination {
   ContributionPagination({
     this.limit,
     this.page,

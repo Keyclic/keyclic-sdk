@@ -27,7 +27,7 @@ docker run \
     --rm \
     --volume ${PWD}:/local \
     --user "$(id -u)":"$(id -g)" \
-    swaggerapi/swagger-codegen-cli:2.4.8 \
+    swaggerapi/swagger-codegen-cli:latest \
     generate \
     --config /local/options.dart.json \
     --input-spec ${SWAGGER_FILE} \

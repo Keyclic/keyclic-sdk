@@ -1,6 +1,6 @@
 part of keyclic_sdk_api.api;
 
-class WebhookPagination extends Pagination {
+class WebhookPagination {
   WebhookPagination({
     this.limit,
     this.page,

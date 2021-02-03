@@ -1,6 +1,6 @@
 part of keyclic_sdk_api.api;
 
-class BookmarkPagination extends Pagination {
+class BookmarkPagination {
   BookmarkPagination({
     this.limit,
     this.page,

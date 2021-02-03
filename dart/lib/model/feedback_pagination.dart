@@ -1,6 +1,6 @@
 part of keyclic_sdk_api.api;
 
-class FeedbackPagination extends Pagination {
+class FeedbackPagination {
   FeedbackPagination({
     this.limit,
     this.page,

@@ -1,6 +1,6 @@
 part of keyclic_sdk_api.api;
 
-class DelegationPagination extends Pagination {
+class DelegationPagination {
   DelegationPagination({
     this.limit,
     this.page,

@@ -1,6 +1,6 @@
 part of keyclic_sdk_api.api;
 
-class ReportPagination extends Pagination {
+class ReportPagination {
   ReportPagination({
     this.limit,
     this.page,
