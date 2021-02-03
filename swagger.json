@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.9.20"
+        "version": "2.9.21"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -1992,7 +1992,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/DigitalDocument"
+                            "$ref": "#\/definitions\/Document"
                         }
                     },
                     "400": {
@@ -2068,7 +2068,7 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "$ref": "#\/parameters\/DigitalDocumentPatch"
+                        "$ref": "#\/parameters\/DocumentPatch"
                     },
                     {
                         "description": "The identifier of the resource.",
@@ -2083,7 +2083,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/DigitalDocument"
+                            "$ref": "#\/definitions\/Document"
                         }
                     },
                     "400": {
@@ -2161,14 +2161,14 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "$ref": "#\/parameters\/DigitalDocumentData"
+                        "$ref": "#\/parameters\/DocumentData"
                     }
                 ],
                 "responses": {
                     "201": {
                         "description": "Returned when the resource is created",
                         "schema": {
-                            "$ref": "#\/definitions\/DigitalDocument"
+                            "$ref": "#\/definitions\/Document"
                         }
                     },
                     "400": {
@@ -16402,6 +16402,18 @@
                 }
             }
         },
+        "Container": {
+            "type": "object",
+            "properties": {
+                "identifier": {
+                    "format": "uuid",
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        },
         "Contribution": {
             "type": "object",
             "properties": {
@@ -16914,213 +16926,6 @@
                 }
             }
         },
-        "DigitalDocument": {
-            "type": "object",
-            "properties": {
-                "_embedded": {
-                    "type": "object",
-                    "properties": {
-                        "signers": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#\/definitions\/Signer"
-                            }
-                        },
-                        "stateTransitions": {
-                            "type": "array",
-                            "items": {
-                                "type": "string",
-                                "format": "string"
-                            }
-                        },
-                        "type": {
-                            "$ref": "#\/definitions\/DocumentType"
-                        }
-                    }
-                },
-                "_links": {
-                    "type": "object",
-                    "properties": {
-                        "createdBy": {
-                            "$ref": "#\/definitions\/DigitalDocumentLinksCreatedBy"
-                        },
-                        "file": {
-                            "$ref": "#\/definitions\/DigitalDocumentLinksFile"
-                        },
-                        "self": {
-                            "$ref": "#\/definitions\/DigitalDocumentLinksSelf"
-                        }
-                    }
-                },
-                "createdAt": {
-                    "format": "date-time",
-                    "readOnly": true,
-                    "type": "string"
-                },
-                "file": {
-                    "$ref": "#\/definitions\/DigitalDocumentFile"
-                },
-                "id": {
-                    "format": "uuid",
-                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
-                    "readOnly": true,
-                    "type": "string"
-                },
-                "permission": {
-                    "$ref": "#\/definitions\/DigitalDocumentPermission"
-                },
-                "text": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "type": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "updatedAt": {
-                    "format": "date-time",
-                    "readOnly": true,
-                    "type": "string"
-                }
-            }
-        },
-        "DigitalDocumentData": {
-            "type": "object",
-            "properties": {
-                "container": {
-                    "type": "string"
-                },
-                "type": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "container",
-                "type"
-            ]
-        },
-        "DigitalDocumentFile": {
-            "type": "object",
-            "properties": {
-                "contentType": {
-                    "enum": [
-                        "text\/csv",
-                        "application\/msword",
-                        "application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
-                        "image\/jpeg",
-                        "image\/jpg",
-                        "application\/pdf",
-                        "image\/png",
-                        "text\/plain",
-                        "application\/vnd.ms-excel",
-                        "application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                        "application\/zip"
-                    ],
-                    "format": "string",
-                    "type": "string"
-                },
-                "name": {
-                    "format": "string",
-                    "type": "string"
-                }
-            }
-        },
-        "DigitalDocumentLinksCreatedBy": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the createdBy associated to the given digitaldocument.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/DigitalDocumentLinksCreatedByIriTemplate"
-                }
-            }
-        },
-        "DigitalDocumentLinksCreatedByIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "person": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "DigitalDocumentLinksFile": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the file associated to the given digitaldocument.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/DigitalDocumentLinksFileIriTemplate"
-                }
-            }
-        },
-        "DigitalDocumentLinksFileIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "document": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "DigitalDocumentLinksSelf": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the self associated to the given digitaldocument.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/DigitalDocumentLinksSelfIriTemplate"
-                }
-            }
-        },
-        "DigitalDocumentLinksSelfIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "digitalDocument": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "DigitalDocumentPatch": {
-            "type": "object",
-            "properties": {
-                "text": {
-                    "format": "string",
-                    "type": "string"
-                }
-            }
-        },
-        "DigitalDocumentPermission": {
-            "type": "object",
-            "properties": {
-                "targetGroup": {
-                    "format": "string",
-                    "type": "string"
-                }
-            }
-        },
         "Dispatcher": {
             "type": "object",
             "properties": {
@@ -17139,6 +16944,30 @@
         "Document": {
             "type": "object",
             "properties": {
+                "_embedded": {
+                    "type": "object",
+                    "properties": {
+                        "container": {
+                            "$ref": "#\/definitions\/Container"
+                        },
+                        "signers": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#\/definitions\/Signer"
+                            }
+                        },
+                        "stateTransitions": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "format": "string"
+                            }
+                        },
+                        "type": {
+                            "$ref": "#\/definitions\/DocumentType"
+                        }
+                    }
+                },
                 "_links": {
                     "type": "object",
                     "properties": {
@@ -17200,6 +17029,12 @@
         "DocumentData": {
             "type": "object",
             "properties": {
+                "container": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
                 "file": {
                     "type": "object",
                     "properties": {
@@ -17224,6 +17059,8 @@
                 }
             },
             "required": [
+                "container",
+                "type",
                 "file",
                 "permission"
             ]
@@ -17367,6 +17204,10 @@
                             "type": "string"
                         }
                     }
+                },
+                "text": {
+                    "format": "string",
+                    "type": "string"
                 }
             }
         },
@@ -23674,27 +23515,19 @@
             },
             "required": true
         },
-        "DigitalDocumentPatch": {
-            "name": "DigitalDocumentPatch",
-            "in": "body",
-            "schema": {
-                "$ref": "#\/definitions\/DigitalDocumentPatch"
-            },
-            "required": true
-        },
-        "DigitalDocumentData": {
-            "name": "DigitalDocumentData",
-            "in": "body",
-            "schema": {
-                "$ref": "#\/definitions\/DigitalDocumentData"
-            },
-            "required": true
-        },
         "DocumentPatch": {
             "name": "DocumentPatch",
             "in": "body",
             "schema": {
                 "$ref": "#\/definitions\/DocumentPatch"
+            },
+            "required": true
+        },
+        "DocumentData": {
+            "name": "DocumentData",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/DocumentData"
             },
             "required": true
         },
@@ -24119,14 +23952,6 @@
             "in": "body",
             "schema": {
                 "$ref": "#\/definitions\/ReportPatch"
-            },
-            "required": true
-        },
-        "DocumentData": {
-            "name": "DocumentData",
-            "in": "body",
-            "schema": {
-                "$ref": "#\/definitions\/DocumentData"
             },
             "required": true
         },
