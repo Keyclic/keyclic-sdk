@@ -14,7 +14,7 @@ class DocumentEmbedded {
     }
 
     return DocumentEmbedded(
-      container: Map<String, dynamic>.from(json['container']),
+      container: json['container'],
       signers: Signer.listFromJson(json['signers']),
       stateTransitions: json['stateTransitions'] is List
           ? List<String>.from(json['stateTransitions'])
