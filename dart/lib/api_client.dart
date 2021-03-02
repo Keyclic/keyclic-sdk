@@ -507,6 +507,8 @@ class ApiClient {
           return FeedbackLinksTrackingIriTemplate.fromJson(value);
         case 'FeedbackWorkflowTransitionData':
           return FeedbackWorkflowTransitionData.fromJson(value);
+        case 'FileData':
+          return FileData.fromJson(value);
         case 'ImageData':
           return ImageData.fromJson(value);
         case 'InternalService':
