@@ -1,9 +1,13 @@
 {{>header}}
-{{#models}}
-    {{#model}}
-        {{#imports}}
+
+{{#models}}{{#model}}
+    {{#imports}}
 import '{{.}}';
-        {{/imports}}
-{{#isEnum}}{{>enum}}{{/isEnum}}{{^isEnum}}{{>class}}{{/isEnum}}
-    {{/model}}
-{{/models}}
+    {{/imports}}
+    {{#isEnum}}
+{{>enum}}
+    {{/isEnum}}
+    {{^isEnum}}
+{{>class}}
+    {{/isEnum}}
+{{/model}}{{/models}}

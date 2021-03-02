@@ -5,10 +5,10 @@ import 'package:{{pubName}}/auth/auth.dart';
 import 'package:dio/dio.dart';
 
 class BasicAuthInfo {
+    const BasicAuthInfo(this.username, this.password);
+
     final String username;
     final String password;
-
-    const BasicAuthInfo(this.username, this.password);
 }
 
 class BasicAuthInterceptor extends AuthInterceptor {
@@ -16,15 +16,18 @@ class BasicAuthInterceptor extends AuthInterceptor {
 
     @override
     Future<dynamic> onRequest(RequestOptions options) {
-        final metadataAuthInfo = getAuthInfo(options, 'basic');
-        for (final info in metadataAuthInfo) {
-            final authName = info['name'] as String;
+        final List<Map<String, dynamic>> metadataAuthInfo = getAuthInfo(options, 'basic');
+        for (final Map<String, dynamic> info in metadataAuthInfo) {
+            final String authName = info['name'] as String;
             final basicAuthInfo = authInfo[authName];
-            if (basicAuthInfo != null) {
-                final basicAuth = 'Basic ' + base64Encode(utf8.encode('${basicAuthInfo.username}:${basicAuthInfo.password}'));
-                options.headers['Authorization'] = basicAuth;
-                break;
+
+            if (basicAuthInfo == null) {
+                continue;
             }
+
+            final basicAuth = 'Basic ' + base64Encode(utf8.encode('${basicAuthInfo.username}:${basicAuthInfo.password}'));
+            options.headers['Authorization'] = basicAuth;
+            break;
         }
 
         return super.onRequest(options);

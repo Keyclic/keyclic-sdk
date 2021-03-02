@@ -1,4 +1,5 @@
 {{>header}}
+
 import 'dart:async';
 import 'dart:convert';
 import 'package:dio/dio.dart';
@@ -6,16 +7,18 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/serializer.dart';
 
 {{#operations}}
-{{#modelImports}}import 'package:{{pubName}}/model/{{.}}.dart';
+{{#modelImports}}
+import 'package:{{pubName}}/model/{{.}}.dart';
 {{/modelImports}}
-{{#fullImports}}import '{{.}}';
+{{#fullImports}}
+import '{{.}}';
 {{/fullImports}}
 
 class {{classname}} {
+    {{classname}}(this._dio, this._serializers);
+
     final Dio _dio;
     final Serializers _serializers;
-
-    {{classname}}(this._dio, this._serializers);
 
     {{#operation}}
     /// {{{summary}}}
@@ -33,20 +36,20 @@ class {{classname}} {
     }) async {
         final path = '{{{path}}}'{{#pathParams}}.replaceAll('{' r'{{baseName}}' '}', {{{paramName}}}.toString()){{/pathParams}};
 
-        final queryParams = <String, dynamic>{};
-        final headerParams = <String, dynamic>{
+        final Map<String, dynamic> headerParams = <String, dynamic>{
             if (headers != null) ...headers,
-        };
-        dynamic bodyData;
+            {{#headerParams}}
+            r'{{baseName}}': {{paramName}},
+            {{/headerParams}}
+        }..removeWhere((key, dynamic value) => value == null);
 
-        {{#headerParams}}
-        headerParams[r'{{baseName}}'] = {{paramName}};
-        {{/headerParams}}
-        {{#queryParams}}
-        queryParams[r'{{baseName}}'] = {{paramName}};
-        {{/queryParams}}
-        queryParams.removeWhere((key, dynamic value) => value == null);
-        headerParams.removeWhere((key, dynamic value) => value == null);
+        final Map<String, dynamic> queryParams = <String, dynamic>{
+            {{#queryParams}}
+            r'{{baseName}}': {{paramName}},
+            {{/queryParams}}
+        }..removeWhere((key, dynamic value) => value == null);
+
+        dynamic bodyData;
 
         final contentTypes = <String>[{{^hasConsumes}}];{{/hasConsumes}}{{#hasConsumes}}{{#consumes}}
             '{{{mediaType}}}',{{/consumes}}

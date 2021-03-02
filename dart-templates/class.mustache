@@ -4,6 +4,10 @@ import 'package:built_value/serializer.dart';
 part '{{classFilename}}.g.dart';
 
 abstract class {{classname}} implements Built<{{classname}}, {{classname}}Builder> {
+    factory {{classname}}([void Function({{classname}}Builder b) updates]) = _${{classname}};
+
+    // Boilerplate code needed to wire-up generated code
+    {{classname}}._();
 
 {{#vars}}
     {{#description}}
@@ -19,13 +23,18 @@ abstract class {{classname}} implements Built<{{classname}}, {{classname}}Builde
     {{/allowableValues}}
 
 {{/vars}}
-    // Boilerplate code needed to wire-up generated code
-    {{classname}}._();
 
-    static void _initializeBuilder({{{classname}}}Builder b) => b{{#vars}}{{#defaultValue}}
-        ..{{{name}}} = {{#isEnum}}{{^isContainer}}const {{{classname}}}{{{enumName}}}._({{/isContainer}}{{/isEnum}}{{{defaultValue}}}{{#isEnum}}{{^isContainer}}){{/isContainer}}{{/isEnum}}{{/defaultValue}}{{/vars}};
+    static void _initializeBuilder({{{classname}}}Builder b) {
+        return b
+            {{#vars}}{{#defaultValue}}
+            ..{{{name}}} =
+                {{#isEnum}}{{^isContainer}}const {{{classname}}}{{{enumName}}}._({{/isContainer}}{{/isEnum}}
+                {{{defaultValue}}}
+                {{#isEnum}}{{^isContainer}}){{/isContainer}}{{/isEnum}}
+            {{/defaultValue}}{{/vars}}
+        ;
+    }
 
-    factory {{classname}}([void Function({{classname}}Builder b) updates]) = _${{classname}};
     static Serializer<{{classname}}> get serializer => _${{#lambda.camelcase}}{{{classname}}}{{/lambda.camelcase}}Serializer;
 }
 {{!
@@ -34,17 +43,13 @@ abstract class {{classname}} implements Built<{{classname}}, {{classname}}Builde
     If an enum is declared as a definition, isEnum is false and the enum is generated from the
     enum.mustache template.
 }}
-{{#vars}}
-    {{#isEnum}}
-        {{^isContainer}}
 
+{{#vars}}{{#isEnum}}
+    {{^isContainer}}
 {{>enum_inline}}
-        {{/isContainer}}
-        {{#isContainer}}
-            {{#mostInnerItems}}
+    {{/isContainer}}
+    {{#isContainer}}{{#mostInnerItems}}
+{{>enum_inline}}
+    {{/mostInnerItems}}{{/isContainer}}
 
-{{>enum_inline}}
-            {{/mostInnerItems}}
-        {{/isContainer}}
-    {{/isEnum}}
-{{/vars}}
+{{/isEnum}}{{/vars}}

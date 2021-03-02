@@ -8,14 +8,18 @@ class OAuthInterceptor extends AuthInterceptor {
 
     @override
     Future<dynamic> onRequest(RequestOptions options) {
-        final authInfo = getAuthInfo(options, 'oauth');
-        for (final info in authInfo) {
-            final token = tokens[info['name']];
-            if (token != null) {
-                options.headers['Authorization'] = 'Bearer ${token}';
-                break;
+        final List<Map<String, dynamic>> authInfo = getAuthInfo(options, 'oauth');
+        for (final Map<String, dynamic> info in authInfo) {
+            final String token = tokens[info['name']];
+
+            if (token == null) {
+                continue;
             }
+
+            options.headers['Authorization'] = 'Bearer ${token}';
+            break;
         }
+
         return super.onRequest(options);
     }
 }

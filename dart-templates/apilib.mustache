@@ -13,29 +13,27 @@ import 'package:{{pubName}}/auth/oauth.dart';
 final _defaultInterceptors = [OAuthInterceptor(), BasicAuthInterceptor(), ApiKeyAuthInterceptor()];
 
 class {{clientName}} {
+    {{clientName}}({
+        this.dio,
+        Serializers serializers,
+        String basePath, List<Interceptor> interceptors
+    }) {
+      if (dio == null) {
+          final BaseOptions options = new BaseOptions(
+              baseUrl: basePath ?? this.basePath,
+              connectTimeout: 5000,
+              receiveTimeout: 3000,
+          );
+          dio = Dio(options);
+      }
+
+      dio.interceptors.addAll(interceptors ?? _defaultInterceptors);
+      this.serializers = serializers ?? standardSerializers;
+    }
 
     Dio dio;
     Serializers serializers;
     String basePath = '{{{basePath}}}';
-
-    {{clientName}}({this.dio, Serializers serializers, String basePath, List<Interceptor> interceptors}) {
-        if (dio == null) {
-            final options = new BaseOptions(
-                baseUrl: basePath ?? this.basePath,
-                connectTimeout: 5000,
-                receiveTimeout: 3000,
-            );
-            dio = Dio(options);
-        }
-
-        if (interceptors == null) {
-            dio.interceptors.addAll(_defaultInterceptors);
-        } else {
-            dio.interceptors.addAll(interceptors);
-        }
-
-        this.serializers = serializers ?? standardSerializers;
-    }
 
     void setOAuthToken(String name, String token) {
         (dio.interceptors.firstWhere((element) => element is OAuthInterceptor, orElse: () => null) as OAuthInterceptor)?.tokens[name] = token;
@@ -50,12 +48,10 @@ class {{clientName}} {
     }
 
 {{#apiInfo}}{{#apis}}
-    /**
-    * Get {{classname}} instance, base route and serializer can be overridden by a given but be careful,
-    * by doing that all interceptors will not be executed
-    */
+    /// Get {{classname}} instance, base route and serializer can be overridden by a given but be careful,
+    /// by doing that all interceptors will not be executed.
     {{classname}} get{{classname}}() {
-    return {{classname}}(dio, serializers);
+        return {{classname}}(dio, serializers);
     }
 
 {{/apis}}{{/apiInfo}}

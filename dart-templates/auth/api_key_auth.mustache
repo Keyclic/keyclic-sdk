@@ -8,21 +8,26 @@ class ApiKeyAuthInterceptor extends AuthInterceptor {
 
     @override
     Future<dynamic> onRequest(RequestOptions options) {
-        final authInfo = getAuthInfo(options, 'apiKey');
+        final List<Map<String, dynamic>> authInfo = getAuthInfo(options, 'apiKey');
         for (final info in authInfo) {
             final authName = info['name'] as String;
             final authKeyName = info['keyName'] as String;
             final authWhere = info['where'] as String;
             final apiKey = apiKeys[authName];
-            if (apiKey != null) {
-                if (authWhere == 'query') {
-                    options.queryParameters[authKeyName] = apiKey;
-                } else {
-                    options.headers[authKeyName] = apiKey;
-                }
+
+            if (apiKey == null) {
+                continue;
+            }
+
+            if (authWhere == 'query') {
+                options.queryParameters[authKeyName] = apiKey;
                 break;
             }
+
+            options.headers[authKeyName] = apiKey;
+            break;
         }
+
         return super.onRequest(options);
     }
 }

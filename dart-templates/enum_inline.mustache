@@ -1,19 +1,18 @@
 class {{{classname}}}{{{enumName}}} extends EnumClass {
+    const {{{classname}}}{{{enumName}}}._(String name): super(name);
 
-  {{#allowableValues}}
-    {{#enumVars}}
-      {{#description}}
-  /// {{{description}}}
-      {{/description}}
-  @BuiltValueEnumConst({{#isInteger}}wireNumber: {{{value}}}{{/isInteger}}{{^isInteger}}wireName: r{{#lambda.escapeBuiltValueEnum}}{{{value}}}{{/lambda.escapeBuiltValueEnum}}{{/isInteger}})
-  static const {{{classname}}}{{{enumName}}} {{name}} = _${{#lambda.camelcase}}{{{classname}}}{{{enumName}}}{{/lambda.camelcase}}_{{name}};
-    {{/enumVars}}
-  {{/allowableValues}}
+    {{#allowableValues}}{{#enumVars}}
+        {{#description}}
+    /// {{{description}}}
+        {{/description}}
+    @BuiltValueEnumConst({{#isInteger}}wireNumber: {{{value}}}{{/isInteger}}{{^isInteger}}wireName: r{{#lambda.escapeBuiltValueEnum}}{{{value}}}{{/lambda.escapeBuiltValueEnum}}{{/isInteger}})
+    static const {{{classname}}}{{{enumName}}} {{name}} = _${{#lambda.camelcase}}{{{classname}}}{{{enumName}}}{{/lambda.camelcase}}_{{name}};
 
-  static Serializer<{{{classname}}}{{{enumName}}}> get serializer => _${{#lambda.camelcase}}{{{classname}}}{{{enumName}}}{{/lambda.camelcase}}Serializer;
+    {{/enumVars}}{{/allowableValues}}
 
-  const {{{classname}}}{{{enumName}}}._(String name): super(name);
+    static Serializer<{{{classname}}}{{{enumName}}}> get serializer => _${{#lambda.camelcase}}{{{classname}}}{{{enumName}}}{{/lambda.camelcase}}Serializer;
 
-  static BuiltSet<{{{classname}}}{{{enumName}}}> get values => _${{#lambda.camelcase}}{{{classname}}}{{{enumName}}}{{/lambda.camelcase}}Values;
-  static {{{classname}}}{{{enumName}}} valueOf(String name) => _${{#lambda.camelcase}}{{{classname}}}{{{enumName}}}{{/lambda.camelcase}}ValueOf(name);
+    static BuiltSet<{{{classname}}}{{{enumName}}}> get values => _${{#lambda.camelcase}}{{{classname}}}{{{enumName}}}{{/lambda.camelcase}}Values;
+
+    static {{{classname}}}{{{enumName}}} valueOf(String name) => _${{#lambda.camelcase}}{{{classname}}}{{{enumName}}}{{/lambda.camelcase}}ValueOf(name);
 }
