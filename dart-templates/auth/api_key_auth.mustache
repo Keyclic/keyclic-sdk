@@ -19,12 +19,8 @@ class ApiKeyAuthInterceptor extends AuthInterceptor {
                 continue;
             }
 
-            if (authWhere == 'query') {
-                options.queryParameters[authKeyName] = apiKey;
-                break;
-            }
-
-            options.headers[authKeyName] = apiKey;
+            final where = authWhere == 'query' ?  options.queryParameters : options.headers;
+            where[authKeyName] = apiKey;
             break;
         }
 
