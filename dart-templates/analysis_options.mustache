@@ -1,9 +1,63 @@
+# https://dart.dev/guides/language/analysis-options
+# https://pub.dev/packages/pedantic
+# https://pub.dev/packages/pedantic#stricter-than-effective-dart
+include: package:pedantic/analysis_options.yaml
+
 analyzer:
-  language:
-    strict-inference: true
-    strict-raw-types: true
-  strong-mode:
-    implicit-dynamic: false
-    implicit-casts: false
+  errors:
+    # treat missing required parameters as a warning (not a hint)
+    missing_required_param: warning # from Flutter
+  #strong-mode:
+    #implicit-casts: false
+    #implicit-dynamic: false
   exclude:
     - test/*.dart
+
+# For lint rules and documentation, see http://dart-lang.github.io/linter/lints
+linter:
+  rules:
+    # Disable style rules
+    omit_local_variable_types: false # opposite of always_specify_types
+
+    # from Flutter
+    # https://github.com/flutter/flutter/blob/master/packages/flutter/lib/analysis_options_user.yaml
+    avoid_web_libraries_in_flutter: true
+    await_only_futures: true
+    camel_case_types: true
+    cancel_subscriptions: true
+    close_sinks: true
+    control_flow_in_finally: true
+    empty_statements: true
+    hash_and_equals: true
+    implementation_imports: true
+    non_constant_identifier_names: true
+    package_api_docs: true
+    package_names: true
+    package_prefixed_library_names: true
+    test_types_in_equals: true
+    throw_in_finally: true
+    unnecessary_brace_in_string_interps: true
+    unnecessary_getters_setters: true
+    unnecessary_statements: true
+
+    # from Effective Dart
+    # https://github.com/tenhobi/effective_dart/blob/master/lib/analysis_options.1.3.0.yaml
+    avoid_catches_without_on_clauses: true
+    avoid_catching_errors: true
+    #avoid_equals_and_hash_code_on_mutable_classes: true TODO(Keyclic): re-enable
+    avoid_function_literals_in_foreach_calls: true
+    avoid_positional_boolean_parameters: true
+    avoid_private_typedef_functions: true
+    avoid_returning_null: true
+    avoid_returning_this: true
+    avoid_setters_without_getters: true
+    constant_identifier_names: true
+    directives_ordering: true
+    file_names: true
+    prefer_initializing_formals: true
+    prefer_interpolation_to_compose_strings: true
+    prefer_function_declarations_over_variables: true
+    prefer_mixin: true
+    #prefer_relative_imports: true TODO(Keyclic): re-enable
+    type_annotate_public_apis: true
+    use_to_and_as_if_applicable: true
