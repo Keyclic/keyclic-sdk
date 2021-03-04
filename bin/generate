@@ -51,7 +51,7 @@ pub get
 # generate models
 pub run build_runner build
 dartfmt --fix --overwrite lib #--line-length 240
-pana --source path . --no-warning
+pana . --no-warning
 
 # When the script exits call cleanup function
 trap cleanup EXIT
