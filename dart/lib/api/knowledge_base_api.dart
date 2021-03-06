@@ -20,6 +20,7 @@ class KnowledgeBaseApi {
     DateTime before,
     String order,
     String section,
+    List<String> sections__,
     int page,
     int limit,
   }) async {
@@ -48,6 +49,9 @@ class KnowledgeBaseApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (section != null)
         ..._convertParametersForCollectionFormat("section", section),
+      if (sections__ != null)
+        ..._convertParametersForCollectionFormat("sections[]", sections__,
+            collectionFormat: "multi"),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),

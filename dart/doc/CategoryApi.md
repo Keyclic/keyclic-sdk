@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **cgetCategories**
-> CategoryPagination cgetCategories(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, organization, query, page, limit)
+> CategoryPagination cgetCategories(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoPoint, geoCoordinates, order, organization, organizations[], query, page, limit)
 
 Retrieve all Category resources.
 
@@ -35,19 +35,21 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var businessActivity = ; // String | The identifier of the resource.
+var businessActivity = businessActivity_example; // String | 
+var businessActivities[] = []; // List<String> | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoPoint = geoPoint_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
 var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
 var order = order_example; // String | 
-var organization = ; // String | The identifier of the resource.
+var organization = organization_example; // String | 
+var organizations[] = []; // List<String> | 
 var query = query_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetCategories(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, organization, query, page, limit);
+    var result = api_instance.cgetCategories(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoPoint, geoCoordinates, order, organization, organizations[], query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling CategoryApi->cgetCategories: $e\n");
@@ -63,13 +65,15 @@ Name | Type | Description  | Notes
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **businessActivity** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **businessActivity** | **String**|  | [optional] 
+ **businessActivities[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **organization** | **String**|  | [optional] 
+ **organizations[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **query** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]

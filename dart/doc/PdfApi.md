@@ -9,13 +9,13 @@ All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**postImage**](PdfApi.md#postImage) | **POST** /pdf/images | Create one Image resource.
+[**cpostImage**](PdfApi.md#cpostImage) | **POST** /pdf/images | Retrieve all Image resources.
 
 
-# **postImage**
-> List<String> postImage(xKeyclicApp, fileData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion)
+# **cpostImage**
+> FilePagination cpostImage(xKeyclicApp, fileData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, page, limit)
 
-Create one Image resource.
+Retrieve all Image resources.
 
 ### Example 
 ```dart
@@ -32,12 +32,14 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
+var page = 56; // int | Page of the overview.
+var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.postImage(xKeyclicApp, fileData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion);
+    var result = api_instance.cpostImage(xKeyclicApp, fileData, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, page, limit);
     print(result);
 } catch (e) {
-    print("Exception when calling PdfApi->postImage: $e\n");
+    print("Exception when calling PdfApi->cpostImage: $e\n");
 }
 ```
 
@@ -51,10 +53,12 @@ Name | Type | Description  | Notes
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
+ **page** | **int**| Page of the overview. | [optional] [default to 1]
+ **limit** | **int**| Page of the overview. | [optional] [default to 10]
 
 ### Return type
 
-**List<String>**
+[**FilePagination**](FilePagination.md)
 
 ### Authorization
 

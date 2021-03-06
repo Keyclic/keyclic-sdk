@@ -21,6 +21,7 @@ class BusinessActivityApi {
     String geoCoordinates,
     String order,
     String organization,
+    List<String> organizations__,
     int page,
     int limit,
   }) async {
@@ -48,6 +49,10 @@ class BusinessActivityApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (organization != null)
         ..._convertParametersForCollectionFormat("organization", organization),
+      if (organizations__ != null)
+        ..._convertParametersForCollectionFormat(
+            "organizations[]", organizations__,
+            collectionFormat: "multi"),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),

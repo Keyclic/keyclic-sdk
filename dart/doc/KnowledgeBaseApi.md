@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **cgetArticlesByKnowledgeBase**
-> ArticlePagination cgetArticlesByKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, section, page, limit)
+> ArticlePagination cgetArticlesByKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, section, sections[], page, limit)
 
 Retrieve all Article resources.
 
@@ -37,12 +37,13 @@ var xKeyclicAppVersion = xKeyclicAppVersion_example; // String |
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var order = order_example; // String | 
-var section = ; // String | The identifier of the resource.
+var section = section_example; // String | 
+var sections[] = []; // List<String> | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetArticlesByKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, section, page, limit);
+    var result = api_instance.cgetArticlesByKnowledgeBase(xKeyclicApp, knowledgeBase, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, section, sections[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling KnowledgeBaseApi->cgetArticlesByKnowledgeBase: $e\n");
@@ -62,7 +63,8 @@ Name | Type | Description  | Notes
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **section** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **section** | **String**|  | [optional] 
+ **sections[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 

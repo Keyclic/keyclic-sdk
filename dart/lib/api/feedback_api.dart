@@ -95,12 +95,14 @@ class FeedbackApi {
     String state,
     String visibility__,
     String batch,
-    String category,
+    List<String> batches__,
     DateTime after,
     DateTime before,
     List<String> geoHash__,
     String order,
     String organization,
+    List<String> organizations__,
+    List<String> states__,
     int page,
     int limit,
   }) async {
@@ -121,8 +123,9 @@ class FeedbackApi {
         ..._convertParametersForCollectionFormat("visibility[]", visibility__),
       if (batch != null)
         ..._convertParametersForCollectionFormat("batch", batch),
-      if (category != null)
-        ..._convertParametersForCollectionFormat("category", category),
+      if (batches__ != null)
+        ..._convertParametersForCollectionFormat("batches[]", batches__,
+            collectionFormat: "multi"),
       if (after != null)
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)
@@ -134,6 +137,13 @@ class FeedbackApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (organization != null)
         ..._convertParametersForCollectionFormat("organization", organization),
+      if (organizations__ != null)
+        ..._convertParametersForCollectionFormat(
+            "organizations[]", organizations__,
+            collectionFormat: "multi"),
+      if (states__ != null)
+        ..._convertParametersForCollectionFormat("states[]", states__,
+            collectionFormat: "multi"),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),

@@ -507,8 +507,12 @@ class ApiClient {
           return FeedbackLinksTrackingIriTemplate.fromJson(value);
         case 'FeedbackWorkflowTransitionData':
           return FeedbackWorkflowTransitionData.fromJson(value);
+        case 'FileCollection':
+          return FileCollection.fromJson(value);
         case 'FileData':
           return FileData.fromJson(value);
+        case 'File_':
+          return File_.fromJson(value);
         case 'ImageData':
           return ImageData.fromJson(value);
         case 'InternalService':
@@ -897,14 +901,6 @@ class ApiClient {
           return ReportLinksCategory.fromJson(value);
         case 'ReportLinksCategoryIriTemplate':
           return ReportLinksCategoryIriTemplate.fromJson(value);
-        case 'ReportLinksDelegatedFrom':
-          return ReportLinksDelegatedFrom.fromJson(value);
-        case 'ReportLinksDelegatedFromIriTemplate':
-          return ReportLinksDelegatedFromIriTemplate.fromJson(value);
-        case 'ReportLinksDelegatedTo':
-          return ReportLinksDelegatedTo.fromJson(value);
-        case 'ReportLinksDelegatedToIriTemplate':
-          return ReportLinksDelegatedToIriTemplate.fromJson(value);
         case 'ReportLinksFeedback':
           return ReportLinksFeedback.fromJson(value);
         case 'ReportLinksFeedbackIriTemplate':
@@ -1125,6 +1121,8 @@ class ApiClient {
           return FeedPagination.fromJson(value);
         case 'FeedbackPagination':
           return FeedbackPagination.fromJson(value);
+        case 'FilePagination':
+          return FilePagination.fromJson(value);
         case 'InternalServicePagination':
           return InternalServicePagination.fromJson(value);
         case 'MemberPagination':

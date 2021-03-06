@@ -19,6 +19,7 @@ class PlaceApi {
     DateTime before,
     String order,
     String organization,
+    List<String> organizations__,
     String state,
     List<String> states__,
     int page,
@@ -49,6 +50,10 @@ class PlaceApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (organization != null)
         ..._convertParametersForCollectionFormat("organization", organization),
+      if (organizations__ != null)
+        ..._convertParametersForCollectionFormat(
+            "organizations[]", organizations__,
+            collectionFormat: "multi"),
       if (state != null)
         ..._convertParametersForCollectionFormat("state", state),
       if (states__ != null)
@@ -114,8 +119,10 @@ class PlaceApi {
     DateTime after,
     DateTime before,
     String member,
+    List<String> members__,
     String order,
     String person,
+    List<String> persons__,
     String query,
     int page,
     int limit,
@@ -143,10 +150,16 @@ class PlaceApi {
         ..._convertParametersForCollectionFormat("before", before),
       if (member != null)
         ..._convertParametersForCollectionFormat("member", member),
+      if (members__ != null)
+        ..._convertParametersForCollectionFormat("members[]", members__,
+            collectionFormat: "multi"),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
       if (person != null)
         ..._convertParametersForCollectionFormat("person", person),
+      if (persons__ != null)
+        ..._convertParametersForCollectionFormat("persons[]", persons__,
+            collectionFormat: "multi"),
       if (query != null)
         ..._convertParametersForCollectionFormat("query", query),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
@@ -206,6 +219,7 @@ class PlaceApi {
     String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String businessActivity,
+    List<String> businessActivities__,
     DateTime after,
     DateTime before,
     String geoElevation,
@@ -214,6 +228,7 @@ class PlaceApi {
     String geoCoordinates,
     String order,
     String organization,
+    List<String> organizations__,
     String parent,
     List<String> parents__,
     String query,
@@ -234,6 +249,10 @@ class PlaceApi {
       if (businessActivity != null)
         ..._convertParametersForCollectionFormat(
             "business_activity", businessActivity),
+      if (businessActivities__ != null)
+        ..._convertParametersForCollectionFormat(
+            "business_activities[]", businessActivities__,
+            collectionFormat: "multi"),
       if (after != null)
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)
@@ -252,6 +271,10 @@ class PlaceApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (organization != null)
         ..._convertParametersForCollectionFormat("organization", organization),
+      if (organizations__ != null)
+        ..._convertParametersForCollectionFormat(
+            "organizations[]", organizations__,
+            collectionFormat: "multi"),
       if (parent != null)
         ..._convertParametersForCollectionFormat("parent", parent),
       if (parents__ != null)

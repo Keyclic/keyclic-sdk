@@ -19,6 +19,7 @@ class PersonApi {
     DateTime before,
     String order,
     String organization,
+    List<String> organizations__,
     String state,
     List<String> states__,
     int page,
@@ -49,6 +50,10 @@ class PersonApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (organization != null)
         ..._convertParametersForCollectionFormat("organization", organization),
+      if (organizations__ != null)
+        ..._convertParametersForCollectionFormat(
+            "organizations[]", organizations__,
+            collectionFormat: "multi"),
       if (state != null)
         ..._convertParametersForCollectionFormat("state", state),
       if (states__ != null)
@@ -112,13 +117,15 @@ class PersonApi {
     String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String batch,
-    String category,
+    List<String> batches__,
     DateTime after,
     DateTime before,
     List<String> geoHash__,
     String order,
     String organization,
+    List<String> organizations__,
     String state,
+    List<String> states__,
     String visibility__,
     int page,
     int limit,
@@ -142,8 +149,9 @@ class PersonApi {
     final List<QueryParam> queryParams = <QueryParam>[
       if (batch != null)
         ..._convertParametersForCollectionFormat("batch", batch),
-      if (category != null)
-        ..._convertParametersForCollectionFormat("category", category),
+      if (batches__ != null)
+        ..._convertParametersForCollectionFormat("batches[]", batches__,
+            collectionFormat: "multi"),
       if (after != null)
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)
@@ -155,8 +163,15 @@ class PersonApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (organization != null)
         ..._convertParametersForCollectionFormat("organization", organization),
+      if (organizations__ != null)
+        ..._convertParametersForCollectionFormat(
+            "organizations[]", organizations__,
+            collectionFormat: "multi"),
       if (state != null)
         ..._convertParametersForCollectionFormat("state", state),
+      if (states__ != null)
+        ..._convertParametersForCollectionFormat("states[]", states__,
+            collectionFormat: "multi"),
       if (visibility__ != null)
         ..._convertParametersForCollectionFormat("visibility[]", visibility__),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
@@ -219,8 +234,9 @@ class PersonApi {
     DateTime after,
     DateTime before,
     String order,
-    String role,
+    String permission,
     String query,
+    String role,
     List<String> roles__,
     String type,
     int page,
@@ -249,9 +265,11 @@ class PersonApi {
         ..._convertParametersForCollectionFormat("before", before),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
-      if (role != null) ..._convertParametersForCollectionFormat("role", role),
+      if (permission != null)
+        ..._convertParametersForCollectionFormat("permission", permission),
       if (query != null)
         ..._convertParametersForCollectionFormat("query", query),
+      if (role != null) ..._convertParametersForCollectionFormat("role", role),
       if (roles__ != null)
         ..._convertParametersForCollectionFormat("roles[]", roles__,
             collectionFormat: "multi"),
@@ -314,10 +332,12 @@ class PersonApi {
     String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String assignedTo,
+    List<String> assignedTos__,
     DateTime after,
     DateTime before,
     String order,
     String organization,
+    List<String> organizations__,
     String query,
     String state,
     List<String> states__,
@@ -343,6 +363,10 @@ class PersonApi {
     final List<QueryParam> queryParams = <QueryParam>[
       if (assignedTo != null)
         ..._convertParametersForCollectionFormat("assigned_to", assignedTo),
+      if (assignedTos__ != null)
+        ..._convertParametersForCollectionFormat(
+            "assigned_tos[]", assignedTos__,
+            collectionFormat: "multi"),
       if (after != null)
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)
@@ -351,6 +375,10 @@ class PersonApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (organization != null)
         ..._convertParametersForCollectionFormat("organization", organization),
+      if (organizations__ != null)
+        ..._convertParametersForCollectionFormat(
+            "organizations[]", organizations__,
+            collectionFormat: "multi"),
       if (query != null)
         ..._convertParametersForCollectionFormat("query", query),
       if (state != null)
@@ -416,20 +444,29 @@ class PersonApi {
     String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String assignedTo,
+    List<String> assignedTos__,
     String batch,
+    List<String> batches__,
     String category,
+    List<String> categories__,
     String createdBy,
+    List<String> createdBies__,
     DateTime after,
     DateTime before,
+    String deep,
     String delegatedTo,
+    List<String> delegatedTos__,
     String hasDocuments,
     String managedBy,
+    List<String> managedBies__,
     String operationStateAll,
     String operationState,
     List<String> operationStates__,
     String order,
     String place,
+    List<String> places__,
     String priority,
+    List<String> priorities__,
     String query,
     String state,
     List<String> states__,
@@ -456,22 +493,45 @@ class PersonApi {
     final List<QueryParam> queryParams = <QueryParam>[
       if (assignedTo != null)
         ..._convertParametersForCollectionFormat("assigned_to", assignedTo),
+      if (assignedTos__ != null)
+        ..._convertParametersForCollectionFormat(
+            "assigned_tos[]", assignedTos__,
+            collectionFormat: "multi"),
       if (batch != null)
         ..._convertParametersForCollectionFormat("batch", batch),
+      if (batches__ != null)
+        ..._convertParametersForCollectionFormat("batches[]", batches__,
+            collectionFormat: "multi"),
       if (category != null)
         ..._convertParametersForCollectionFormat("category", category),
+      if (categories__ != null)
+        ..._convertParametersForCollectionFormat("categories[]", categories__,
+            collectionFormat: "multi"),
       if (createdBy != null)
         ..._convertParametersForCollectionFormat("created_by", createdBy),
+      if (createdBies__ != null)
+        ..._convertParametersForCollectionFormat(
+            "created_bies[]", createdBies__,
+            collectionFormat: "multi"),
       if (after != null)
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)
         ..._convertParametersForCollectionFormat("before", before),
+      if (deep != null) ..._convertParametersForCollectionFormat("deep", deep),
       if (delegatedTo != null)
         ..._convertParametersForCollectionFormat("delegated_to", delegatedTo),
+      if (delegatedTos__ != null)
+        ..._convertParametersForCollectionFormat(
+            "delegated_tos[]", delegatedTos__,
+            collectionFormat: "multi"),
       if (hasDocuments != null)
         ..._convertParametersForCollectionFormat("has_documents", hasDocuments),
       if (managedBy != null)
         ..._convertParametersForCollectionFormat("managed_by", managedBy),
+      if (managedBies__ != null)
+        ..._convertParametersForCollectionFormat(
+            "managed_bies[]", managedBies__,
+            collectionFormat: "multi"),
       if (operationStateAll != null)
         ..._convertParametersForCollectionFormat(
             "operation_state_all", operationStateAll),
@@ -486,8 +546,14 @@ class PersonApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (place != null)
         ..._convertParametersForCollectionFormat("place", place),
+      if (places__ != null)
+        ..._convertParametersForCollectionFormat("places[]", places__,
+            collectionFormat: "multi"),
       if (priority != null)
         ..._convertParametersForCollectionFormat("priority", priority),
+      if (priorities__ != null)
+        ..._convertParametersForCollectionFormat("priorities[]", priorities__,
+            collectionFormat: "multi"),
       if (query != null)
         ..._convertParametersForCollectionFormat("query", query),
       if (state != null)

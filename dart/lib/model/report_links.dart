@@ -3,8 +3,6 @@ part of keyclic_sdk_api.api;
 class ReportLinks {
   ReportLinks({
     this.category,
-    this.delegatedFrom,
-    this.delegatedTo,
     this.feedback,
     this.operations,
     this.organization,
@@ -20,8 +18,6 @@ class ReportLinks {
 
     return ReportLinks(
       category: ReportLinksCategory.fromJson(json['category']),
-      delegatedFrom: ReportLinksDelegatedFrom.fromJson(json['delegatedFrom']),
-      delegatedTo: ReportLinksDelegatedTo.fromJson(json['delegatedTo']),
       feedback: ReportLinksFeedback.fromJson(json['feedback']),
       operations: ReportLinksOperations.fromJson(json['operations']),
       organization: ReportLinksOrganization.fromJson(json['organization']),
@@ -32,10 +28,6 @@ class ReportLinks {
   }
 
   ReportLinksCategory category;
-
-  ReportLinksDelegatedFrom delegatedFrom;
-
-  ReportLinksDelegatedTo delegatedTo;
 
   ReportLinksFeedback feedback;
 
@@ -59,8 +51,6 @@ class ReportLinks {
     return other is ReportLinks &&
         runtimeType == other.runtimeType &&
         category == other.category &&
-        delegatedFrom == other.delegatedFrom &&
-        delegatedTo == other.delegatedTo &&
         feedback == other.feedback &&
         operations == other.operations &&
         organization == other.organization &&
@@ -75,8 +65,6 @@ class ReportLinks {
     int hashCode = 0;
 
     hashCode ^= category?.hashCode ?? 0;
-    hashCode ^= delegatedFrom?.hashCode ?? 0;
-    hashCode ^= delegatedTo?.hashCode ?? 0;
     hashCode ^= feedback?.hashCode ?? 0;
     hashCode ^= operations?.hashCode ?? 0;
     hashCode ^= organization?.hashCode ?? 0;
@@ -104,8 +92,6 @@ class ReportLinks {
   Map<String, dynamic> toJson() {
     return {
       if (category != null) 'category': category.toJson(),
-      if (delegatedFrom != null) 'delegatedFrom': delegatedFrom.toJson(),
-      if (delegatedTo != null) 'delegatedTo': delegatedTo.toJson(),
       if (feedback != null) 'feedback': feedback.toJson(),
       if (operations != null) 'operations': operations.toJson(),
       if (organization != null) 'organization': organization.toJson(),
@@ -117,6 +103,6 @@ class ReportLinks {
 
   @override
   String toString() {
-    return 'ReportLinks[category=$category, delegatedFrom=$delegatedFrom, delegatedTo=$delegatedTo, feedback=$feedback, operations=$operations, organization=$organization, place=$place, self=$self, tracking=$tracking, ]';
+    return 'ReportLinks[category=$category, feedback=$feedback, operations=$operations, organization=$organization, place=$place, self=$self, tracking=$tracking, ]';
   }
 }

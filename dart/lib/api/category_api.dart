@@ -16,12 +16,14 @@ class CategoryApi {
     String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String businessActivity,
+    List<String> businessActivities__,
     DateTime after,
     DateTime before,
     String geoPoint,
     String geoCoordinates,
     String order,
     String organization,
+    List<String> organizations__,
     String query,
     int page,
     int limit,
@@ -40,6 +42,10 @@ class CategoryApi {
       if (businessActivity != null)
         ..._convertParametersForCollectionFormat(
             "business_activity", businessActivity),
+      if (businessActivities__ != null)
+        ..._convertParametersForCollectionFormat(
+            "business_activities[]", businessActivities__,
+            collectionFormat: "multi"),
       if (after != null)
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)
@@ -53,6 +59,10 @@ class CategoryApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (organization != null)
         ..._convertParametersForCollectionFormat("organization", organization),
+      if (organizations__ != null)
+        ..._convertParametersForCollectionFormat(
+            "organizations[]", organizations__,
+            collectionFormat: "multi"),
       if (query != null)
         ..._convertParametersForCollectionFormat("query", query),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),

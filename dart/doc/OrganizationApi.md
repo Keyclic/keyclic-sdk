@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 
 # **cgetCategoriesByOrganization**
-> CategoryPagination cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, query, page, limit)
+> CategoryPagination cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoPoint, geoCoordinates, order, organizations[], query, page, limit)
 
 Retrieve all Category resources.
 
@@ -49,18 +49,20 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var businessActivity = ; // String | The identifier of the resource.
+var businessActivity = businessActivity_example; // String | 
+var businessActivities[] = []; // List<String> | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoPoint = geoPoint_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
 var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
 var order = order_example; // String | 
+var organizations[] = []; // List<String> | 
 var query = query_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, geoPoint, geoCoordinates, order, query, page, limit);
+    var result = api_instance.cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoPoint, geoCoordinates, order, organizations[], query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetCategoriesByOrganization: $e\n");
@@ -77,12 +79,14 @@ Name | Type | Description  | Notes
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **businessActivity** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **businessActivity** | **String**|  | [optional] 
+ **businessActivities[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **order** | **String**|  | [optional] [default to desc]
+ **organizations[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **query** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
@@ -103,7 +107,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetDelegationsByOrganization**
-> DelegationPagination cgetDelegationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, state, page, limit)
+> DelegationPagination cgetDelegationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, state, states[], page, limit)
 
 Retrieve all Delegation resources.
 
@@ -126,11 +130,12 @@ var after = 2013-10-20T19:20:30+01:00; // DateTime |
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var order = order_example; // String | 
 var state = state_example; // String | 
+var states[] = []; // List<String> | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetDelegationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, state, page, limit);
+    var result = api_instance.cgetDelegationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, state, states[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetDelegationsByOrganization: $e\n");
@@ -151,6 +156,7 @@ Name | Type | Description  | Notes
  **before** | **DateTime**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
  **state** | **String**|  | [optional] 
+ **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 
@@ -304,7 +310,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetMembersByOrganization**
-> MemberPagination cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, role, query, roles[], type, page, limit)
+> MemberPagination cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, permission, query, role, roles[], type, page, limit)
 
 Retrieve all Member resources.
 
@@ -326,15 +332,16 @@ var xKeyclicAppVersion = xKeyclicAppVersion_example; // String |
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var order = order_example; // String | 
-var role = role_example; // String | 
+var permission = permission_example; // String | 
 var query = query_example; // String | 
+var role = role_example; // String | 
 var roles[] = []; // List<String> | 
 var type = type_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, role, query, roles[], type, page, limit);
+    var result = api_instance.cgetMembersByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, permission, query, role, roles[], type, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetMembersByOrganization: $e\n");
@@ -354,8 +361,9 @@ Name | Type | Description  | Notes
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **role** | **String**|  | [optional] 
+ **permission** | **String**|  | [optional] 
  **query** | **String**|  | [optional] 
+ **role** | **String**|  | [optional] 
  **roles[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **type** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
@@ -377,7 +385,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetOperationsByOrganization**
-> OperationPagination cgetOperationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, after, before, order, query, state, states[], page, limit)
+> OperationPagination cgetOperationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], after, before, order, organizations[], query, state, states[], page, limit)
 
 Retrieve all Operation resources.
 
@@ -396,10 +404,12 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var assignedTo = ; // String | The identifier of the resource.
+var assignedTo = assignedTo_example; // String | 
+var assignedTos[] = []; // List<String> | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var order = order_example; // String | 
+var organizations[] = []; // List<String> | 
 var query = query_example; // String | 
 var state = state_example; // String | 
 var states[] = []; // List<String> | 
@@ -407,7 +417,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetOperationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, after, before, order, query, state, states[], page, limit);
+    var result = api_instance.cgetOperationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], after, before, order, organizations[], query, state, states[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetOperationsByOrganization: $e\n");
@@ -424,10 +434,12 @@ Name | Type | Description  | Notes
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **assignedTo** | **String**|  | [optional] 
+ **assignedTos[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
+ **organizations[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **query** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
  **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
@@ -450,7 +462,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetOrganizations**
-> OrganizationPagination cgetOrganizations(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, disabledAt, geoPoint, geoCoordinates, order, organization, query, page, limit)
+> OrganizationPagination cgetOrganizations(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, disabledAt, geoPoint, geoCoordinates, order, organization, organizations[], query, page, limit)
 
 Retrieve all Organization resources.
 
@@ -468,20 +480,22 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var businessActivity = ; // String | The identifier of the resource.
+var businessActivity = businessActivity_example; // String | 
+var businessActivities[] = []; // List<String> | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var disabledAt = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoPoint = geoPoint_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
 var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
 var order = order_example; // String | 
-var organization = ; // String | The identifier of the resource.
+var organization = organization_example; // String | 
+var organizations[] = []; // List<String> | 
 var query = query_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetOrganizations(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, disabledAt, geoPoint, geoCoordinates, order, organization, query, page, limit);
+    var result = api_instance.cgetOrganizations(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, disabledAt, geoPoint, geoCoordinates, order, organization, organizations[], query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetOrganizations: $e\n");
@@ -497,14 +511,16 @@ Name | Type | Description  | Notes
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **businessActivity** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **businessActivity** | **String**|  | [optional] 
+ **businessActivities[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **disabledAt** | **DateTime**|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **organization** | **String**|  | [optional] 
+ **organizations[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **query** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
@@ -525,7 +541,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetPlacesByOrganization**
-> PlacePagination cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, parent, parents[], query, page, limit)
+> PlacePagination cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, organizations[], parent, parents[], query, page, limit)
 
 Retrieve all Place resources.
 
@@ -544,7 +560,8 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var businessActivity = ; // String | The identifier of the resource.
+var businessActivity = businessActivity_example; // String | 
+var businessActivities[] = []; // List<String> | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoElevation = geoElevation_example; // String | 
@@ -552,14 +569,15 @@ var geoHash[] = []; // List<String> |
 var geoPoint = geoPoint_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
 var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
 var order = order_example; // String | 
-var parent = ; // String | The identifier of the resource.
-var parents[] = []; // List<String> | The identifier of the resource.
+var organizations[] = []; // List<String> | 
+var parent = parent_example; // String | 
+var parents[] = []; // List<String> | 
 var query = query_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, parent, parents[], query, page, limit);
+    var result = api_instance.cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, organizations[], parent, parents[], query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetPlacesByOrganization: $e\n");
@@ -576,7 +594,8 @@ Name | Type | Description  | Notes
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **businessActivity** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **businessActivity** | **String**|  | [optional] 
+ **businessActivities[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **geoElevation** | **String**|  | [optional] 
@@ -584,8 +603,9 @@ Name | Type | Description  | Notes
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **parent** | [**String**](.md)| The identifier of the resource. | [optional] 
- **parents[]** | [**List&lt;String&gt;**](String.md)| The identifier of the resource. | [optional] 
+ **organizations[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **parent** | **String**|  | [optional] 
+ **parents[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **query** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
@@ -606,7 +626,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetPublicationsByOrganization**
-> PublicationPagination cgetPublicationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, place, page, limit)
+> PublicationPagination cgetPublicationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, place, places[], page, limit)
 
 Retrieve all Publication resources.
 
@@ -628,12 +648,13 @@ var xKeyclicAppVersion = xKeyclicAppVersion_example; // String |
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var order = order_example; // String | 
-var place = ; // String | The identifier of the resource.
+var place = place_example; // String | 
+var places[] = []; // List<String> | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetPublicationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, place, page, limit);
+    var result = api_instance.cgetPublicationsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, place, places[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetPublicationsByOrganization: $e\n");
@@ -653,7 +674,8 @@ Name | Type | Description  | Notes
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **place** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **place** | **String**|  | [optional] 
+ **places[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 
@@ -673,7 +695,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetReportsByOrganization**
-> ReportPagination cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, batch, category, createdBy, after, before, delegatedTo, hasDocuments, managedBy, operationStateAll, operationState, operationStates[], order, place, priority, query, state, states[], visibility[], page, limit)
+> ReportPagination cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], batch, batches[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], order, place, places[], priority, priorities[], query, state, states[], visibility[], page, limit)
 
 Retrieve all Report resources.
 
@@ -692,21 +714,30 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var assignedTo = ; // String | The identifier of the resource.
-var batch = ; // String | The identifier of the resource.
-var category = ; // String | The identifier of the resource.
-var createdBy = ; // String | The identifier of the resource.
+var assignedTo = assignedTo_example; // String | 
+var assignedTos[] = []; // List<String> | 
+var batch = batch_example; // String | 
+var batches[] = []; // List<String> | 
+var category = category_example; // String | 
+var categories[] = []; // List<String> | 
+var createdBy = createdBy_example; // String | 
+var createdBies[] = []; // List<String> | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
-var delegatedTo = ; // String | The identifier of the resource.
+var deep = deep_example; // String | 
+var delegatedTo = delegatedTo_example; // String | 
+var delegatedTos[] = []; // List<String> | 
 var hasDocuments = hasDocuments_example; // String | 
-var managedBy = ; // String | The identifier of the resource.
+var managedBy = managedBy_example; // String | 
+var managedBies[] = []; // List<String> | 
 var operationStateAll = operationStateAll_example; // String | 
 var operationState = operationState_example; // String | 
 var operationStates[] = []; // List<String> | 
 var order = order_example; // String | 
-var place = ; // String | The identifier of the resource.
-var priority = ; // String | The identifier of the resource.
+var place = place_example; // String | 
+var places[] = []; // List<String> | 
+var priority = priority_example; // String | 
+var priorities[] = []; // List<String> | 
 var query = query_example; // String | 
 var state = state_example; // String | 
 var states[] = []; // List<String> | 
@@ -715,7 +746,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, batch, category, createdBy, after, before, delegatedTo, hasDocuments, managedBy, operationStateAll, operationState, operationStates[], order, place, priority, query, state, states[], visibility[], page, limit);
+    var result = api_instance.cgetReportsByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], batch, batches[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], order, place, places[], priority, priorities[], query, state, states[], visibility[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetReportsByOrganization: $e\n");
@@ -732,21 +763,30 @@ Name | Type | Description  | Notes
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
- **batch** | [**String**](.md)| The identifier of the resource. | [optional] 
- **category** | [**String**](.md)| The identifier of the resource. | [optional] 
- **createdBy** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **assignedTo** | **String**|  | [optional] 
+ **assignedTos[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **batch** | **String**|  | [optional] 
+ **batches[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **category** | **String**|  | [optional] 
+ **categories[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **createdBy** | **String**|  | [optional] 
+ **createdBies[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
- **delegatedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **deep** | **String**|  | [optional] 
+ **delegatedTo** | **String**|  | [optional] 
+ **delegatedTos[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **hasDocuments** | **String**|  | [optional] 
- **managedBy** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **managedBy** | **String**|  | [optional] 
+ **managedBies[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **operationStateAll** | **String**|  | [optional] 
  **operationState** | **String**|  | [optional] 
  **operationStates[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **place** | [**String**](.md)| The identifier of the resource. | [optional] 
- **priority** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **place** | **String**|  | [optional] 
+ **places[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **priority** | **String**|  | [optional] 
+ **priorities[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **query** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
  **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
@@ -902,7 +942,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cpostExportByOrganization**
-> cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, batch, category, createdBy, after, before, delegatedTo, hasDocuments, managedBy, operationStateAll, operationState, operationStates[], order, place, priority, query, state, states[], visibility[], page, limit)
+> cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], batch, batches[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], order, place, places[], priority, priorities[], query, state, states[], visibility[], page, limit)
 
 Retrieve all Export resources.
 
@@ -921,21 +961,30 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var assignedTo = ; // String | The identifier of the resource.
-var batch = ; // String | The identifier of the resource.
-var category = ; // String | The identifier of the resource.
-var createdBy = ; // String | The identifier of the resource.
+var assignedTo = assignedTo_example; // String | 
+var assignedTos[] = []; // List<String> | 
+var batch = batch_example; // String | 
+var batches[] = []; // List<String> | 
+var category = category_example; // String | 
+var categories[] = []; // List<String> | 
+var createdBy = createdBy_example; // String | 
+var createdBies[] = []; // List<String> | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
-var delegatedTo = ; // String | The identifier of the resource.
+var deep = deep_example; // String | 
+var delegatedTo = delegatedTo_example; // String | 
+var delegatedTos[] = []; // List<String> | 
 var hasDocuments = hasDocuments_example; // String | 
-var managedBy = ; // String | The identifier of the resource.
+var managedBy = managedBy_example; // String | 
+var managedBies[] = []; // List<String> | 
 var operationStateAll = operationStateAll_example; // String | 
 var operationState = operationState_example; // String | 
 var operationStates[] = []; // List<String> | 
 var order = order_example; // String | 
-var place = ; // String | The identifier of the resource.
-var priority = ; // String | The identifier of the resource.
+var place = place_example; // String | 
+var places[] = []; // List<String> | 
+var priority = priority_example; // String | 
+var priorities[] = []; // List<String> | 
 var query = query_example; // String | 
 var state = state_example; // String | 
 var states[] = []; // List<String> | 
@@ -944,7 +993,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    api_instance.cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, batch, category, createdBy, after, before, delegatedTo, hasDocuments, managedBy, operationStateAll, operationState, operationStates[], order, place, priority, query, state, states[], visibility[], page, limit);
+    api_instance.cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], batch, batches[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], order, place, places[], priority, priorities[], query, state, states[], visibility[], page, limit);
 } catch (e) {
     print("Exception when calling OrganizationApi->cpostExportByOrganization: $e\n");
 }
@@ -960,21 +1009,30 @@ Name | Type | Description  | Notes
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
- **batch** | [**String**](.md)| The identifier of the resource. | [optional] 
- **category** | [**String**](.md)| The identifier of the resource. | [optional] 
- **createdBy** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **assignedTo** | **String**|  | [optional] 
+ **assignedTos[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **batch** | **String**|  | [optional] 
+ **batches[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **category** | **String**|  | [optional] 
+ **categories[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **createdBy** | **String**|  | [optional] 
+ **createdBies[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
- **delegatedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **deep** | **String**|  | [optional] 
+ **delegatedTo** | **String**|  | [optional] 
+ **delegatedTos[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **hasDocuments** | **String**|  | [optional] 
- **managedBy** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **managedBy** | **String**|  | [optional] 
+ **managedBies[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **operationStateAll** | **String**|  | [optional] 
  **operationState** | **String**|  | [optional] 
  **operationStates[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **place** | [**String**](.md)| The identifier of the resource. | [optional] 
- **priority** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **place** | **String**|  | [optional] 
+ **places[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **priority** | **String**|  | [optional] 
+ **priorities[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **query** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
  **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
@@ -998,7 +1056,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAnalyticByOrganization**
-> Chart getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, category, place, state, options[property], options[sort])
+> Chart getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, category, categories[], place, places[], state, states[], options[property], options[sort])
 
 Retrieve one Analytic resource.
 
@@ -1017,14 +1075,17 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var category = ; // String | The identifier of the resource.
-var place = ; // String | The identifier of the resource.
+var category = category_example; // String | 
+var categories[] = []; // List<String> | 
+var place = place_example; // String | 
+var places[] = []; // List<String> | 
 var state = state_example; // String | 
+var states[] = []; // List<String> | 
 var options[property] = options[property]_example; // String | 
 var options[sort] = options[sort]_example; // String | 
 
 try { 
-    var result = api_instance.getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, category, place, state, options[property], options[sort]);
+    var result = api_instance.getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, category, categories[], place, places[], state, states[], options[property], options[sort]);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->getAnalyticByOrganization: $e\n");
@@ -1041,9 +1102,12 @@ Name | Type | Description  | Notes
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **category** | [**String**](.md)| The identifier of the resource. | [optional] 
- **place** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **category** | **String**|  | [optional] 
+ **categories[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **place** | **String**|  | [optional] 
+ **places[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **state** | **String**|  | [optional] 
+ **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **options[property]** | **String**|  | [optional] 
  **options[sort]** | **String**|  | [optional] 
 

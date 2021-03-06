@@ -5,16 +5,18 @@ class PdfApi {
 
   final ApiClient apiClient;
 
-  /// Create one Image resource.
+  /// Retrieve all Image resources.
   ///
   ///
-  Future<List<String>> postImage(
+  Future<FilePagination> cpostImage(
     String xKeyclicApp,
     FileData fileData, {
     String acceptLanguage,
     DateTime xDateTime,
     String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
+    int page,
+    int limit,
   }) async {
     // verify required params are set
 
@@ -30,7 +32,11 @@ class PdfApi {
     final String path = "/pdf/images".replaceAll("{format}", "json");
 
     // query params
-    final List<QueryParam> queryParams = <QueryParam>[];
+    final List<QueryParam> queryParams = <QueryParam>[
+      if (page != null) ..._convertParametersForCollectionFormat("page", page),
+      if (limit != null)
+        ..._convertParametersForCollectionFormat("limit", limit),
+    ];
 
     // header params
     final Map<String, String> headerParams = <String, String>{
@@ -71,7 +77,7 @@ class PdfApi {
       return null;
     }
 
-    return List<String>.from(
-        apiClient.deserialize(response.body, 'List<String>'));
+    return apiClient.deserialize(response.body, 'FilePagination')
+        as FilePagination;
   }
 }

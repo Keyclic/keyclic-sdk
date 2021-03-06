@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.ReportLinksDelegatedTo
+# keyclic_sdk_api.model.File_
 
 ## Load the model package
 ```dart
@@ -8,8 +8,9 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** | The URI of the delegatedTo associated to the given report. | [optional] [default to null]
-**iriTemplate** | [**ReportLinksDelegatedToIriTemplate**](ReportLinksDelegatedToIriTemplate.md) |  | [optional] [default to null]
+**content** | **String** |  | [optional] [default to null]
+**contentType** | **String** |  | [optional] [default to null]
+**name** | **String** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

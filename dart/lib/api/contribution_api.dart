@@ -18,6 +18,7 @@ class ContributionApi {
     DateTime after,
     DateTime before,
     String feedback,
+    List<String> feedbacks__,
     String order,
     int page,
     int limit,
@@ -39,6 +40,9 @@ class ContributionApi {
         ..._convertParametersForCollectionFormat("before", before),
       if (feedback != null)
         ..._convertParametersForCollectionFormat("feedback", feedback),
+      if (feedbacks__ != null)
+        ..._convertParametersForCollectionFormat("feedbacks[]", feedbacks__,
+            collectionFormat: "multi"),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
