@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **cgetDocumentsByPerson**
-> DocumentPagination cgetDocumentsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, organization, state, states[], page, limit)
+> DocumentPagination cgetDocumentsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, organization, organizations[], state, states[], page, limit)
 
 Retrieve all Document resources.
 
@@ -42,14 +42,15 @@ var xKeyclicAppVersion = xKeyclicAppVersion_example; // String |
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var order = order_example; // String | 
-var organization = ; // String | The identifier of the resource.
+var organization = organization_example; // String | 
+var organizations[] = []; // List<String> | 
 var state = state_example; // String | 
 var states[] = []; // List<String> | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetDocumentsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, organization, state, states[], page, limit);
+    var result = api_instance.cgetDocumentsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, organization, organizations[], state, states[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetDocumentsByPerson: $e\n");
@@ -69,7 +70,8 @@ Name | Type | Description  | Notes
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **organization** | **String**|  | [optional] 
+ **organizations[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **state** | **String**|  | [optional] 
  **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
@@ -91,7 +93,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetFeedbackByPerson**
-> FeedbackPagination cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, batch, category, after, before, geoHash[], order, organization, state, visibility[], page, limit)
+> FeedbackPagination cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, batch, batches[], after, before, geoHash[], order, organization, organizations[], state, states[], visibility[], page, limit)
 
 Retrieve all Feedback resources.
 
@@ -110,20 +112,22 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var batch = ; // String | The identifier of the resource.
-var category = ; // String | The identifier of the resource.
+var batch = batch_example; // String | 
+var batches[] = []; // List<String> | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoHash[] = []; // List<String> | 
 var order = order_example; // String | 
-var organization = ; // String | The identifier of the resource.
+var organization = organization_example; // String | 
+var organizations[] = []; // List<String> | 
 var state = state_example; // String | 
+var states[] = []; // List<String> | 
 var visibility[] = visibility[]_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, batch, category, after, before, geoHash[], order, organization, state, visibility[], page, limit);
+    var result = api_instance.cgetFeedbackByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, batch, batches[], after, before, geoHash[], order, organization, organizations[], state, states[], visibility[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetFeedbackByPerson: $e\n");
@@ -140,14 +144,16 @@ Name | Type | Description  | Notes
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **batch** | [**String**](.md)| The identifier of the resource. | [optional] 
- **category** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **batch** | **String**|  | [optional] 
+ **batches[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **geoHash[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **organization** | **String**|  | [optional] 
+ **organizations[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **state** | **String**|  | [optional] 
+ **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **visibility[]** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
@@ -168,7 +174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetMembershipsByPerson**
-> MemberPagination cgetMembershipsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, role, query, roles[], type, page, limit)
+> MemberPagination cgetMembershipsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, permission, query, role, roles[], type, page, limit)
 
 Retrieve all Membership resources.
 
@@ -190,15 +196,16 @@ var xKeyclicAppVersion = xKeyclicAppVersion_example; // String |
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var order = order_example; // String | 
-var role = role_example; // String | 
+var permission = permission_example; // String | 
 var query = query_example; // String | 
+var role = role_example; // String | 
 var roles[] = []; // List<String> | 
 var type = type_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetMembershipsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, role, query, roles[], type, page, limit);
+    var result = api_instance.cgetMembershipsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, permission, query, role, roles[], type, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetMembershipsByPerson: $e\n");
@@ -218,8 +225,9 @@ Name | Type | Description  | Notes
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **role** | **String**|  | [optional] 
+ **permission** | **String**|  | [optional] 
  **query** | **String**|  | [optional] 
+ **role** | **String**|  | [optional] 
  **roles[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **type** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
@@ -241,7 +249,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetOperationsByPerson**
-> OperationPagination cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, states[], page, limit)
+> OperationPagination cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], after, before, order, organization, organizations[], query, state, states[], page, limit)
 
 Retrieve all Operation resources.
 
@@ -260,11 +268,13 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var assignedTo = ; // String | The identifier of the resource.
+var assignedTo = assignedTo_example; // String | 
+var assignedTos[] = []; // List<String> | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var order = order_example; // String | 
-var organization = ; // String | The identifier of the resource.
+var organization = organization_example; // String | 
+var organizations[] = []; // List<String> | 
 var query = query_example; // String | 
 var state = state_example; // String | 
 var states[] = []; // List<String> | 
@@ -272,7 +282,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, after, before, order, organization, query, state, states[], page, limit);
+    var result = api_instance.cgetOperationsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], after, before, order, organization, organizations[], query, state, states[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetOperationsByPerson: $e\n");
@@ -289,11 +299,13 @@ Name | Type | Description  | Notes
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **assignedTo** | **String**|  | [optional] 
+ **assignedTos[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **organization** | **String**|  | [optional] 
+ **organizations[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **query** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
  **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
@@ -316,7 +328,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetReportsByPerson**
-> ReportPagination cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, batch, category, createdBy, after, before, delegatedTo, hasDocuments, managedBy, operationStateAll, operationState, operationStates[], order, place, priority, query, state, states[], visibility[], page, limit)
+> ReportPagination cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], batch, batches[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], order, place, places[], priority, priorities[], query, state, states[], visibility[], page, limit)
 
 Retrieve all Report resources.
 
@@ -335,21 +347,30 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
-var assignedTo = ; // String | The identifier of the resource.
-var batch = ; // String | The identifier of the resource.
-var category = ; // String | The identifier of the resource.
-var createdBy = ; // String | The identifier of the resource.
+var assignedTo = assignedTo_example; // String | 
+var assignedTos[] = []; // List<String> | 
+var batch = batch_example; // String | 
+var batches[] = []; // List<String> | 
+var category = category_example; // String | 
+var categories[] = []; // List<String> | 
+var createdBy = createdBy_example; // String | 
+var createdBies[] = []; // List<String> | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
-var delegatedTo = ; // String | The identifier of the resource.
+var deep = deep_example; // String | 
+var delegatedTo = delegatedTo_example; // String | 
+var delegatedTos[] = []; // List<String> | 
 var hasDocuments = hasDocuments_example; // String | 
-var managedBy = ; // String | The identifier of the resource.
+var managedBy = managedBy_example; // String | 
+var managedBies[] = []; // List<String> | 
 var operationStateAll = operationStateAll_example; // String | 
 var operationState = operationState_example; // String | 
 var operationStates[] = []; // List<String> | 
 var order = order_example; // String | 
-var place = ; // String | The identifier of the resource.
-var priority = ; // String | The identifier of the resource.
+var place = place_example; // String | 
+var places[] = []; // List<String> | 
+var priority = priority_example; // String | 
+var priorities[] = []; // List<String> | 
 var query = query_example; // String | 
 var state = state_example; // String | 
 var states[] = []; // List<String> | 
@@ -358,7 +379,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, batch, category, createdBy, after, before, delegatedTo, hasDocuments, managedBy, operationStateAll, operationState, operationStates[], order, place, priority, query, state, states[], visibility[], page, limit);
+    var result = api_instance.cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], batch, batches[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], order, place, places[], priority, priorities[], query, state, states[], visibility[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetReportsByPerson: $e\n");
@@ -375,21 +396,30 @@ Name | Type | Description  | Notes
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
- **assignedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
- **batch** | [**String**](.md)| The identifier of the resource. | [optional] 
- **category** | [**String**](.md)| The identifier of the resource. | [optional] 
- **createdBy** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **assignedTo** | **String**|  | [optional] 
+ **assignedTos[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **batch** | **String**|  | [optional] 
+ **batches[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **category** | **String**|  | [optional] 
+ **categories[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **createdBy** | **String**|  | [optional] 
+ **createdBies[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
- **delegatedTo** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **deep** | **String**|  | [optional] 
+ **delegatedTo** | **String**|  | [optional] 
+ **delegatedTos[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **hasDocuments** | **String**|  | [optional] 
- **managedBy** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **managedBy** | **String**|  | [optional] 
+ **managedBies[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **operationStateAll** | **String**|  | [optional] 
  **operationState** | **String**|  | [optional] 
  **operationStates[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **place** | [**String**](.md)| The identifier of the resource. | [optional] 
- **priority** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **place** | **String**|  | [optional] 
+ **places[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **priority** | **String**|  | [optional] 
+ **priorities[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **query** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
  **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 

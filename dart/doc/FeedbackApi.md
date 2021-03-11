@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetFeedback**
-> FeedbackPagination cgetFeedback(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, state, visibility[], batch, category, after, before, geoHash[], order, organization, page, limit)
+> FeedbackPagination cgetFeedback(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, state, visibility[], batch, batches[], after, before, geoHash[], order, organization, organizations[], states[], page, limit)
 
 Retrieve all Feedback resources.
 
@@ -101,18 +101,20 @@ var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String |
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
 var state = state_example; // String | 
 var visibility[] = visibility[]_example; // String | 
-var batch = ; // String | The identifier of the resource.
-var category = ; // String | The identifier of the resource.
+var batch = batch_example; // String | 
+var batches[] = []; // List<String> | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoHash[] = []; // List<String> | 
 var order = order_example; // String | 
-var organization = ; // String | The identifier of the resource.
+var organization = organization_example; // String | 
+var organizations[] = []; // List<String> | 
+var states[] = []; // List<String> | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetFeedback(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, state, visibility[], batch, category, after, before, geoHash[], order, organization, page, limit);
+    var result = api_instance.cgetFeedback(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, state, visibility[], batch, batches[], after, before, geoHash[], order, organization, organizations[], states[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling FeedbackApi->cgetFeedback: $e\n");
@@ -130,13 +132,15 @@ Name | Type | Description  | Notes
  **xKeyclicAppVersion** | **String**|  | [optional] 
  **state** | **String**|  | [optional] [default to DELIVERED]
  **visibility[]** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
- **batch** | [**String**](.md)| The identifier of the resource. | [optional] 
- **category** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **batch** | **String**|  | [optional] 
+ **batches[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **geoHash[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **organization** | **String**|  | [optional] 
+ **organizations[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 

@@ -19,6 +19,7 @@ class ReportApi {
     DateTime before,
     String order,
     String state,
+    List<String> states__,
     int page,
     int limit,
   }) async {
@@ -47,6 +48,9 @@ class ReportApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (state != null)
         ..._convertParametersForCollectionFormat("state", state),
+      if (states__ != null)
+        ..._convertParametersForCollectionFormat("states[]", states__,
+            collectionFormat: "multi"),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),
@@ -108,6 +112,7 @@ class ReportApi {
     DateTime before,
     String order,
     String organization,
+    List<String> organizations__,
     String state,
     List<String> states__,
     int page,
@@ -138,6 +143,10 @@ class ReportApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (organization != null)
         ..._convertParametersForCollectionFormat("organization", organization),
+      if (organizations__ != null)
+        ..._convertParametersForCollectionFormat(
+            "organizations[]", organizations__,
+            collectionFormat: "multi"),
       if (state != null)
         ..._convertParametersForCollectionFormat("state", state),
       if (states__ != null)
@@ -201,10 +210,12 @@ class ReportApi {
     String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
     String assignedTo,
+    List<String> assignedTos__,
     DateTime after,
     DateTime before,
     String order,
     String organization,
+    List<String> organizations__,
     String query,
     String state,
     List<String> states__,
@@ -230,6 +241,10 @@ class ReportApi {
     final List<QueryParam> queryParams = <QueryParam>[
       if (assignedTo != null)
         ..._convertParametersForCollectionFormat("assigned_to", assignedTo),
+      if (assignedTos__ != null)
+        ..._convertParametersForCollectionFormat(
+            "assigned_tos[]", assignedTos__,
+            collectionFormat: "multi"),
       if (after != null)
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)
@@ -238,6 +253,10 @@ class ReportApi {
         ..._convertParametersForCollectionFormat("order", order),
       if (organization != null)
         ..._convertParametersForCollectionFormat("organization", organization),
+      if (organizations__ != null)
+        ..._convertParametersForCollectionFormat(
+            "organizations[]", organizations__,
+            collectionFormat: "multi"),
       if (query != null)
         ..._convertParametersForCollectionFormat("query", query),
       if (state != null)

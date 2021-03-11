@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **cgetBusinessActivities**
-> BusinessActivityPagination cgetBusinessActivities(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, geoPoint, geoCoordinates, order, organization, page, limit)
+> BusinessActivityPagination cgetBusinessActivities(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, geoPoint, geoCoordinates, order, organization, organizations[], page, limit)
 
 Retrieve all BusinessActivity resources.
 
@@ -38,12 +38,13 @@ var before = 2013-10-20T19:20:30+01:00; // DateTime |
 var geoPoint = geoPoint_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
 var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
 var order = order_example; // String | 
-var organization = ; // String | The identifier of the resource.
+var organization = organization_example; // String | 
+var organizations[] = []; // List<String> | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetBusinessActivities(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, geoPoint, geoCoordinates, order, organization, page, limit);
+    var result = api_instance.cgetBusinessActivities(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, geoPoint, geoCoordinates, order, organization, organizations[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling BusinessActivityApi->cgetBusinessActivities: $e\n");
@@ -64,7 +65,8 @@ Name | Type | Description  | Notes
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **organization** | [**String**](.md)| The identifier of the resource. | [optional] 
+ **organization** | **String**|  | [optional] 
+ **organizations[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 

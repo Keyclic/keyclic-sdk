@@ -1,6 +1,6 @@
 part of keyclic_sdk_api.api;
 
-class DocumentFileContentTypeEnum {
+class File_ContentTypeEnum {
   static const String textCsv_ = "text/csv";
   static const String applicationMsword_ = "application/msword";
   static const String
@@ -18,19 +18,19 @@ class DocumentFileContentTypeEnum {
   static const String applicationZip_ = "application/zip";
 }
 
-class DocumentFile {
-  DocumentFile({
+class File_ {
+  File_({
     this.content,
     this.contentType,
     this.name,
   });
 
-  factory DocumentFile.fromJson(Map<String, dynamic> json) {
+  factory File_.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return null;
     }
 
-    return DocumentFile(
+    return File_(
       content: json['content'],
       contentType: json['contentType'],
       name: json['name'],
@@ -39,7 +39,7 @@ class DocumentFile {
 
   String content;
 
-  /// use DocumentFileContentTypeEnum
+  /// use File_ContentTypeEnum
   String contentType;
 
   String name;
@@ -51,7 +51,7 @@ class DocumentFile {
       return true;
     }
 
-    return other is DocumentFile &&
+    return other is File_ &&
         runtimeType == other.runtimeType &&
         content == other.content &&
         contentType == other.contentType &&
@@ -70,18 +70,16 @@ class DocumentFile {
     return hashCode;
   }
 
-  static List<DocumentFile> listFromJson(List<dynamic> json) {
-    return json
-            ?.map((dynamic value) => DocumentFile.fromJson(value))
-            ?.toList() ??
-        <DocumentFile>[];
+  static List<File_> listFromJson(List<dynamic> json) {
+    return json?.map((dynamic value) => File_.fromJson(value))?.toList() ??
+        <File_>[];
   }
 
-  static Map<String, DocumentFile> mapFromJson(Map<String, dynamic> json) {
-    return json?.map<String, DocumentFile>((String key, dynamic value) {
-          return MapEntry(key, DocumentFile.fromJson(value));
+  static Map<String, File_> mapFromJson(Map<String, dynamic> json) {
+    return json?.map<String, File_>((String key, dynamic value) {
+          return MapEntry(key, File_.fromJson(value));
         }) ??
-        <String, DocumentFile>{};
+        <String, File_>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -94,6 +92,6 @@ class DocumentFile {
 
   @override
   String toString() {
-    return 'DocumentFile[content=$content, contentType=$contentType, name=$name, ]';
+    return 'File_[content=$content, contentType=$contentType, name=$name, ]';
   }
 }

@@ -9,7 +9,7 @@
             "url": "http:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.9.22"
+        "version": "2.10.0-beta1"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -492,6 +492,9 @@
                         "$ref": "#\/parameters\/organization"
                     },
                     {
+                        "$ref": "#\/parameters\/organizations__"
+                    },
+                    {
                         "$ref": "#\/parameters\/page"
                     },
                     {
@@ -757,6 +760,9 @@
                         "$ref": "#\/parameters\/business_activity"
                     },
                     {
+                        "$ref": "#\/parameters\/business_activities__"
+                    },
+                    {
                         "$ref": "#\/parameters\/after"
                     },
                     {
@@ -773,6 +779,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/organization"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organizations__"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -1300,6 +1309,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/feedback"
+                    },
+                    {
+                        "$ref": "#\/parameters\/feedbacks__"
                     },
                     {
                         "$ref": "#\/parameters\/order"
@@ -3683,7 +3695,7 @@
                         "$ref": "#\/parameters\/batch"
                     },
                     {
-                        "$ref": "#\/parameters\/category"
+                        "$ref": "#\/parameters\/batches__"
                     },
                     {
                         "$ref": "#\/parameters\/after"
@@ -3699,6 +3711,12 @@
                     },
                     {
                         "$ref": "#\/parameters\/organization"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organizations__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/states__"
                     },
                     {
                         "$ref": "#\/parameters\/page"
@@ -4614,10 +4632,13 @@
                         "$ref": "#\/parameters\/order"
                     },
                     {
-                        "$ref": "#\/parameters\/role"
+                        "$ref": "#\/parameters\/permission"
                     },
                     {
                         "$ref": "#\/parameters\/query"
+                    },
+                    {
+                        "$ref": "#\/parameters\/role"
                     },
                     {
                         "$ref": "#\/parameters\/roles__"
@@ -5517,6 +5538,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/section"
+                    },
+                    {
+                        "$ref": "#\/parameters\/sections__"
                     },
                     {
                         "$ref": "#\/parameters\/page"
@@ -7860,6 +7884,9 @@
                         "$ref": "#\/parameters\/business_activity"
                     },
                     {
+                        "$ref": "#\/parameters\/business_activities__"
+                    },
+                    {
                         "$ref": "#\/parameters\/after"
                     },
                     {
@@ -7879,6 +7906,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/organization"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organizations__"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -7969,6 +7999,9 @@
                         "$ref": "#\/parameters\/business_activity"
                     },
                     {
+                        "$ref": "#\/parameters\/business_activities__"
+                    },
+                    {
                         "$ref": "#\/parameters\/after"
                     },
                     {
@@ -7982,6 +8015,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organizations__"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -8096,6 +8132,9 @@
                         "name": "state",
                         "pattern": ".*",
                         "type": "string"
+                    },
+                    {
+                        "$ref": "#\/parameters\/states__"
                     },
                     {
                         "$ref": "#\/parameters\/page"
@@ -8419,10 +8458,13 @@
                         "$ref": "#\/parameters\/order"
                     },
                     {
-                        "$ref": "#\/parameters\/role"
+                        "$ref": "#\/parameters\/permission"
                     },
                     {
                         "$ref": "#\/parameters\/query"
+                    },
+                    {
+                        "$ref": "#\/parameters\/role"
                     },
                     {
                         "$ref": "#\/parameters\/roles__"
@@ -8530,6 +8572,9 @@
                         "$ref": "#\/parameters\/assigned_to"
                     },
                     {
+                        "$ref": "#\/parameters\/assigned_tos__"
+                    },
+                    {
                         "$ref": "#\/parameters\/after"
                     },
                     {
@@ -8537,6 +8582,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organizations__"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -8650,6 +8698,9 @@
                         "$ref": "#\/parameters\/business_activity"
                     },
                     {
+                        "$ref": "#\/parameters\/business_activities__"
+                    },
+                    {
                         "$ref": "#\/parameters\/after"
                     },
                     {
@@ -8669,6 +8720,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organizations__"
                     },
                     {
                         "$ref": "#\/parameters\/parent"
@@ -8788,6 +8842,9 @@
                         "$ref": "#\/parameters\/place"
                     },
                     {
+                        "$ref": "#\/parameters\/places__"
+                    },
+                    {
                         "$ref": "#\/parameters\/page"
                     },
                     {
@@ -8887,13 +8944,25 @@
                         "$ref": "#\/parameters\/assigned_to"
                     },
                     {
+                        "$ref": "#\/parameters\/assigned_tos__"
+                    },
+                    {
                         "$ref": "#\/parameters\/batch"
+                    },
+                    {
+                        "$ref": "#\/parameters\/batches__"
                     },
                     {
                         "$ref": "#\/parameters\/category"
                     },
                     {
+                        "$ref": "#\/parameters\/categories__"
+                    },
+                    {
                         "$ref": "#\/parameters\/created_by"
+                    },
+                    {
+                        "$ref": "#\/parameters\/created_bies__"
                     },
                     {
                         "$ref": "#\/parameters\/after"
@@ -8902,13 +8971,22 @@
                         "$ref": "#\/parameters\/before"
                     },
                     {
+                        "$ref": "#\/parameters\/deep"
+                    },
+                    {
                         "$ref": "#\/parameters\/delegated_to"
+                    },
+                    {
+                        "$ref": "#\/parameters\/delegated_tos__"
                     },
                     {
                         "$ref": "#\/parameters\/has_documents"
                     },
                     {
                         "$ref": "#\/parameters\/managed_by"
+                    },
+                    {
+                        "$ref": "#\/parameters\/managed_bies__"
                     },
                     {
                         "$ref": "#\/parameters\/operation_state_all"
@@ -8926,7 +9004,13 @@
                         "$ref": "#\/parameters\/place"
                     },
                     {
+                        "$ref": "#\/parameters\/places__"
+                    },
+                    {
                         "$ref": "#\/parameters\/priority"
+                    },
+                    {
+                        "$ref": "#\/parameters\/priorities__"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -9527,13 +9611,22 @@
                         "$ref": "#\/parameters\/category"
                     },
                     {
+                        "$ref": "#\/parameters\/categories__"
+                    },
+                    {
                         "$ref": "#\/parameters\/place"
+                    },
+                    {
+                        "$ref": "#\/parameters\/places__"
                     },
                     {
                         "in": "query",
                         "name": "state",
                         "pattern": ".*",
                         "type": "string"
+                    },
+                    {
+                        "$ref": "#\/parameters\/states__"
                     },
                     {
                         "$ref": "#\/parameters\/options_property_"
@@ -9725,13 +9818,25 @@
                         "$ref": "#\/parameters\/assigned_to"
                     },
                     {
+                        "$ref": "#\/parameters\/assigned_tos__"
+                    },
+                    {
                         "$ref": "#\/parameters\/batch"
+                    },
+                    {
+                        "$ref": "#\/parameters\/batches__"
                     },
                     {
                         "$ref": "#\/parameters\/category"
                     },
                     {
+                        "$ref": "#\/parameters\/categories__"
+                    },
+                    {
                         "$ref": "#\/parameters\/created_by"
+                    },
+                    {
+                        "$ref": "#\/parameters\/created_bies__"
                     },
                     {
                         "$ref": "#\/parameters\/after"
@@ -9740,13 +9845,22 @@
                         "$ref": "#\/parameters\/before"
                     },
                     {
+                        "$ref": "#\/parameters\/deep"
+                    },
+                    {
                         "$ref": "#\/parameters\/delegated_to"
+                    },
+                    {
+                        "$ref": "#\/parameters\/delegated_tos__"
                     },
                     {
                         "$ref": "#\/parameters\/has_documents"
                     },
                     {
                         "$ref": "#\/parameters\/managed_by"
+                    },
+                    {
+                        "$ref": "#\/parameters\/managed_bies__"
                     },
                     {
                         "$ref": "#\/parameters\/operation_state_all"
@@ -9764,7 +9878,13 @@
                         "$ref": "#\/parameters\/place"
                     },
                     {
+                        "$ref": "#\/parameters\/places__"
+                    },
+                    {
                         "$ref": "#\/parameters\/priority"
+                    },
+                    {
+                        "$ref": "#\/parameters\/priorities__"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -9841,6 +9961,91 @@
                 ]
             }
         },
+        "\/pdf\/images": {
+            "post": {
+                "tags": [
+                    "Pdf"
+                ],
+                "summary": "Retrieve all Image resources.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "cpostImage",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/FileData"
+                    },
+                    {
+                        "$ref": "#\/parameters\/page"
+                    },
+                    {
+                        "$ref": "#\/parameters\/limit"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/FilePagination"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
         "\/people\/{person}\/documents": {
             "get": {
                 "tags": [
@@ -9885,6 +10090,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/organization"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organizations__"
                     },
                     {
                         "in": "query",
@@ -9995,7 +10203,7 @@
                         "$ref": "#\/parameters\/batch"
                     },
                     {
-                        "$ref": "#\/parameters\/category"
+                        "$ref": "#\/parameters\/batches__"
                     },
                     {
                         "$ref": "#\/parameters\/after"
@@ -10013,10 +10221,16 @@
                         "$ref": "#\/parameters\/organization"
                     },
                     {
+                        "$ref": "#\/parameters\/organizations__"
+                    },
+                    {
                         "in": "query",
                         "name": "state",
                         "pattern": ".*",
                         "type": "string"
+                    },
+                    {
+                        "$ref": "#\/parameters\/states__"
                     },
                     {
                         "$ref": "#\/parameters\/visibility__"
@@ -10127,10 +10341,13 @@
                         "$ref": "#\/parameters\/order"
                     },
                     {
-                        "$ref": "#\/parameters\/role"
+                        "$ref": "#\/parameters\/permission"
                     },
                     {
                         "$ref": "#\/parameters\/query"
+                    },
+                    {
+                        "$ref": "#\/parameters\/role"
                     },
                     {
                         "$ref": "#\/parameters\/roles__"
@@ -10238,6 +10455,9 @@
                         "$ref": "#\/parameters\/assigned_to"
                     },
                     {
+                        "$ref": "#\/parameters\/assigned_tos__"
+                    },
+                    {
                         "$ref": "#\/parameters\/after"
                     },
                     {
@@ -10248,6 +10468,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/organization"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organizations__"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -10361,13 +10584,25 @@
                         "$ref": "#\/parameters\/assigned_to"
                     },
                     {
+                        "$ref": "#\/parameters\/assigned_tos__"
+                    },
+                    {
                         "$ref": "#\/parameters\/batch"
+                    },
+                    {
+                        "$ref": "#\/parameters\/batches__"
                     },
                     {
                         "$ref": "#\/parameters\/category"
                     },
                     {
+                        "$ref": "#\/parameters\/categories__"
+                    },
+                    {
                         "$ref": "#\/parameters\/created_by"
+                    },
+                    {
+                        "$ref": "#\/parameters\/created_bies__"
                     },
                     {
                         "$ref": "#\/parameters\/after"
@@ -10376,13 +10611,22 @@
                         "$ref": "#\/parameters\/before"
                     },
                     {
+                        "$ref": "#\/parameters\/deep"
+                    },
+                    {
                         "$ref": "#\/parameters\/delegated_to"
+                    },
+                    {
+                        "$ref": "#\/parameters\/delegated_tos__"
                     },
                     {
                         "$ref": "#\/parameters\/has_documents"
                     },
                     {
                         "$ref": "#\/parameters\/managed_by"
+                    },
+                    {
+                        "$ref": "#\/parameters\/managed_bies__"
                     },
                     {
                         "$ref": "#\/parameters\/operation_state_all"
@@ -10400,7 +10644,13 @@
                         "$ref": "#\/parameters\/place"
                     },
                     {
+                        "$ref": "#\/parameters\/places__"
+                    },
+                    {
                         "$ref": "#\/parameters\/priority"
+                    },
+                    {
+                        "$ref": "#\/parameters\/priorities__"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -10803,6 +11053,9 @@
                         "$ref": "#\/parameters\/business_activity"
                     },
                     {
+                        "$ref": "#\/parameters\/business_activities__"
+                    },
+                    {
                         "$ref": "#\/parameters\/after"
                     },
                     {
@@ -10825,6 +11078,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/organization"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organizations__"
                     },
                     {
                         "$ref": "#\/parameters\/parent"
@@ -11007,6 +11263,9 @@
                         "$ref": "#\/parameters\/organization"
                     },
                     {
+                        "$ref": "#\/parameters\/organizations__"
+                    },
+                    {
                         "in": "query",
                         "name": "state",
                         "pattern": ".*",
@@ -11121,10 +11380,16 @@
                         "$ref": "#\/parameters\/member"
                     },
                     {
+                        "$ref": "#\/parameters\/members__"
+                    },
+                    {
                         "$ref": "#\/parameters\/order"
                     },
                     {
                         "$ref": "#\/parameters\/person"
+                    },
+                    {
+                        "$ref": "#\/parameters\/persons__"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -12126,6 +12391,9 @@
                         "type": "string"
                     },
                     {
+                        "$ref": "#\/parameters\/states__"
+                    },
+                    {
                         "$ref": "#\/parameters\/page"
                     },
                     {
@@ -12232,6 +12500,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/organization"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organizations__"
                     },
                     {
                         "in": "query",
@@ -12433,6 +12704,9 @@
                         "$ref": "#\/parameters\/assigned_to"
                     },
                     {
+                        "$ref": "#\/parameters\/assigned_tos__"
+                    },
+                    {
                         "$ref": "#\/parameters\/after"
                     },
                     {
@@ -12443,6 +12717,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/organization"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organizations__"
                     },
                     {
                         "$ref": "#\/parameters\/query"
@@ -15701,6 +15978,7 @@
                 "name": {
                     "format": "string",
                     "maxLength": 255,
+                    "minLength": 1,
                     "type": "string"
                 },
                 "type": {
@@ -16985,6 +17263,10 @@
                     "readOnly": true,
                     "type": "string"
                 },
+                "name": {
+                    "format": "string",
+                    "type": "string"
+                },
                 "permission": {
                     "$ref": "#\/definitions\/DocumentPermission"
                 },
@@ -17057,6 +17339,10 @@
         "DocumentFile": {
             "type": "object",
             "properties": {
+                "content": {
+                    "format": "string",
+                    "type": "string"
+                },
                 "contentType": {
                     "enum": [
                         "text\/csv",
@@ -18094,6 +18380,82 @@
             "required": [
                 "transition"
             ]
+        },
+        "FileCollection": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "$ref": "#\/definitions\/File_"
+                    }
+                }
+            }
+        },
+        "FileData": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "string"
+                },
+                "contentType": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "content",
+                "contentType",
+                "name"
+            ]
+        },
+        "FilePagination": {
+            "allOf": [
+                {
+                    "$ref": "#\/definitions\/Pagination"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "_embedded": {
+                            "$ref": "#\/definitions\/FileCollection"
+                        }
+                    }
+                }
+            ]
+        },
+        "File_": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "contentType": {
+                    "enum": [
+                        "text\/csv",
+                        "application\/msword",
+                        "application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                        "image\/jpeg",
+                        "image\/jpg",
+                        "application\/pdf",
+                        "image\/png",
+                        "text\/plain",
+                        "application\/vnd.ms-excel",
+                        "application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        "application\/zip"
+                    ],
+                    "format": "string",
+                    "type": "string"
+                },
+                "name": {
+                    "format": "string",
+                    "type": "string"
+                }
+            }
         },
         "ImageData": {
             "type": "object",
@@ -21345,12 +21707,6 @@
                         "category": {
                             "$ref": "#\/definitions\/ReportLinksCategory"
                         },
-                        "delegatedFrom": {
-                            "$ref": "#\/definitions\/ReportLinksDelegatedFrom"
-                        },
-                        "delegatedTo": {
-                            "$ref": "#\/definitions\/ReportLinksDelegatedTo"
-                        },
                         "feedback": {
                             "$ref": "#\/definitions\/ReportLinksFeedback"
                         },
@@ -21454,58 +21810,6 @@
                     "type": "object",
                     "properties": {
                         "category": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "ReportLinksDelegatedFrom": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the delegatedFrom associated to the given report.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/ReportLinksDelegatedFromIriTemplate"
-                }
-            }
-        },
-        "ReportLinksDelegatedFromIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "organization": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "ReportLinksDelegatedTo": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the delegatedTo associated to the given report.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/ReportLinksDelegatedToIriTemplate"
-                }
-            }
-        },
-        "ReportLinksDelegatedToIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "organization": {
                             "type": "string"
                         }
                     }
@@ -23414,11 +23718,20 @@
             "type": "string"
         },
         "organization": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "name": "organization",
+            "pattern": ".*",
             "type": "string"
+        },
+        "organizations__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "organizations[]",
+            "pattern": ".*",
+            "type": "array"
         },
         "page": {
             "default": 1,
@@ -23437,11 +23750,20 @@
             "type": "integer"
         },
         "business_activity": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "name": "business_activity",
+            "pattern": ".*",
             "type": "string"
+        },
+        "business_activities__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "business_activities[]",
+            "pattern": ".*",
+            "type": "array"
         },
         "query": {
             "in": "query",
@@ -23466,11 +23788,20 @@
             "required": true
         },
         "feedback": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "name": "feedback",
+            "pattern": ".*",
             "type": "string"
+        },
+        "feedbacks__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "feedbacks[]",
+            "pattern": ".*",
+            "type": "array"
         },
         "ContributionData": {
             "name": "ContributionData",
@@ -23548,27 +23879,31 @@
             "collectionFormat": "multi",
             "default": "VISIBILITY_PUBLIC",
             "enum": [
+                "VISIBILITY_PRIVATE",
                 "VISIBILITY_PUBLIC",
-                "VISIBILITY_PRIVATE"
+                "VISIBILITY_RESTRICTED",
+                "VISIBILITY_SHARED"
             ],
             "in": "query",
             "name": "visibility[]",
-            "pattern": "VISIBILITY_PUBLIC|VISIBILITY_PRIVATE",
+            "pattern": "VISIBILITY_PRIVATE|VISIBILITY_PUBLIC|VISIBILITY_RESTRICTED|VISIBILITY_SHARED",
             "type": "string"
         },
         "batch": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "name": "batch",
+            "pattern": ".*",
             "type": "string"
         },
-        "category": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
+        "batches__": {
+            "collectionFormat": "multi",
             "in": "query",
-            "name": "category",
-            "type": "string"
+            "items": {
+                "type": "string"
+            },
+            "name": "batches[]",
+            "pattern": ".*",
+            "type": "array"
         },
         "geo_hash__": {
             "collectionFormat": "multi",
@@ -23578,6 +23913,16 @@
             },
             "name": "geo_hash[]",
             "pattern": "^.{5}$",
+            "type": "array"
+        },
+        "states__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "states[]",
+            "pattern": ".*",
             "type": "array"
         },
         "CommentData": {
@@ -23611,6 +23956,12 @@
                 "$ref": "#\/definitions\/FeedbackWorkflowTransitionData"
             },
             "required": true
+        },
+        "permission": {
+            "in": "query",
+            "name": "permission",
+            "pattern": ".*",
+            "type": "string"
         },
         "role": {
             "in": "query",
@@ -23667,11 +24018,20 @@
             "required": true
         },
         "section": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "name": "section",
+            "pattern": ".*",
             "type": "string"
+        },
+        "sections__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "sections[]",
+            "pattern": ".*",
+            "type": "array"
         },
         "MarkerData": {
             "name": "MarkerData",
@@ -23748,19 +24108,18 @@
             "type": "string"
         },
         "assigned_to": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "name": "assigned_to",
+            "pattern": ".*",
             "type": "string"
         },
-        "states__": {
+        "assigned_tos__": {
             "collectionFormat": "multi",
             "in": "query",
             "items": {
                 "type": "string"
             },
-            "name": "states[]",
+            "name": "assigned_tos[]",
             "pattern": ".*",
             "type": "array"
         },
@@ -23771,43 +24130,90 @@
             "type": "string"
         },
         "parent": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "name": "parent",
+            "pattern": ".*",
             "type": "string"
         },
         "parents__": {
             "collectionFormat": "multi",
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "items": {
                 "type": "string"
             },
             "name": "parents[]",
+            "pattern": ".*",
             "type": "array"
         },
         "place": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "name": "place",
+            "pattern": ".*",
             "type": "string"
         },
+        "places__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "places[]",
+            "pattern": ".*",
+            "type": "array"
+        },
+        "category": {
+            "in": "query",
+            "name": "category",
+            "pattern": ".*",
+            "type": "string"
+        },
+        "categories__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "categories[]",
+            "pattern": ".*",
+            "type": "array"
+        },
         "created_by": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "name": "created_by",
+            "pattern": ".*",
+            "type": "string"
+        },
+        "created_bies__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "created_bies[]",
+            "pattern": ".*",
+            "type": "array"
+        },
+        "deep": {
+            "in": "query",
+            "name": "deep",
+            "pattern": ".*",
             "type": "string"
         },
         "delegated_to": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "name": "delegated_to",
+            "pattern": ".*",
             "type": "string"
+        },
+        "delegated_tos__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "delegated_tos[]",
+            "pattern": ".*",
+            "type": "array"
         },
         "has_documents": {
             "in": "query",
@@ -23816,11 +24222,20 @@
             "type": "string"
         },
         "managed_by": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "name": "managed_by",
+            "pattern": ".*",
             "type": "string"
+        },
+        "managed_bies__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "managed_bies[]",
+            "pattern": ".*",
+            "type": "array"
         },
         "operation_state_all": {
             "in": "query",
@@ -23845,11 +24260,20 @@
             "type": "array"
         },
         "priority": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "name": "priority",
+            "pattern": ".*",
             "type": "string"
+        },
+        "priorities__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "priorities[]",
+            "pattern": ".*",
+            "type": "array"
         },
         "options_property_": {
             "in": "query",
@@ -23874,6 +24298,14 @@
             },
             "required": true
         },
+        "FileData": {
+            "name": "FileData",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/FileData"
+            },
+            "required": true
+        },
         "PersonPatch": {
             "name": "PersonPatch",
             "in": "body",
@@ -23883,18 +24315,36 @@
             "required": true
         },
         "member": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "name": "member",
+            "pattern": ".*",
             "type": "string"
         },
+        "members__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "members[]",
+            "pattern": ".*",
+            "type": "array"
+        },
         "person": {
-            "description": "The identifier of the resource.",
-            "format": "uuid",
             "in": "query",
             "name": "person",
+            "pattern": ".*",
             "type": "string"
+        },
+        "persons__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "persons[]",
+            "pattern": ".*",
+            "type": "array"
         },
         "PlacePatch": {
             "name": "PlacePatch",
