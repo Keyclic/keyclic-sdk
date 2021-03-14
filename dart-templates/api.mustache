@@ -3,7 +3,6 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:dio/dio.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:built_value/serializer.dart';
 
 {{#operations}}
@@ -132,6 +131,8 @@ class {{classname}} {
             onSendProgress: onSendProgress,
             onReceiveProgress: onReceiveProgress,
         ){{#returnType}}.then((response) {
+            print('{{nickname}}: then');
+            print('reponse data: ${response.data}');
         {{#isResponseFile}}
             final data = response.data;
         {{/isResponseFile}}
@@ -169,6 +170,9 @@ class {{classname}} {
                 statusMessage: response.statusMessage,
                 extra: response.extra,
             );
+        }).catchError((error) {
+            print('{{nickname}}: catchError');
+            print(error);
         }){{/returnType}};
     }
 

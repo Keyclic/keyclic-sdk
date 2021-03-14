@@ -1,13 +1,21 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
+import '../serializers.dart';
+
 part '{{classFilename}}.g.dart';
 
 abstract class {{classname}} implements Built<{{classname}}, {{classname}}Builder> {
     factory {{classname}}([void Function({{classname}}Builder b) updates]) = _${{classname}};
 
+    factory {{classname}}.fromJson(Map<String, dynamic> json) {
+        return standardSerializers.deserializeWith({{classname}}.serializer, json);
+    }
+
     // Boilerplate code needed to wire-up generated code
     {{classname}}._();
+
+    static Serializer<{{classname}}> get serializer => _${{#lambda.camelcase}}{{{classname}}}{{/lambda.camelcase}}Serializer;
 
 {{#vars}}
     {{#description}}
@@ -35,7 +43,10 @@ abstract class {{classname}} implements Built<{{classname}}, {{classname}}Builde
         ;
     }
 
-    static Serializer<{{classname}}> get serializer => _${{#lambda.camelcase}}{{{classname}}}{{/lambda.camelcase}}Serializer;
+
+    Map<String, dynamic> toJson() {
+        return standardSerializers.serializeWith({{classname}}.serializer, this);
+    }
 }
 {{!
     Generate an enum for any variables that are declared as inline enums
