@@ -18162,6 +18162,16 @@
                     "format": "date-time",
                     "readOnly": true,
                     "type": "string"
+                },
+                "visibility": {
+                    "enum": [
+                        "VISIBILITY_PRIVATE",
+                        "VISIBILITY_PUBLIC",
+                        "VISIBILITY_RESTRICTED",
+                        "VISIBILITY_SHARED"
+                    ],
+                    "format": "string",
+                    "type": "string"
                 }
             },
             "required": [

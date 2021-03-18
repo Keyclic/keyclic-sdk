@@ -1,5 +1,12 @@
 part of keyclic_sdk_api.api;
 
+class FeedbackVisibilityEnum {
+  static const String pRIVATE_ = "VISIBILITY_PRIVATE";
+  static const String pUBLIC_ = "VISIBILITY_PUBLIC";
+  static const String rESTRICTED_ = "VISIBILITY_RESTRICTED";
+  static const String sHARED_ = "VISIBILITY_SHARED";
+}
+
 class Feedback {
   Feedback({
     this.embedded,
@@ -13,6 +20,7 @@ class Feedback {
     this.state,
     this.type,
     this.updatedAt,
+    this.visibility,
   });
 
   factory Feedback.fromJson(Map<String, dynamic> json) {
@@ -44,6 +52,7 @@ class Feedback {
       state: json['state'] is List ? List<String>.from(json['state']) : null,
       type: json['type'],
       updatedAt: updatedAt,
+      visibility: json['visibility'],
     );
   }
 
@@ -69,6 +78,9 @@ class Feedback {
 
   DateTime updatedAt;
 
+  /// use FeedbackVisibilityEnum
+  String visibility;
+
   @override
   bool operator ==(dynamic other) {
     // Same reference
@@ -88,7 +100,8 @@ class Feedback {
         public == other.public &&
         DeepCollectionEquality.unordered().equals(state, other.state) &&
         type == other.type &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        visibility == other.visibility;
   }
 
   /// By default hashCode return reference
@@ -120,6 +133,7 @@ class Feedback {
     hashCode ^= public?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
     hashCode ^= updatedAt?.hashCode ?? 0;
+    hashCode ^= visibility?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -149,11 +163,12 @@ class Feedback {
       if (state != null) 'state': state,
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
+      if (visibility != null) 'visibility': visibility,
     };
   }
 
   @override
   String toString() {
-    return 'Feedback[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, geoCoordinates=$geoCoordinates, id=$id, metadata=$metadata, public=$public, state=$state, type=$type, updatedAt=$updatedAt, ]';
+    return 'Feedback[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, geoCoordinates=$geoCoordinates, id=$id, metadata=$metadata, public=$public, state=$state, type=$type, updatedAt=$updatedAt, visibility=$visibility, ]';
   }
 }
