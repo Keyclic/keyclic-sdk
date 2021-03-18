@@ -9,7 +9,7 @@ All URIs are relative to *https://api.keyclic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cgetDelegationsByReport**](ReportApi.md#cgetDelegationsByReport) | **GET** /reports/{report}/delegations | Retrieve all Delegation resources.
+[**cgetAssignmentsByReport**](ReportApi.md#cgetAssignmentsByReport) | **GET** /reports/{report}/assignments | Retrieve all Assignment resources.
 [**cgetDocumentsByReport**](ReportApi.md#cgetDocumentsByReport) | **GET** /reports/{report}/documents | Retrieve all Document resources.
 [**cgetOperationsByReport**](ReportApi.md#cgetOperationsByReport) | **GET** /reports/{report}/operations | Retrieve all Operation resources.
 [**getReport**](ReportApi.md#getReport) | **GET** /reports/{report} | Retrieve one Report resource.
@@ -19,10 +19,10 @@ Method | HTTP request | Description
 [**postWorkflowByReport**](ReportApi.md#postWorkflowByReport) | **POST** /reports/{report}/workflow | Create one Workflow resource.
 
 
-# **cgetDelegationsByReport**
-> DelegationPagination cgetDelegationsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, state, states[], page, limit)
+# **cgetAssignmentsByReport**
+> AssignmentPagination cgetAssignmentsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, state, states[], page, limit)
 
-Retrieve all Delegation resources.
+Retrieve all Assignment resources.
 
 ### Example 
 ```dart
@@ -48,10 +48,10 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetDelegationsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, state, states[], page, limit);
+    var result = api_instance.cgetAssignmentsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, state, states[], page, limit);
     print(result);
 } catch (e) {
-    print("Exception when calling ReportApi->cgetDelegationsByReport: $e\n");
+    print("Exception when calling ReportApi->cgetAssignmentsByReport: $e\n");
 }
 ```
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DelegationPagination**](DelegationPagination.md)
+[**AssignmentPagination**](AssignmentPagination.md)
 
 ### Authorization
 

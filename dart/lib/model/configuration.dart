@@ -3,8 +3,8 @@ part of keyclic_sdk_api.api;
 class Configuration {
   Configuration({
     this.links,
+    this.assignmentType,
     this.createdAt,
-    this.delegationType,
     this.description,
     this.id,
     this.memberType,
@@ -34,9 +34,9 @@ class Configuration {
 
     return Configuration(
       links: ConfigurationLinks.fromJson(json['_links']),
+      assignmentType:
+          ConfigurationAssignmentType.fromJson(json['assignmentType']),
       createdAt: createdAt,
-      delegationType:
-          ConfigurationDelegationType.fromJson(json['delegationType']),
       description: json['description'],
       id: json['id'],
       memberType: ConfigurationMemberType.fromJson(json['memberType']),
@@ -50,9 +50,9 @@ class Configuration {
 
   ConfigurationLinks links;
 
-  DateTime createdAt;
+  ConfigurationAssignmentType assignmentType;
 
-  ConfigurationDelegationType delegationType;
+  DateTime createdAt;
 
   String description;
 
@@ -80,8 +80,8 @@ class Configuration {
     return other is Configuration &&
         runtimeType == other.runtimeType &&
         links == other.links &&
+        assignmentType == other.assignmentType &&
         createdAt == other.createdAt &&
-        delegationType == other.delegationType &&
         description == other.description &&
         id == other.id &&
         memberType == other.memberType &&
@@ -98,8 +98,8 @@ class Configuration {
     int hashCode = 0;
 
     hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= assignmentType?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
-    hashCode ^= delegationType?.hashCode ?? 0;
     hashCode ^= description?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= memberType?.hashCode ?? 0;
@@ -129,8 +129,8 @@ class Configuration {
   Map<String, dynamic> toJson() {
     return {
       if (links != null) '_links': links.toJson(),
+      if (assignmentType != null) 'assignmentType': assignmentType.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (delegationType != null) 'delegationType': delegationType.toJson(),
       if (description != null) 'description': description,
       if (id != null) 'id': id,
       if (memberType != null) 'memberType': memberType.toJson(),
@@ -144,6 +144,6 @@ class Configuration {
 
   @override
   String toString() {
-    return 'Configuration[links=$links, createdAt=$createdAt, delegationType=$delegationType, description=$description, id=$id, memberType=$memberType, name=$name, operationType=$operationType, reportType=$reportType, type=$type, updatedAt=$updatedAt, ]';
+    return 'Configuration[links=$links, assignmentType=$assignmentType, createdAt=$createdAt, description=$description, id=$id, memberType=$memberType, name=$name, operationType=$operationType, reportType=$reportType, type=$type, updatedAt=$updatedAt, ]';
   }
 }

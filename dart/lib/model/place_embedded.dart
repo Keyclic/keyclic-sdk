@@ -19,7 +19,7 @@ class PlaceEmbedded {
       documentTypes: DocumentType.listFromJson(json['documentTypes']),
       organization: Organization.fromJson(json['organization']),
       path: NodePath.listFromJson(json['path']),
-      workflow: DelegationEmbeddedWorkflow.fromJson(json['workflow']),
+      workflow: AssignmentEmbeddedWorkflow.fromJson(json['workflow']),
     );
   }
 
@@ -31,7 +31,7 @@ class PlaceEmbedded {
 
   List<NodePath> path;
 
-  DelegationEmbeddedWorkflow workflow;
+  AssignmentEmbeddedWorkflow workflow;
 
   @override
   bool operator ==(dynamic other) {

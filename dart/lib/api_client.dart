@@ -177,6 +177,44 @@ class ApiClient {
           return ArticleLinksSelfIriTemplateMapping.fromJson(value);
         case 'AssignData':
           return AssignData.fromJson(value);
+        case 'Assignment':
+          return Assignment.fromJson(value);
+        case 'AssignmentCollection':
+          return AssignmentCollection.fromJson(value);
+        case 'AssignmentData':
+          return AssignmentData.fromJson(value);
+        case 'AssignmentEmbedded':
+          return AssignmentEmbedded.fromJson(value);
+        case 'AssignmentEmbeddedWorkflow':
+          return AssignmentEmbeddedWorkflow.fromJson(value);
+        case 'AssignmentLinks':
+          return AssignmentLinks.fromJson(value);
+        case 'AssignmentLinksCreatedBy':
+          return AssignmentLinksCreatedBy.fromJson(value);
+        case 'AssignmentLinksCreatedByIriTemplate':
+          return AssignmentLinksCreatedByIriTemplate.fromJson(value);
+        case 'AssignmentLinksCreatedByIriTemplateMapping':
+          return AssignmentLinksCreatedByIriTemplateMapping.fromJson(value);
+        case 'AssignmentLinksReport':
+          return AssignmentLinksReport.fromJson(value);
+        case 'AssignmentLinksReportIriTemplate':
+          return AssignmentLinksReportIriTemplate.fromJson(value);
+        case 'AssignmentLinksReportIriTemplateMapping':
+          return AssignmentLinksReportIriTemplateMapping.fromJson(value);
+        case 'AssignmentLinksSelf':
+          return AssignmentLinksSelf.fromJson(value);
+        case 'AssignmentLinksSelfIriTemplate':
+          return AssignmentLinksSelfIriTemplate.fromJson(value);
+        case 'AssignmentLinksSelfIriTemplateMapping':
+          return AssignmentLinksSelfIriTemplateMapping.fromJson(value);
+        case 'AssignmentLinksService':
+          return AssignmentLinksService.fromJson(value);
+        case 'AssignmentLinksServiceIriTemplate':
+          return AssignmentLinksServiceIriTemplate.fromJson(value);
+        case 'AssignmentLinksServiceIriTemplateMapping':
+          return AssignmentLinksServiceIriTemplateMapping.fromJson(value);
+        case 'AssignmentTypeWorkflow':
+          return AssignmentTypeWorkflow.fromJson(value);
         case 'Bookmark':
           return Bookmark.fromJson(value);
         case 'BookmarkCollection':
@@ -273,8 +311,8 @@ class ApiClient {
           return ConditionListCondition.fromJson(value);
         case 'Configuration':
           return Configuration.fromJson(value);
-        case 'ConfigurationDelegationType':
-          return ConfigurationDelegationType.fromJson(value);
+        case 'ConfigurationAssignmentType':
+          return ConfigurationAssignmentType.fromJson(value);
         case 'ConfigurationLinks':
           return ConfigurationLinks.fromJson(value);
         case 'ConfigurationLinksSelf':
@@ -301,50 +339,12 @@ class ApiClient {
           return ContributionLinksContributor.fromJson(value);
         case 'ContributionLinksContributorIriTemplate':
           return ContributionLinksContributorIriTemplate.fromJson(value);
-        case 'ContributionLinksContributorIriTemplateMapping':
-          return ContributionLinksContributorIriTemplateMapping.fromJson(value);
         case 'ContributionLinksFeedback':
           return ContributionLinksFeedback.fromJson(value);
         case 'ContributionLinksFeedbackIriTemplate':
           return ContributionLinksFeedbackIriTemplate.fromJson(value);
         case 'ContributionLinksFeedbackIriTemplateMapping':
           return ContributionLinksFeedbackIriTemplateMapping.fromJson(value);
-        case 'Delegation':
-          return Delegation.fromJson(value);
-        case 'DelegationCollection':
-          return DelegationCollection.fromJson(value);
-        case 'DelegationData':
-          return DelegationData.fromJson(value);
-        case 'DelegationEmbedded':
-          return DelegationEmbedded.fromJson(value);
-        case 'DelegationEmbeddedWorkflow':
-          return DelegationEmbeddedWorkflow.fromJson(value);
-        case 'DelegationLinks':
-          return DelegationLinks.fromJson(value);
-        case 'DelegationLinksCreatedBy':
-          return DelegationLinksCreatedBy.fromJson(value);
-        case 'DelegationLinksCreatedByIriTemplate':
-          return DelegationLinksCreatedByIriTemplate.fromJson(value);
-        case 'DelegationLinksReport':
-          return DelegationLinksReport.fromJson(value);
-        case 'DelegationLinksReportIriTemplate':
-          return DelegationLinksReportIriTemplate.fromJson(value);
-        case 'DelegationLinksReportIriTemplateMapping':
-          return DelegationLinksReportIriTemplateMapping.fromJson(value);
-        case 'DelegationLinksSelf':
-          return DelegationLinksSelf.fromJson(value);
-        case 'DelegationLinksSelfIriTemplate':
-          return DelegationLinksSelfIriTemplate.fromJson(value);
-        case 'DelegationLinksSelfIriTemplateMapping':
-          return DelegationLinksSelfIriTemplateMapping.fromJson(value);
-        case 'DelegationLinksService':
-          return DelegationLinksService.fromJson(value);
-        case 'DelegationLinksServiceIriTemplate':
-          return DelegationLinksServiceIriTemplate.fromJson(value);
-        case 'DelegationLinksServiceIriTemplateMapping':
-          return DelegationLinksServiceIriTemplateMapping.fromJson(value);
-        case 'DelegationTypeWorkflow':
-          return DelegationTypeWorkflow.fromJson(value);
         case 'Device':
           return Device.fromJson(value);
         case 'DeviceData':
@@ -1103,6 +1103,8 @@ class ApiClient {
           return WorkflowTransition.fromJson(value);
         case 'ArticlePagination':
           return ArticlePagination.fromJson(value);
+        case 'AssignmentPagination':
+          return AssignmentPagination.fromJson(value);
         case 'BookmarkPagination':
           return BookmarkPagination.fromJson(value);
         case 'BusinessActivityPagination':
@@ -1111,8 +1113,6 @@ class ApiClient {
           return CategoryPagination.fromJson(value);
         case 'ContributionPagination':
           return ContributionPagination.fromJson(value);
-        case 'DelegationPagination':
-          return DelegationPagination.fromJson(value);
         case 'DocumentPagination':
           return DocumentPagination.fromJson(value);
         case 'ExternalServicePagination':

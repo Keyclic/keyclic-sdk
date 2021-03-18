@@ -18,7 +18,7 @@ class ReportEmbedded {
     }
 
     return ReportEmbedded(
-      assignment: Delegation.fromJson(json['assignment']),
+      assignment: Assignment.fromJson(json['assignment']),
       category: Category.fromJson(json['category']),
       children: Operation.listFromJson(json['children']),
       documents: Document.listFromJson(json['documents']),
@@ -26,11 +26,11 @@ class ReportEmbedded {
       place: Place.fromJson(json['place']),
       targetGroups:
           ReportEmbeddedTargetGroups.listFromJson(json['targetGroups']),
-      workflow: DelegationEmbeddedWorkflow.fromJson(json['workflow']),
+      workflow: AssignmentEmbeddedWorkflow.fromJson(json['workflow']),
     );
   }
 
-  Delegation assignment;
+  Assignment assignment;
 
   Category category;
 
@@ -44,7 +44,7 @@ class ReportEmbedded {
 
   List<ReportEmbeddedTargetGroups> targetGroups;
 
-  DelegationEmbeddedWorkflow workflow;
+  AssignmentEmbeddedWorkflow workflow;
 
   @override
   bool operator ==(dynamic other) {

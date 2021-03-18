@@ -8,14 +8,14 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**assignment** | [**Delegation**](Delegation.md) |  | [optional] [default to null]
+**assignment** | [**Assignment**](Assignment.md) |  | [optional] [default to null]
 **category** | [**Category**](Category.md) |  | [optional] [default to null]
 **children** | [**List&lt;Operation&gt;**](Operation.md) |  | [optional] [default to []]
 **documents** | [**List&lt;Document&gt;**](Document.md) |  | [optional] [default to []]
 **feedback** | [**Feedback**](Feedback.md) |  | [optional] [default to null]
 **place** | [**Place**](Place.md) |  | [optional] [default to null]
 **targetGroups** | [**List&lt;ReportEmbeddedTargetGroups&gt;**](ReportEmbeddedTargetGroups.md) |  | [optional] [default to []]
-**workflow** | [**DelegationEmbeddedWorkflow**](DelegationEmbeddedWorkflow.md) |  | [optional] [default to null]
+**workflow** | [**AssignmentEmbeddedWorkflow**](AssignmentEmbeddedWorkflow.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -12,11 +12,11 @@ class OperationLinksReportIriTemplate {
 
     return OperationLinksReportIriTemplate(
       mapping:
-          DelegationLinksReportIriTemplateMapping.fromJson(json['mapping']),
+          AssignmentLinksReportIriTemplateMapping.fromJson(json['mapping']),
     );
   }
 
-  DelegationLinksReportIriTemplateMapping mapping;
+  AssignmentLinksReportIriTemplateMapping mapping;
 
   @override
   bool operator ==(dynamic other) {

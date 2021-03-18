@@ -9,8 +9,8 @@ import 'package:keyclic_sdk_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**ConfigurationLinks**](ConfigurationLinks.md) |  | [optional] [default to null]
+**assignmentType** | [**ConfigurationAssignmentType**](ConfigurationAssignmentType.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
-**delegationType** | [**ConfigurationDelegationType**](ConfigurationDelegationType.md) |  | [optional] [default to null]
 **description** | **String** |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
 **memberType** | [**ConfigurationMemberType**](ConfigurationMemberType.md) |  | [optional] [default to null]

@@ -5,10 +5,10 @@ class ReportApi {
 
   final ApiClient apiClient;
 
-  /// Retrieve all Delegation resources.
+  /// Retrieve all Assignment resources.
   ///
   ///
-  Future<DelegationPagination> cgetDelegationsByReport(
+  Future<AssignmentPagination> cgetAssignmentsByReport(
     String xKeyclicApp,
     String report, {
     String acceptLanguage,
@@ -34,7 +34,7 @@ class ReportApi {
     }
 
     // create path and map variables
-    final String path = "/reports/{report}/delegations"
+    final String path = "/reports/{report}/assignments"
         .replaceAll("{format}", "json")
         .replaceAll("{" + "report" + "}", report.toString());
 
@@ -94,8 +94,8 @@ class ReportApi {
       return null;
     }
 
-    return apiClient.deserialize(response.body, 'DelegationPagination')
-        as DelegationPagination;
+    return apiClient.deserialize(response.body, 'AssignmentPagination')
+        as AssignmentPagination;
   }
 
   /// Retrieve all Document resources.

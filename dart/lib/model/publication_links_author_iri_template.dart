@@ -12,12 +12,12 @@ class PublicationLinksAuthorIriTemplate {
     }
 
     return PublicationLinksAuthorIriTemplate(
-      mapping: ContributionLinksContributorIriTemplateMapping.fromJson(
-          json['mapping']),
+      mapping:
+          AssignmentLinksCreatedByIriTemplateMapping.fromJson(json['mapping']),
     );
   }
 
-  ContributionLinksContributorIriTemplateMapping mapping;
+  AssignmentLinksCreatedByIriTemplateMapping mapping;
 
   @override
   bool operator ==(dynamic other) {
