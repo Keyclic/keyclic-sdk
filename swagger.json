@@ -6,10 +6,10 @@
         "termsOfService": "",
         "contact": {
             "name": "API Support",
-            "url": "http:\/\/keyclic.com",
+            "url": "https:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.10.0-beta1"
+        "version": "2.10.1"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -1532,17 +1532,17 @@
                 ]
             }
         },
-        "\/delegations\/{delegation}": {
+        "\/assignments\/{assignment}": {
             "get": {
                 "tags": [
-                    "Delegation"
+                    "Assignment"
                 ],
-                "summary": "Retrieve one Delegation resource.",
+                "summary": "Retrieve one Assignment resource.",
                 "externalDocs": {
                     "description": "Keyclic API documentation.",
                     "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
                 },
-                "operationId": "getDelegation",
+                "operationId": "getAssignment",
                 "consumes": [
                     "application\/json;charset=UTF-8"
                 ],
@@ -1569,7 +1569,7 @@
                         "description": "The identifier of the resource.",
                         "format": "uuid",
                         "in": "path",
-                        "name": "delegation",
+                        "name": "assignment",
                         "required": true,
                         "type": "string"
                     }
@@ -1578,7 +1578,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/Delegation"
+                            "$ref": "#\/definitions\/Assignment"
                         }
                     },
                     "400": {
@@ -1622,17 +1622,17 @@
                 ]
             }
         },
-        "\/delegations": {
+        "\/assignments": {
             "post": {
                 "tags": [
-                    "Delegation"
+                    "Assignment"
                 ],
-                "summary": "Create one Delegation resource.",
+                "summary": "Create one Assignment resource.",
                 "externalDocs": {
                     "description": "Keyclic API documentation.",
                     "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
                 },
-                "operationId": "postDelegation",
+                "operationId": "postAssignment",
                 "consumes": [
                     "application\/json;charset=UTF-8"
                 ],
@@ -1656,14 +1656,14 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "$ref": "#\/parameters\/DelegationData"
+                        "$ref": "#\/parameters\/AssignmentData"
                     }
                 ],
                 "responses": {
                     "201": {
                         "description": "Returned when the resource is created",
                         "schema": {
-                            "$ref": "#\/definitions\/Delegation"
+                            "$ref": "#\/definitions\/Assignment"
                         }
                     },
                     "400": {
@@ -1701,17 +1701,17 @@
                 ]
             }
         },
-        "\/delegations\/{delegation}\/workflow": {
+        "\/assignments\/{assignment}\/workflow": {
             "post": {
                 "tags": [
-                    "Delegation"
+                    "Assignment"
                 ],
                 "summary": "Create one Workflow resource.",
                 "externalDocs": {
                     "description": "Keyclic API documentation.",
                     "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
                 },
-                "operationId": "postWorkflowByDelegation",
+                "operationId": "postWorkflowByAssignment",
                 "consumes": [
                     "application\/json;charset=UTF-8"
                 ],
@@ -1741,7 +1741,7 @@
                         "description": "The identifier of the resource.",
                         "format": "uuid",
                         "in": "path",
-                        "name": "delegation",
+                        "name": "assignment",
                         "required": true,
                         "type": "string"
                     }
@@ -1750,7 +1750,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/Delegation"
+                            "$ref": "#\/definitions\/Assignment"
                         }
                     },
                     "400": {
@@ -8085,120 +8085,6 @@
                 ]
             }
         },
-        "\/organizations\/{organization}\/delegations": {
-            "get": {
-                "tags": [
-                    "Organization"
-                ],
-                "summary": "Retrieve all Delegation resources.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "cgetDelegationsByOrganization",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-date-time"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-platform"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "$ref": "#\/parameters\/after"
-                    },
-                    {
-                        "$ref": "#\/parameters\/before"
-                    },
-                    {
-                        "$ref": "#\/parameters\/order"
-                    },
-                    {
-                        "in": "query",
-                        "name": "state",
-                        "pattern": ".*",
-                        "type": "string"
-                    },
-                    {
-                        "$ref": "#\/parameters\/states__"
-                    },
-                    {
-                        "$ref": "#\/parameters\/page"
-                    },
-                    {
-                        "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "description": "The identifier of the resource.",
-                        "format": "uuid",
-                        "in": "path",
-                        "name": "organization",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/DelegationPagination"
-                        }
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "404": {
-                        "description": "Returned when the resource is not found",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            }
-        },
         "\/organizations\/{organization}\/external-services": {
             "get": {
                 "tags": [
@@ -12342,17 +12228,17 @@
                 ]
             }
         },
-        "\/reports\/{report}\/delegations": {
+        "\/reports\/{report}\/assignments": {
             "get": {
                 "tags": [
                     "Report"
                 ],
-                "summary": "Retrieve all Delegation resources.",
+                "summary": "Retrieve all Assignment resources.",
                 "externalDocs": {
                     "description": "Keyclic API documentation.",
                     "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
                 },
-                "operationId": "cgetDelegationsByReport",
+                "operationId": "cgetAssignmentsByReport",
                 "consumes": [
                     "application\/json;charset=UTF-8"
                 ],
@@ -12412,7 +12298,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/DelegationPagination"
+                            "$ref": "#\/definitions\/AssignmentPagination"
                         }
                     },
                     "400": {
@@ -15268,6 +15154,268 @@
                     "https"
                 ]
             }
+        },
+        "\/delegations\/{assignment}": {
+            "get": {
+                "tags": [
+                    "Assignment"
+                ],
+                "summary": "Retrieve one Assignment resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "getAssignment",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "assignment",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Assignment"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/delegations": {
+            "post": {
+                "tags": [
+                    "Assignment"
+                ],
+                "summary": "Create one Assignment resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "postAssignment",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/AssignmentData"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Returned when the resource is created",
+                        "schema": {
+                            "$ref": "#\/definitions\/Assignment"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/delegations\/{assignment}\/workflow": {
+            "post": {
+                "tags": [
+                    "Assignment"
+                ],
+                "summary": "Create one Workflow resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "postWorkflowByAssignment",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/WorkflowData"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "assignment",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Assignment"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
         }
     },
     "definitions": {
@@ -15765,6 +15913,281 @@
             "required": [
                 "member"
             ]
+        },
+        "Assignment": {
+            "type": "object",
+            "properties": {
+                "_embedded": {
+                    "type": "object",
+                    "properties": {
+                        "service": {
+                            "$ref": "#\/definitions\/InternalService"
+                        },
+                        "workflow": {
+                            "type": "object",
+                            "properties": {
+                                "metrics": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#\/definitions\/Metric"
+                                    }
+                                },
+                                "state": {
+                                    "$ref": "#\/definitions\/WorkflowState"
+                                },
+                                "transitions": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#\/definitions\/WorkflowTransition"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "_links": {
+                    "type": "object",
+                    "properties": {
+                        "createdBy": {
+                            "$ref": "#\/definitions\/AssignmentLinksCreatedBy"
+                        },
+                        "report": {
+                            "$ref": "#\/definitions\/AssignmentLinksReport"
+                        },
+                        "self": {
+                            "$ref": "#\/definitions\/AssignmentLinksSelf"
+                        },
+                        "service": {
+                            "$ref": "#\/definitions\/AssignmentLinksService"
+                        }
+                    }
+                },
+                "createdAt": {
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "description": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "id": {
+                    "format": "uuid",
+                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "type": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            }
+        },
+        "AssignmentCollection": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "$ref": "#\/definitions\/Assignment"
+                    }
+                }
+            }
+        },
+        "AssignmentData": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "report": {
+                    "type": "string"
+                },
+                "service": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "report",
+                "service"
+            ]
+        },
+        "AssignmentLinksCreatedBy": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the createdBy associated to the given assignment.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/AssignmentLinksCreatedByIriTemplate"
+                }
+            }
+        },
+        "AssignmentLinksCreatedByIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "person": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "AssignmentLinksReport": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the report associated to the given assignment.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/AssignmentLinksReportIriTemplate"
+                }
+            }
+        },
+        "AssignmentLinksReportIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "report": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "AssignmentLinksSelf": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the self associated to the given assignment.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/AssignmentLinksSelfIriTemplate"
+                }
+            }
+        },
+        "AssignmentLinksSelfIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "assignment": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "AssignmentLinksService": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the service associated to the given assignment.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/AssignmentLinksServiceIriTemplate"
+                }
+            }
+        },
+        "AssignmentLinksServiceIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "service": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "AssignmentPagination": {
+            "allOf": [
+                {
+                    "$ref": "#\/definitions\/Pagination"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "_embedded": {
+                            "$ref": "#\/definitions\/AssignmentCollection"
+                        }
+                    }
+                }
+            ]
+        },
+        "AssignmentTypeWorkflow": {
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "description": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "end": {
+                    "$ref": "#\/definitions\/WorkflowState"
+                },
+                "id": {
+                    "format": "uuid",
+                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "name": {
+                    "format": "string",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "start": {
+                    "$ref": "#\/definitions\/WorkflowState"
+                },
+                "states": {
+                    "items": {
+                        "$ref": "#\/definitions\/WorkflowState"
+                    },
+                    "type": "array"
+                },
+                "transitions": {
+                    "items": {
+                        "$ref": "#\/definitions\/WorkflowTransition"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            }
         },
         "Bookmark": {
             "type": "object",
@@ -16530,13 +16953,13 @@
                         }
                     }
                 },
+                "assignmentType": {
+                    "$ref": "#\/definitions\/ConfigurationAssignmentType"
+                },
                 "createdAt": {
                     "format": "date-time",
                     "readOnly": true,
                     "type": "string"
-                },
-                "delegationType": {
-                    "$ref": "#\/definitions\/ConfigurationDelegationType"
                 },
                 "description": {
                     "format": "string",
@@ -16573,7 +16996,7 @@
                 }
             }
         },
-        "ConfigurationDelegationType": {
+        "ConfigurationAssignmentType": {
             "type": "object",
             "properties": {
                 "id": {
@@ -16587,7 +17010,7 @@
                     "type": "string"
                 },
                 "workflow": {
-                    "$ref": "#\/definitions\/DelegationTypeWorkflow"
+                    "$ref": "#\/definitions\/AssignmentTypeWorkflow"
                 }
             }
         },
@@ -16805,281 +17228,6 @@
                     }
                 }
             ]
-        },
-        "Delegation": {
-            "type": "object",
-            "properties": {
-                "_embedded": {
-                    "type": "object",
-                    "properties": {
-                        "service": {
-                            "$ref": "#\/definitions\/InternalService"
-                        },
-                        "workflow": {
-                            "type": "object",
-                            "properties": {
-                                "metrics": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#\/definitions\/Metric"
-                                    }
-                                },
-                                "state": {
-                                    "$ref": "#\/definitions\/WorkflowState"
-                                },
-                                "transitions": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#\/definitions\/WorkflowTransition"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "_links": {
-                    "type": "object",
-                    "properties": {
-                        "createdBy": {
-                            "$ref": "#\/definitions\/DelegationLinksCreatedBy"
-                        },
-                        "report": {
-                            "$ref": "#\/definitions\/DelegationLinksReport"
-                        },
-                        "self": {
-                            "$ref": "#\/definitions\/DelegationLinksSelf"
-                        },
-                        "service": {
-                            "$ref": "#\/definitions\/DelegationLinksService"
-                        }
-                    }
-                },
-                "createdAt": {
-                    "format": "date-time",
-                    "readOnly": true,
-                    "type": "string"
-                },
-                "description": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "id": {
-                    "format": "uuid",
-                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
-                    "readOnly": true,
-                    "type": "string"
-                },
-                "type": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "updatedAt": {
-                    "format": "date-time",
-                    "readOnly": true,
-                    "type": "string"
-                }
-            }
-        },
-        "DelegationCollection": {
-            "type": "object",
-            "properties": {
-                "items": {
-                    "type": "array",
-                    "default": [],
-                    "items": {
-                        "$ref": "#\/definitions\/Delegation"
-                    }
-                }
-            }
-        },
-        "DelegationData": {
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "report": {
-                    "type": "string"
-                },
-                "service": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "report",
-                "service"
-            ]
-        },
-        "DelegationLinksCreatedBy": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the createdBy associated to the given delegation.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/DelegationLinksCreatedByIriTemplate"
-                }
-            }
-        },
-        "DelegationLinksCreatedByIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "person": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "DelegationLinksReport": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the report associated to the given delegation.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/DelegationLinksReportIriTemplate"
-                }
-            }
-        },
-        "DelegationLinksReportIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "report": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "DelegationLinksSelf": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the self associated to the given delegation.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/DelegationLinksSelfIriTemplate"
-                }
-            }
-        },
-        "DelegationLinksSelfIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "delegation": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "DelegationLinksService": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the service associated to the given delegation.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/DelegationLinksServiceIriTemplate"
-                }
-            }
-        },
-        "DelegationLinksServiceIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "service": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "DelegationPagination": {
-            "allOf": [
-                {
-                    "$ref": "#\/definitions\/Pagination"
-                },
-                {
-                    "type": "object",
-                    "properties": {
-                        "_embedded": {
-                            "$ref": "#\/definitions\/DelegationCollection"
-                        }
-                    }
-                }
-            ]
-        },
-        "DelegationTypeWorkflow": {
-            "type": "object",
-            "properties": {
-                "createdAt": {
-                    "format": "date-time",
-                    "readOnly": true,
-                    "type": "string"
-                },
-                "description": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "end": {
-                    "$ref": "#\/definitions\/WorkflowState"
-                },
-                "id": {
-                    "format": "uuid",
-                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
-                    "readOnly": true,
-                    "type": "string"
-                },
-                "name": {
-                    "format": "string",
-                    "maxLength": 255,
-                    "type": "string"
-                },
-                "start": {
-                    "$ref": "#\/definitions\/WorkflowState"
-                },
-                "states": {
-                    "items": {
-                        "$ref": "#\/definitions\/WorkflowState"
-                    },
-                    "type": "array"
-                },
-                "transitions": {
-                    "items": {
-                        "$ref": "#\/definitions\/WorkflowTransition"
-                    },
-                    "type": "array"
-                },
-                "type": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "updatedAt": {
-                    "format": "date-time",
-                    "readOnly": true,
-                    "type": "string"
-                }
-            }
         },
         "Device": {
             "type": "object",
@@ -21639,7 +21787,7 @@
                     "type": "object",
                     "properties": {
                         "assignment": {
-                            "$ref": "#\/definitions\/Delegation"
+                            "$ref": "#\/definitions\/Assignment"
                         },
                         "category": {
                             "$ref": "#\/definitions\/Category"
@@ -23811,11 +23959,11 @@
             },
             "required": true
         },
-        "DelegationData": {
-            "name": "DelegationData",
+        "AssignmentData": {
+            "name": "AssignmentData",
             "in": "body",
             "schema": {
-                "$ref": "#\/definitions\/DelegationData"
+                "$ref": "#\/definitions\/AssignmentData"
             },
             "required": true
         },
