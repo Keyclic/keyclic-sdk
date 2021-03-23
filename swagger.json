@@ -9,7 +9,7 @@
             "url": "https:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.10.1"
+        "version": "2.11.0"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -18161,6 +18161,16 @@
                 "updatedAt": {
                     "format": "date-time",
                     "readOnly": true,
+                    "type": "string"
+                },
+                "visibility": {
+                    "enum": [
+                        "VISIBILITY_PRIVATE",
+                        "VISIBILITY_PUBLIC",
+                        "VISIBILITY_RESTRICTED",
+                        "VISIBILITY_SHARED"
+                    ],
+                    "format": "string",
                     "type": "string"
                 }
             },
