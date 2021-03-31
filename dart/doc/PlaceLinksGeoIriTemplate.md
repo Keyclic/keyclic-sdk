@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.FileCollection
+# keyclic_sdk_api.model.PlaceLinksGeoIriTemplate
 
 ## Load the model package
 ```dart
@@ -8,7 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**List&lt;File_&gt;**](File_.md) |  | [optional] [default to []]
+**mapping** | [**BookmarkLinksPlaceIriTemplateMapping**](BookmarkLinksPlaceIriTemplateMapping.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

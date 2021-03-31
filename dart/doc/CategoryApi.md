@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **cgetCategories**
-> CategoryPagination cgetCategories(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoPoint, geoCoordinates, order, organization, organizations[], query, page, limit)
+> CategoryPagination cgetCategories(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoPoint, geoCoordinates, leaf, order, organization, organizations[], query, page, limit)
 
 Retrieve all Category resources.
 
@@ -41,6 +41,7 @@ var after = 2013-10-20T19:20:30+01:00; // DateTime |
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoPoint = geoPoint_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
 var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var leaf = leaf_example; // String | 
 var order = order_example; // String | 
 var organization = organization_example; // String | 
 var organizations[] = []; // List<String> | 
@@ -49,7 +50,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetCategories(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoPoint, geoCoordinates, order, organization, organizations[], query, page, limit);
+    var result = api_instance.cgetCategories(xKeyclicApp, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoPoint, geoCoordinates, leaf, order, organization, organizations[], query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling CategoryApi->cgetCategories: $e\n");
@@ -71,6 +72,7 @@ Name | Type | Description  | Notes
  **before** | **DateTime**|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **leaf** | **String**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
  **organization** | **String**|  | [optional] 
  **organizations[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 

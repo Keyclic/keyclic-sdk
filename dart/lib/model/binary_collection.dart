@@ -1,21 +1,21 @@
 part of keyclic_sdk_api.api;
 
-class FileCollection {
-  FileCollection({
+class BinaryCollection {
+  BinaryCollection({
     this.items,
   });
 
-  factory FileCollection.fromJson(Map<String, dynamic> json) {
+  factory BinaryCollection.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return null;
     }
 
-    return FileCollection(
-      items: File_.listFromJson(json['items']),
+    return BinaryCollection(
+      items: Binary.listFromJson(json['items']),
     );
   }
 
-  List<File_> items;
+  List<Binary> items;
 
   @override
   bool operator ==(dynamic other) {
@@ -24,7 +24,7 @@ class FileCollection {
       return true;
     }
 
-    return other is FileCollection &&
+    return other is BinaryCollection &&
         runtimeType == other.runtimeType &&
         DeepCollectionEquality.unordered().equals(items, other.items);
   }
@@ -36,25 +36,25 @@ class FileCollection {
 
     if (items is List && items.isNotEmpty) {
       hashCode ^= items
-          .map((File_ element) => element.hashCode)
+          .map((Binary element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
     return hashCode;
   }
 
-  static List<FileCollection> listFromJson(List<dynamic> json) {
+  static List<BinaryCollection> listFromJson(List<dynamic> json) {
     return json
-            ?.map((dynamic value) => FileCollection.fromJson(value))
+            ?.map((dynamic value) => BinaryCollection.fromJson(value))
             ?.toList() ??
-        <FileCollection>[];
+        <BinaryCollection>[];
   }
 
-  static Map<String, FileCollection> mapFromJson(Map<String, dynamic> json) {
-    return json?.map<String, FileCollection>((String key, dynamic value) {
-          return MapEntry(key, FileCollection.fromJson(value));
+  static Map<String, BinaryCollection> mapFromJson(Map<String, dynamic> json) {
+    return json?.map<String, BinaryCollection>((String key, dynamic value) {
+          return MapEntry(key, BinaryCollection.fromJson(value));
         }) ??
-        <String, FileCollection>{};
+        <String, BinaryCollection>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -65,6 +65,6 @@ class FileCollection {
 
   @override
   String toString() {
-    return 'FileCollection[items=$items, ]';
+    return 'BinaryCollection[items=$items, ]';
   }
 }

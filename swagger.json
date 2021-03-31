@@ -9,7 +9,7 @@
             "url": "https:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.11.0"
+        "version": "2.12.5"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -773,6 +773,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/geo_coordinates"
+                    },
+                    {
+                        "$ref": "#\/parameters\/leaf"
                     },
                     {
                         "$ref": "#\/parameters\/order"
@@ -8014,6 +8017,9 @@
                         "$ref": "#\/parameters\/geo_coordinates"
                     },
                     {
+                        "$ref": "#\/parameters\/leaf"
+                    },
+                    {
                         "$ref": "#\/parameters\/order"
                     },
                     {
@@ -8603,6 +8609,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/geo_coordinates"
+                    },
+                    {
+                        "$ref": "#\/parameters\/leaf"
                     },
                     {
                         "$ref": "#\/parameters\/order"
@@ -9894,7 +9903,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/FilePagination"
+                            "$ref": "#\/definitions\/BinaryPagination"
                         }
                     },
                     "400": {
@@ -10960,6 +10969,9 @@
                         "$ref": "#\/parameters\/geo_coordinates"
                     },
                     {
+                        "$ref": "#\/parameters\/leaf"
+                    },
+                    {
                         "$ref": "#\/parameters\/order"
                     },
                     {
@@ -11586,6 +11598,96 @@
                         "description": "",
                         "schema": {
                             "$ref": "#\/definitions\/Place"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "\/places\/{place}\/geo": {
+            "get": {
+                "tags": [
+                    "Place"
+                ],
+                "summary": "Retrieve one Geo resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "getGeoByPlace",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "place",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/GeoShape"
                         }
                     },
                     "400": {
@@ -16189,6 +16291,50 @@
                 }
             }
         },
+        "Binary": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "contentType": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "name": {
+                    "format": "string",
+                    "type": "string"
+                }
+            }
+        },
+        "BinaryCollection": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "$ref": "#\/definitions\/Binary"
+                    }
+                }
+            }
+        },
+        "BinaryPagination": {
+            "allOf": [
+                {
+                    "$ref": "#\/definitions\/Pagination"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "_embedded": {
+                            "$ref": "#\/definitions\/BinaryCollection"
+                        }
+                    }
+                }
+            ]
+        },
         "Bookmark": {
             "type": "object",
             "properties": {
@@ -17411,10 +17557,6 @@
                     "readOnly": true,
                     "type": "string"
                 },
-                "name": {
-                    "format": "string",
-                    "type": "string"
-                },
                 "permission": {
                     "$ref": "#\/definitions\/DocumentPermission"
                 },
@@ -17487,10 +17629,6 @@
         "DocumentFile": {
             "type": "object",
             "properties": {
-                "content": {
-                    "format": "string",
-                    "type": "string"
-                },
                 "contentType": {
                     "enum": [
                         "text\/csv",
@@ -18539,18 +18677,6 @@
                 "transition"
             ]
         },
-        "FileCollection": {
-            "type": "object",
-            "properties": {
-                "items": {
-                    "type": "array",
-                    "default": [],
-                    "items": {
-                        "$ref": "#\/definitions\/File_"
-                    }
-                }
-            }
-        },
         "FileData": {
             "type": "object",
             "properties": {
@@ -18570,48 +18696,33 @@
                 "name"
             ]
         },
-        "FilePagination": {
-            "allOf": [
-                {
-                    "$ref": "#\/definitions\/Pagination"
-                },
-                {
-                    "type": "object",
-                    "properties": {
-                        "_embedded": {
-                            "$ref": "#\/definitions\/FileCollection"
-                        }
-                    }
-                }
-            ]
-        },
-        "File_": {
+        "GeoShape": {
             "type": "object",
             "properties": {
-                "content": {
-                    "format": "string",
-                    "type": "string"
+                "centroid": {
+                    "type": "object",
+                    "properties": {
+                        "latitude": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "longitude": {
+                            "type": "number",
+                            "format": "float"
+                        }
+                    },
+                    "required": [
+                        "latitude",
+                        "longitude"
+                    ]
                 },
-                "contentType": {
-                    "enum": [
-                        "text\/csv",
-                        "application\/msword",
-                        "application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
-                        "image\/jpeg",
-                        "image\/jpg",
-                        "application\/pdf",
-                        "image\/png",
-                        "text\/plain",
-                        "application\/vnd.ms-excel",
-                        "application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                        "application\/zip"
-                    ],
-                    "format": "string",
-                    "type": "string"
+                "elevation": {
+                    "format": "int32",
+                    "type": "integer"
                 },
-                "name": {
-                    "format": "string",
-                    "type": "string"
+                "polygon": {
+                    "$ref": "#\/definitions\/Polygon",
+                    "required": false
                 }
             }
         },
@@ -21043,6 +21154,9 @@
                 "_links": {
                     "type": "object",
                     "properties": {
+                        "geo": {
+                            "$ref": "#\/definitions\/PlaceLinksGeo"
+                        },
                         "organization": {
                             "$ref": "#\/definitions\/PlaceLinksOrganization"
                         },
@@ -21146,6 +21260,32 @@
                 },
                 "polygon": {
                     "$ref": "#\/definitions\/Polygon"
+                }
+            }
+        },
+        "PlaceLinksGeo": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the geo associated to the given place.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/PlaceLinksGeoIriTemplate"
+                }
+            }
+        },
+        "PlaceLinksGeoIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "place": {
+                            "type": "string"
+                        }
+                    }
                 }
             }
         },
@@ -23922,6 +24062,12 @@
             "name": "business_activities[]",
             "pattern": ".*",
             "type": "array"
+        },
+        "leaf": {
+            "in": "query",
+            "name": "leaf",
+            "pattern": ".*",
+            "type": "string"
         },
         "query": {
             "in": "query",

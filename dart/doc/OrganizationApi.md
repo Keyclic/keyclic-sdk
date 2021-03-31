@@ -29,7 +29,7 @@ Method | HTTP request | Description
 
 
 # **cgetCategoriesByOrganization**
-> CategoryPagination cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoPoint, geoCoordinates, order, organizations[], query, page, limit)
+> CategoryPagination cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoPoint, geoCoordinates, leaf, order, organizations[], query, page, limit)
 
 Retrieve all Category resources.
 
@@ -54,6 +54,7 @@ var after = 2013-10-20T19:20:30+01:00; // DateTime |
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var geoPoint = geoPoint_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
 var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var leaf = leaf_example; // String | 
 var order = order_example; // String | 
 var organizations[] = []; // List<String> | 
 var query = query_example; // String | 
@@ -61,7 +62,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoPoint, geoCoordinates, order, organizations[], query, page, limit);
+    var result = api_instance.cgetCategoriesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoPoint, geoCoordinates, leaf, order, organizations[], query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetCategoriesByOrganization: $e\n");
@@ -84,6 +85,7 @@ Name | Type | Description  | Notes
  **before** | **DateTime**|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **leaf** | **String**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
  **organizations[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **query** | **String**|  | [optional] 
@@ -471,7 +473,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetPlacesByOrganization**
-> PlacePagination cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, organizations[], parent, parents[], query, page, limit)
+> PlacePagination cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, leaf, order, organizations[], parent, parents[], query, page, limit)
 
 Retrieve all Place resources.
 
@@ -498,6 +500,7 @@ var geoElevation = geoElevation_example; // String |
 var geoHash[] = []; // List<String> | 
 var geoPoint = geoPoint_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
 var geoCoordinates = geoCoordinates_example; // String | One latitude and one longitude serialized and separated by a plus or a minus sign.
+var leaf = leaf_example; // String | 
 var order = order_example; // String | 
 var organizations[] = []; // List<String> | 
 var parent = parent_example; // String | 
@@ -507,7 +510,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, order, organizations[], parent, parents[], query, page, limit);
+    var result = api_instance.cgetPlacesByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, businessActivity, businessActivities[], after, before, geoElevation, geoHash[], geoPoint, geoCoordinates, leaf, order, organizations[], parent, parents[], query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->cgetPlacesByOrganization: $e\n");
@@ -532,6 +535,7 @@ Name | Type | Description  | Notes
  **geoHash[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **geoPoint** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
  **geoCoordinates** | **String**| One latitude and one longitude serialized and separated by a plus or a minus sign. | [optional] 
+ **leaf** | **String**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
  **organizations[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **parent** | **String**|  | [optional] 

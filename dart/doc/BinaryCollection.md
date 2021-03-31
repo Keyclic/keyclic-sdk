@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.File_
+# keyclic_sdk_api.model.BinaryCollection
 
 ## Load the model package
 ```dart
@@ -8,9 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**content** | **String** |  | [optional] [default to null]
-**contentType** | **String** |  | [optional] [default to null]
-**name** | **String** |  | [optional] [default to null]
+**items** | [**List&lt;Binary&gt;**](Binary.md) |  | [optional] [default to []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

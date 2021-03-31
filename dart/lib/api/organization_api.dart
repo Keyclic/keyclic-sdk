@@ -22,6 +22,7 @@ class OrganizationApi {
     DateTime before,
     String geoPoint,
     String geoCoordinates,
+    String leaf,
     String order,
     List<String> organizations__,
     String query,
@@ -61,6 +62,7 @@ class OrganizationApi {
       if (geoCoordinates != null)
         ..._convertParametersForCollectionFormat(
             "geo_coordinates", geoCoordinates),
+      if (leaf != null) ..._convertParametersForCollectionFormat("leaf", leaf),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
       if (organizations__ != null)
@@ -630,6 +632,7 @@ class OrganizationApi {
     List<String> geoHash__,
     String geoPoint,
     String geoCoordinates,
+    String leaf,
     String order,
     List<String> organizations__,
     String parent,
@@ -676,6 +679,7 @@ class OrganizationApi {
       if (geoCoordinates != null)
         ..._convertParametersForCollectionFormat(
             "geo_coordinates", geoCoordinates),
+      if (leaf != null) ..._convertParametersForCollectionFormat("leaf", leaf),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
       if (organizations__ != null)

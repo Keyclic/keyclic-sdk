@@ -21,6 +21,7 @@ class CategoryApi {
     DateTime before,
     String geoPoint,
     String geoCoordinates,
+    String leaf,
     String order,
     String organization,
     List<String> organizations__,
@@ -55,6 +56,7 @@ class CategoryApi {
       if (geoCoordinates != null)
         ..._convertParametersForCollectionFormat(
             "geo_coordinates", geoCoordinates),
+      if (leaf != null) ..._convertParametersForCollectionFormat("leaf", leaf),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
       if (organization != null)
