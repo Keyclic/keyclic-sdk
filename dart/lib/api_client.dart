@@ -513,6 +513,10 @@ class ApiClient {
           return FeedbackWorkflowTransitionData.fromJson(value);
         case 'FileData':
           return FileData.fromJson(value);
+        case 'GeoShape':
+          return GeoShape.fromJson(value);
+        case 'GeoShapeCentroid':
+          return GeoShapeCentroid.fromJson(value);
         case 'ImageData':
           return ImageData.fromJson(value);
         case 'InternalService':
@@ -807,6 +811,10 @@ class ApiClient {
           return PlaceGeoShape.fromJson(value);
         case 'PlaceLinks':
           return PlaceLinks.fromJson(value);
+        case 'PlaceLinksGeo':
+          return PlaceLinksGeo.fromJson(value);
+        case 'PlaceLinksGeoIriTemplate':
+          return PlaceLinksGeoIriTemplate.fromJson(value);
         case 'PlaceLinksOrganization':
           return PlaceLinksOrganization.fromJson(value);
         case 'PlaceLinksOrganizationIriTemplate':

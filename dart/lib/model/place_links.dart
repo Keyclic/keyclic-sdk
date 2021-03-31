@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class PlaceLinks {
   PlaceLinks({
+    this.geo,
     this.organization,
     this.self,
   });
@@ -12,10 +13,13 @@ class PlaceLinks {
     }
 
     return PlaceLinks(
+      geo: PlaceLinksGeo.fromJson(json['geo']),
       organization: PlaceLinksOrganization.fromJson(json['organization']),
       self: PlaceLinksSelf.fromJson(json['self']),
     );
   }
+
+  PlaceLinksGeo geo;
 
   PlaceLinksOrganization organization;
 
@@ -30,6 +34,7 @@ class PlaceLinks {
 
     return other is PlaceLinks &&
         runtimeType == other.runtimeType &&
+        geo == other.geo &&
         organization == other.organization &&
         self == other.self;
   }
@@ -39,6 +44,7 @@ class PlaceLinks {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= geo?.hashCode ?? 0;
     hashCode ^= organization?.hashCode ?? 0;
     hashCode ^= self?.hashCode ?? 0;
 
@@ -59,6 +65,7 @@ class PlaceLinks {
 
   Map<String, dynamic> toJson() {
     return {
+      if (geo != null) 'geo': geo.toJson(),
       if (organization != null) 'organization': organization.toJson(),
       if (self != null) 'self': self.toJson(),
     };
@@ -66,6 +73,6 @@ class PlaceLinks {
 
   @override
   String toString() {
-    return 'PlaceLinks[organization=$organization, self=$self, ]';
+    return 'PlaceLinks[geo=$geo, organization=$organization, self=$self, ]';
   }
 }
