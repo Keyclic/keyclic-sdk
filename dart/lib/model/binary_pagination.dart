@@ -1,7 +1,7 @@
 part of keyclic_sdk_api.api;
 
-class FilePagination extends Pagination {
-  FilePagination({
+class BinaryPagination extends Pagination {
+  BinaryPagination({
     this.limit,
     this.page,
     this.pages,
@@ -10,18 +10,18 @@ class FilePagination extends Pagination {
     this.embedded,
   });
 
-  factory FilePagination.fromJson(Map<String, dynamic> json) {
+  factory BinaryPagination.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return null;
     }
 
-    return FilePagination(
+    return BinaryPagination(
       limit: json['limit'],
       page: json['page'],
       pages: json['pages'],
       total: json['total'],
       links: PaginationLinks.fromJson(json['_links']),
-      embedded: FileCollection.fromJson(json['_embedded']),
+      embedded: BinaryCollection.fromJson(json['_embedded']),
     );
   }
 
@@ -35,7 +35,7 @@ class FilePagination extends Pagination {
 
   PaginationLinks links;
 
-  FileCollection embedded;
+  BinaryCollection embedded;
 
   @override
   bool operator ==(dynamic other) {
@@ -44,7 +44,7 @@ class FilePagination extends Pagination {
       return true;
     }
 
-    return other is FilePagination &&
+    return other is BinaryPagination &&
         runtimeType == other.runtimeType &&
         limit == other.limit &&
         page == other.page &&
@@ -69,18 +69,18 @@ class FilePagination extends Pagination {
     return hashCode;
   }
 
-  static List<FilePagination> listFromJson(List<dynamic> json) {
+  static List<BinaryPagination> listFromJson(List<dynamic> json) {
     return json
-            ?.map((dynamic value) => FilePagination.fromJson(value))
+            ?.map((dynamic value) => BinaryPagination.fromJson(value))
             ?.toList() ??
-        <FilePagination>[];
+        <BinaryPagination>[];
   }
 
-  static Map<String, FilePagination> mapFromJson(Map<String, dynamic> json) {
-    return json?.map<String, FilePagination>((String key, dynamic value) {
-          return MapEntry(key, FilePagination.fromJson(value));
+  static Map<String, BinaryPagination> mapFromJson(Map<String, dynamic> json) {
+    return json?.map<String, BinaryPagination>((String key, dynamic value) {
+          return MapEntry(key, BinaryPagination.fromJson(value));
         }) ??
-        <String, FilePagination>{};
+        <String, BinaryPagination>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -96,6 +96,6 @@ class FilePagination extends Pagination {
 
   @override
   String toString() {
-    return 'FilePagination[limit=$limit, page=$page, pages=$pages, total=$total, links=$links, embedded=$embedded, ]';
+    return 'BinaryPagination[limit=$limit, page=$page, pages=$pages, total=$total, links=$links, embedded=$embedded, ]';
   }
 }

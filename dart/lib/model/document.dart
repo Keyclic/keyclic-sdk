@@ -7,7 +7,6 @@ class Document {
     this.createdAt,
     this.file,
     this.id,
-    this.name,
     this.permission,
     this.text,
     this.type,
@@ -37,7 +36,6 @@ class Document {
       createdAt: createdAt,
       file: DocumentFile.fromJson(json['file']),
       id: json['id'],
-      name: json['name'],
       permission: DocumentPermission.fromJson(json['permission']),
       text: json['text'],
       type: json['type'],
@@ -54,8 +52,6 @@ class Document {
   DocumentFile file;
 
   String id;
-
-  String name;
 
   DocumentPermission permission;
 
@@ -79,7 +75,6 @@ class Document {
         createdAt == other.createdAt &&
         file == other.file &&
         id == other.id &&
-        name == other.name &&
         permission == other.permission &&
         text == other.text &&
         type == other.type &&
@@ -96,7 +91,6 @@ class Document {
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= file?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
-    hashCode ^= name?.hashCode ?? 0;
     hashCode ^= permission?.hashCode ?? 0;
     hashCode ^= text?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
@@ -124,7 +118,6 @@ class Document {
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (file != null) 'file': file.toJson(),
       if (id != null) 'id': id,
-      if (name != null) 'name': name,
       if (permission != null) 'permission': permission.toJson(),
       if (text != null) 'text': text,
       if (type != null) 'type': type,
@@ -134,6 +127,6 @@ class Document {
 
   @override
   String toString() {
-    return 'Document[embedded=$embedded, links=$links, createdAt=$createdAt, file=$file, id=$id, name=$name, permission=$permission, text=$text, type=$type, updatedAt=$updatedAt, ]';
+    return 'Document[embedded=$embedded, links=$links, createdAt=$createdAt, file=$file, id=$id, permission=$permission, text=$text, type=$type, updatedAt=$updatedAt, ]';
   }
 }

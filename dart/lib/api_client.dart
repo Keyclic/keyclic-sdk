@@ -215,6 +215,10 @@ class ApiClient {
           return AssignmentLinksServiceIriTemplateMapping.fromJson(value);
         case 'AssignmentTypeWorkflow':
           return AssignmentTypeWorkflow.fromJson(value);
+        case 'Binary':
+          return Binary.fromJson(value);
+        case 'BinaryCollection':
+          return BinaryCollection.fromJson(value);
         case 'Bookmark':
           return Bookmark.fromJson(value);
         case 'BookmarkCollection':
@@ -507,12 +511,8 @@ class ApiClient {
           return FeedbackLinksTrackingIriTemplate.fromJson(value);
         case 'FeedbackWorkflowTransitionData':
           return FeedbackWorkflowTransitionData.fromJson(value);
-        case 'FileCollection':
-          return FileCollection.fromJson(value);
         case 'FileData':
           return FileData.fromJson(value);
-        case 'File_':
-          return File_.fromJson(value);
         case 'ImageData':
           return ImageData.fromJson(value);
         case 'InternalService':
@@ -1105,6 +1105,8 @@ class ApiClient {
           return ArticlePagination.fromJson(value);
         case 'AssignmentPagination':
           return AssignmentPagination.fromJson(value);
+        case 'BinaryPagination':
+          return BinaryPagination.fromJson(value);
         case 'BookmarkPagination':
           return BookmarkPagination.fromJson(value);
         case 'BusinessActivityPagination':
@@ -1121,8 +1123,6 @@ class ApiClient {
           return FeedPagination.fromJson(value);
         case 'FeedbackPagination':
           return FeedbackPagination.fromJson(value);
-        case 'FilePagination':
-          return FilePagination.fromJson(value);
         case 'InternalServicePagination':
           return InternalServicePagination.fromJson(value);
         case 'MemberPagination':

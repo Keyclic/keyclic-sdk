@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.File_
+# keyclic_sdk_api.model.Binary
 
 ## Load the model package
 ```dart

@@ -20,7 +20,6 @@ class DocumentFileContentTypeEnum {
 
 class DocumentFile {
   DocumentFile({
-    this.content,
     this.contentType,
     this.name,
   });
@@ -31,13 +30,10 @@ class DocumentFile {
     }
 
     return DocumentFile(
-      content: json['content'],
       contentType: json['contentType'],
       name: json['name'],
     );
   }
-
-  String content;
 
   /// use DocumentFileContentTypeEnum
   String contentType;
@@ -53,7 +49,6 @@ class DocumentFile {
 
     return other is DocumentFile &&
         runtimeType == other.runtimeType &&
-        content == other.content &&
         contentType == other.contentType &&
         name == other.name;
   }
@@ -63,7 +58,6 @@ class DocumentFile {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= content?.hashCode ?? 0;
     hashCode ^= contentType?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
 
@@ -86,7 +80,6 @@ class DocumentFile {
 
   Map<String, dynamic> toJson() {
     return {
-      if (content != null) 'content': content,
       if (contentType != null) 'contentType': contentType,
       if (name != null) 'name': name,
     };
@@ -94,6 +87,6 @@ class DocumentFile {
 
   @override
   String toString() {
-    return 'DocumentFile[content=$content, contentType=$contentType, name=$name, ]';
+    return 'DocumentFile[contentType=$contentType, name=$name, ]';
   }
 }

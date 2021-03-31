@@ -1,4 +1,4 @@
-# keyclic_sdk_api.model.FilePagination
+# keyclic_sdk_api.model.BinaryPagination
 
 ## Load the model package
 ```dart
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **pages** | **int** |  | [optional] [default to null]
 **total** | **int** |  | [optional] [default to null]
 **links** | [**PaginationLinks**](PaginationLinks.md) |  | [optional] [default to null]
-**embedded** | [**FileCollection**](FileCollection.md) |  | [optional] [default to null]
+**embedded** | [**BinaryCollection**](BinaryCollection.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

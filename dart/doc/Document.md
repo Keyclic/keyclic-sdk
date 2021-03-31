@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **file** | [**DocumentFile**](DocumentFile.md) |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
-**name** | **String** |  | [optional] [default to null]
 **permission** | [**DocumentPermission**](DocumentPermission.md) |  | [optional] [default to null]
 **text** | **String** |  | [optional] [default to null]
 **type** | **String** |  | [optional] [default to null]

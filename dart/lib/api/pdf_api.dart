@@ -8,7 +8,7 @@ class PdfApi {
   /// Retrieve all Image resources.
   ///
   ///
-  Future<FilePagination> cpostImage(
+  Future<BinaryPagination> cpostImage(
     String xKeyclicApp,
     FileData fileData, {
     String acceptLanguage,
@@ -77,7 +77,7 @@ class PdfApi {
       return null;
     }
 
-    return apiClient.deserialize(response.body, 'FilePagination')
-        as FilePagination;
+    return apiClient.deserialize(response.body, 'BinaryPagination')
+        as BinaryPagination;
   }
 }
