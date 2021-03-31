@@ -9,7 +9,7 @@
             "url": "https:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.11.0"
+        "version": "2.11.1-dev.377e0916ec90"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -9894,7 +9894,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#\/definitions\/FilePagination"
+                            "$ref": "#\/definitions\/BinaryPagination"
                         }
                     },
                     "400": {
@@ -16189,6 +16189,50 @@
                 }
             }
         },
+        "Binary": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "contentType": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "name": {
+                    "format": "string",
+                    "type": "string"
+                }
+            }
+        },
+        "BinaryCollection": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "$ref": "#\/definitions\/Binary"
+                    }
+                }
+            }
+        },
+        "BinaryPagination": {
+            "allOf": [
+                {
+                    "$ref": "#\/definitions\/Pagination"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "_embedded": {
+                            "$ref": "#\/definitions\/BinaryCollection"
+                        }
+                    }
+                }
+            ]
+        },
         "Bookmark": {
             "type": "object",
             "properties": {
@@ -17411,10 +17455,6 @@
                     "readOnly": true,
                     "type": "string"
                 },
-                "name": {
-                    "format": "string",
-                    "type": "string"
-                },
                 "permission": {
                     "$ref": "#\/definitions\/DocumentPermission"
                 },
@@ -17487,10 +17527,6 @@
         "DocumentFile": {
             "type": "object",
             "properties": {
-                "content": {
-                    "format": "string",
-                    "type": "string"
-                },
                 "contentType": {
                     "enum": [
                         "text\/csv",
@@ -18539,18 +18575,6 @@
                 "transition"
             ]
         },
-        "FileCollection": {
-            "type": "object",
-            "properties": {
-                "items": {
-                    "type": "array",
-                    "default": [],
-                    "items": {
-                        "$ref": "#\/definitions\/File_"
-                    }
-                }
-            }
-        },
         "FileData": {
             "type": "object",
             "properties": {
@@ -18569,51 +18593,6 @@
                 "contentType",
                 "name"
             ]
-        },
-        "FilePagination": {
-            "allOf": [
-                {
-                    "$ref": "#\/definitions\/Pagination"
-                },
-                {
-                    "type": "object",
-                    "properties": {
-                        "_embedded": {
-                            "$ref": "#\/definitions\/FileCollection"
-                        }
-                    }
-                }
-            ]
-        },
-        "File_": {
-            "type": "object",
-            "properties": {
-                "content": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "contentType": {
-                    "enum": [
-                        "text\/csv",
-                        "application\/msword",
-                        "application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
-                        "image\/jpeg",
-                        "image\/jpg",
-                        "application\/pdf",
-                        "image\/png",
-                        "text\/plain",
-                        "application\/vnd.ms-excel",
-                        "application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                        "application\/zip"
-                    ],
-                    "format": "string",
-                    "type": "string"
-                },
-                "name": {
-                    "format": "string",
-                    "type": "string"
-                }
-            }
         },
         "ImageData": {
             "type": "object",
