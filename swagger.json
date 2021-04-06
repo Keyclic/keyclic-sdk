@@ -9,7 +9,7 @@
             "url": "https:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.12.5"
+        "version": "2.12.9"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -1683,99 +1683,6 @@
                     },
                     "403": {
                         "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            }
-        },
-        "\/assignments\/{assignment}\/workflow": {
-            "post": {
-                "tags": [
-                    "Assignment"
-                ],
-                "summary": "Create one Workflow resource.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "postWorkflowByAssignment",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-date-time"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-platform"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "$ref": "#\/parameters\/WorkflowData"
-                    },
-                    {
-                        "description": "The identifier of the resource.",
-                        "format": "uuid",
-                        "in": "path",
-                        "name": "assignment",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Assignment"
-                        }
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "404": {
-                        "description": "Returned when the resource is not found",
                         "schema": {
                             "$ref": "#\/definitions\/Error"
                         }
@@ -12373,15 +12280,6 @@
                         "$ref": "#\/parameters\/order"
                     },
                     {
-                        "in": "query",
-                        "name": "state",
-                        "pattern": ".*",
-                        "type": "string"
-                    },
-                    {
-                        "$ref": "#\/parameters\/states__"
-                    },
-                    {
                         "$ref": "#\/parameters\/page"
                     },
                     {
@@ -15257,96 +15155,6 @@
                 ]
             }
         },
-        "\/delegations\/{assignment}": {
-            "get": {
-                "tags": [
-                    "Assignment"
-                ],
-                "summary": "Retrieve one Assignment resource.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "getAssignment",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-date-time"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-platform"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "description": "The identifier of the resource.",
-                        "format": "uuid",
-                        "in": "path",
-                        "name": "assignment",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Assignment"
-                        }
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "404": {
-                        "description": "Returned when the resource is not found",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            }
-        },
         "\/delegations": {
             "post": {
                 "tags": [
@@ -15405,99 +15213,6 @@
                     },
                     "403": {
                         "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            }
-        },
-        "\/delegations\/{assignment}\/workflow": {
-            "post": {
-                "tags": [
-                    "Assignment"
-                ],
-                "summary": "Create one Workflow resource.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "postWorkflowByAssignment",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-date-time"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-platform"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "$ref": "#\/parameters\/WorkflowData"
-                    },
-                    {
-                        "description": "The identifier of the resource.",
-                        "format": "uuid",
-                        "in": "path",
-                        "name": "assignment",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Assignment"
-                        }
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "404": {
-                        "description": "Returned when the resource is not found",
                         "schema": {
                             "$ref": "#\/definitions\/Error"
                         }
@@ -16069,10 +15784,6 @@
                     "readOnly": true,
                     "type": "string"
                 },
-                "description": {
-                    "format": "string",
-                    "type": "string"
-                },
                 "id": {
                     "format": "uuid",
                     "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
@@ -16238,58 +15949,6 @@
                     }
                 }
             ]
-        },
-        "AssignmentTypeWorkflow": {
-            "type": "object",
-            "properties": {
-                "createdAt": {
-                    "format": "date-time",
-                    "readOnly": true,
-                    "type": "string"
-                },
-                "description": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "end": {
-                    "$ref": "#\/definitions\/WorkflowState"
-                },
-                "id": {
-                    "format": "uuid",
-                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
-                    "readOnly": true,
-                    "type": "string"
-                },
-                "name": {
-                    "format": "string",
-                    "maxLength": 255,
-                    "type": "string"
-                },
-                "start": {
-                    "$ref": "#\/definitions\/WorkflowState"
-                },
-                "states": {
-                    "items": {
-                        "$ref": "#\/definitions\/WorkflowState"
-                    },
-                    "type": "array"
-                },
-                "transitions": {
-                    "items": {
-                        "$ref": "#\/definitions\/WorkflowTransition"
-                    },
-                    "type": "array"
-                },
-                "type": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "updatedAt": {
-                    "format": "date-time",
-                    "readOnly": true,
-                    "type": "string"
-                }
-            }
         },
         "Binary": {
             "type": "object",
@@ -16743,20 +16402,9 @@
                         }
                     }
                 },
-                "color": {
-                    "format": "string",
-                    "pattern": "\/^#(?:[0-9a-fA-F]{3}){1,2}$\/",
-                    "type": "string"
-                },
                 "createdAt": {
                     "format": "date-time",
                     "readOnly": true,
-                    "type": "string"
-                },
-                "icon": {
-                    "format": "string",
-                    "maxLength": 255,
-                    "minLength": 1,
                     "type": "string"
                 },
                 "id": {
@@ -16811,13 +16459,6 @@
                     "minLength": 1,
                     "maxLength": 255
                 },
-                "color": {
-                    "type": "string",
-                    "pattern": "\/^#(?:[0-9a-fA-F]{3}){1,2}$\/"
-                },
-                "icon": {
-                    "type": "string"
-                },
                 "organization": {
                     "type": "string"
                 },
@@ -16827,8 +16468,6 @@
             },
             "required": [
                 "name",
-                "color",
-                "icon",
                 "organization"
             ]
         },
@@ -16902,17 +16541,6 @@
         "CategoryPatch": {
             "type": "object",
             "properties": {
-                "color": {
-                    "format": "string",
-                    "pattern": "\/^#(?:[0-9a-fA-F]{3}){1,2}$\/",
-                    "type": "string"
-                },
-                "icon": {
-                    "format": "string",
-                    "maxLength": 255,
-                    "minLength": 1,
-                    "type": "string"
-                },
                 "identificationNumber": {
                     "format": "string",
                     "maxLength": 255,
@@ -17099,9 +16727,6 @@
                         }
                     }
                 },
-                "assignmentType": {
-                    "$ref": "#\/definitions\/ConfigurationAssignmentType"
-                },
                 "createdAt": {
                     "format": "date-time",
                     "readOnly": true,
@@ -17139,24 +16764,6 @@
                     "format": "date-time",
                     "readOnly": true,
                     "type": "string"
-                }
-            }
-        },
-        "ConfigurationAssignmentType": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "format": "uuid",
-                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
-                    "readOnly": true,
-                    "type": "string"
-                },
-                "type": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "workflow": {
-                    "$ref": "#\/definitions\/AssignmentTypeWorkflow"
                 }
             }
         },
@@ -24123,14 +23730,6 @@
             },
             "required": true
         },
-        "WorkflowData": {
-            "name": "WorkflowData",
-            "in": "body",
-            "schema": {
-                "$ref": "#\/definitions\/WorkflowData"
-            },
-            "required": true
-        },
         "DeviceData": {
             "name": "DeviceData",
             "in": "body",
@@ -24398,6 +23997,14 @@
             "in": "body",
             "schema": {
                 "$ref": "#\/definitions\/LegacySignatureData"
+            },
+            "required": true
+        },
+        "WorkflowData": {
+            "name": "WorkflowData",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/WorkflowData"
             },
             "required": true
         },
