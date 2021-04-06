@@ -9,8 +9,6 @@ import 'package:keyclic_sdk_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [default to null]
-**color** | **String** |  | [default to null]
-**icon** | **String** |  | [default to null]
 **organization** | **String** |  | [default to null]
 **parent** | **String** |  | [optional] [default to null]
 

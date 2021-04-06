@@ -2,8 +2,6 @@ part of keyclic_sdk_api.api;
 
 class CategoryPatch {
   CategoryPatch({
-    this.color,
-    this.icon,
     this.identificationNumber,
     this.name,
   });
@@ -14,16 +12,10 @@ class CategoryPatch {
     }
 
     return CategoryPatch(
-      color: json['color'],
-      icon: json['icon'],
       identificationNumber: json['identificationNumber'],
       name: json['name'],
     );
   }
-
-  String color;
-
-  String icon;
 
   String identificationNumber;
 
@@ -38,8 +30,6 @@ class CategoryPatch {
 
     return other is CategoryPatch &&
         runtimeType == other.runtimeType &&
-        color == other.color &&
-        icon == other.icon &&
         identificationNumber == other.identificationNumber &&
         name == other.name;
   }
@@ -49,8 +39,6 @@ class CategoryPatch {
   int get hashCode {
     int hashCode = 0;
 
-    hashCode ^= color?.hashCode ?? 0;
-    hashCode ^= icon?.hashCode ?? 0;
     hashCode ^= identificationNumber?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
 
@@ -73,8 +61,6 @@ class CategoryPatch {
 
   Map<String, dynamic> toJson() {
     return {
-      if (color != null) 'color': color,
-      if (icon != null) 'icon': icon,
       if (identificationNumber != null)
         'identificationNumber': identificationNumber,
       if (name != null) 'name': name,
@@ -83,6 +69,6 @@ class CategoryPatch {
 
   @override
   String toString() {
-    return 'CategoryPatch[color=$color, icon=$icon, identificationNumber=$identificationNumber, name=$name, ]';
+    return 'CategoryPatch[identificationNumber=$identificationNumber, name=$name, ]';
   }
 }

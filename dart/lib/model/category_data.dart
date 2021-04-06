@@ -3,8 +3,6 @@ part of keyclic_sdk_api.api;
 class CategoryData {
   CategoryData({
     this.name,
-    this.color,
-    this.icon,
     this.organization,
     this.parent,
   });
@@ -16,18 +14,12 @@ class CategoryData {
 
     return CategoryData(
       name: json['name'],
-      color: json['color'],
-      icon: json['icon'],
       organization: json['organization'],
       parent: json['parent'],
     );
   }
 
   String name;
-
-  String color;
-
-  String icon;
 
   String organization;
 
@@ -43,8 +35,6 @@ class CategoryData {
     return other is CategoryData &&
         runtimeType == other.runtimeType &&
         name == other.name &&
-        color == other.color &&
-        icon == other.icon &&
         organization == other.organization &&
         parent == other.parent;
   }
@@ -55,8 +45,6 @@ class CategoryData {
     int hashCode = 0;
 
     hashCode ^= name?.hashCode ?? 0;
-    hashCode ^= color?.hashCode ?? 0;
-    hashCode ^= icon?.hashCode ?? 0;
     hashCode ^= organization?.hashCode ?? 0;
     hashCode ^= parent?.hashCode ?? 0;
 
@@ -80,8 +68,6 @@ class CategoryData {
   Map<String, dynamic> toJson() {
     return {
       if (name != null) 'name': name,
-      if (color != null) 'color': color,
-      if (icon != null) 'icon': icon,
       if (organization != null) 'organization': organization,
       if (parent != null) 'parent': parent,
     };
@@ -89,6 +75,6 @@ class CategoryData {
 
   @override
   String toString() {
-    return 'CategoryData[name=$name, color=$color, icon=$icon, organization=$organization, parent=$parent, ]';
+    return 'CategoryData[name=$name, organization=$organization, parent=$parent, ]';
   }
 }

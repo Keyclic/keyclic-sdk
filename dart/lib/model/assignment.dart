@@ -5,7 +5,6 @@ class Assignment {
     this.embedded,
     this.links,
     this.createdAt,
-    this.description,
     this.id,
     this.type,
     this.updatedAt,
@@ -32,7 +31,6 @@ class Assignment {
       embedded: AssignmentEmbedded.fromJson(json['_embedded']),
       links: AssignmentLinks.fromJson(json['_links']),
       createdAt: createdAt,
-      description: json['description'],
       id: json['id'],
       type: json['type'],
       updatedAt: updatedAt,
@@ -44,8 +42,6 @@ class Assignment {
   AssignmentLinks links;
 
   DateTime createdAt;
-
-  String description;
 
   String id;
 
@@ -65,7 +61,6 @@ class Assignment {
         embedded == other.embedded &&
         links == other.links &&
         createdAt == other.createdAt &&
-        description == other.description &&
         id == other.id &&
         type == other.type &&
         updatedAt == other.updatedAt;
@@ -79,7 +74,6 @@ class Assignment {
     hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
-    hashCode ^= description?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
     hashCode ^= updatedAt?.hashCode ?? 0;
@@ -104,7 +98,6 @@ class Assignment {
       if (embedded != null) '_embedded': embedded.toJson(),
       if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (description != null) 'description': description,
       if (id != null) 'id': id,
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
@@ -113,6 +106,6 @@ class Assignment {
 
   @override
   String toString() {
-    return 'Assignment[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, id=$id, type=$type, updatedAt=$updatedAt, ]';
+    return 'Assignment[embedded=$embedded, links=$links, createdAt=$createdAt, id=$id, type=$type, updatedAt=$updatedAt, ]';
   }
 }

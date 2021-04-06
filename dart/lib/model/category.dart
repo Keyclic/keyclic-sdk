@@ -4,9 +4,7 @@ class Category {
   Category({
     this.embedded,
     this.links,
-    this.color,
     this.createdAt,
-    this.icon,
     this.id,
     this.identificationNumber,
     this.name,
@@ -34,9 +32,7 @@ class Category {
     return Category(
       embedded: CategoryEmbedded.fromJson(json['_embedded']),
       links: CategoryLinks.fromJson(json['_links']),
-      color: json['color'],
       createdAt: createdAt,
-      icon: json['icon'],
       id: json['id'],
       identificationNumber: json['identificationNumber'],
       name: json['name'],
@@ -49,11 +45,7 @@ class Category {
 
   CategoryLinks links;
 
-  String color;
-
   DateTime createdAt;
-
-  String icon;
 
   String id;
 
@@ -76,9 +68,7 @@ class Category {
         runtimeType == other.runtimeType &&
         embedded == other.embedded &&
         links == other.links &&
-        color == other.color &&
         createdAt == other.createdAt &&
-        icon == other.icon &&
         id == other.id &&
         identificationNumber == other.identificationNumber &&
         name == other.name &&
@@ -93,9 +83,7 @@ class Category {
 
     hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
-    hashCode ^= color?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
-    hashCode ^= icon?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= identificationNumber?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
@@ -121,9 +109,7 @@ class Category {
     return {
       if (embedded != null) '_embedded': embedded.toJson(),
       if (links != null) '_links': links.toJson(),
-      if (color != null) 'color': color,
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (icon != null) 'icon': icon,
       if (id != null) 'id': id,
       if (identificationNumber != null)
         'identificationNumber': identificationNumber,
@@ -135,6 +121,6 @@ class Category {
 
   @override
   String toString() {
-    return 'Category[embedded=$embedded, links=$links, color=$color, createdAt=$createdAt, icon=$icon, id=$id, identificationNumber=$identificationNumber, name=$name, type=$type, updatedAt=$updatedAt, ]';
+    return 'Category[embedded=$embedded, links=$links, createdAt=$createdAt, id=$id, identificationNumber=$identificationNumber, name=$name, type=$type, updatedAt=$updatedAt, ]';
   }
 }

@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **embedded** | [**AssignmentEmbedded**](AssignmentEmbedded.md) |  | [optional] [default to null]
 **links** | [**AssignmentLinks**](AssignmentLinks.md) |  | [optional] [default to null]
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
-**description** | **String** |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
 **type** | **String** |  | [optional] [default to null]
 **updatedAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]

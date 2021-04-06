@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **cgetAssignmentsByReport**
-> AssignmentPagination cgetAssignmentsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, state, states[], page, limit)
+> AssignmentPagination cgetAssignmentsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, page, limit)
 
 Retrieve all Assignment resources.
 
@@ -42,13 +42,11 @@ var xKeyclicAppVersion = xKeyclicAppVersion_example; // String |
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var order = order_example; // String | 
-var state = state_example; // String | 
-var states[] = []; // List<String> | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetAssignmentsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, state, states[], page, limit);
+    var result = api_instance.cgetAssignmentsByReport(xKeyclicApp, report, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling ReportApi->cgetAssignmentsByReport: $e\n");
@@ -68,8 +66,6 @@ Name | Type | Description  | Notes
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
- **state** | **String**|  | [optional] 
- **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 

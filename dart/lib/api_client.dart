@@ -213,8 +213,6 @@ class ApiClient {
           return AssignmentLinksServiceIriTemplate.fromJson(value);
         case 'AssignmentLinksServiceIriTemplateMapping':
           return AssignmentLinksServiceIriTemplateMapping.fromJson(value);
-        case 'AssignmentTypeWorkflow':
-          return AssignmentTypeWorkflow.fromJson(value);
         case 'Binary':
           return Binary.fromJson(value);
         case 'BinaryCollection':
@@ -315,8 +313,6 @@ class ApiClient {
           return ConditionListCondition.fromJson(value);
         case 'Configuration':
           return Configuration.fromJson(value);
-        case 'ConfigurationAssignmentType':
-          return ConfigurationAssignmentType.fromJson(value);
         case 'ConfigurationLinks':
           return ConfigurationLinks.fromJson(value);
         case 'ConfigurationLinksSelf':
