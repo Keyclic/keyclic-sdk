@@ -9,6 +9,7 @@ class Configuration {
     this.memberType,
     this.name,
     this.operationType,
+    this.placeType,
     this.reportType,
     this.type,
     this.updatedAt,
@@ -39,6 +40,7 @@ class Configuration {
       memberType: ConfigurationMemberType.fromJson(json['memberType']),
       name: json['name'],
       operationType: ConfigurationOperationType.fromJson(json['operationType']),
+      placeType: ConfigurationPlaceType.fromJson(json['placeType']),
       reportType: ConfigurationReportType.fromJson(json['reportType']),
       type: json['type'],
       updatedAt: updatedAt,
@@ -58,6 +60,8 @@ class Configuration {
   String name;
 
   ConfigurationOperationType operationType;
+
+  ConfigurationPlaceType placeType;
 
   ConfigurationReportType reportType;
 
@@ -81,6 +85,7 @@ class Configuration {
         memberType == other.memberType &&
         name == other.name &&
         operationType == other.operationType &&
+        placeType == other.placeType &&
         reportType == other.reportType &&
         type == other.type &&
         updatedAt == other.updatedAt;
@@ -98,6 +103,7 @@ class Configuration {
     hashCode ^= memberType?.hashCode ?? 0;
     hashCode ^= name?.hashCode ?? 0;
     hashCode ^= operationType?.hashCode ?? 0;
+    hashCode ^= placeType?.hashCode ?? 0;
     hashCode ^= reportType?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
     hashCode ^= updatedAt?.hashCode ?? 0;
@@ -128,6 +134,7 @@ class Configuration {
       if (memberType != null) 'memberType': memberType.toJson(),
       if (name != null) 'name': name,
       if (operationType != null) 'operationType': operationType.toJson(),
+      if (placeType != null) 'placeType': placeType.toJson(),
       if (reportType != null) 'reportType': reportType.toJson(),
       if (type != null) 'type': type,
       if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
@@ -136,6 +143,6 @@ class Configuration {
 
   @override
   String toString() {
-    return 'Configuration[links=$links, createdAt=$createdAt, description=$description, id=$id, memberType=$memberType, name=$name, operationType=$operationType, reportType=$reportType, type=$type, updatedAt=$updatedAt, ]';
+    return 'Configuration[links=$links, createdAt=$createdAt, description=$description, id=$id, memberType=$memberType, name=$name, operationType=$operationType, placeType=$placeType, reportType=$reportType, type=$type, updatedAt=$updatedAt, ]';
   }
 }

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **dueAt** | [**DateTime**](DateTime.md) |  | [optional] [default to null]
 **id** | **String** |  | [optional] [default to null]
 **identificationNumber** | **String** |  | [optional] [default to null]
+**phase** | [**WorkflowState**](WorkflowState.md) |  | [optional] [default to null]
 **priority** | [**ReportPriority**](ReportPriority.md) |  | [optional] [default to null]
 **reference** | **String** |  | [optional] [default to null]
 **tags** | **List&lt;String&gt;** |  | [optional] [default to []]

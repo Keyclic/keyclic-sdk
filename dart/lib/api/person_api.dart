@@ -463,11 +463,14 @@ class PersonApi {
     String operationState,
     List<String> operationStates__,
     String order,
+    String phase,
+    List<String> phases__,
     String place,
     List<String> places__,
     String priority,
     List<String> priorities__,
     String query,
+    String rating,
     String state,
     List<String> states__,
     String visibility__,
@@ -544,6 +547,11 @@ class PersonApi {
             collectionFormat: "multi"),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
+      if (phase != null)
+        ..._convertParametersForCollectionFormat("phase", phase),
+      if (phases__ != null)
+        ..._convertParametersForCollectionFormat("phases[]", phases__,
+            collectionFormat: "multi"),
       if (place != null)
         ..._convertParametersForCollectionFormat("place", place),
       if (places__ != null)
@@ -556,6 +564,8 @@ class PersonApi {
             collectionFormat: "multi"),
       if (query != null)
         ..._convertParametersForCollectionFormat("query", query),
+      if (rating != null)
+        ..._convertParametersForCollectionFormat("rating", rating),
       if (state != null)
         ..._convertParametersForCollectionFormat("state", state),
       if (states__ != null)

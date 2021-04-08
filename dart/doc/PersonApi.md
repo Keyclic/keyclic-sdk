@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetReportsByPerson**
-> ReportPagination cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], batch, batches[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], order, place, places[], priority, priorities[], query, state, states[], visibility[], page, limit)
+> ReportPagination cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], batch, batches[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], order, phase, phases[], place, places[], priority, priorities[], query, rating, state, states[], visibility[], page, limit)
 
 Retrieve all Report resources.
 
@@ -367,11 +367,14 @@ var operationStateAll = operationStateAll_example; // String |
 var operationState = operationState_example; // String | 
 var operationStates[] = []; // List<String> | 
 var order = order_example; // String | 
+var phase = phase_example; // String | 
+var phases[] = []; // List<String> | 
 var place = place_example; // String | 
 var places[] = []; // List<String> | 
 var priority = priority_example; // String | 
 var priorities[] = []; // List<String> | 
 var query = query_example; // String | 
+var rating = rating_example; // String | 
 var state = state_example; // String | 
 var states[] = []; // List<String> | 
 var visibility[] = visibility[]_example; // String | 
@@ -379,7 +382,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], batch, batches[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], order, place, places[], priority, priorities[], query, state, states[], visibility[], page, limit);
+    var result = api_instance.cgetReportsByPerson(xKeyclicApp, person, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], batch, batches[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], order, phase, phases[], place, places[], priority, priorities[], query, rating, state, states[], visibility[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PersonApi->cgetReportsByPerson: $e\n");
@@ -416,11 +419,14 @@ Name | Type | Description  | Notes
  **operationState** | **String**|  | [optional] 
  **operationStates[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
+ **phase** | **String**|  | [optional] 
+ **phases[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **place** | **String**|  | [optional] 
  **places[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **priority** | **String**|  | [optional] 
  **priorities[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **query** | **String**|  | [optional] 
+ **rating** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
  **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **visibility[]** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]

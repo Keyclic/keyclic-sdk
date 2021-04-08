@@ -9,6 +9,7 @@ class Report {
     this.dueAt,
     this.id,
     this.identificationNumber,
+    this.phase,
     this.priority,
     this.reference,
     this.tags,
@@ -47,6 +48,7 @@ class Report {
       dueAt: dueAt,
       id: json['id'],
       identificationNumber: json['identificationNumber'],
+      phase: WorkflowState.fromJson(json['phase']),
       priority: ReportPriority.fromJson(json['priority']),
       reference: json['reference'],
       tags: json['tags'] is List ? List<String>.from(json['tags']) : null,
@@ -68,6 +70,8 @@ class Report {
   String id;
 
   String identificationNumber;
+
+  WorkflowState phase;
 
   ReportPriority priority;
 
@@ -95,6 +99,7 @@ class Report {
         dueAt == other.dueAt &&
         id == other.id &&
         identificationNumber == other.identificationNumber &&
+        phase == other.phase &&
         priority == other.priority &&
         reference == other.reference &&
         DeepCollectionEquality.unordered().equals(tags, other.tags) &&
@@ -120,6 +125,7 @@ class Report {
     hashCode ^= dueAt?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
     hashCode ^= identificationNumber?.hashCode ?? 0;
+    hashCode ^= phase?.hashCode ?? 0;
     hashCode ^= priority?.hashCode ?? 0;
     hashCode ^= reference?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
@@ -150,6 +156,7 @@ class Report {
       if (id != null) 'id': id,
       if (identificationNumber != null)
         'identificationNumber': identificationNumber,
+      if (phase != null) 'phase': phase.toJson(),
       if (priority != null) 'priority': priority.toJson(),
       if (reference != null) 'reference': reference,
       if (tags != null) 'tags': tags,
@@ -160,6 +167,6 @@ class Report {
 
   @override
   String toString() {
-    return 'Report[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, dueAt=$dueAt, id=$id, identificationNumber=$identificationNumber, priority=$priority, reference=$reference, tags=$tags, type=$type, updatedAt=$updatedAt, ]';
+    return 'Report[embedded=$embedded, links=$links, createdAt=$createdAt, description=$description, dueAt=$dueAt, id=$id, identificationNumber=$identificationNumber, phase=$phase, priority=$priority, reference=$reference, tags=$tags, type=$type, updatedAt=$updatedAt, ]';
   }
 }

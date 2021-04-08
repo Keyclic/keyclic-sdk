@@ -325,6 +325,8 @@ class ApiClient {
           return ConfigurationMemberType.fromJson(value);
         case 'ConfigurationOperationType':
           return ConfigurationOperationType.fromJson(value);
+        case 'ConfigurationPlaceType':
+          return ConfigurationPlaceType.fromJson(value);
         case 'ConfigurationReportType':
           return ConfigurationReportType.fromJson(value);
         case 'Contribution':
@@ -825,6 +827,8 @@ class ApiClient {
           return PlacePostalAddress.fromJson(value);
         case 'PlacePreferences':
           return PlacePreferences.fromJson(value);
+        case 'PlaceTypeWorkflow':
+          return PlaceTypeWorkflow.fromJson(value);
         case 'Plan':
           return Plan.fromJson(value);
         case 'PlanCollection':
