@@ -9,7 +9,7 @@
             "url": "https:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.12.9"
+        "version": "2.12.11"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -8803,6 +8803,12 @@
                         "$ref": "#\/parameters\/order"
                     },
                     {
+                        "$ref": "#\/parameters\/phase"
+                    },
+                    {
+                        "$ref": "#\/parameters\/phases__"
+                    },
+                    {
                         "$ref": "#\/parameters\/place"
                     },
                     {
@@ -8816,6 +8822,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/query"
+                    },
+                    {
+                        "$ref": "#\/parameters\/rating"
                     },
                     {
                         "in": "query",
@@ -9677,6 +9686,12 @@
                         "$ref": "#\/parameters\/order"
                     },
                     {
+                        "$ref": "#\/parameters\/phase"
+                    },
+                    {
+                        "$ref": "#\/parameters\/phases__"
+                    },
+                    {
                         "$ref": "#\/parameters\/place"
                     },
                     {
@@ -9690,6 +9705,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/query"
+                    },
+                    {
+                        "$ref": "#\/parameters\/rating"
                     },
                     {
                         "in": "query",
@@ -10443,6 +10461,12 @@
                         "$ref": "#\/parameters\/order"
                     },
                     {
+                        "$ref": "#\/parameters\/phase"
+                    },
+                    {
+                        "$ref": "#\/parameters\/phases__"
+                    },
+                    {
                         "$ref": "#\/parameters\/place"
                     },
                     {
@@ -10456,6 +10480,9 @@
                     },
                     {
                         "$ref": "#\/parameters\/query"
+                    },
+                    {
+                        "$ref": "#\/parameters\/rating"
                     },
                     {
                         "in": "query",
@@ -11099,6 +11126,97 @@
                         "description": "",
                         "schema": {
                             "$ref": "#\/definitions\/DocumentPagination"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Place"
+                ],
+                "summary": "Create one Document resource.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "postDocumentByPlace",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/DocumentData"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "place",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Returned when the resource is created",
+                        "schema": {
+                            "$ref": "#\/definitions\/Document"
                         }
                     },
                     "400": {
@@ -16753,6 +16871,9 @@
                 "operationType": {
                     "$ref": "#\/definitions\/ConfigurationOperationType"
                 },
+                "placeType": {
+                    "$ref": "#\/definitions\/ConfigurationPlaceType"
+                },
                 "reportType": {
                     "$ref": "#\/definitions\/ConfigurationReportType"
                 },
@@ -16829,6 +16950,24 @@
                 },
                 "workflow": {
                     "$ref": "#\/definitions\/OperationTypeWorkflow"
+                }
+            }
+        },
+        "ConfigurationPlaceType": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "format": "uuid",
+                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "type": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "workflow": {
+                    "$ref": "#\/definitions\/PlaceTypeWorkflow"
                 }
             }
         },
@@ -21028,6 +21167,58 @@
                 }
             }
         },
+        "PlaceTypeWorkflow": {
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "description": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "end": {
+                    "$ref": "#\/definitions\/WorkflowState"
+                },
+                "id": {
+                    "format": "uuid",
+                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "name": {
+                    "format": "string",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "start": {
+                    "$ref": "#\/definitions\/WorkflowState"
+                },
+                "states": {
+                    "items": {
+                        "$ref": "#\/definitions\/WorkflowState"
+                    },
+                    "type": "array"
+                },
+                "transitions": {
+                    "items": {
+                        "$ref": "#\/definitions\/WorkflowTransition"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "format": "string",
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "format": "date-time",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            }
+        },
         "Plan": {
             "type": "object",
             "properties": {
@@ -21658,6 +21849,9 @@
                     "maxLength": 255,
                     "minLength": 1,
                     "type": "string"
+                },
+                "phase": {
+                    "$ref": "#\/definitions\/WorkflowState"
                 },
                 "priority": {
                     "$ref": "#\/definitions\/ReportPriority"
@@ -24170,6 +24364,22 @@
             "pattern": ".*",
             "type": "array"
         },
+        "phase": {
+            "in": "query",
+            "name": "phase",
+            "pattern": ".*",
+            "type": "string"
+        },
+        "phases__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "phases[]",
+            "pattern": ".*",
+            "type": "array"
+        },
         "priority": {
             "in": "query",
             "name": "priority",
@@ -24185,6 +24395,12 @@
             "name": "priorities[]",
             "pattern": ".*",
             "type": "array"
+        },
+        "rating": {
+            "in": "query",
+            "name": "rating",
+            "pattern": "[-+]?\\d+",
+            "type": "string"
         },
         "options_property_": {
             "in": "query",
