@@ -9,7 +9,7 @@
             "url": "https:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.12.11"
+        "version": "2.12.14"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -15855,6 +15855,9 @@
                 "_embedded": {
                     "type": "object",
                     "properties": {
+                        "createdBy": {
+                            "$ref": "#\/definitions\/Person"
+                        },
                         "service": {
                             "$ref": "#\/definitions\/InternalService"
                         },
@@ -15883,9 +15886,6 @@
                 "_links": {
                     "type": "object",
                     "properties": {
-                        "createdBy": {
-                            "$ref": "#\/definitions\/AssignmentLinksCreatedBy"
-                        },
                         "report": {
                             "$ref": "#\/definitions\/AssignmentLinksReport"
                         },
@@ -15948,32 +15948,6 @@
                 "report",
                 "service"
             ]
-        },
-        "AssignmentLinksCreatedBy": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the createdBy associated to the given assignment.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/AssignmentLinksCreatedByIriTemplate"
-                }
-            }
-        },
-        "AssignmentLinksCreatedByIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "person": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
         },
         "AssignmentLinksReport": {
             "type": "object",
@@ -16714,6 +16688,14 @@
                             "$ref": "#\/definitions\/CheckpointLinksOrganization"
                         }
                     }
+                },
+                "_embedded": {
+                    "type": "object",
+                    "properties": {
+                        "createdBy": {
+                            "$ref": "#\/definitions\/Person"
+                        }
+                    }
                 }
             }
         },
@@ -16998,6 +16980,14 @@
         "Contribution": {
             "type": "object",
             "properties": {
+                "_embedded": {
+                    "type": "object",
+                    "properties": {
+                        "createdBy": {
+                            "$ref": "#\/definitions\/Person"
+                        }
+                    }
+                },
                 "_links": {
                     "type": "object",
                     "properties": {
@@ -17256,6 +17246,9 @@
                         "container": {
                             "type": "object",
                             "additionalProperties": true
+                        },
+                        "createdBy": {
+                            "$ref": "#\/definitions\/Person"
                         },
                         "signers": {
                             "type": "array",
@@ -19656,6 +19649,9 @@
                 "_embedded": {
                     "type": "object",
                     "properties": {
+                        "createdBy": {
+                            "$ref": "#\/definitions\/Person"
+                        },
                         "operator": {
                             "$ref": "#\/definitions\/Person"
                         },
@@ -19684,9 +19680,6 @@
                 "_links": {
                     "type": "object",
                     "properties": {
-                        "createdBy": {
-                            "$ref": "#\/definitions\/OperationLinksCreatedBy"
-                        },
                         "feedback": {
                             "$ref": "#\/definitions\/OperationLinksFeedback"
                         },
@@ -19801,32 +19794,6 @@
             "required": [
                 "report"
             ]
-        },
-        "OperationLinksCreatedBy": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the createdBy associated to the given operation.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/OperationLinksCreatedByIriTemplate"
-                }
-            }
-        },
-        "OperationLinksCreatedByIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "person": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
         },
         "OperationLinksFeedback": {
             "type": "object",
@@ -20565,12 +20532,6 @@
                 "_links": {
                     "type": "object",
                     "properties": {
-                        "application": {
-                            "$ref": "#\/definitions\/PersonLinksApplication"
-                        },
-                        "createdBy": {
-                            "$ref": "#\/definitions\/PersonLinksCreatedBy"
-                        },
                         "image": {
                             "$ref": "#\/definitions\/PersonLinksImage"
                         },
@@ -20662,58 +20623,6 @@
                 },
                 "termsOfService": {
                     "type": "boolean"
-                }
-            }
-        },
-        "PersonLinksApplication": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the application associated to the given person.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/PersonLinksApplicationIriTemplate"
-                }
-            }
-        },
-        "PersonLinksApplicationIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "application": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "PersonLinksCreatedBy": {
-            "type": "object",
-            "properties": {
-                "href": {
-                    "description": "The URI of the createdBy associated to the given person.",
-                    "type": "string",
-                    "format": "string"
-                },
-                "iriTemplate": {
-                    "$ref": "#\/definitions\/PersonLinksCreatedByIriTemplate"
-                }
-            }
-        },
-        "PersonLinksCreatedByIriTemplate": {
-            "type": "object",
-            "properties": {
-                "mapping": {
-                    "type": "object",
-                    "properties": {
-                        "person": {
-                            "type": "string"
-                        }
-                    }
                 }
             }
         },
@@ -20873,6 +20782,23 @@
                             "type": "array",
                             "items": {
                                 "$ref": "#\/definitions\/NodePath"
+                            }
+                        },
+                        "targetGroups": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    }
+                                }
                             }
                         },
                         "workflow": {
@@ -23266,6 +23192,14 @@
                     "properties": {
                         "organization": {
                             "$ref": "#\/definitions\/CheckpointLinksOrganization"
+                        }
+                    }
+                },
+                "_embedded": {
+                    "type": "object",
+                    "properties": {
+                        "createdBy": {
+                            "$ref": "#\/definitions\/Person"
                         }
                     }
                 }
