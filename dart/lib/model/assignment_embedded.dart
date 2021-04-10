@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class AssignmentEmbedded {
   AssignmentEmbedded({
+    this.createdBy,
     this.service,
     this.workflow,
   });
@@ -12,10 +13,13 @@ class AssignmentEmbedded {
     }
 
     return AssignmentEmbedded(
+      createdBy: Person.fromJson(json['createdBy']),
       service: InternalService.fromJson(json['service']),
       workflow: AssignmentEmbeddedWorkflow.fromJson(json['workflow']),
     );
   }
+
+  Person createdBy;
 
   InternalService service;
 
@@ -30,6 +34,7 @@ class AssignmentEmbedded {
 
     return other is AssignmentEmbedded &&
         runtimeType == other.runtimeType &&
+        createdBy == other.createdBy &&
         service == other.service &&
         workflow == other.workflow;
   }
@@ -39,6 +44,7 @@ class AssignmentEmbedded {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= createdBy?.hashCode ?? 0;
     hashCode ^= service?.hashCode ?? 0;
     hashCode ^= workflow?.hashCode ?? 0;
 
@@ -62,6 +68,7 @@ class AssignmentEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
+      if (createdBy != null) 'createdBy': createdBy.toJson(),
       if (service != null) 'service': service.toJson(),
       if (workflow != null) 'workflow': workflow.toJson(),
     };
@@ -69,6 +76,6 @@ class AssignmentEmbedded {
 
   @override
   String toString() {
-    return 'AssignmentEmbedded[service=$service, workflow=$workflow, ]';
+    return 'AssignmentEmbedded[createdBy=$createdBy, service=$service, workflow=$workflow, ]';
   }
 }

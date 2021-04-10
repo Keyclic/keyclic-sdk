@@ -12,12 +12,12 @@ class ContributionLinksContributorIriTemplate {
     }
 
     return ContributionLinksContributorIriTemplate(
-      mapping:
-          AssignmentLinksCreatedByIriTemplateMapping.fromJson(json['mapping']),
+      mapping: ContributionLinksContributorIriTemplateMapping.fromJson(
+          json['mapping']),
     );
   }
 
-  AssignmentLinksCreatedByIriTemplateMapping mapping;
+  ContributionLinksContributorIriTemplateMapping mapping;
 
   @override
   bool operator ==(dynamic other) {

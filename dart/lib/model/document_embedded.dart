@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class DocumentEmbedded {
   DocumentEmbedded({
     this.container,
+    this.createdBy,
     this.signers,
     this.stateTransitions,
     this.type,
@@ -15,6 +16,7 @@ class DocumentEmbedded {
 
     return DocumentEmbedded(
       container: json['container'],
+      createdBy: Person.fromJson(json['createdBy']),
       signers: Signer.listFromJson(json['signers']),
       stateTransitions: json['stateTransitions'] is List
           ? List<String>.from(json['stateTransitions'])
@@ -24,6 +26,8 @@ class DocumentEmbedded {
   }
 
   Map<String, dynamic> container;
+
+  Person createdBy;
 
   List<Signer> signers;
 
@@ -41,6 +45,7 @@ class DocumentEmbedded {
     return other is DocumentEmbedded &&
         runtimeType == other.runtimeType &&
         container == other.container &&
+        createdBy == other.createdBy &&
         DeepCollectionEquality.unordered().equals(signers, other.signers) &&
         DeepCollectionEquality.unordered()
             .equals(stateTransitions, other.stateTransitions) &&
@@ -64,6 +69,7 @@ class DocumentEmbedded {
     }
 
     hashCode ^= container?.hashCode ?? 0;
+    hashCode ^= createdBy?.hashCode ?? 0;
     hashCode ^= type?.hashCode ?? 0;
 
     return hashCode;
@@ -86,6 +92,7 @@ class DocumentEmbedded {
   Map<String, dynamic> toJson() {
     return {
       if (container != null) 'container': container,
+      if (createdBy != null) 'createdBy': createdBy.toJson(),
       if (signers != null) 'signers': signers,
       if (stateTransitions != null) 'stateTransitions': stateTransitions,
       if (type != null) 'type': type.toJson(),
@@ -94,6 +101,6 @@ class DocumentEmbedded {
 
   @override
   String toString() {
-    return 'DocumentEmbedded[container=$container, signers=$signers, stateTransitions=$stateTransitions, type=$type, ]';
+    return 'DocumentEmbedded[container=$container, createdBy=$createdBy, signers=$signers, stateTransitions=$stateTransitions, type=$type, ]';
   }
 }

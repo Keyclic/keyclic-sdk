@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **data** | [**CheckpointState**](CheckpointState.md) |  | [optional] [default to null]
 **state** | **List&lt;String&gt;** |  | [optional] [default to []]
 **links** | [**CheckpointLinks**](CheckpointLinks.md) |  | [optional] [default to null]
+**embedded** | [**CheckpointEmbedded**](CheckpointEmbedded.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

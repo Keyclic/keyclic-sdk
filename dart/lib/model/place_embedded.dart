@@ -6,6 +6,7 @@ class PlaceEmbedded {
     this.documentTypes,
     this.organization,
     this.path,
+    this.targetGroups,
     this.workflow,
   });
 
@@ -19,6 +20,8 @@ class PlaceEmbedded {
       documentTypes: DocumentType.listFromJson(json['documentTypes']),
       organization: Organization.fromJson(json['organization']),
       path: NodePath.listFromJson(json['path']),
+      targetGroups:
+          PlaceEmbeddedTargetGroups.listFromJson(json['targetGroups']),
       workflow: AssignmentEmbeddedWorkflow.fromJson(json['workflow']),
     );
   }
@@ -30,6 +33,8 @@ class PlaceEmbedded {
   Organization organization;
 
   List<NodePath> path;
+
+  List<PlaceEmbeddedTargetGroups> targetGroups;
 
   AssignmentEmbeddedWorkflow workflow;
 
@@ -47,6 +52,8 @@ class PlaceEmbedded {
             .equals(documentTypes, other.documentTypes) &&
         organization == other.organization &&
         DeepCollectionEquality.unordered().equals(path, other.path) &&
+        DeepCollectionEquality.unordered()
+            .equals(targetGroups, other.targetGroups) &&
         workflow == other.workflow;
   }
 
@@ -68,6 +75,11 @@ class PlaceEmbedded {
     if (path is List && path.isNotEmpty) {
       hashCode ^= path
           .map((NodePath element) => element.hashCode)
+          .reduce((int value, int cursor) => value ^ cursor);
+    }
+    if (targetGroups is List && targetGroups.isNotEmpty) {
+      hashCode ^= targetGroups
+          .map((PlaceEmbeddedTargetGroups element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
@@ -97,12 +109,13 @@ class PlaceEmbedded {
       if (documentTypes != null) 'documentTypes': documentTypes,
       if (organization != null) 'organization': organization.toJson(),
       if (path != null) 'path': path,
+      if (targetGroups != null) 'targetGroups': targetGroups,
       if (workflow != null) 'workflow': workflow.toJson(),
     };
   }
 
   @override
   String toString() {
-    return 'PlaceEmbedded[children=$children, documentTypes=$documentTypes, organization=$organization, path=$path, workflow=$workflow, ]';
+    return 'PlaceEmbedded[children=$children, documentTypes=$documentTypes, organization=$organization, path=$path, targetGroups=$targetGroups, workflow=$workflow, ]';
   }
 }

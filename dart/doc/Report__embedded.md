@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **documents** | [**List&lt;Document&gt;**](Document.md) |  | [optional] [default to []]
 **feedback** | [**Feedback**](Feedback.md) |  | [optional] [default to null]
 **place** | [**Place**](Place.md) |  | [optional] [default to null]
-**targetGroups** | [**List&lt;ReportEmbeddedTargetGroups&gt;**](ReportEmbeddedTargetGroups.md) |  | [optional] [default to []]
+**targetGroups** | [**List&lt;PlaceEmbeddedTargetGroups&gt;**](PlaceEmbeddedTargetGroups.md) |  | [optional] [default to []]
 **workflow** | [**AssignmentEmbeddedWorkflow**](AssignmentEmbeddedWorkflow.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

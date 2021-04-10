@@ -25,7 +25,7 @@ class ReportEmbedded {
       feedback: Feedback.fromJson(json['feedback']),
       place: Place.fromJson(json['place']),
       targetGroups:
-          ReportEmbeddedTargetGroups.listFromJson(json['targetGroups']),
+          PlaceEmbeddedTargetGroups.listFromJson(json['targetGroups']),
       workflow: AssignmentEmbeddedWorkflow.fromJson(json['workflow']),
     );
   }
@@ -42,7 +42,7 @@ class ReportEmbedded {
 
   Place place;
 
-  List<ReportEmbeddedTargetGroups> targetGroups;
+  List<PlaceEmbeddedTargetGroups> targetGroups;
 
   AssignmentEmbeddedWorkflow workflow;
 
@@ -83,7 +83,7 @@ class ReportEmbedded {
     }
     if (targetGroups is List && targetGroups.isNotEmpty) {
       hashCode ^= targetGroups
-          .map((ReportEmbeddedTargetGroups element) => element.hashCode)
+          .map((PlaceEmbeddedTargetGroups element) => element.hashCode)
           .reduce((int value, int cursor) => value ^ cursor);
     }
 

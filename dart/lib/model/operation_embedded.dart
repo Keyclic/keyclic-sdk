@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class OperationEmbedded {
   OperationEmbedded({
+    this.createdBy,
     this.operator_,
     this.workflow,
   });
@@ -12,10 +13,13 @@ class OperationEmbedded {
     }
 
     return OperationEmbedded(
+      createdBy: Person.fromJson(json['createdBy']),
       operator_: Person.fromJson(json['operator']),
       workflow: AssignmentEmbeddedWorkflow.fromJson(json['workflow']),
     );
   }
+
+  Person createdBy;
 
   Person operator_;
 
@@ -30,6 +34,7 @@ class OperationEmbedded {
 
     return other is OperationEmbedded &&
         runtimeType == other.runtimeType &&
+        createdBy == other.createdBy &&
         operator_ == other.operator_ &&
         workflow == other.workflow;
   }
@@ -39,6 +44,7 @@ class OperationEmbedded {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= createdBy?.hashCode ?? 0;
     hashCode ^= operator_?.hashCode ?? 0;
     hashCode ^= workflow?.hashCode ?? 0;
 
@@ -61,6 +67,7 @@ class OperationEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
+      if (createdBy != null) 'createdBy': createdBy.toJson(),
       if (operator_ != null) 'operator': operator_.toJson(),
       if (workflow != null) 'workflow': workflow.toJson(),
     };
@@ -68,6 +75,6 @@ class OperationEmbedded {
 
   @override
   String toString() {
-    return 'OperationEmbedded[operator_=$operator_, workflow=$workflow, ]';
+    return 'OperationEmbedded[createdBy=$createdBy, operator_=$operator_, workflow=$workflow, ]';
   }
 }

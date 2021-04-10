@@ -1,18 +1,18 @@
 part of keyclic_sdk_api.api;
 
-class ReportEmbeddedTargetGroups {
-  ReportEmbeddedTargetGroups({
+class PlaceEmbeddedTargetGroups {
+  PlaceEmbeddedTargetGroups({
     this.id,
     this.name,
     this.description,
   });
 
-  factory ReportEmbeddedTargetGroups.fromJson(Map<String, dynamic> json) {
+  factory PlaceEmbeddedTargetGroups.fromJson(Map<String, dynamic> json) {
     if (json == null) {
       return null;
     }
 
-    return ReportEmbeddedTargetGroups(
+    return PlaceEmbeddedTargetGroups(
       id: json['id'],
       name: json['name'],
       description: json['description'],
@@ -32,7 +32,7 @@ class ReportEmbeddedTargetGroups {
       return true;
     }
 
-    return other is ReportEmbeddedTargetGroups &&
+    return other is PlaceEmbeddedTargetGroups &&
         runtimeType == other.runtimeType &&
         id == other.id &&
         name == other.name &&
@@ -51,20 +51,20 @@ class ReportEmbeddedTargetGroups {
     return hashCode;
   }
 
-  static List<ReportEmbeddedTargetGroups> listFromJson(List<dynamic> json) {
+  static List<PlaceEmbeddedTargetGroups> listFromJson(List<dynamic> json) {
     return json
-            ?.map((dynamic value) => ReportEmbeddedTargetGroups.fromJson(value))
+            ?.map((dynamic value) => PlaceEmbeddedTargetGroups.fromJson(value))
             ?.toList() ??
-        <ReportEmbeddedTargetGroups>[];
+        <PlaceEmbeddedTargetGroups>[];
   }
 
-  static Map<String, ReportEmbeddedTargetGroups> mapFromJson(
+  static Map<String, PlaceEmbeddedTargetGroups> mapFromJson(
       Map<String, dynamic> json) {
-    return json?.map<String, ReportEmbeddedTargetGroups>(
+    return json?.map<String, PlaceEmbeddedTargetGroups>(
             (String key, dynamic value) {
-          return MapEntry(key, ReportEmbeddedTargetGroups.fromJson(value));
+          return MapEntry(key, PlaceEmbeddedTargetGroups.fromJson(value));
         }) ??
-        <String, ReportEmbeddedTargetGroups>{};
+        <String, PlaceEmbeddedTargetGroups>{};
   }
 
   Map<String, dynamic> toJson() {
@@ -77,6 +77,6 @@ class ReportEmbeddedTargetGroups {
 
   @override
   String toString() {
-    return 'ReportEmbeddedTargetGroups[id=$id, name=$name, description=$description, ]';
+    return 'PlaceEmbeddedTargetGroups[id=$id, name=$name, description=$description, ]';
   }
 }

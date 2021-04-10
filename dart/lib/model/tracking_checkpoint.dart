@@ -6,6 +6,7 @@ class TrackingCheckpoint {
     this.data,
     this.state,
     this.links,
+    this.embedded,
   });
 
   factory TrackingCheckpoint.fromJson(Map<String, dynamic> json) {
@@ -24,6 +25,7 @@ class TrackingCheckpoint {
       data: CheckpointState.fromJson(json['data']),
       state: json['state'] is List ? List<String>.from(json['state']) : null,
       links: CheckpointLinks.fromJson(json['_links']),
+      embedded: CheckpointEmbedded.fromJson(json['_embedded']),
     );
   }
 
@@ -34,6 +36,8 @@ class TrackingCheckpoint {
   List<String> state;
 
   CheckpointLinks links;
+
+  CheckpointEmbedded embedded;
 
   @override
   bool operator ==(dynamic other) {
@@ -47,7 +51,8 @@ class TrackingCheckpoint {
         createdAt == other.createdAt &&
         data == other.data &&
         DeepCollectionEquality.unordered().equals(state, other.state) &&
-        links == other.links;
+        links == other.links &&
+        embedded == other.embedded;
   }
 
   /// By default hashCode return reference
@@ -64,6 +69,7 @@ class TrackingCheckpoint {
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= data?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
+    hashCode ^= embedded?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -89,11 +95,12 @@ class TrackingCheckpoint {
       if (data != null) 'data': data.toJson(),
       if (state != null) 'state': state,
       if (links != null) '_links': links.toJson(),
+      if (embedded != null) '_embedded': embedded.toJson(),
     };
   }
 
   @override
   String toString() {
-    return 'TrackingCheckpoint[createdAt=$createdAt, data=$data, state=$state, links=$links, ]';
+    return 'TrackingCheckpoint[createdAt=$createdAt, data=$data, state=$state, links=$links, embedded=$embedded, ]';
   }
 }

@@ -8,6 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**createdBy** | [**Person**](Person.md) |  | [optional] [default to null]
 **service** | [**InternalService**](InternalService.md) |  | [optional] [default to null]
 **workflow** | [**AssignmentEmbeddedWorkflow**](AssignmentEmbeddedWorkflow.md) |  | [optional] [default to null]
 

@@ -2,7 +2,6 @@ part of keyclic_sdk_api.api;
 
 class OperationLinks {
   OperationLinks({
-    this.createdBy,
     this.feedback,
     this.image,
     this.images,
@@ -19,7 +18,6 @@ class OperationLinks {
     }
 
     return OperationLinks(
-      createdBy: OperationLinksCreatedBy.fromJson(json['createdBy']),
       feedback: OperationLinksFeedback.fromJson(json['feedback']),
       image: OperationLinksImage.fromJson(json['image']),
       images: OperationLinksImages.listFromJson(json['images']),
@@ -30,8 +28,6 @@ class OperationLinks {
       tracking: OperationLinksTracking.fromJson(json['tracking']),
     );
   }
-
-  OperationLinksCreatedBy createdBy;
 
   OperationLinksFeedback feedback;
 
@@ -58,7 +54,6 @@ class OperationLinks {
 
     return other is OperationLinks &&
         runtimeType == other.runtimeType &&
-        createdBy == other.createdBy &&
         feedback == other.feedback &&
         image == other.image &&
         DeepCollectionEquality.unordered().equals(images, other.images) &&
@@ -80,7 +75,6 @@ class OperationLinks {
           .reduce((int value, int cursor) => value ^ cursor);
     }
 
-    hashCode ^= createdBy?.hashCode ?? 0;
     hashCode ^= feedback?.hashCode ?? 0;
     hashCode ^= image?.hashCode ?? 0;
     hashCode ^= operator_?.hashCode ?? 0;
@@ -108,7 +102,6 @@ class OperationLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      if (createdBy != null) 'createdBy': createdBy.toJson(),
       if (feedback != null) 'feedback': feedback.toJson(),
       if (image != null) 'image': image.toJson(),
       if (images != null) 'images': images,
@@ -122,6 +115,6 @@ class OperationLinks {
 
   @override
   String toString() {
-    return 'OperationLinks[createdBy=$createdBy, feedback=$feedback, image=$image, images=$images, operator_=$operator_, organization=$organization, report=$report, self=$self, tracking=$tracking, ]';
+    return 'OperationLinks[feedback=$feedback, image=$image, images=$images, operator_=$operator_, organization=$organization, report=$report, self=$self, tracking=$tracking, ]';
   }
 }

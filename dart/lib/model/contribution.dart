@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class Contribution {
   Contribution({
+    this.embedded,
     this.links,
     this.createdAt,
     this.id,
@@ -27,6 +28,7 @@ class Contribution {
     }
 
     return Contribution(
+      embedded: CheckpointEmbedded.fromJson(json['_embedded']),
       links: ContributionLinks.fromJson(json['_links']),
       createdAt: createdAt,
       id: json['id'],
@@ -34,6 +36,8 @@ class Contribution {
       updatedAt: updatedAt,
     );
   }
+
+  CheckpointEmbedded embedded;
 
   ContributionLinks links;
 
@@ -54,6 +58,7 @@ class Contribution {
 
     return other is Contribution &&
         runtimeType == other.runtimeType &&
+        embedded == other.embedded &&
         links == other.links &&
         createdAt == other.createdAt &&
         id == other.id &&
@@ -66,6 +71,7 @@ class Contribution {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= embedded?.hashCode ?? 0;
     hashCode ^= links?.hashCode ?? 0;
     hashCode ^= createdAt?.hashCode ?? 0;
     hashCode ^= id?.hashCode ?? 0;
@@ -91,6 +97,7 @@ class Contribution {
 
   Map<String, dynamic> toJson() {
     return {
+      if (embedded != null) '_embedded': embedded.toJson(),
       if (links != null) '_links': links.toJson(),
       if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
       if (id != null) 'id': id,
@@ -101,6 +108,6 @@ class Contribution {
 
   @override
   String toString() {
-    return 'Contribution[links=$links, createdAt=$createdAt, id=$id, type=$type, updatedAt=$updatedAt, ]';
+    return 'Contribution[embedded=$embedded, links=$links, createdAt=$createdAt, id=$id, type=$type, updatedAt=$updatedAt, ]';
   }
 }
