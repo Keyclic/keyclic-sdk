@@ -9,7 +9,7 @@
             "url": "https:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.12.14"
+        "version": "2.12.15-dev.563aa9c2a8cf"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -9419,16 +9419,73 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "$ref": "#\/parameters\/assigned_to"
+                    },
+                    {
+                        "$ref": "#\/parameters\/assigned_tos__"
+                    },
+                    {
                         "$ref": "#\/parameters\/category"
                     },
                     {
                         "$ref": "#\/parameters\/categories__"
                     },
                     {
+                        "$ref": "#\/parameters\/created_by"
+                    },
+                    {
+                        "$ref": "#\/parameters\/created_bies__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/delegated_to"
+                    },
+                    {
+                        "$ref": "#\/parameters\/delegated_tos__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/has_documents"
+                    },
+                    {
+                        "$ref": "#\/parameters\/managed_by"
+                    },
+                    {
+                        "$ref": "#\/parameters\/managed_bies__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/operation_state_all"
+                    },
+                    {
+                        "$ref": "#\/parameters\/operation_state"
+                    },
+                    {
+                        "$ref": "#\/parameters\/operation_states__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/phase"
+                    },
+                    {
+                        "$ref": "#\/parameters\/phases__"
+                    },
+                    {
                         "$ref": "#\/parameters\/place"
                     },
                     {
                         "$ref": "#\/parameters\/places__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/priority"
+                    },
+                    {
+                        "$ref": "#\/parameters\/priorities__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/rating"
                     },
                     {
                         "in": "query",
@@ -19278,8 +19335,8 @@
                 "type": {
                     "type": "string",
                     "enum": [
-                        "collaborator",
-                        "contact"
+                        "Collaborator",
+                        "Contact"
                     ]
                 }
             },
@@ -20524,6 +20581,29 @@
             },
             "required": [
                 "password"
+            ]
+        },
+        "Permission": {
+            "format": "string",
+            "type": "string",
+            "enum": [
+                "ORGANIZATION:AGENT",
+                "ORGANIZATION:MEMBER",
+                "ORGANIZATION:OPERATOR",
+                "ALL",
+                "ANALYTICS:ALL",
+                "CATEGORY:ALL",
+                "EXPORT:ALL",
+                "MEMBER_COLLABORATOR:ALL",
+                "MEMBER_CONTACT:ALL",
+                "OCCUPANT:ALL",
+                "OPERATION:ALL",
+                "ORGANIZATION:ALL",
+                "PLACE:ALL",
+                "PUBLICATION:ALL",
+                "REPORT:ALL",
+                "SERVICE:ALL",
+                "WEBHOOK:ALL"
             ]
         },
         "Person": {
