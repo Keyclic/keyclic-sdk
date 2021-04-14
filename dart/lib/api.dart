@@ -375,6 +375,7 @@ part 'model/pagination.dart';
 part 'model/pagination_link.dart';
 part 'model/pagination_links.dart';
 part 'model/password_change_data.dart';
+part 'model/permission.dart';
 part 'model/person.dart';
 part 'model/person_agreement.dart';
 part 'model/person_links.dart';

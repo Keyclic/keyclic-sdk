@@ -1002,7 +1002,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAnalyticByOrganization**
-> Chart getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, category, categories[], place, places[], state, states[], options[property], options[sort])
+> Chart getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], category, categories[], createdBy, createdBies[], after, before, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], phase, phases[], place, places[], priority, priorities[], rating, state, states[], options[property], options[sort])
 
 Retrieve one Analytic resource.
 
@@ -1021,17 +1021,36 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
+var assignedTo = assignedTo_example; // String | 
+var assignedTos[] = []; // List<String> | 
 var category = category_example; // String | 
 var categories[] = []; // List<String> | 
+var createdBy = createdBy_example; // String | 
+var createdBies[] = []; // List<String> | 
+var after = 2013-10-20T19:20:30+01:00; // DateTime | 
+var before = 2013-10-20T19:20:30+01:00; // DateTime | 
+var delegatedTo = delegatedTo_example; // String | 
+var delegatedTos[] = []; // List<String> | 
+var hasDocuments = hasDocuments_example; // String | 
+var managedBy = managedBy_example; // String | 
+var managedBies[] = []; // List<String> | 
+var operationStateAll = operationStateAll_example; // String | 
+var operationState = operationState_example; // String | 
+var operationStates[] = []; // List<String> | 
+var phase = phase_example; // String | 
+var phases[] = []; // List<String> | 
 var place = place_example; // String | 
 var places[] = []; // List<String> | 
+var priority = priority_example; // String | 
+var priorities[] = []; // List<String> | 
+var rating = rating_example; // String | 
 var state = state_example; // String | 
 var states[] = []; // List<String> | 
 var options[property] = options[property]_example; // String | 
 var options[sort] = options[sort]_example; // String | 
 
 try { 
-    var result = api_instance.getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, category, categories[], place, places[], state, states[], options[property], options[sort]);
+    var result = api_instance.getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], category, categories[], createdBy, createdBies[], after, before, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], phase, phases[], place, places[], priority, priorities[], rating, state, states[], options[property], options[sort]);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->getAnalyticByOrganization: $e\n");
@@ -1048,10 +1067,29 @@ Name | Type | Description  | Notes
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
+ **assignedTo** | **String**|  | [optional] 
+ **assignedTos[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **category** | **String**|  | [optional] 
  **categories[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **createdBy** | **String**|  | [optional] 
+ **createdBies[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **after** | **DateTime**|  | [optional] 
+ **before** | **DateTime**|  | [optional] 
+ **delegatedTo** | **String**|  | [optional] 
+ **delegatedTos[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **hasDocuments** | **String**|  | [optional] 
+ **managedBy** | **String**|  | [optional] 
+ **managedBies[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **operationStateAll** | **String**|  | [optional] 
+ **operationState** | **String**|  | [optional] 
+ **operationStates[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **phase** | **String**|  | [optional] 
+ **phases[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **place** | **String**|  | [optional] 
  **places[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **priority** | **String**|  | [optional] 
+ **priorities[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
+ **rating** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
  **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **options[property]** | **String**|  | [optional] 

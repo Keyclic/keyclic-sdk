@@ -1391,10 +1391,29 @@ class OrganizationApi {
     DateTime xDateTime,
     String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
+    String assignedTo,
+    List<String> assignedTos__,
     String category,
     List<String> categories__,
+    String createdBy,
+    List<String> createdBies__,
+    DateTime after,
+    DateTime before,
+    String delegatedTo,
+    List<String> delegatedTos__,
+    String hasDocuments,
+    String managedBy,
+    List<String> managedBies__,
+    String operationStateAll,
+    String operationState,
+    List<String> operationStates__,
+    String phase,
+    List<String> phases__,
     String place,
     List<String> places__,
+    String priority,
+    List<String> priorities__,
+    String rating,
     String state,
     List<String> states__,
     String options_property_,
@@ -1417,16 +1436,68 @@ class OrganizationApi {
 
     // query params
     final List<QueryParam> queryParams = <QueryParam>[
+      if (assignedTo != null)
+        ..._convertParametersForCollectionFormat("assigned_to", assignedTo),
+      if (assignedTos__ != null)
+        ..._convertParametersForCollectionFormat(
+            "assigned_tos[]", assignedTos__,
+            collectionFormat: "multi"),
       if (category != null)
         ..._convertParametersForCollectionFormat("category", category),
       if (categories__ != null)
         ..._convertParametersForCollectionFormat("categories[]", categories__,
+            collectionFormat: "multi"),
+      if (createdBy != null)
+        ..._convertParametersForCollectionFormat("created_by", createdBy),
+      if (createdBies__ != null)
+        ..._convertParametersForCollectionFormat(
+            "created_bies[]", createdBies__,
+            collectionFormat: "multi"),
+      if (after != null)
+        ..._convertParametersForCollectionFormat("after", after),
+      if (before != null)
+        ..._convertParametersForCollectionFormat("before", before),
+      if (delegatedTo != null)
+        ..._convertParametersForCollectionFormat("delegated_to", delegatedTo),
+      if (delegatedTos__ != null)
+        ..._convertParametersForCollectionFormat(
+            "delegated_tos[]", delegatedTos__,
+            collectionFormat: "multi"),
+      if (hasDocuments != null)
+        ..._convertParametersForCollectionFormat("has_documents", hasDocuments),
+      if (managedBy != null)
+        ..._convertParametersForCollectionFormat("managed_by", managedBy),
+      if (managedBies__ != null)
+        ..._convertParametersForCollectionFormat(
+            "managed_bies[]", managedBies__,
+            collectionFormat: "multi"),
+      if (operationStateAll != null)
+        ..._convertParametersForCollectionFormat(
+            "operation_state_all", operationStateAll),
+      if (operationState != null)
+        ..._convertParametersForCollectionFormat(
+            "operation_state", operationState),
+      if (operationStates__ != null)
+        ..._convertParametersForCollectionFormat(
+            "operation_states[]", operationStates__,
+            collectionFormat: "multi"),
+      if (phase != null)
+        ..._convertParametersForCollectionFormat("phase", phase),
+      if (phases__ != null)
+        ..._convertParametersForCollectionFormat("phases[]", phases__,
             collectionFormat: "multi"),
       if (place != null)
         ..._convertParametersForCollectionFormat("place", place),
       if (places__ != null)
         ..._convertParametersForCollectionFormat("places[]", places__,
             collectionFormat: "multi"),
+      if (priority != null)
+        ..._convertParametersForCollectionFormat("priority", priority),
+      if (priorities__ != null)
+        ..._convertParametersForCollectionFormat("priorities[]", priorities__,
+            collectionFormat: "multi"),
+      if (rating != null)
+        ..._convertParametersForCollectionFormat("rating", rating),
       if (state != null)
         ..._convertParametersForCollectionFormat("state", state),
       if (states__ != null)

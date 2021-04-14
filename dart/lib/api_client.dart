@@ -759,6 +759,8 @@ class ApiClient {
           return PaginationLinks.fromJson(value);
         case 'PasswordChangeData':
           return PasswordChangeData.fromJson(value);
+        case 'Permission':
+          return Permission.fromJson(value);
         case 'Person':
           return Person.fromJson(value);
         case 'PersonAgreement':

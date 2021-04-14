@@ -43,6 +43,10 @@ String _parameterToString(dynamic value) {
     return value.toUtc().toIso8601String();
   }
 
+  if (value is Permission) {
+    return Permission.encode(value).toString();
+  }
+
   if (value is String) {
     return Uri.encodeQueryComponent(value);
   }
