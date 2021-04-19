@@ -3,6 +3,10 @@ part of keyclic_sdk_api.api;
 class Permission {
   Permission.fromJson(dynamic data) {
     switch (data) {
+      case "FILTER:ALL":
+        value = data;
+        break;
+
       case "ORGANIZATION:AGENT":
         value = data;
         break;
@@ -80,6 +84,8 @@ class Permission {
 
   /// The underlying value of this enum member.
   String value;
+
+  static Permission fILTERALL_ = Permission._internal("FILTER:ALL");
 
   static Permission oRGANIZATIONAGENT_ =
       Permission._internal("ORGANIZATION:AGENT");
