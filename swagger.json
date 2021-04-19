@@ -9,7 +9,7 @@
             "url": "https:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.12.15-dev.563aa9c2a8cf"
+        "version": "2.13.1"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -16827,6 +16827,11 @@
                     "format": "float",
                     "type": "number"
                 },
+                "reference": {
+                    "format": "string",
+                    "maxLength": 255,
+                    "type": "string"
+                },
                 "type": {
                     "format": "string",
                     "type": "string"
@@ -20584,9 +20589,9 @@
             ]
         },
         "Permission": {
-            "format": "string",
             "type": "string",
             "enum": [
+                "FILTER:ALL",
                 "ORGANIZATION:AGENT",
                 "ORGANIZATION:MEMBER",
                 "ORGANIZATION:OPERATOR",
@@ -23343,6 +23348,11 @@
                     "format": "float",
                     "type": "number"
                 },
+                "reference": {
+                    "format": "string",
+                    "maxLength": 255,
+                    "type": "string"
+                },
                 "type": {
                     "format": "string",
                     "type": "string"
@@ -23662,6 +23672,11 @@
                 "progression": {
                     "format": "float",
                     "type": "number"
+                },
+                "reference": {
+                    "format": "string",
+                    "maxLength": 255,
+                    "type": "string"
                 },
                 "type": {
                     "format": "string",
