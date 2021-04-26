@@ -418,6 +418,7 @@ part 'model/plan_links_self_iri_template.dart';
 part 'model/plan_patch.dart';
 part 'model/point.dart';
 part 'model/polygon.dart';
+part 'model/preferences_form.dart';
 part 'model/preferences_notification.dart';
 part 'model/preferences_reference.dart';
 part 'model/property_condition_list.dart';

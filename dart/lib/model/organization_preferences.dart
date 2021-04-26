@@ -3,6 +3,7 @@ part of keyclic_sdk_api.api;
 class OrganizationPreferences {
   OrganizationPreferences({
     this.categoryRequired,
+    this.form,
     this.offline,
     this.public,
     this.reference,
@@ -16,6 +17,7 @@ class OrganizationPreferences {
 
     return OrganizationPreferences(
       categoryRequired: json['categoryRequired'],
+      form: PreferencesForm.fromJson(json['form']),
       offline: json['offline'],
       public: json['public'],
       reference: PreferencesReference.fromJson(json['reference']),
@@ -24,6 +26,8 @@ class OrganizationPreferences {
   }
 
   bool categoryRequired;
+
+  PreferencesForm form;
 
   bool offline;
 
@@ -43,6 +47,7 @@ class OrganizationPreferences {
     return other is OrganizationPreferences &&
         runtimeType == other.runtimeType &&
         categoryRequired == other.categoryRequired &&
+        form == other.form &&
         offline == other.offline &&
         public == other.public &&
         reference == other.reference &&
@@ -55,6 +60,7 @@ class OrganizationPreferences {
     int hashCode = 0;
 
     hashCode ^= categoryRequired?.hashCode ?? 0;
+    hashCode ^= form?.hashCode ?? 0;
     hashCode ^= offline?.hashCode ?? 0;
     hashCode ^= public?.hashCode ?? 0;
     hashCode ^= reference?.hashCode ?? 0;
@@ -82,6 +88,7 @@ class OrganizationPreferences {
   Map<String, dynamic> toJson() {
     return {
       if (categoryRequired != null) 'categoryRequired': categoryRequired,
+      if (form != null) 'form': form.toJson(),
       if (offline != null) 'offline': offline,
       if (public != null) 'public': public,
       if (reference != null) 'reference': reference.toJson(),
@@ -91,6 +98,6 @@ class OrganizationPreferences {
 
   @override
   String toString() {
-    return 'OrganizationPreferences[categoryRequired=$categoryRequired, offline=$offline, public=$public, reference=$reference, reviewEnabled=$reviewEnabled, ]';
+    return 'OrganizationPreferences[categoryRequired=$categoryRequired, form=$form, offline=$offline, public=$public, reference=$reference, reviewEnabled=$reviewEnabled, ]';
   }
 }
