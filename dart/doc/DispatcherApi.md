@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **cgetRulesByDispatcher**
-> RulePagination cgetRulesByDispatcher(xKeyclicApp, dispatcher, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, page, limit)
+> RulePagination cgetRulesByDispatcher(xKeyclicApp, dispatcher, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, category, categories[], after, before, order, service, services[], page, limit)
 
 Retrieve all Rule resources.
 
@@ -33,14 +33,18 @@ var acceptLanguage = acceptLanguage_example; // String |
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
 var xKeyclicAppPlatform = xKeyclicAppPlatform_example; // String | 
 var xKeyclicAppVersion = xKeyclicAppVersion_example; // String | 
+var category = category_example; // String | 
+var categories[] = []; // List<String> | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
 var order = order_example; // String | 
+var service = service_example; // String | 
+var services[] = []; // List<String> | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetRulesByDispatcher(xKeyclicApp, dispatcher, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, order, page, limit);
+    var result = api_instance.cgetRulesByDispatcher(xKeyclicApp, dispatcher, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, category, categories[], after, before, order, service, services[], page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling DispatcherApi->cgetRulesByDispatcher: $e\n");
@@ -57,9 +61,13 @@ Name | Type | Description  | Notes
  **xDateTime** | **DateTime**|  | [optional] 
  **xKeyclicAppPlatform** | **String**|  | [optional] 
  **xKeyclicAppVersion** | **String**|  | [optional] 
+ **category** | **String**|  | [optional] 
+ **categories[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
  **order** | **String**|  | [optional] [default to desc]
+ **service** | **String**|  | [optional] 
+ **services[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 

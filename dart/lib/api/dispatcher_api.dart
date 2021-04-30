@@ -16,9 +16,13 @@ class DispatcherApi {
     DateTime xDateTime,
     String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
+    String category,
+    List<String> categories__,
     DateTime after,
     DateTime before,
     String order,
+    String service,
+    List<String> services__,
     int page,
     int limit,
   }) async {
@@ -39,12 +43,22 @@ class DispatcherApi {
 
     // query params
     final List<QueryParam> queryParams = <QueryParam>[
+      if (category != null)
+        ..._convertParametersForCollectionFormat("category", category),
+      if (categories__ != null)
+        ..._convertParametersForCollectionFormat("categories[]", categories__,
+            collectionFormat: "multi"),
       if (after != null)
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)
         ..._convertParametersForCollectionFormat("before", before),
       if (order != null)
         ..._convertParametersForCollectionFormat("order", order),
+      if (service != null)
+        ..._convertParametersForCollectionFormat("service", service),
+      if (services__ != null)
+        ..._convertParametersForCollectionFormat("services[]", services__,
+            collectionFormat: "multi"),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
         ..._convertParametersForCollectionFormat("limit", limit),
