@@ -16519,6 +16519,13 @@
             "properties": {
                 "text": {
                     "type": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "Comment",
+                        "Reminder"
+                    ]
                 }
             },
             "required": [
