@@ -1399,6 +1399,7 @@ class OrganizationApi {
     List<String> createdBies__,
     DateTime after,
     DateTime before,
+    String deep,
     String delegatedTo,
     List<String> delegatedTos__,
     String hasDocuments,
@@ -1457,6 +1458,7 @@ class OrganizationApi {
         ..._convertParametersForCollectionFormat("after", after),
       if (before != null)
         ..._convertParametersForCollectionFormat("before", before),
+      if (deep != null) ..._convertParametersForCollectionFormat("deep", deep),
       if (delegatedTo != null)
         ..._convertParametersForCollectionFormat("delegated_to", delegatedTo),
       if (delegatedTos__ != null)

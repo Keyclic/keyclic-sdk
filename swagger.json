@@ -9,7 +9,7 @@
             "url": "https:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.13.6"
+        "version": "2.13.7"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -2162,6 +2162,12 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "$ref": "#\/parameters\/category"
+                    },
+                    {
+                        "$ref": "#\/parameters\/categories__"
+                    },
+                    {
                         "$ref": "#\/parameters\/after"
                     },
                     {
@@ -2169,6 +2175,12 @@
                     },
                     {
                         "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/service"
+                    },
+                    {
+                        "$ref": "#\/parameters\/services__"
                     },
                     {
                         "$ref": "#\/parameters\/page"
@@ -9443,6 +9455,9 @@
                         "$ref": "#\/parameters\/before"
                     },
                     {
+                        "$ref": "#\/parameters\/deep"
+                    },
+                    {
                         "$ref": "#\/parameters\/delegated_to"
                     },
                     {
@@ -16519,6 +16534,13 @@
             "properties": {
                 "text": {
                     "type": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "Comment",
+                        "Reminder"
+                    ]
                 }
             },
             "required": [
@@ -23667,6 +23689,38 @@
             },
             "required": true
         },
+        "category": {
+            "in": "query",
+            "name": "category",
+            "pattern": ".*",
+            "type": "string"
+        },
+        "categories__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "categories[]",
+            "pattern": ".*",
+            "type": "array"
+        },
+        "service": {
+            "in": "query",
+            "name": "service",
+            "pattern": ".*",
+            "type": "string"
+        },
+        "services__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "services[]",
+            "pattern": ".*",
+            "type": "array"
+        },
         "DocumentWorkflowData": {
             "name": "DocumentWorkflowData",
             "in": "body",
@@ -23982,22 +24036,6 @@
                 "type": "string"
             },
             "name": "places[]",
-            "pattern": ".*",
-            "type": "array"
-        },
-        "category": {
-            "in": "query",
-            "name": "category",
-            "pattern": ".*",
-            "type": "string"
-        },
-        "categories__": {
-            "collectionFormat": "multi",
-            "in": "query",
-            "items": {
-                "type": "string"
-            },
-            "name": "categories[]",
             "pattern": ".*",
             "type": "array"
         },

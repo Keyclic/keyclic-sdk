@@ -1002,7 +1002,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAnalyticByOrganization**
-> Chart getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], category, categories[], createdBy, createdBies[], after, before, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], phase, phases[], place, places[], priority, priorities[], rating, state, states[], options[property], options[sort])
+> Chart getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], phase, phases[], place, places[], priority, priorities[], rating, state, states[], options[property], options[sort])
 
 Retrieve one Analytic resource.
 
@@ -1029,6 +1029,7 @@ var createdBy = createdBy_example; // String |
 var createdBies[] = []; // List<String> | 
 var after = 2013-10-20T19:20:30+01:00; // DateTime | 
 var before = 2013-10-20T19:20:30+01:00; // DateTime | 
+var deep = deep_example; // String | 
 var delegatedTo = delegatedTo_example; // String | 
 var delegatedTos[] = []; // List<String> | 
 var hasDocuments = hasDocuments_example; // String | 
@@ -1050,7 +1051,7 @@ var options[property] = options[property]_example; // String |
 var options[sort] = options[sort]_example; // String | 
 
 try { 
-    var result = api_instance.getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], category, categories[], createdBy, createdBies[], after, before, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], phase, phases[], place, places[], priority, priorities[], rating, state, states[], options[property], options[sort]);
+    var result = api_instance.getAnalyticByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], phase, phases[], place, places[], priority, priorities[], rating, state, states[], options[property], options[sort]);
     print(result);
 } catch (e) {
     print("Exception when calling OrganizationApi->getAnalyticByOrganization: $e\n");
@@ -1075,6 +1076,7 @@ Name | Type | Description  | Notes
  **createdBies[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **after** | **DateTime**|  | [optional] 
  **before** | **DateTime**|  | [optional] 
+ **deep** | **String**|  | [optional] 
  **delegatedTo** | **String**|  | [optional] 
  **delegatedTos[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **hasDocuments** | **String**|  | [optional] 

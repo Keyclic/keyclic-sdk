@@ -1,8 +1,14 @@
 part of keyclic_sdk_api.api;
 
+class CommentDataTypeEnum {
+  static const String comment_ = "Comment";
+  static const String reminder_ = "Reminder";
+}
+
 class CommentData {
   CommentData({
     this.text,
+    this.type,
   });
 
   factory CommentData.fromJson(Map<String, dynamic> json) {
@@ -12,10 +18,14 @@ class CommentData {
 
     return CommentData(
       text: json['text'],
+      type: json['type'],
     );
   }
 
   String text;
+
+  /// use CommentDataTypeEnum
+  String type;
 
   @override
   bool operator ==(dynamic other) {
@@ -26,7 +36,8 @@ class CommentData {
 
     return other is CommentData &&
         runtimeType == other.runtimeType &&
-        text == other.text;
+        text == other.text &&
+        type == other.type;
   }
 
   /// By default hashCode return reference
@@ -35,6 +46,7 @@ class CommentData {
     int hashCode = 0;
 
     hashCode ^= text?.hashCode ?? 0;
+    hashCode ^= type?.hashCode ?? 0;
 
     return hashCode;
   }
@@ -56,11 +68,12 @@ class CommentData {
   Map<String, dynamic> toJson() {
     return {
       if (text != null) 'text': text,
+      if (type != null) 'type': type,
     };
   }
 
   @override
   String toString() {
-    return 'CommentData[text=$text, ]';
+    return 'CommentData[text=$text, type=$type, ]';
   }
 }
