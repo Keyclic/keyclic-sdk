@@ -15122,7 +15122,8 @@
                     "type": "string"
                 },
                 "subject": {
-                    "$ref": "#\/definitions\/ActivityEntity"
+                    "type": "object",
+                    "additionalProperties": true
                 },
                 "time": {
                     "format": "date-time",
@@ -15161,21 +15162,6 @@
                     "items": {
                         "$ref": "#\/definitions\/ActivityGroup"
                     }
-                }
-            }
-        },
-        "ActivityEntity": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "format": "uuid",
-                    "pattern": "^\\[0-9A-Fa-f]{8}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{4}[-]?[0-9A-Fa-f]{12}",
-                    "readOnly": true,
-                    "type": "string"
-                },
-                "type": {
-                    "format": "string",
-                    "type": "string"
                 }
             }
         },
