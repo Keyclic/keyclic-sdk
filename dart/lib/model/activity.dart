@@ -27,7 +27,7 @@ class Activity {
       message: json['message'],
       object: json['object'],
       origin: json['origin'],
-      subject: ActivityEntity.fromJson(json['subject']),
+      subject: json['subject'],
       time: time,
       title: json['title'],
       verb: json['verb'],
@@ -42,7 +42,7 @@ class Activity {
 
   String origin;
 
-  ActivityEntity subject;
+  Map<String, dynamic> subject;
 
   DateTime time;
 
@@ -104,7 +104,7 @@ class Activity {
       if (message != null) 'message': message,
       if (object != null) 'object': object,
       if (origin != null) 'origin': origin,
-      if (subject != null) 'subject': subject.toJson(),
+      if (subject != null) 'subject': subject,
       if (time != null) 'time': time.toUtc().toIso8601String(),
       if (title != null) 'title': title,
       if (verb != null) 'verb': verb,

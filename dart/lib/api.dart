@@ -56,7 +56,6 @@ part 'api/workflow_api.dart';
 
 part 'model/activity.dart';
 part 'model/activity_aggregated_pagination.dart';
-part 'model/activity_entity.dart';
 part 'model/activity_group.dart';
 part 'model/activity_pagination.dart';
 part 'model/agreement_older_than.dart';

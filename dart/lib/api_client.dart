@@ -120,8 +120,6 @@ class ApiClient {
           return Activity.fromJson(value);
         case 'ActivityAggregatedPagination':
           return ActivityAggregatedPagination.fromJson(value);
-        case 'ActivityEntity':
-          return ActivityEntity.fromJson(value);
         case 'ActivityGroup':
           return ActivityGroup.fromJson(value);
         case 'ActivityPagination':
