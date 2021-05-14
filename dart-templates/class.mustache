@@ -147,7 +147,7 @@ class {{classname}} {{#interfaces}}extends {{interfaces.0}} {{/interfaces}}{
     return {
       {{#vars}}
       {{#isDateTime}}
-        '{{{baseName}}}': {{name}}.toUtc().toIso8601String(),
+        '{{{baseName}}}': {{name}}?.toUtc()?.toIso8601String(),
       {{/isDateTime}}
       {{^isDateTime}}
         {{#complexType}}
