@@ -155,7 +155,7 @@ class {{classname}} {{#interfaces}}extends {{interfaces.0}} {{/interfaces}}{
             '{{{baseName}}}': {{name}},
           {{/isContainer}}
           {{^isContainer}}
-            '{{{baseName}}}': {{name}}.toJson(),
+            '{{{baseName}}}': {{name}}?.toJson(),
           {{/isContainer}}
         {{/complexType}}
         {{^complexType}}
