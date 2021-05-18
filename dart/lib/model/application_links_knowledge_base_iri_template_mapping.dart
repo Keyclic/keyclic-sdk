@@ -61,7 +61,7 @@ class ApplicationLinksKnowledgeBaseIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (knowledgeBase != null) 'knowledgeBase': knowledgeBase,
+      'knowledgeBase': knowledgeBase,
     };
   }
 

@@ -71,10 +71,10 @@ class PlacePatch {
 
   Map<String, dynamic> toJson() {
     return {
-      if (address != null) 'address': address.toJson(),
-      if (branchCode != null) 'branchCode': branchCode,
-      if (description != null) 'description': description,
-      if (name != null) 'name': name,
+      'address': address?.toJson(),
+      'branchCode': branchCode,
+      'description': description,
+      'name': name,
     };
   }
 

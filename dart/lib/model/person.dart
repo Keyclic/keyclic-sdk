@@ -149,21 +149,21 @@ class Person {
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links.toJson(),
-      if (agreement != null) 'agreement': agreement.toJson(),
-      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (email != null) 'email': email,
-      if (enabled != null) 'enabled': enabled,
-      if (familyName != null) 'familyName': familyName,
-      if (givenName != null) 'givenName': givenName,
-      if (id != null) 'id': id,
-      if (jobTitle != null) 'jobTitle': jobTitle,
-      if (optIn != null) 'optIn': optIn,
-      if (preferences != null) 'preferences': preferences.toJson(),
-      if (telephone != null) 'telephone': telephone,
-      if (type != null) 'type': type,
-      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
-      if (username != null) 'username': username,
+      '_links': links?.toJson(),
+      'agreement': agreement?.toJson(),
+      'createdAt': createdAt?.toUtc()?.toIso8601String(),
+      'email': email,
+      'enabled': enabled,
+      'familyName': familyName,
+      'givenName': givenName,
+      'id': id,
+      'jobTitle': jobTitle,
+      'optIn': optIn,
+      'preferences': preferences?.toJson(),
+      'telephone': telephone,
+      'type': type,
+      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
+      'username': username,
     };
   }
 

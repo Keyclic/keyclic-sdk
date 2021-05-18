@@ -61,8 +61,8 @@ class GeoShapeCentroid {
 
   Map<String, dynamic> toJson() {
     return {
-      if (latitude != null) 'latitude': latitude,
-      if (longitude != null) 'longitude': longitude,
+      'latitude': latitude,
+      'longitude': longitude,
     };
   }
 

@@ -62,8 +62,8 @@ class TrackingProgression {
 
   Map<String, dynamic> toJson() {
     return {
-      if (resolved != null) 'resolved': resolved,
-      if (total != null) 'total': total,
+      'resolved': resolved,
+      'total': total,
     };
   }
 

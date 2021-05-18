@@ -71,10 +71,10 @@ class Marker {
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links.toJson(),
-      if (id != null) 'id': id,
-      if (point != null) 'point': point.toJson(),
-      if (type != null) 'type': type,
+      '_links': links?.toJson(),
+      'id': id,
+      'point': point?.toJson(),
+      'type': type,
     };
   }
 

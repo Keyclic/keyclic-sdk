@@ -61,8 +61,8 @@ class InvitationLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      if (member != null) 'member': member.toJson(),
-      if (self != null) 'self': self.toJson(),
+      'member': member?.toJson(),
+      'self': self?.toJson(),
     };
   }
 

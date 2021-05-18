@@ -80,8 +80,8 @@ class DocumentFile {
 
   Map<String, dynamic> toJson() {
     return {
-      if (contentType != null) 'contentType': contentType,
-      if (name != null) 'name': name,
+      'contentType': contentType,
+      'name': name,
     };
   }
 

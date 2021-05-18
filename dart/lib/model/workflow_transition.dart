@@ -92,13 +92,13 @@ class WorkflowTransition {
 
   Map<String, dynamic> toJson() {
     return {
-      if (commentRequired != null) 'commentRequired': commentRequired,
-      if (description != null) 'description': description,
-      if (from != null) 'from': from.toJson(),
-      if (id != null) 'id': id,
-      if (name != null) 'name': name,
-      if (to != null) 'to': to.toJson(),
-      if (type != null) 'type': type,
+      'commentRequired': commentRequired,
+      'description': description,
+      'from': from?.toJson(),
+      'id': id,
+      'name': name,
+      'to': to?.toJson(),
+      'type': type,
     };
   }
 

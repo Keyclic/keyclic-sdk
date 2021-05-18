@@ -107,14 +107,14 @@ class Webhook {
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links.toJson(),
-      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (enabled != null) 'enabled': enabled,
-      if (event != null) 'event': event,
-      if (id != null) 'id': id,
-      if (payloadUrl != null) 'payloadUrl': payloadUrl,
-      if (type != null) 'type': type,
-      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
+      '_links': links?.toJson(),
+      'createdAt': createdAt?.toUtc()?.toIso8601String(),
+      'enabled': enabled,
+      'event': event,
+      'id': id,
+      'payloadUrl': payloadUrl,
+      'type': type,
+      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
     };
   }
 

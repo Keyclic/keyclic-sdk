@@ -111,13 +111,13 @@ class MemberTypeRole {
 
   Map<String, dynamic> toJson() {
     return {
-      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (description != null) 'description': description,
-      if (id != null) 'id': id,
-      if (name != null) 'name': name,
-      if (permissions != null) 'permissions': permissions,
-      if (type != null) 'type': type,
-      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
+      'createdAt': createdAt?.toUtc()?.toIso8601String(),
+      'description': description,
+      'id': id,
+      'name': name,
+      'permissions': permissions,
+      'type': type,
+      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
     };
   }
 

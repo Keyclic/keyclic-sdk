@@ -59,7 +59,7 @@ class RuleLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (rule != null) 'rule': rule,
+      'rule': rule,
     };
   }
 

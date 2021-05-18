@@ -59,8 +59,8 @@ class RulePatch {
 
   Map<String, dynamic> toJson() {
     return {
-      if (category != null) 'category': category,
-      if (service != null) 'service': service,
+      'category': category,
+      'service': service,
     };
   }
 

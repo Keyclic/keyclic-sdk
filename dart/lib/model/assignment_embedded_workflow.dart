@@ -79,9 +79,9 @@ class AssignmentEmbeddedWorkflow {
 
   Map<String, dynamic> toJson() {
     return {
-      if (metrics != null) 'metrics': metrics,
-      if (state != null) 'state': state.toJson(),
-      if (transitions != null) 'transitions': transitions,
+      'metrics': metrics,
+      'state': state?.toJson(),
+      'transitions': transitions,
     };
   }
 

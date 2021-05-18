@@ -62,8 +62,8 @@ class ExternalServiceLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      if (provider != null) 'provider': provider.toJson(),
-      if (self != null) 'self': self.toJson(),
+      'provider': provider?.toJson(),
+      'self': self?.toJson(),
     };
   }
 

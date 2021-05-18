@@ -80,11 +80,11 @@ class MemberContactPoint {
 
   Map<String, dynamic> toJson() {
     return {
-      if (description != null) 'description': description,
-      if (email != null) 'email': email,
-      if (isOpen != null) 'isOpen': isOpen,
-      if (name != null) 'name': name,
-      if (telephone != null) 'telephone': telephone,
+      'description': description,
+      'email': email,
+      'isOpen': isOpen,
+      'name': name,
+      'telephone': telephone,
     };
   }
 

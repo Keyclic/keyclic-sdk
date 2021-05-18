@@ -60,7 +60,7 @@ class PreferencesForm {
 
   Map<String, dynamic> toJson() {
     return {
-      if (required != null) 'required': required,
+      'required': required,
     };
   }
 

@@ -91,11 +91,11 @@ class FeedbackEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      if (category != null) 'category': category.toJson(),
-      if (markers != null) 'markers': markers,
-      if (reporter != null) 'reporter': reporter.toJson(),
-      if (stateTransitions != null) 'stateTransitions': stateTransitions,
-      if (tracking != null) 'tracking': tracking,
+      'category': category?.toJson(),
+      'markers': markers,
+      'reporter': reporter?.toJson(),
+      'stateTransitions': stateTransitions,
+      'tracking': tracking,
     };
   }
 

@@ -96,13 +96,12 @@ class ReportPatch {
 
   Map<String, dynamic> toJson() {
     return {
-      if (category != null) 'category': category,
-      if (description != null) 'description': description,
-      if (dueAt != null) 'dueAt': dueAt.toUtc().toIso8601String(),
-      if (identificationNumber != null)
-        'identificationNumber': identificationNumber,
-      if (priority != null) 'priority': priority,
-      if (tags != null) 'tags': tags,
+      'category': category,
+      'description': description,
+      'dueAt': dueAt?.toUtc()?.toIso8601String(),
+      'identificationNumber': identificationNumber,
+      'priority': priority,
+      'tags': tags,
     };
   }
 

@@ -67,9 +67,9 @@ class DocumentLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      if (createdBy != null) 'createdBy': createdBy.toJson(),
-      if (file != null) 'file': file.toJson(),
-      if (self != null) 'self': self.toJson(),
+      'createdBy': createdBy?.toJson(),
+      'file': file?.toJson(),
+      'self': self?.toJson(),
     };
   }
 

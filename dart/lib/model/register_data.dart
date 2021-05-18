@@ -73,10 +73,10 @@ class RegisterData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (agreement != null) 'agreement': agreement.toJson(),
-      if (email != null) 'email': email,
-      if (invitation != null) 'invitation': invitation,
-      if (password != null) 'password': password,
+      'agreement': agreement?.toJson(),
+      'email': email,
+      'invitation': invitation,
+      'password': password,
     };
   }
 

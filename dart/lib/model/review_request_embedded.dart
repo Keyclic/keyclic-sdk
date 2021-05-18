@@ -57,7 +57,7 @@ class ReviewRequestEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      if (review != null) 'review': review.toJson(),
+      'review': review?.toJson(),
     };
   }
 

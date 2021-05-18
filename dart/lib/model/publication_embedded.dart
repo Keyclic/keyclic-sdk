@@ -62,8 +62,8 @@ class PublicationEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      if (author != null) 'author': author.toJson(),
-      if (place != null) 'place': place.toJson(),
+      'author': author?.toJson(),
+      'place': place?.toJson(),
     };
   }
 

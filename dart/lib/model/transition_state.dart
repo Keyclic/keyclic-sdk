@@ -121,18 +121,18 @@ class TransitionState {
 
   Map<String, dynamic> toJson() {
     return {
-      if (allowAdd != null) 'allowAdd': allowAdd,
-      if (allowDispatch != null) 'allowDispatch': allowDispatch,
-      if (backgroundColor != null) 'backgroundColor': backgroundColor,
-      if (color != null) 'color': color,
-      if (description != null) 'description': description,
-      if (end != null) 'end': end,
-      if (id != null) 'id': id,
-      if (key != null) 'key': key,
-      if (name != null) 'name': name,
-      if (progression != null) 'progression': progression,
-      if (reference != null) 'reference': reference,
-      if (type != null) 'type': type,
+      'allowAdd': allowAdd,
+      'allowDispatch': allowDispatch,
+      'backgroundColor': backgroundColor,
+      'color': color,
+      'description': description,
+      'end': end,
+      'id': id,
+      'key': key,
+      'name': name,
+      'progression': progression,
+      'reference': reference,
+      'type': type,
     };
   }
 

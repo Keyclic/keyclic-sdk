@@ -61,7 +61,7 @@ class PublicationLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (publication != null) 'publication': publication,
+      'publication': publication,
     };
   }
 

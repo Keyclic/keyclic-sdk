@@ -61,7 +61,7 @@ class ReviewLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (review != null) 'review': review,
+      'review': review,
     };
   }
 

@@ -133,16 +133,16 @@ class OperationTypeWorkflow {
 
   Map<String, dynamic> toJson() {
     return {
-      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (description != null) 'description': description,
-      if (end != null) 'end': end.toJson(),
-      if (id != null) 'id': id,
-      if (name != null) 'name': name,
-      if (start != null) 'start': start.toJson(),
-      if (states != null) 'states': states,
-      if (transitions != null) 'transitions': transitions,
-      if (type != null) 'type': type,
-      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
+      'createdAt': createdAt?.toUtc()?.toIso8601String(),
+      'description': description,
+      'end': end?.toJson(),
+      'id': id,
+      'name': name,
+      'start': start?.toJson(),
+      'states': states,
+      'transitions': transitions,
+      'type': type,
+      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
     };
   }
 

@@ -148,20 +148,19 @@ class Report {
 
   Map<String, dynamic> toJson() {
     return {
-      if (embedded != null) '_embedded': embedded.toJson(),
-      if (links != null) '_links': links.toJson(),
-      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (description != null) 'description': description,
-      if (dueAt != null) 'dueAt': dueAt.toUtc().toIso8601String(),
-      if (id != null) 'id': id,
-      if (identificationNumber != null)
-        'identificationNumber': identificationNumber,
-      if (phase != null) 'phase': phase.toJson(),
-      if (priority != null) 'priority': priority.toJson(),
-      if (reference != null) 'reference': reference,
-      if (tags != null) 'tags': tags,
-      if (type != null) 'type': type,
-      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
+      '_embedded': embedded?.toJson(),
+      '_links': links?.toJson(),
+      'createdAt': createdAt?.toUtc()?.toIso8601String(),
+      'description': description,
+      'dueAt': dueAt?.toUtc()?.toIso8601String(),
+      'id': id,
+      'identificationNumber': identificationNumber,
+      'phase': phase?.toJson(),
+      'priority': priority?.toJson(),
+      'reference': reference,
+      'tags': tags,
+      'type': type,
+      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
     };
   }
 

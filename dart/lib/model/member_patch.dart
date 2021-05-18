@@ -66,8 +66,8 @@ class MemberPatch {
 
   Map<String, dynamic> toJson() {
     return {
-      if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
-      if (roles != null) 'roles': roles,
+      'contactPoint': contactPoint?.toJson(),
+      'roles': roles,
     };
   }
 

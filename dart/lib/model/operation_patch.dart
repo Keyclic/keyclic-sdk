@@ -80,12 +80,10 @@ class OperationPatch {
 
   Map<String, dynamic> toJson() {
     return {
-      if (description != null) 'description': description,
-      if (identificationNumber != null)
-        'identificationNumber': identificationNumber,
-      if (name != null) 'name': name,
-      if (scheduledAt != null)
-        'scheduledAt': scheduledAt.toUtc().toIso8601String(),
+      'description': description,
+      'identificationNumber': identificationNumber,
+      'name': name,
+      'scheduledAt': scheduledAt?.toUtc()?.toIso8601String(),
     };
   }
 

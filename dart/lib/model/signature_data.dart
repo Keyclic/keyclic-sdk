@@ -61,8 +61,8 @@ class SignatureData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (image != null) 'image': image,
-      if (text != null) 'text': text,
+      'image': image,
+      'text': text,
     };
   }
 

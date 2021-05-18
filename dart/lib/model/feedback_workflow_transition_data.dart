@@ -64,7 +64,7 @@ class FeedbackWorkflowTransitionData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (transition != null) 'transition': transition,
+      'transition': transition,
     };
   }
 

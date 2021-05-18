@@ -67,8 +67,8 @@ class OperationLinksImageIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (image != null) 'image': image,
-      if (operation != null) 'operation': operation,
+      'image': image,
+      'operation': operation,
     };
   }
 

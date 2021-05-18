@@ -77,11 +77,11 @@ class Signer {
 
   Map<String, dynamic> toJson() {
     return {
-      if (embedded != null) '_embedded': embedded.toJson(),
-      if (links != null) '_links': links.toJson(),
-      if (id != null) 'id': id,
-      if (signature != null) 'signature': signature.toJson(),
-      if (type != null) 'type': type,
+      '_embedded': embedded?.toJson(),
+      '_links': links?.toJson(),
+      'id': id,
+      'signature': signature?.toJson(),
+      'type': type,
     };
   }
 

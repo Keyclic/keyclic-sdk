@@ -65,9 +65,9 @@ class Duration {
 
   Map<String, dynamic> toJson() {
     return {
-      if (hours != null) 'hours': hours,
-      if (minutes != null) 'minutes': minutes,
-      if (seconds != null) 'seconds': seconds,
+      'hours': hours,
+      'minutes': minutes,
+      'seconds': seconds,
     };
   }
 

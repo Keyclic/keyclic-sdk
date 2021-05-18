@@ -127,17 +127,17 @@ class Configuration {
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links.toJson(),
-      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (description != null) 'description': description,
-      if (id != null) 'id': id,
-      if (memberType != null) 'memberType': memberType.toJson(),
-      if (name != null) 'name': name,
-      if (operationType != null) 'operationType': operationType.toJson(),
-      if (placeType != null) 'placeType': placeType.toJson(),
-      if (reportType != null) 'reportType': reportType.toJson(),
-      if (type != null) 'type': type,
-      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
+      '_links': links?.toJson(),
+      'createdAt': createdAt?.toUtc()?.toIso8601String(),
+      'description': description,
+      'id': id,
+      'memberType': memberType?.toJson(),
+      'name': name,
+      'operationType': operationType?.toJson(),
+      'placeType': placeType?.toJson(),
+      'reportType': reportType?.toJson(),
+      'type': type,
+      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
     };
   }
 

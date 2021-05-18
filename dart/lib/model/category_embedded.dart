@@ -69,8 +69,8 @@ class CategoryEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      if (children != null) 'children': children,
-      if (path != null) 'path': path,
+      'children': children,
+      'path': path,
     };
   }
 

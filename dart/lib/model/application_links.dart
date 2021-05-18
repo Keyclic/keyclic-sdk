@@ -62,8 +62,8 @@ class ApplicationLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      if (knowledgeBase != null) 'knowledgeBase': knowledgeBase.toJson(),
-      if (self != null) 'self': self.toJson(),
+      'knowledgeBase': knowledgeBase?.toJson(),
+      'self': self?.toJson(),
     };
   }
 

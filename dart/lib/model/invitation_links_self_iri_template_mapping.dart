@@ -61,7 +61,7 @@ class InvitationLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (invitation != null) 'invitation': invitation,
+      'invitation': invitation,
     };
   }
 

@@ -59,7 +59,7 @@ class PlaceCollection {
 
   Map<String, dynamic> toJson() {
     return {
-      if (items != null) 'items': items,
+      'items': items,
     };
   }
 

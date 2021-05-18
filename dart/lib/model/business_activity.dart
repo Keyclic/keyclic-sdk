@@ -109,14 +109,14 @@ class BusinessActivity {
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links.toJson(),
-      if (alternateName != null) 'alternateName': alternateName,
-      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (id != null) 'id': id,
-      if (metadataSchema != null) 'metadataSchema': metadataSchema.toJson(),
-      if (name != null) 'name': name,
-      if (type != null) 'type': type,
-      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
+      '_links': links?.toJson(),
+      'alternateName': alternateName,
+      'createdAt': createdAt?.toUtc()?.toIso8601String(),
+      'id': id,
+      'metadataSchema': metadataSchema?.toJson(),
+      'name': name,
+      'type': type,
+      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
     };
   }
 

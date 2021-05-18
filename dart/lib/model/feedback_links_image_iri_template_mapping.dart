@@ -67,8 +67,8 @@ class FeedbackLinksImageIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (feedback != null) 'feedback': feedback,
-      if (image != null) 'image': image,
+      'feedback': feedback,
+      'image': image,
     };
   }
 

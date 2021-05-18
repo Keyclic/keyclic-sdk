@@ -59,8 +59,8 @@ class LoginData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (login != null) 'login': login,
-      if (password != null) 'password': password,
+      'login': login,
+      'password': password,
     };
   }
 

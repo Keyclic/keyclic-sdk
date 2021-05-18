@@ -68,9 +68,9 @@ class FeedbackDataGeoPoint {
 
   Map<String, dynamic> toJson() {
     return {
-      if (latitude != null) 'latitude': latitude,
-      if (longitude != null) 'longitude': longitude,
-      if (srid != null) 'srid': srid,
+      'latitude': latitude,
+      'longitude': longitude,
+      'srid': srid,
     };
   }
 

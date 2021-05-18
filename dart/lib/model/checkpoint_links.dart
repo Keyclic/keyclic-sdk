@@ -55,7 +55,7 @@ class CheckpointLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      if (organization != null) 'organization': organization.toJson(),
+      'organization': organization?.toJson(),
     };
   }
 

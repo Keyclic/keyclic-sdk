@@ -101,13 +101,13 @@ class Member {
 
   Map<String, dynamic> toJson() {
     return {
-      if (embedded != null) '_embedded': embedded.toJson(),
-      if (links != null) '_links': links.toJson(),
-      if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
-      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (id != null) 'id': id,
-      if (type != null) 'type': type,
-      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
+      '_embedded': embedded?.toJson(),
+      '_links': links?.toJson(),
+      'contactPoint': contactPoint?.toJson(),
+      'createdAt': createdAt?.toUtc()?.toIso8601String(),
+      'id': id,
+      'type': type,
+      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
     };
   }
 

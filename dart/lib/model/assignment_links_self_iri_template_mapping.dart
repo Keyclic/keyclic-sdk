@@ -61,7 +61,7 @@ class AssignmentLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (assignment != null) 'assignment': assignment,
+      'assignment': assignment,
     };
   }
 

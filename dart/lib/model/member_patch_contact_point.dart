@@ -75,10 +75,10 @@ class MemberPatchContactPoint {
 
   Map<String, dynamic> toJson() {
     return {
-      if (description != null) 'description': description,
-      if (email != null) 'email': email,
-      if (telephone != null) 'telephone': telephone,
-      if (name != null) 'name': name,
+      'description': description,
+      'email': email,
+      'telephone': telephone,
+      'name': name,
     };
   }
 

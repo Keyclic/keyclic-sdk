@@ -55,7 +55,7 @@ class ServiceMemberData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (member != null) 'member': member,
+      'member': member,
     };
   }
 

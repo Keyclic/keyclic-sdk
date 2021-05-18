@@ -91,11 +91,11 @@ class DocumentEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      if (container != null) 'container': container,
-      if (createdBy != null) 'createdBy': createdBy.toJson(),
-      if (signers != null) 'signers': signers,
-      if (stateTransitions != null) 'stateTransitions': stateTransitions,
-      if (type != null) 'type': type.toJson(),
+      'container': container?.toJson(),
+      'createdBy': createdBy?.toJson(),
+      'signers': signers,
+      'stateTransitions': stateTransitions,
+      'type': type?.toJson(),
     };
   }
 

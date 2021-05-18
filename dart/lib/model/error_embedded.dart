@@ -59,7 +59,7 @@ class ErrorEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      if (errors != null) 'errors': errors,
+      'errors': errors,
     };
   }
 

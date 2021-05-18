@@ -71,10 +71,10 @@ class PlaceData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (name != null) 'name': name,
-      if (branchCode != null) 'branchCode': branchCode,
-      if (polygon != null) 'polygon': polygon,
-      if (organization != null) 'organization': organization,
+      'name': name,
+      'branchCode': branchCode,
+      'polygon': polygon,
+      'organization': organization,
     };
   }
 

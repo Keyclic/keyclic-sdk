@@ -56,7 +56,7 @@ class CheckpointEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      if (createdBy != null) 'createdBy': createdBy.toJson(),
+      'createdBy': createdBy?.toJson(),
     };
   }
 

@@ -61,7 +61,7 @@ class DocumentLinksFileIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (document != null) 'document': document,
+      'document': document,
     };
   }
 
