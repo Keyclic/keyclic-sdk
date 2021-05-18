@@ -73,10 +73,10 @@ class DocumentData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (container != null) 'container': container,
-      if (type != null) 'type': type,
-      if (file != null) 'file': file.toJson(),
-      if (permission != null) 'permission': permission.toJson(),
+      'container': container,
+      'type': type,
+      'file': file?.toJson(),
+      'permission': permission?.toJson(),
     };
   }
 

@@ -61,7 +61,7 @@ class ContributionCollection {
 
   Map<String, dynamic> toJson() {
     return {
-      if (items != null) 'items': items,
+      'items': items,
     };
   }
 

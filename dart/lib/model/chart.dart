@@ -67,8 +67,8 @@ class Chart {
 
   Map<String, dynamic> toJson() {
     return {
-      if (data != null) 'data': data,
-      if (labels != null) 'labels': labels,
+      'data': data,
+      'labels': labels,
     };
   }
 

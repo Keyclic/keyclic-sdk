@@ -61,7 +61,7 @@ class AssignmentLinksServiceIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (service != null) 'service': service,
+      'service': service,
     };
   }
 

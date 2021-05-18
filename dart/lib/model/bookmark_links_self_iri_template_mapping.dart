@@ -61,7 +61,7 @@ class BookmarkLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (bookmark != null) 'bookmark': bookmark,
+      'bookmark': bookmark,
     };
   }
 

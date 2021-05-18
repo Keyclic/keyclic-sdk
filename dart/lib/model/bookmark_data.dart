@@ -61,8 +61,8 @@ class BookmarkData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (member != null) 'member': member,
-      if (place != null) 'place': place,
+      'member': member,
+      'place': place,
     };
   }
 

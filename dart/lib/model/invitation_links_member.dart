@@ -65,8 +65,8 @@ class InvitationLinksMember {
 
   Map<String, dynamic> toJson() {
     return {
-      if (href != null) 'href': href,
-      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
+      'href': href,
+      'iriTemplate': iriTemplate?.toJson(),
     };
   }
 

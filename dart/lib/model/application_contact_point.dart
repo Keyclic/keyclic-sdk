@@ -81,11 +81,11 @@ class ApplicationContactPoint {
 
   Map<String, dynamic> toJson() {
     return {
-      if (email != null) 'email': email,
-      if (id != null) 'id': id,
-      if (name != null) 'name': name,
-      if (telephone != null) 'telephone': telephone,
-      if (type != null) 'type': type,
+      'email': email,
+      'id': id,
+      'name': name,
+      'telephone': telephone,
+      'type': type,
     };
   }
 

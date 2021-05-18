@@ -65,9 +65,9 @@ class GeoShape {
 
   Map<String, dynamic> toJson() {
     return {
-      if (centroid != null) 'centroid': centroid.toJson(),
-      if (elevation != null) 'elevation': elevation,
-      if (polygon != null) 'polygon': polygon.toJson(),
+      'centroid': centroid?.toJson(),
+      'elevation': elevation,
+      'polygon': polygon?.toJson(),
     };
   }
 

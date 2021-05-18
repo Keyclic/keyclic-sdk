@@ -59,8 +59,8 @@ class SignerData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (document != null) 'document': document,
-      if (member != null) 'member': member,
+      'document': document,
+      'member': member,
     };
   }
 

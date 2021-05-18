@@ -87,13 +87,12 @@ class OrganizationLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      if (application != null) 'application': application.toJson(),
-      if (businessActivity != null)
-        'businessActivity': businessActivity.toJson(),
-      if (configuration != null) 'configuration': configuration.toJson(),
-      if (dispatcher != null) 'dispatcher': dispatcher.toJson(),
-      if (logo != null) 'logo': logo.toJson(),
-      if (self != null) 'self': self.toJson(),
+      'application': application?.toJson(),
+      'businessActivity': businessActivity?.toJson(),
+      'configuration': configuration?.toJson(),
+      'dispatcher': dispatcher?.toJson(),
+      'logo': logo?.toJson(),
+      'self': self?.toJson(),
     };
   }
 

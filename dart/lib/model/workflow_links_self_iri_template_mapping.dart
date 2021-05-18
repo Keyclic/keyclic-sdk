@@ -61,7 +61,7 @@ class WorkflowLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (workflow != null) 'workflow': workflow,
+      'workflow': workflow,
     };
   }
 

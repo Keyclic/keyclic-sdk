@@ -61,8 +61,8 @@ class ActivityEntity {
 
   Map<String, dynamic> toJson() {
     return {
-      if (id != null) 'id': id,
-      if (type != null) 'type': type,
+      'id': id,
+      'type': type,
     };
   }
 

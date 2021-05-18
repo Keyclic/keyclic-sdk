@@ -61,7 +61,7 @@ class MarkerLinksPlanIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (plan != null) 'plan': plan,
+      'plan': plan,
     };
   }
 

@@ -61,7 +61,7 @@ class ExternalServiceLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (externalService != null) 'externalService': externalService,
+      'externalService': externalService,
     };
   }
 

@@ -56,7 +56,7 @@ class DocumentPermission {
 
   Map<String, dynamic> toJson() {
     return {
-      if (targetGroup != null) 'targetGroup': targetGroup,
+      'targetGroup': targetGroup,
     };
   }
 

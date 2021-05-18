@@ -61,7 +61,7 @@ class OperationLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (operation != null) 'operation': operation,
+      'operation': operation,
     };
   }
 

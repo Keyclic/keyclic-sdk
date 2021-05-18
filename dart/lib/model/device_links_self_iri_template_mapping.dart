@@ -61,7 +61,7 @@ class DeviceLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (device != null) 'device': device,
+      'device': device,
     };
   }
 

@@ -53,7 +53,7 @@ class PlanPatch {
 
   Map<String, dynamic> toJson() {
     return {
-      if (name != null) 'name': name,
+      'name': name,
     };
   }
 

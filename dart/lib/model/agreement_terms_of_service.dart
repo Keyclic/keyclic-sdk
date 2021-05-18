@@ -57,7 +57,7 @@ class AgreementTermsOfService {
 
   Map<String, dynamic> toJson() {
     return {
-      if (content != null) 'content': content,
+      'content': content,
     };
   }
 

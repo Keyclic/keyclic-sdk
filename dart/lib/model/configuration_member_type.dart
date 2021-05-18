@@ -74,9 +74,9 @@ class ConfigurationMemberType {
 
   Map<String, dynamic> toJson() {
     return {
-      if (id != null) 'id': id,
-      if (roles != null) 'roles': roles,
-      if (type != null) 'type': type,
+      'id': id,
+      'roles': roles,
+      'type': type,
     };
   }
 

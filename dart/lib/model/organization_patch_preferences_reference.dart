@@ -61,7 +61,7 @@ class OrganizationPatchPreferencesReference {
 
   Map<String, dynamic> toJson() {
     return {
-      if (prefix != null) 'prefix': prefix,
+      'prefix': prefix,
     };
   }
 

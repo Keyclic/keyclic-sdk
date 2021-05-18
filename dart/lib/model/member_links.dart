@@ -67,9 +67,9 @@ class MemberLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      if (organization != null) 'organization': organization.toJson(),
-      if (person != null) 'person': person.toJson(),
-      if (self != null) 'self': self.toJson(),
+      'organization': organization?.toJson(),
+      'person': person?.toJson(),
+      'self': self?.toJson(),
     };
   }
 

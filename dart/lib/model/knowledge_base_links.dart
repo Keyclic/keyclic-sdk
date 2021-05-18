@@ -56,7 +56,7 @@ class KnowledgeBaseLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      if (self != null) 'self': self.toJson(),
+      'self': self?.toJson(),
     };
   }
 

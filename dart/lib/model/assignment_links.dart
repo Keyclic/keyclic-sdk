@@ -67,9 +67,9 @@ class AssignmentLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      if (report != null) 'report': report.toJson(),
-      if (self != null) 'self': self.toJson(),
-      if (service != null) 'service': service.toJson(),
+      'report': report?.toJson(),
+      'self': self?.toJson(),
+      'service': service?.toJson(),
     };
   }
 

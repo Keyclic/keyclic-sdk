@@ -140,18 +140,18 @@ class Application {
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links.toJson(),
-      if (about != null) 'about': about.toJson(),
-      if (agreement != null) 'agreement': agreement.toJson(),
-      if (configuration != null) 'configuration': configuration.toJson(),
-      if (contactPoints != null) 'contactPoints': contactPoints,
-      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (id != null) 'id': id,
-      if (name != null) 'name': name,
-      if (token != null) 'token': token,
-      if (type != null) 'type': type,
-      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
-      if (version != null) 'version': version,
+      '_links': links?.toJson(),
+      'about': about?.toJson(),
+      'agreement': agreement?.toJson(),
+      'configuration': configuration?.toJson(),
+      'contactPoints': contactPoints,
+      'createdAt': createdAt?.toUtc()?.toIso8601String(),
+      'id': id,
+      'name': name,
+      'token': token,
+      'type': type,
+      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
+      'version': version,
     };
   }
 

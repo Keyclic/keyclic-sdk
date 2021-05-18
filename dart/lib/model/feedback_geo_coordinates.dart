@@ -64,8 +64,8 @@ class FeedbackGeoCoordinates {
 
   Map<String, dynamic> toJson() {
     return {
-      if (elevation != null) 'elevation': elevation,
-      if (point != null) 'point': point.toJson(),
+      'elevation': elevation,
+      'point': point?.toJson(),
     };
   }
 

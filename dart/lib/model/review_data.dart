@@ -65,9 +65,9 @@ class ReviewData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (reviewBody != null) 'reviewBody': reviewBody,
-      if (reviewRating != null) 'reviewRating': reviewRating,
-      if (reviewRequest != null) 'reviewRequest': reviewRequest,
+      'reviewBody': reviewBody,
+      'reviewRating': reviewRating,
+      'reviewRequest': reviewRequest,
     };
   }
 

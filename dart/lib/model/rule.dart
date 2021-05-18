@@ -71,10 +71,10 @@ class Rule {
 
   Map<String, dynamic> toJson() {
     return {
-      if (embedded != null) '_embedded': embedded.toJson(),
-      if (links != null) '_links': links.toJson(),
-      if (id != null) 'id': id,
-      if (type != null) 'type': type,
+      '_embedded': embedded?.toJson(),
+      '_links': links?.toJson(),
+      'id': id,
+      'type': type,
     };
   }
 

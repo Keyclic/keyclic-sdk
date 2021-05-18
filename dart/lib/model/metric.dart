@@ -59,8 +59,8 @@ class Metric {
 
   Map<String, dynamic> toJson() {
     return {
-      if (name != null) 'name': name,
-      if (duration != null) 'duration': duration.toJson(),
+      'name': name,
+      'duration': duration?.toJson(),
     };
   }
 

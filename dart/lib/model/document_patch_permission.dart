@@ -57,7 +57,7 @@ class DocumentPatchPermission {
 
   Map<String, dynamic> toJson() {
     return {
-      if (targetGroup != null) 'targetGroup': targetGroup,
+      'targetGroup': targetGroup,
     };
   }
 

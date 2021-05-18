@@ -61,7 +61,7 @@ class BusinessActivityLinksImageIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      if (businessActivity != null) 'businessActivity': businessActivity,
+      'businessActivity': businessActivity,
     };
   }
 

@@ -68,9 +68,9 @@ class ApplicationAgreement {
 
   Map<String, dynamic> toJson() {
     return {
-      if (olderThan != null) 'olderThan': olderThan.toJson(),
-      if (privacyPolicy != null) 'privacyPolicy': privacyPolicy.toJson(),
-      if (termsOfService != null) 'termsOfService': termsOfService.toJson(),
+      'olderThan': olderThan?.toJson(),
+      'privacyPolicy': privacyPolicy?.toJson(),
+      'termsOfService': termsOfService?.toJson(),
     };
   }
 

@@ -107,15 +107,14 @@ class Category {
 
   Map<String, dynamic> toJson() {
     return {
-      if (embedded != null) '_embedded': embedded.toJson(),
-      if (links != null) '_links': links.toJson(),
-      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (id != null) 'id': id,
-      if (identificationNumber != null)
-        'identificationNumber': identificationNumber,
-      if (name != null) 'name': name,
-      if (type != null) 'type': type,
-      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
+      '_embedded': embedded?.toJson(),
+      '_links': links?.toJson(),
+      'createdAt': createdAt?.toUtc()?.toIso8601String(),
+      'id': id,
+      'identificationNumber': identificationNumber,
+      'name': name,
+      'type': type,
+      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
     };
   }
 

@@ -55,7 +55,7 @@ class ContributionData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (feedback != null) 'feedback': feedback,
+      'feedback': feedback,
     };
   }
 

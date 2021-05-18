@@ -67,8 +67,8 @@ class SignerSignature {
 
   Map<String, dynamic> toJson() {
     return {
-      if (signedAt != null) 'signedAt': signedAt.toUtc().toIso8601String(),
-      if (text != null) 'text': text,
+      'signedAt': signedAt?.toUtc()?.toIso8601String(),
+      'text': text,
     };
   }
 

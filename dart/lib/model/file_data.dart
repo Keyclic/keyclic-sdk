@@ -65,9 +65,9 @@ class FileData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (content != null) 'content': content,
-      if (contentType != null) 'contentType': contentType,
-      if (name != null) 'name': name,
+      'content': content,
+      'contentType': contentType,
+      'name': name,
     };
   }
 

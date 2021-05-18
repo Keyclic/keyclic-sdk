@@ -69,9 +69,9 @@ class PlaceEmbeddedTargetGroups {
 
   Map<String, dynamic> toJson() {
     return {
-      if (id != null) 'id': id,
-      if (name != null) 'name': name,
-      if (description != null) 'description': description,
+      'id': id,
+      'name': name,
+      'description': description,
     };
   }
 

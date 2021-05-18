@@ -78,10 +78,10 @@ class MemberData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
-      if (organization != null) 'organization': organization,
-      if (person != null) 'person': person,
-      if (type != null) 'type': type,
+      'contactPoint': contactPoint?.toJson(),
+      'organization': organization,
+      'person': person,
+      'type': type,
     };
   }
 

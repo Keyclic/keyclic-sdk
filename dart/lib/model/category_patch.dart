@@ -61,9 +61,8 @@ class CategoryPatch {
 
   Map<String, dynamic> toJson() {
     return {
-      if (identificationNumber != null)
-        'identificationNumber': identificationNumber,
-      if (name != null) 'name': name,
+      'identificationNumber': identificationNumber,
+      'name': name,
     };
   }
 

@@ -87,12 +87,12 @@ class InternalServiceData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (address != null) 'address': address.toJson(),
-      if (contactPoint != null) 'contactPoint': contactPoint.toJson(),
-      if (description != null) 'description': description,
-      if (manager != null) 'manager': manager,
-      if (name != null) 'name': name,
-      if (organization != null) 'organization': organization,
+      'address': address?.toJson(),
+      'contactPoint': contactPoint?.toJson(),
+      'description': description,
+      'manager': manager,
+      'name': name,
+      'organization': organization,
     };
   }
 

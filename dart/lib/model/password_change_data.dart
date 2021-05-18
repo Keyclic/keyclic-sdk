@@ -56,7 +56,7 @@ class PasswordChangeData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (password != null) 'password': password,
+      'password': password,
     };
   }
 

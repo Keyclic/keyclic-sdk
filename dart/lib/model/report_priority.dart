@@ -79,11 +79,11 @@ class ReportPriority {
 
   Map<String, dynamic> toJson() {
     return {
-      if (color != null) 'color': color,
-      if (id != null) 'id': id,
-      if (name != null) 'name': name,
-      if (position != null) 'position': position,
-      if (type != null) 'type': type,
+      'color': color,
+      'id': id,
+      'name': name,
+      'position': position,
+      'type': type,
     };
   }
 

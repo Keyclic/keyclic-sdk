@@ -62,8 +62,8 @@ class LegacySignatureData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (signer != null) 'signer': signer.toJson(),
-      if (image != null) 'image': image,
+      'signer': signer?.toJson(),
+      'image': image,
     };
   }
 

@@ -55,7 +55,7 @@ class PaginationLink {
 
   Map<String, dynamic> toJson() {
     return {
-      if (href != null) 'href': href,
+      'href': href,
     };
   }
 

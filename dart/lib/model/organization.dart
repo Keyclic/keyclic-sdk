@@ -127,17 +127,17 @@ class Organization {
 
   Map<String, dynamic> toJson() {
     return {
-      if (links != null) '_links': links.toJson(),
-      if (address != null) 'address': address.toJson(),
-      if (alternateName != null) 'alternateName': alternateName,
-      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
-      if (description != null) 'description': description,
-      if (enabled != null) 'enabled': enabled,
-      if (id != null) 'id': id,
-      if (name != null) 'name': name,
-      if (preferences != null) 'preferences': preferences.toJson(),
-      if (type != null) 'type': type,
-      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
+      '_links': links?.toJson(),
+      'address': address?.toJson(),
+      'alternateName': alternateName,
+      'createdAt': createdAt?.toUtc()?.toIso8601String(),
+      'description': description,
+      'enabled': enabled,
+      'id': id,
+      'name': name,
+      'preferences': preferences?.toJson(),
+      'type': type,
+      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
     };
   }
 

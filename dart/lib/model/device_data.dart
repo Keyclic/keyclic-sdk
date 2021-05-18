@@ -71,9 +71,9 @@ class DeviceData {
 
   Map<String, dynamic> toJson() {
     return {
-      if (token != null) 'token': token,
-      if (platform != null) 'platform': platform,
-      if (person != null) 'person': person,
+      'token': token,
+      'platform': platform,
+      'person': person,
     };
   }
 
