@@ -55,7 +55,7 @@ class SignerEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'member': member?.toJson(),
+      if (member != null) 'member': member.toJson(),
     };
   }
 

@@ -67,9 +67,9 @@ class CategoryData {
 
   Map<String, dynamic> toJson() {
     return {
-      'name': name,
-      'organization': organization,
-      'parent': parent,
+      if (name != null) 'name': name,
+      if (organization != null) 'organization': organization,
+      if (parent != null) 'parent': parent,
     };
   }
 

@@ -61,8 +61,8 @@ class BookmarkEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'member': member?.toJson(),
-      'place': place?.toJson(),
+      if (member != null) 'member': member.toJson(),
+      if (place != null) 'place': place.toJson(),
     };
   }
 

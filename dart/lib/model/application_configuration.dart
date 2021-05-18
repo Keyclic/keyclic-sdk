@@ -57,7 +57,7 @@ class ApplicationConfiguration {
 
   Map<String, dynamic> toJson() {
     return {
-      'public': public,
+      if (public != null) 'public': public,
     };
   }
 

@@ -102,13 +102,13 @@ class Review {
 
   Map<String, dynamic> toJson() {
     return {
-      '_links': links?.toJson(),
-      'createdAt': createdAt?.toUtc()?.toIso8601String(),
-      'id': id,
-      'reviewBody': reviewBody,
-      'reviewRating': reviewRating,
-      'type': type,
-      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
+      if (links != null) '_links': links.toJson(),
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (id != null) 'id': id,
+      if (reviewBody != null) 'reviewBody': reviewBody,
+      if (reviewRating != null) 'reviewRating': reviewRating,
+      if (type != null) 'type': type,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
   }
 

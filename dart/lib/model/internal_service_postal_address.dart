@@ -70,9 +70,9 @@ class InternalServicePostalAddress {
 
   Map<String, dynamic> toJson() {
     return {
-      'locality': locality,
-      'postalCode': postalCode,
-      'streetAddress': streetAddress,
+      if (locality != null) 'locality': locality,
+      if (postalCode != null) 'postalCode': postalCode,
+      if (streetAddress != null) 'streetAddress': streetAddress,
     };
   }
 

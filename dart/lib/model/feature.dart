@@ -72,9 +72,9 @@ class Feature {
 
   Map<String, dynamic> toJson() {
     return {
-      'type': type,
-      'geometry': geometry?.toJson(),
-      'properties': properties,
+      if (type != null) 'type': type,
+      if (geometry != null) 'geometry': geometry.toJson(),
+      if (properties != null) 'properties': properties,
     };
   }
 

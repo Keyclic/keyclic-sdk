@@ -61,8 +61,8 @@ class PersonLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'image': image?.toJson(),
-      'self': self?.toJson(),
+      if (image != null) 'image': image.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

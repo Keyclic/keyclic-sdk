@@ -112,14 +112,14 @@ class ReportEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'assignment': assignment?.toJson(),
-      'category': category?.toJson(),
-      'children': children,
-      'documents': documents,
-      'feedback': feedback?.toJson(),
-      'place': place?.toJson(),
-      'targetGroups': targetGroups,
-      'workflow': workflow?.toJson(),
+      if (assignment != null) 'assignment': assignment.toJson(),
+      if (category != null) 'category': category.toJson(),
+      if (children != null) 'children': children,
+      if (documents != null) 'documents': documents,
+      if (feedback != null) 'feedback': feedback.toJson(),
+      if (place != null) 'place': place.toJson(),
+      if (targetGroups != null) 'targetGroups': targetGroups,
+      if (workflow != null) 'workflow': workflow.toJson(),
     };
   }
 

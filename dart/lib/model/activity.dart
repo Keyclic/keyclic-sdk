@@ -100,14 +100,14 @@ class Activity {
 
   Map<String, dynamic> toJson() {
     return {
-      'actor': actor,
-      'message': message,
-      'object': object,
-      'origin': origin,
-      'subject': subject?.toJson(),
-      'time': time?.toUtc()?.toIso8601String(),
-      'title': title,
-      'verb': verb,
+      if (actor != null) 'actor': actor,
+      if (message != null) 'message': message,
+      if (object != null) 'object': object,
+      if (origin != null) 'origin': origin,
+      if (subject != null) 'subject': subject.toJson(),
+      if (time != null) 'time': time.toUtc().toIso8601String(),
+      if (title != null) 'title': title,
+      if (verb != null) 'verb': verb,
     };
   }
 

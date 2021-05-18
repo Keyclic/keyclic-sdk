@@ -82,11 +82,11 @@ class ReviewRequestLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'itemToReview': itemToReview?.toJson(),
-      'organization': organization?.toJson(),
-      'review': review?.toJson(),
-      'reviewer': reviewer?.toJson(),
-      'self': self?.toJson(),
+      if (itemToReview != null) 'itemToReview': itemToReview.toJson(),
+      if (organization != null) 'organization': organization.toJson(),
+      if (review != null) 'review': review.toJson(),
+      if (reviewer != null) 'reviewer': reviewer.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

@@ -58,7 +58,7 @@ class PersonPatchPreferences {
 
   Map<String, dynamic> toJson() {
     return {
-      'notification': notification?.toJson(),
+      if (notification != null) 'notification': notification.toJson(),
     };
   }
 

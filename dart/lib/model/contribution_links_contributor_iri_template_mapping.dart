@@ -61,7 +61,7 @@ class ContributionLinksContributorIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'person': person,
+      if (person != null) 'person': person,
     };
   }
 

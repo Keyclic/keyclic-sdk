@@ -61,8 +61,8 @@ class CategoryLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'organization': organization?.toJson(),
-      'self': self?.toJson(),
+      if (organization != null) 'organization': organization.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

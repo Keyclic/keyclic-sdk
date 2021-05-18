@@ -59,7 +59,7 @@ class OrganizationPatchPreferences {
 
   Map<String, dynamic> toJson() {
     return {
-      'reference': reference?.toJson(),
+      if (reference != null) 'reference': reference.toJson(),
     };
   }
 

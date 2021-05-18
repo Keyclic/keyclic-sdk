@@ -61,7 +61,7 @@ class WebhookLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'webhook': webhook,
+      if (webhook != null) 'webhook': webhook,
     };
   }
 

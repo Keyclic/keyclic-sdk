@@ -59,7 +59,7 @@ class MemberLinksPersonIriTemplate {
 
   Map<String, dynamic> toJson() {
     return {
-      'mapping': mapping?.toJson(),
+      if (mapping != null) 'mapping': mapping.toJson(),
     };
   }
 

@@ -68,8 +68,8 @@ class OperationSignature {
 
   Map<String, dynamic> toJson() {
     return {
-      'signedAt': signedAt?.toUtc()?.toIso8601String(),
-      'signer': signer?.toJson(),
+      if (signedAt != null) 'signedAt': signedAt.toUtc().toIso8601String(),
+      if (signer != null) 'signer': signer.toJson(),
     };
   }
 

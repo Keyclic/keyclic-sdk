@@ -61,7 +61,7 @@ class CategoryLinksOrganizationIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'organization': organization,
+      if (organization != null) 'organization': organization,
     };
   }
 

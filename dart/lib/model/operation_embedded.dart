@@ -67,9 +67,9 @@ class OperationEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'createdBy': createdBy?.toJson(),
-      'operator': operator_?.toJson(),
-      'workflow': workflow?.toJson(),
+      if (createdBy != null) 'createdBy': createdBy.toJson(),
+      if (operator_ != null) 'operator': operator_.toJson(),
+      if (workflow != null) 'workflow': workflow.toJson(),
     };
   }
 

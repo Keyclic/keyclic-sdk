@@ -61,8 +61,8 @@ class ApplicationAbout {
 
   Map<String, dynamic> toJson() {
     return {
-      'name': name,
-      'text': text,
+      if (name != null) 'name': name,
+      if (text != null) 'text': text,
     };
   }
 

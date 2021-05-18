@@ -61,7 +61,7 @@ class MarkerLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'marker': marker,
+      if (marker != null) 'marker': marker,
     };
   }
 

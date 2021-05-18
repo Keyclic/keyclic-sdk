@@ -113,15 +113,15 @@ class Document {
 
   Map<String, dynamic> toJson() {
     return {
-      '_embedded': embedded?.toJson(),
-      '_links': links?.toJson(),
-      'createdAt': createdAt?.toUtc()?.toIso8601String(),
-      'file': file?.toJson(),
-      'id': id,
-      'permission': permission?.toJson(),
-      'text': text,
-      'type': type,
-      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
+      if (embedded != null) '_embedded': embedded.toJson(),
+      if (links != null) '_links': links.toJson(),
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (file != null) 'file': file.toJson(),
+      if (id != null) 'id': id,
+      if (permission != null) 'permission': permission.toJson(),
+      if (text != null) 'text': text,
+      if (type != null) 'type': type,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
   }
 

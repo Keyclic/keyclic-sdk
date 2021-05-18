@@ -53,7 +53,7 @@ class RuleLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'self': self?.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

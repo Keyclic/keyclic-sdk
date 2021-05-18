@@ -64,8 +64,8 @@ class Polygon {
 
   Map<String, dynamic> toJson() {
     return {
-      'type': type,
-      'features': features,
+      if (type != null) 'type': type,
+      if (features != null) 'features': features,
     };
   }
 

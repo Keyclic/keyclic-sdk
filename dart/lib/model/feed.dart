@@ -65,9 +65,9 @@ class Feed {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'name': name,
-      'type': type,
+      if (id != null) 'id': id,
+      if (name != null) 'name': name,
+      if (type != null) 'type': type,
     };
   }
 

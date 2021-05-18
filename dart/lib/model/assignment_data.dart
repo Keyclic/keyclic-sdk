@@ -67,9 +67,9 @@ class AssignmentData {
 
   Map<String, dynamic> toJson() {
     return {
-      'description': description,
-      'report': report,
-      'service': service,
+      if (description != null) 'description': description,
+      if (report != null) 'report': report,
+      if (service != null) 'service': service,
     };
   }
 

@@ -67,9 +67,9 @@ class SuccessLogin {
 
   Map<String, dynamic> toJson() {
     return {
-      'accessToken': accessToken,
-      'credentials': credentials?.toJson(),
-      'tokenType': tokenType,
+      if (accessToken != null) 'accessToken': accessToken,
+      if (credentials != null) 'credentials': credentials.toJson(),
+      if (tokenType != null) 'tokenType': tokenType,
     };
   }
 

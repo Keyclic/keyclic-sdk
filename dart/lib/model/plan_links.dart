@@ -65,9 +65,9 @@ class PlanLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'image': image?.toJson(),
-      'place': place?.toJson(),
-      'self': self?.toJson(),
+      if (image != null) 'image': image.toJson(),
+      if (place != null) 'place': place.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

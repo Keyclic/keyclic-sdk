@@ -131,18 +131,18 @@ class Place {
 
   Map<String, dynamic> toJson() {
     return {
-      '_embedded': embedded?.toJson(),
-      '_links': links?.toJson(),
-      'address': address?.toJson(),
-      'branchCode': branchCode,
-      'createdAt': createdAt?.toUtc()?.toIso8601String(),
-      'description': description,
-      'geo': geo?.toJson(),
-      'id': id,
-      'name': name,
-      'preferences': preferences?.toJson(),
-      'type': type,
-      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
+      if (embedded != null) '_embedded': embedded.toJson(),
+      if (links != null) '_links': links.toJson(),
+      if (address != null) 'address': address.toJson(),
+      if (branchCode != null) 'branchCode': branchCode,
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (description != null) 'description': description,
+      if (geo != null) 'geo': geo.toJson(),
+      if (id != null) 'id': id,
+      if (name != null) 'name': name,
+      if (preferences != null) 'preferences': preferences.toJson(),
+      if (type != null) 'type': type,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
   }
 

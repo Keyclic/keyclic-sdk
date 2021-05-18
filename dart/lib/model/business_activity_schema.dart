@@ -77,8 +77,8 @@ class BusinessActivitySchema {
 
   Map<String, dynamic> toJson() {
     return {
-      'properties': properties,
-      'required': required,
+      if (properties != null) 'properties': properties,
+      if (required != null) 'required': required,
     };
   }
 

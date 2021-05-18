@@ -61,7 +61,7 @@ class OrganizationLinksDispatcherIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'dispatcher': dispatcher,
+      if (dispatcher != null) 'dispatcher': dispatcher,
     };
   }
 

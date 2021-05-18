@@ -59,8 +59,8 @@ class Dispatcher {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'type': type,
+      if (id != null) 'id': id,
+      if (type != null) 'type': type,
     };
   }
 

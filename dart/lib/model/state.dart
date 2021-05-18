@@ -83,12 +83,12 @@ class State {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'type': type,
-      'name': name,
-      'description': description,
-      'color': color,
-      'progression': progression,
+      if (id != null) 'id': id,
+      if (type != null) 'type': type,
+      if (name != null) 'name': name,
+      if (description != null) 'description': description,
+      if (color != null) 'color': color,
+      if (progression != null) 'progression': progression,
     };
   }
 

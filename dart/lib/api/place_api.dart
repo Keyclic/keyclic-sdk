@@ -123,7 +123,6 @@ class PlaceApi {
     String order,
     String person,
     List<String> persons__,
-    List<String> places__,
     String query,
     int page,
     int limit,
@@ -160,9 +159,6 @@ class PlaceApi {
         ..._convertParametersForCollectionFormat("person", person),
       if (persons__ != null)
         ..._convertParametersForCollectionFormat("persons[]", persons__,
-            collectionFormat: "multi"),
-      if (places__ != null)
-        ..._convertParametersForCollectionFormat("places[]", places__,
             collectionFormat: "multi"),
       if (query != null)
         ..._convertParametersForCollectionFormat("query", query),

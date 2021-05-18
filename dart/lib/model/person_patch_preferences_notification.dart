@@ -67,8 +67,8 @@ class PersonPatchPreferencesNotification {
 
   Map<String, dynamic> toJson() {
     return {
-      'mail': mail,
-      'push': push,
+      if (mail != null) 'mail': mail,
+      if (push != null) 'push': push,
     };
   }
 

@@ -78,10 +78,10 @@ class MemberEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'invitation': invitation?.toJson(),
-      'organization': organization?.toJson(),
-      'person': person?.toJson(),
-      'roles': roles,
+      if (invitation != null) 'invitation': invitation.toJson(),
+      if (organization != null) 'organization': organization.toJson(),
+      if (person != null) 'person': person.toJson(),
+      if (roles != null) 'roles': roles,
     };
   }
 

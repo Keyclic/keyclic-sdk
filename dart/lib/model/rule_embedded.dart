@@ -61,8 +61,8 @@ class RuleEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'category': category?.toJson(),
-      'service': service?.toJson(),
+      if (category != null) 'category': category.toJson(),
+      if (service != null) 'service': service.toJson(),
     };
   }
 

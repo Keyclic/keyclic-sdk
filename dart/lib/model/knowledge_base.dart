@@ -103,13 +103,13 @@ class KnowledgeBase {
 
   Map<String, dynamic> toJson() {
     return {
-      '_links': links?.toJson(),
-      'createdAt': createdAt?.toUtc()?.toIso8601String(),
-      'description': description,
-      'id': id,
-      'name': name,
-      'type': type,
-      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
+      if (links != null) '_links': links.toJson(),
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (description != null) 'description': description,
+      if (id != null) 'id': id,
+      if (name != null) 'name': name,
+      if (type != null) 'type': type,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
   }
 

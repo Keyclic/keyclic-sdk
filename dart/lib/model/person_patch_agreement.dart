@@ -68,9 +68,9 @@ class PersonPatchAgreement {
 
   Map<String, dynamic> toJson() {
     return {
-      'privacyPolicy': privacyPolicy,
-      'termsOfService': termsOfService,
-      'olderThan': olderThan,
+      if (privacyPolicy != null) 'privacyPolicy': privacyPolicy,
+      if (termsOfService != null) 'termsOfService': termsOfService,
+      if (olderThan != null) 'olderThan': olderThan,
     };
   }
 

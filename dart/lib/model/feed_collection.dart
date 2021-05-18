@@ -59,7 +59,7 @@ class FeedCollection {
 
   Map<String, dynamic> toJson() {
     return {
-      'items': items,
+      if (items != null) 'items': items,
     };
   }
 

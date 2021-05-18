@@ -67,9 +67,9 @@ class BookmarkLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'member': member?.toJson(),
-      'place': place?.toJson(),
-      'self': self?.toJson(),
+      if (member != null) 'member': member.toJson(),
+      if (place != null) 'place': place.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

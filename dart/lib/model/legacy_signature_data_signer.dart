@@ -63,8 +63,8 @@ class LegacySignatureDataSigner {
 
   Map<String, dynamic> toJson() {
     return {
-      'familyName': familyName,
-      'givenName': givenName,
+      if (familyName != null) 'familyName': familyName,
+      if (givenName != null) 'givenName': givenName,
     };
   }
 

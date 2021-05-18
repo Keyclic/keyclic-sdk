@@ -62,8 +62,8 @@ class MemberLinksSelf {
 
   Map<String, dynamic> toJson() {
     return {
-      'href': href,
-      'iriTemplate': iriTemplate?.toJson(),
+      if (href != null) 'href': href,
+      if (iriTemplate != null) 'iriTemplate': iriTemplate.toJson(),
     };
   }
 

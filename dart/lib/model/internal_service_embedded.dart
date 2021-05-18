@@ -57,7 +57,7 @@ class InternalServiceEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'manager': manager?.toJson(),
+      if (manager != null) 'manager': manager.toJson(),
     };
   }
 
