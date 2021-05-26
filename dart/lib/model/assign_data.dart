@@ -53,7 +53,7 @@ class AssignData {
 
   Map<String, dynamic> toJson() {
     return {
-      'member': member,
+      if (member != null) 'member': member,
     };
   }
 

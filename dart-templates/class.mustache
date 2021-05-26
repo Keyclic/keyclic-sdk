@@ -146,22 +146,23 @@ class {{classname}} {{#interfaces}}extends {{interfaces.0}} {{/interfaces}}{
   Map<String, dynamic> toJson() {
     return {
       {{#vars}}
-      {{#isDateTime}}
-        '{{{baseName}}}': {{name}}?.toUtc()?.toIso8601String(),
-      {{/isDateTime}}
-      {{^isDateTime}}
-        {{#complexType}}
-          {{#isContainer}}
+      if ({{name}} != null)
+        {{#isDateTime}}
+          '{{{baseName}}}': {{name}}.toUtc().toIso8601String(),
+        {{/isDateTime}}
+        {{^isDateTime}}
+          {{#complexType}}
+            {{#isContainer}}
+              '{{{baseName}}}': {{name}},
+            {{/isContainer}}
+            {{^isContainer}}
+              '{{{baseName}}}': {{name}}.toJson(),
+            {{/isContainer}}
+          {{/complexType}}
+          {{^complexType}}
             '{{{baseName}}}': {{name}},
-          {{/isContainer}}
-          {{^isContainer}}
-            '{{{baseName}}}': {{name}}?.toJson(),
-          {{/isContainer}}
-        {{/complexType}}
-        {{^complexType}}
-          '{{{baseName}}}': {{name}},
-        {{/complexType}}
-      {{/isDateTime}}
+          {{/complexType}}
+        {{/isDateTime}}
       {{/vars}}
     };
   }

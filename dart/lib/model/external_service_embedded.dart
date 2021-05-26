@@ -57,7 +57,7 @@ class ExternalServiceEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'provider': provider?.toJson(),
+      if (provider != null) 'provider': provider.toJson(),
     };
   }
 

@@ -61,7 +61,7 @@ class BookmarkLinksPlaceIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'place': place,
+      if (place != null) 'place': place,
     };
   }
 

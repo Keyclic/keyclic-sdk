@@ -87,12 +87,12 @@ class OrganizationPreferences {
 
   Map<String, dynamic> toJson() {
     return {
-      'categoryRequired': categoryRequired,
-      'form': form?.toJson(),
-      'offline': offline,
-      'public': public,
-      'reference': reference?.toJson(),
-      'reviewEnabled': reviewEnabled,
+      if (categoryRequired != null) 'categoryRequired': categoryRequired,
+      if (form != null) 'form': form.toJson(),
+      if (offline != null) 'offline': offline,
+      if (public != null) 'public': public,
+      if (reference != null) 'reference': reference.toJson(),
+      if (reviewEnabled != null) 'reviewEnabled': reviewEnabled,
     };
   }
 

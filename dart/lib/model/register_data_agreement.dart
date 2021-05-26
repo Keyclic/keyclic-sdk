@@ -69,9 +69,9 @@ class RegisterDataAgreement {
 
   Map<String, dynamic> toJson() {
     return {
-      'olderThan': olderThan,
-      'privacyPolicy': privacyPolicy,
-      'termsOfService': termsOfService,
+      if (olderThan != null) 'olderThan': olderThan,
+      if (privacyPolicy != null) 'privacyPolicy': privacyPolicy,
+      if (termsOfService != null) 'termsOfService': termsOfService,
     };
   }
 

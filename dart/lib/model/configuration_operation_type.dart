@@ -69,9 +69,9 @@ class ConfigurationOperationType {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'type': type,
-      'workflow': workflow?.toJson(),
+      if (id != null) 'id': id,
+      if (type != null) 'type': type,
+      if (workflow != null) 'workflow': workflow.toJson(),
     };
   }
 

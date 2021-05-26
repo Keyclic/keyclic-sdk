@@ -65,9 +65,9 @@ class Error {
 
   Map<String, dynamic> toJson() {
     return {
-      'message': message,
-      'total': total,
-      '_embedded': embedded?.toJson(),
+      if (message != null) 'message': message,
+      if (total != null) 'total': total,
+      if (embedded != null) '_embedded': embedded.toJson(),
     };
   }
 

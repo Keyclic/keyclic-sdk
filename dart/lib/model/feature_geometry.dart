@@ -73,8 +73,8 @@ class FeatureGeometry {
 
   Map<String, dynamic> toJson() {
     return {
-      'type': type,
-      'coordinates': coordinates,
+      if (type != null) 'type': type,
+      if (coordinates != null) 'coordinates': coordinates,
     };
   }
 

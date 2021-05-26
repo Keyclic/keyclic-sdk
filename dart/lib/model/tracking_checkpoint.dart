@@ -91,11 +91,11 @@ class TrackingCheckpoint {
 
   Map<String, dynamic> toJson() {
     return {
-      'createdAt': createdAt?.toUtc()?.toIso8601String(),
-      'data': data?.toJson(),
-      'state': state,
-      '_links': links?.toJson(),
-      '_embedded': embedded?.toJson(),
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (data != null) 'data': data.toJson(),
+      if (state != null) 'state': state,
+      if (links != null) '_links': links.toJson(),
+      if (embedded != null) '_embedded': embedded.toJson(),
     };
   }
 

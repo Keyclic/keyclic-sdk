@@ -65,9 +65,9 @@ class PlanData {
 
   Map<String, dynamic> toJson() {
     return {
-      'file': file,
-      'name': name,
-      'place': place,
+      if (file != null) 'file': file,
+      if (name != null) 'name': name,
+      if (place != null) 'place': place,
     };
   }
 

@@ -107,13 +107,13 @@ class Invitation {
 
   Map<String, dynamic> toJson() {
     return {
-      '_embedded': embedded?.toJson(),
-      '_links': links?.toJson(),
-      'createdAt': createdAt?.toUtc()?.toIso8601String(),
-      'expiredAt': expiredAt?.toUtc()?.toIso8601String(),
-      'id': id,
-      'type': type,
-      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
+      if (embedded != null) '_embedded': embedded.toJson(),
+      if (links != null) '_links': links.toJson(),
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (expiredAt != null) 'expiredAt': expiredAt.toUtc().toIso8601String(),
+      if (id != null) 'id': id,
+      if (type != null) 'type': type,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
   }
 

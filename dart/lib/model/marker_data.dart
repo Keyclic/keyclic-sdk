@@ -65,9 +65,9 @@ class MarkerData {
 
   Map<String, dynamic> toJson() {
     return {
-      'feedback': feedback,
-      'plan': plan,
-      'point': point?.toJson(),
+      if (feedback != null) 'feedback': feedback,
+      if (plan != null) 'plan': plan,
+      if (point != null) 'point': point.toJson(),
     };
   }
 

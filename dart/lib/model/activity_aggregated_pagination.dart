@@ -87,11 +87,11 @@ class ActivityAggregatedPagination {
 
   Map<String, dynamic> toJson() {
     return {
-      'duration': duration,
-      'next': next,
-      'unseen': unseen,
-      'unread': unread,
-      'results': results,
+      if (duration != null) 'duration': duration,
+      if (next != null) 'next': next,
+      if (unseen != null) 'unseen': unseen,
+      if (unread != null) 'unread': unread,
+      if (results != null) 'results': results,
     };
   }
 

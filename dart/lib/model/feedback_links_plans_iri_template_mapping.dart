@@ -67,8 +67,8 @@ class FeedbackLinksPlansIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'plan': plan,
-      'feedback': feedback,
+      if (plan != null) 'plan': plan,
+      if (feedback != null) 'feedback': feedback,
     };
   }
 

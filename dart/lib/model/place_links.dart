@@ -65,9 +65,9 @@ class PlaceLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'geo': geo?.toJson(),
-      'organization': organization?.toJson(),
-      'self': self?.toJson(),
+      if (geo != null) 'geo': geo.toJson(),
+      if (organization != null) 'organization': organization.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

@@ -73,10 +73,10 @@ class DocumentType {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'type': type,
-      'name': name,
-      'description': description,
+      if (id != null) 'id': id,
+      if (type != null) 'type': type,
+      if (name != null) 'name': name,
+      if (description != null) 'description': description,
     };
   }
 

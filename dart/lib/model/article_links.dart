@@ -61,8 +61,8 @@ class ArticleLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'section': section?.toJson(),
-      'self': self?.toJson(),
+      if (section != null) 'section': section.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

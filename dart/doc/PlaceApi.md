@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cgetOccupantsByPlace**
-> OccupantPagination cgetOccupantsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, member, members[], order, person, persons[], places[], query, page, limit)
+> OccupantPagination cgetOccupantsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, member, members[], order, person, persons[], query, page, limit)
 
 Retrieve all Occupant resources.
 
@@ -120,13 +120,12 @@ var members[] = []; // List<String> |
 var order = order_example; // String | 
 var person = person_example; // String | 
 var persons[] = []; // List<String> | 
-var places[] = []; // List<String> | 
 var query = query_example; // String | 
 var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    var result = api_instance.cgetOccupantsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, member, members[], order, person, persons[], places[], query, page, limit);
+    var result = api_instance.cgetOccupantsByPlace(xKeyclicApp, place, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, after, before, member, members[], order, person, persons[], query, page, limit);
     print(result);
 } catch (e) {
     print("Exception when calling PlaceApi->cgetOccupantsByPlace: $e\n");
@@ -150,7 +149,6 @@ Name | Type | Description  | Notes
  **order** | **String**|  | [optional] [default to desc]
  **person** | **String**|  | [optional] 
  **persons[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
- **places[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
  **query** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]

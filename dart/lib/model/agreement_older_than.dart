@@ -56,7 +56,7 @@ class AgreementOlderThan {
 
   Map<String, dynamic> toJson() {
     return {
-      'content': content,
+      if (content != null) 'content': content,
     };
   }
 

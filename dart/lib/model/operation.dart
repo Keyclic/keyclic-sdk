@@ -132,17 +132,19 @@ class Operation {
 
   Map<String, dynamic> toJson() {
     return {
-      '_embedded': embedded?.toJson(),
-      '_links': links?.toJson(),
-      'createdAt': createdAt?.toUtc()?.toIso8601String(),
-      'description': description,
-      'id': id,
-      'identificationNumber': identificationNumber,
-      'name': name,
-      'scheduledAt': scheduledAt?.toUtc()?.toIso8601String(),
-      'signature': signature?.toJson(),
-      'type': type,
-      'updatedAt': updatedAt?.toUtc()?.toIso8601String(),
+      if (embedded != null) '_embedded': embedded.toJson(),
+      if (links != null) '_links': links.toJson(),
+      if (createdAt != null) 'createdAt': createdAt.toUtc().toIso8601String(),
+      if (description != null) 'description': description,
+      if (id != null) 'id': id,
+      if (identificationNumber != null)
+        'identificationNumber': identificationNumber,
+      if (name != null) 'name': name,
+      if (scheduledAt != null)
+        'scheduledAt': scheduledAt.toUtc().toIso8601String(),
+      if (signature != null) 'signature': signature.toJson(),
+      if (type != null) 'type': type,
+      if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
     };
   }
 

@@ -61,8 +61,8 @@ class PlacePreferences {
 
   Map<String, dynamic> toJson() {
     return {
-      'public': public,
-      'visibility': visibility,
+      if (public != null) 'public': public,
+      if (visibility != null) 'visibility': visibility,
     };
   }
 

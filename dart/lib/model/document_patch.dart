@@ -67,9 +67,9 @@ class DocumentPatch {
 
   Map<String, dynamic> toJson() {
     return {
-      'file': file?.toJson(),
-      'permission': permission?.toJson(),
-      'text': text,
+      if (file != null) 'file': file.toJson(),
+      if (permission != null) 'permission': permission.toJson(),
+      if (text != null) 'text': text,
     };
   }
 

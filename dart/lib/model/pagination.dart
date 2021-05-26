@@ -77,11 +77,11 @@ class Pagination {
 
   Map<String, dynamic> toJson() {
     return {
-      'limit': limit,
-      'page': page,
-      'pages': pages,
-      'total': total,
-      '_links': links?.toJson(),
+      if (limit != null) 'limit': limit,
+      if (page != null) 'page': page,
+      if (pages != null) 'pages': pages,
+      if (total != null) 'total': total,
+      if (links != null) '_links': links.toJson(),
     };
   }
 

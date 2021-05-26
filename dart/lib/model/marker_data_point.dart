@@ -61,8 +61,8 @@ class MarkerDataPoint {
 
   Map<String, dynamic> toJson() {
     return {
-      'x': x,
-      'y': y,
+      if (x != null) 'x': x,
+      if (y != null) 'y': y,
     };
   }
 

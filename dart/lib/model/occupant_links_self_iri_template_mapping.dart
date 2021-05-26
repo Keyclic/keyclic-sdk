@@ -61,7 +61,7 @@ class OccupantLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'occupant': occupant,
+      if (occupant != null) 'occupant': occupant,
     };
   }
 

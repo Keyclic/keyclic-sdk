@@ -62,7 +62,7 @@ class DocumentWorkflowData {
 
   Map<String, dynamic> toJson() {
     return {
-      'transition': transition,
+      if (transition != null) 'transition': transition,
     };
   }
 

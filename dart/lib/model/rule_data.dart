@@ -65,9 +65,9 @@ class RuleData {
 
   Map<String, dynamic> toJson() {
     return {
-      'category': category,
-      'dispatcher': dispatcher,
-      'service': service,
+      if (category != null) 'category': category,
+      if (dispatcher != null) 'dispatcher': dispatcher,
+      if (service != null) 'service': service,
     };
   }
 

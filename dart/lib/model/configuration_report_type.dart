@@ -81,10 +81,10 @@ class ConfigurationReportType {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'priorities': priorities,
-      'type': type,
-      'workflow': workflow?.toJson(),
+      if (id != null) 'id': id,
+      if (priorities != null) 'priorities': priorities,
+      if (type != null) 'type': type,
+      if (workflow != null) 'workflow': workflow.toJson(),
     };
   }
 

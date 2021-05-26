@@ -61,7 +61,7 @@ class SignerLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'signer': signer,
+      if (signer != null) 'signer': signer,
     };
   }
 

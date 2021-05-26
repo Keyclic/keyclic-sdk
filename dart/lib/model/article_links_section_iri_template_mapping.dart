@@ -61,7 +61,7 @@ class ArticleLinksSectionIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'section': section,
+      if (section != null) 'section': section,
     };
   }
 

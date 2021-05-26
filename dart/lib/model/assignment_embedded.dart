@@ -68,9 +68,9 @@ class AssignmentEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'createdBy': createdBy?.toJson(),
-      'service': service?.toJson(),
-      'workflow': workflow?.toJson(),
+      if (createdBy != null) 'createdBy': createdBy.toJson(),
+      if (service != null) 'service': service.toJson(),
+      if (workflow != null) 'workflow': workflow.toJson(),
     };
   }
 

@@ -61,7 +61,7 @@ class ConfigurationLinksSelfIriTemplateMapping {
 
   Map<String, dynamic> toJson() {
     return {
-      'configuration': configuration,
+      if (configuration != null) 'configuration': configuration,
     };
   }
 

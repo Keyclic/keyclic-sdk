@@ -91,13 +91,13 @@ class ReportLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'category': category?.toJson(),
-      'feedback': feedback?.toJson(),
-      'operations': operations?.toJson(),
-      'organization': organization?.toJson(),
-      'place': place?.toJson(),
-      'self': self?.toJson(),
-      'tracking': tracking?.toJson(),
+      if (category != null) 'category': category.toJson(),
+      if (feedback != null) 'feedback': feedback.toJson(),
+      if (operations != null) 'operations': operations.toJson(),
+      if (organization != null) 'organization': organization.toJson(),
+      if (place != null) 'place': place.toJson(),
+      if (self != null) 'self': self.toJson(),
+      if (tracking != null) 'tracking': tracking.toJson(),
     };
   }
 

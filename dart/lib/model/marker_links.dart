@@ -61,8 +61,8 @@ class MarkerLinks {
 
   Map<String, dynamic> toJson() {
     return {
-      'plan': plan?.toJson(),
-      'self': self?.toJson(),
+      if (plan != null) 'plan': plan.toJson(),
+      if (self != null) 'self': self.toJson(),
     };
   }
 

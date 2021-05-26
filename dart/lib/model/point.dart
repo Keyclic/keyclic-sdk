@@ -65,9 +65,9 @@ class Point {
 
   Map<String, dynamic> toJson() {
     return {
-      'latitude': latitude,
-      'longitude': longitude,
-      'srid': srid,
+      if (latitude != null) 'latitude': latitude,
+      if (longitude != null) 'longitude': longitude,
+      if (srid != null) 'srid': srid,
     };
   }
 

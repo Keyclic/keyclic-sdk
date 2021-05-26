@@ -105,12 +105,12 @@ class PlaceEmbedded {
 
   Map<String, dynamic> toJson() {
     return {
-      'children': children,
-      'documentTypes': documentTypes,
-      'organization': organization?.toJson(),
-      'path': path,
-      'targetGroups': targetGroups,
-      'workflow': workflow?.toJson(),
+      if (children != null) 'children': children,
+      if (documentTypes != null) 'documentTypes': documentTypes,
+      if (organization != null) 'organization': organization.toJson(),
+      if (path != null) 'path': path,
+      if (targetGroups != null) 'targetGroups': targetGroups,
+      if (workflow != null) 'workflow': workflow.toJson(),
     };
   }
 
