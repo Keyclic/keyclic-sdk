@@ -9,7 +9,7 @@
             "url": "https:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.13.7"
+        "version": "2.13.11"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -11063,6 +11063,9 @@
                         "$ref": "#\/parameters\/persons__"
                     },
                     {
+                        "$ref": "#\/parameters\/places__"
+                    },
+                    {
                         "$ref": "#\/parameters\/query"
                     },
                     {
@@ -20612,6 +20615,9 @@
                 "_links": {
                     "type": "object",
                     "properties": {
+                        "children": {
+                            "$ref": "#\/definitions\/PlaceLinksChildren"
+                        },
                         "geo": {
                             "$ref": "#\/definitions\/PlaceLinksGeo"
                         },
@@ -20718,6 +20724,32 @@
                 },
                 "polygon": {
                     "$ref": "#\/definitions\/Polygon"
+                }
+            }
+        },
+        "PlaceLinksChildren": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "description": "The URI of the children associated to the given place.",
+                    "type": "string",
+                    "format": "string"
+                },
+                "iriTemplate": {
+                    "$ref": "#\/definitions\/PlaceLinksChildrenIriTemplate"
+                }
+            }
+        },
+        "PlaceLinksChildrenIriTemplate": {
+            "type": "object",
+            "properties": {
+                "mapping": {
+                    "type": "object",
+                    "properties": {
+                        "parent": {
+                            "type": "string"
+                        }
+                    }
                 }
             }
         },
