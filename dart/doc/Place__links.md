@@ -8,6 +8,7 @@ import 'package:keyclic_sdk_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**children** | [**PlaceLinksChildren**](PlaceLinksChildren.md) |  | [optional] [default to null]
 **geo** | [**PlaceLinksGeo**](PlaceLinksGeo.md) |  | [optional] [default to null]
 **organization** | [**PlaceLinksOrganization**](PlaceLinksOrganization.md) |  | [optional] [default to null]
 **self** | [**PlaceLinksSelf**](PlaceLinksSelf.md) |  | [optional] [default to null]
