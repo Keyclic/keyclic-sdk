@@ -2,6 +2,7 @@ part of keyclic_sdk_api.api;
 
 class PlaceLinks {
   PlaceLinks({
+    this.children,
     this.geo,
     this.organization,
     this.self,
@@ -13,11 +14,14 @@ class PlaceLinks {
     }
 
     return PlaceLinks(
+      children: PlaceLinksChildren.fromJson(json['children']),
       geo: PlaceLinksGeo.fromJson(json['geo']),
       organization: PlaceLinksOrganization.fromJson(json['organization']),
       self: PlaceLinksSelf.fromJson(json['self']),
     );
   }
+
+  PlaceLinksChildren children;
 
   PlaceLinksGeo geo;
 
@@ -34,6 +38,7 @@ class PlaceLinks {
 
     return other is PlaceLinks &&
         runtimeType == other.runtimeType &&
+        children == other.children &&
         geo == other.geo &&
         organization == other.organization &&
         self == other.self;
@@ -44,6 +49,7 @@ class PlaceLinks {
   int get hashCode {
     int hashCode = 0;
 
+    hashCode ^= children?.hashCode ?? 0;
     hashCode ^= geo?.hashCode ?? 0;
     hashCode ^= organization?.hashCode ?? 0;
     hashCode ^= self?.hashCode ?? 0;
@@ -65,6 +71,7 @@ class PlaceLinks {
 
   Map<String, dynamic> toJson() {
     return {
+      if (children != null) 'children': children.toJson(),
       if (geo != null) 'geo': geo.toJson(),
       if (organization != null) 'organization': organization.toJson(),
       if (self != null) 'self': self.toJson(),
@@ -73,6 +80,6 @@ class PlaceLinks {
 
   @override
   String toString() {
-    return 'PlaceLinks[geo=$geo, organization=$organization, self=$self, ]';
+    return 'PlaceLinks[children=$children, geo=$geo, organization=$organization, self=$self, ]';
   }
 }

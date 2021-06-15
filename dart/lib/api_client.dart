@@ -799,6 +799,12 @@ class ApiClient {
           return PlaceGeoShape.fromJson(value);
         case 'PlaceLinks':
           return PlaceLinks.fromJson(value);
+        case 'PlaceLinksChildren':
+          return PlaceLinksChildren.fromJson(value);
+        case 'PlaceLinksChildrenIriTemplate':
+          return PlaceLinksChildrenIriTemplate.fromJson(value);
+        case 'PlaceLinksChildrenIriTemplateMapping':
+          return PlaceLinksChildrenIriTemplateMapping.fromJson(value);
         case 'PlaceLinksGeo':
           return PlaceLinksGeo.fromJson(value);
         case 'PlaceLinksGeoIriTemplate':
