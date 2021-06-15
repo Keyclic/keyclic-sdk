@@ -51,7 +51,7 @@ sed -i 's/Map<String, String> metadata/Map<String, dynamic> metadata/g' lib/mode
 # fix object type
 sed -i 's/Object.fromJson(\(.*\))/\1/g' lib/model/document_embedded.dart
 sed -i 's/Object/Map<String, dynamic>/g' lib/model/document_embedded.dart
-sed -i 's/container.toJson()/container/g' lib/model/document_embedded.dart
+sed -i 's/container?.toJson()/container/g' lib/model/document_embedded.dart
 # fix coordinates
 sed -i 's/List<List<num>> coordinates/List<dynamic> coordinates/g' lib/model/*
 # replace coordinates type when mapping
