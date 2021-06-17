@@ -882,7 +882,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cpostExportByOrganization**
-> cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], batch, batches[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], order, phase, phases[], place, places[], priority, priorities[], query, rating, state, states[], visibility[], page, limit)
+> cpostExportByOrganization(xKeyclicApp, exportData, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], batch, batches[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], order, phase, phases[], place, places[], priority, priorities[], query, rating, state, states[], visibility[], page, limit)
 
 Retrieve all Export resources.
 
@@ -896,6 +896,7 @@ import 'package:keyclic_sdk_api/api.dart';
 
 var api_instance = OrganizationApi();
 var xKeyclicApp = xKeyclicApp_example; // String | 
+var exportData = ExportData(); // ExportData | 
 var organization = ; // String | The identifier of the resource.
 var acceptLanguage = acceptLanguage_example; // String | 
 var xDateTime = 2013-10-20T19:20:30+01:00; // DateTime | 
@@ -936,7 +937,7 @@ var page = 56; // int | Page of the overview.
 var limit = 56; // int | Page of the overview.
 
 try { 
-    api_instance.cpostExportByOrganization(xKeyclicApp, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], batch, batches[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], order, phase, phases[], place, places[], priority, priorities[], query, rating, state, states[], visibility[], page, limit);
+    api_instance.cpostExportByOrganization(xKeyclicApp, exportData, organization, acceptLanguage, xDateTime, xKeyclicAppPlatform, xKeyclicAppVersion, assignedTo, assignedTos[], batch, batches[], category, categories[], createdBy, createdBies[], after, before, deep, delegatedTo, delegatedTos[], hasDocuments, managedBy, managedBies[], operationStateAll, operationState, operationStates[], order, phase, phases[], place, places[], priority, priorities[], query, rating, state, states[], visibility[], page, limit);
 } catch (e) {
     print("Exception when calling OrganizationApi->cpostExportByOrganization: $e\n");
 }
@@ -947,6 +948,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyclicApp** | **String**|  | [default to com.keyclic.app]
+ **exportData** | [**ExportData**](ExportData.md)|  | 
  **organization** | [**String**](.md)| The identifier of the resource. | 
  **acceptLanguage** | **String**|  | [optional] [default to fr-FR]
  **xDateTime** | **DateTime**|  | [optional] 

@@ -201,6 +201,7 @@ part 'model/document_workflow_data.dart';
 part 'model/duration.dart';
 part 'model/error.dart';
 part 'model/error_embedded.dart';
+part 'model/export_data.dart';
 part 'model/external_service.dart';
 part 'model/external_service_collection.dart';
 part 'model/external_service_contact_point.dart';
