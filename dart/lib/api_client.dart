@@ -411,6 +411,8 @@ class ApiClient {
           return Error.fromJson(value);
         case 'ErrorEmbedded':
           return ErrorEmbedded.fromJson(value);
+        case 'ExportData':
+          return ExportData.fromJson(value);
         case 'ExternalService':
           return ExternalService.fromJson(value);
         case 'ExternalServiceCollection':

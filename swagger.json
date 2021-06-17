@@ -9,7 +9,7 @@
             "url": "https:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.13.11"
+        "version": "2.13.12-dev.4a0f7a79c7"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -9698,6 +9698,9 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
+                        "$ref": "#\/parameters\/ExportData"
+                    },
+                    {
                         "$ref": "#\/parameters\/assigned_to"
                     },
                     {
@@ -17355,6 +17358,18 @@
                 }
             }
         },
+        "ExportData": {
+            "type": "object",
+            "properties": {
+                "contentType": {
+                    "type": "string",
+                    "enum": [
+                        "application\/pdf",
+                        "application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                    ]
+                }
+            }
+        },
         "ExternalService": {
             "type": "object",
             "properties": {
@@ -24211,6 +24226,14 @@
             "in": "body",
             "schema": {
                 "$ref": "#\/definitions\/OrganizationPatch"
+            },
+            "required": true
+        },
+        "ExportData": {
+            "name": "ExportData",
+            "in": "body",
+            "schema": {
+                "$ref": "#\/definitions\/ExportData"
             },
             "required": true
         },
