@@ -33,7 +33,7 @@ deploy-dart() {
 
     cd ${CURRENT_DIR}/dart || { echo -e "Cannot find ${WORKING_DIR} directory"; exit 1; }
 
-    pub publish
+    pub publish -f
 
     cd ${CURRENT_DIR} || exit
 }
