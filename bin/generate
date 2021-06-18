@@ -27,13 +27,27 @@ docker run \
     --rm \
     --volume ${PWD}:/local \
     --user "$(id -u)":"$(id -g)" \
-    swaggerapi/swagger-codegen-cli:2.4.8 \
+    openapitools/openapi-generator-cli:v5.0.1 \
     generate \
     --config /local/options.dart.json \
     --input-spec ${SWAGGER_FILE} \
-    --lang dart \
+    --generator-name dart-dio \
+    --minimal-update \
     --output /local/dart \
     --template-dir /local/dart-templates
+
+# examples
+# java \
+#   -DdebugModels \
+#   -jar /home/keyclic/Downloads/openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar \
+#   generate \
+#   --config options.dart.json \
+#   --input-spec ${SWAGGER_FILE} \
+#   --generator-name dart-dio \
+#   --minimal-update \
+#   --output dart \
+#   --template-dir dart-templates \
+#   > .codegen.dart.log
 
 sleep 10
 
@@ -41,43 +55,30 @@ sleep 10
 cd "${CURRENT_DIR}"/dart || { echo -e "Cannot find dart directory"; exit 1; }
 
 # remove bracket in function parameter name
-sed -i -r 's/([a-zA-Z]+)\[([a-zA-Z]*)\]/\1_\2_/g' lib/api/*
+# sed -i -r 's/([a-zA-Z]+)\[([a-zA-Z]*)\]/\1_\2_/g' lib/api/*
 # replace array query parameter name with bracket instead of underscore
-sed -i -r 's/"([a-zA-Z0-9_]+)_([a-zA-Z0-9]*)_"/"\1\[\2\]"/g' lib/api/*
-sed -i -r 's/"([a-zA-Z0-9]+)__"/"\1\[]"/g' lib/api/*
-
-# fix metadata type
-sed -i 's/Map<String, String> metadata/Map<String, dynamic> metadata/g' lib/model/*
-# fix object type
-sed -i 's/Object.fromJson(\(.*\))/\1/g' lib/model/document_embedded.dart
-sed -i 's/Object/Map<String, dynamic>/g' lib/model/document_embedded.dart
-sed -i 's/container.toJson()/container/g' lib/model/document_embedded.dart
-# fix coordinates
-sed -i 's/List<List<num>> coordinates/List<dynamic> coordinates/g' lib/model/*
-# replace coordinates type when mapping
-sed -i 's/coordinates\.map((List<num> element)/coordinates\.map((dynamic element)/' lib/model/feature_geometry.dart
-# remove List.listFromJson
-sed -i 's/List.listFromJson//g' lib/model/*
-
-# change some files to match requirements of pubspec.yaml specifications
-cp ../LICENSE .
-mv docs doc
-mv .analysis_options analysis_options.yaml
+# sed -i -r 's/"([a-zA-Z0-9_]+)_([a-zA-Z0-9]*)_"/"\1\[\2\]"/g' lib/api/*
+# sed -i -r 's/"([a-zA-Z0-9]+)__"/"\1\[]"/g' lib/api/*
+sed -i -r 's/"([a-zA-Z0-9]+)LeftSquareBracketRightSquareBracket"/"\1\__"/g' lib/api/*
 
 pub get
-dartfmt --fix --overwrite lib
+# generate models
+pub run build_runner build
+dartfmt --fix --overwrite lib #--line-length 240
+pana . --no-warning
 
 # When the script exits call cleanup function
 trap cleanup EXIT
 
 # examples
-#java \
+# java \
 #   -DdebugModels \
-#   -jar ../swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar \
+#   -jar ../openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar \
 #   generate \
 #   --config options.dart.json \
 #   --input-spec ${SWAGGER_FILE} \
-#   --lang dart \
+#   --generator-name dart-dio \
+#   --minimal-update \
 #   --output dart \
 #   --template-dir dart-templates \
 #   > .codegen.dart.log

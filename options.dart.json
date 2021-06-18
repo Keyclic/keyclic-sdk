@@ -1,5 +1,6 @@
 {
   "browserClient": false,
+  "clientName": "ApiClient",
   "pubDescription": "The keyclic_sdk_api package is an implementation of the Keyclic API.",
   "pubName": "keyclic_sdk_api",
   "pubVersion": "2.13.11",

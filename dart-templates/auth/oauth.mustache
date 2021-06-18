@@ -1,18 +1,25 @@
-part of {{pubName}}.api;
+{{>header}}
+import 'dart:async';
+import 'package:{{pubName}}/auth/auth.dart';
+import 'package:dio/dio.dart';
 
-class OAuth implements Authentication {
-  String _oauthToken;
+class OAuthInterceptor extends AuthInterceptor {
+    Map<String, String> tokens = {};
 
-  @override
-  void applyToParams(
-    List<QueryParam> queryParams,
-    Map<String, String> headerParams,
-  ) {
-    if (_oauthToken != null) {
-      headerParams["Authorization"] = "Bearer $_oauthToken";
+    @override
+    Future<dynamic> onRequest(RequestOptions options) {
+        final List<Map<String, dynamic>> authInfo = getAuthInfo(options, 'oauth');
+        for (final Map<String, dynamic> info in authInfo) {
+            final String token = tokens[info['name']];
+
+            if (token == null) {
+                continue;
+            }
+
+            options.headers['Authorization'] = 'Bearer ${token}';
+            break;
+        }
+
+        return super.onRequest(options);
     }
-  }
-
-  @override
-  void setAccessToken(String value) => _oauthToken = value;
 }

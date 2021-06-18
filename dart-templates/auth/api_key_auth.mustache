@@ -1,27 +1,29 @@
-part of {{pubName}}.api;
+{{>header}}
+import 'dart:async';
+import 'package:{{pubName}}/auth/auth.dart';
+import 'package:dio/dio.dart';
 
-class ApiKeyAuth implements Authentication {
-  ApiKeyAuth(this.location, this.paramName);
+class ApiKeyAuthInterceptor extends AuthInterceptor {
+    Map<String, String> apiKeys = {};
 
-  final String location;
-  final String paramName;
+    @override
+    Future<dynamic> onRequest(RequestOptions options) {
+        final List<Map<String, dynamic>> authInfo = getAuthInfo(options, 'apiKey');
+        for (final info in authInfo) {
+            final String authName = info['name'];
+            final String authKeyName = info['keyName'];
+            final String authWhere = info['where'];
+            final apiKey = apiKeys[authName];
 
-  String _apiKey;
+            if (apiKey == null) {
+                continue;
+            }
 
-  @override
-  void applyToParams(
-    List<QueryParam> queryParams,
-    Map<String, String> headerParams,
-  ) {
-    if (location == 'query' && _apiKey != null) {
-      queryParams.add(QueryParam(paramName, _apiKey));
+            final where = authWhere == 'query' ?  options.queryParameters : options.headers;
+            where[authKeyName] = apiKey;
+            break;
+        }
+
+        return super.onRequest(options);
     }
-
-    if (location == 'header' && _apiKey != null) {
-      headerParams[paramName] = _apiKey;
-    }
-  }
-
-  @override
-  void setAccessToken(String value) => _apiKey = value;
 }

@@ -1,29 +1,32 @@
-class {{classname}} {
-  {{classname}}.fromJson(dynamic data) {
-    switch (data) {
-      {{#allowableValues}}{{#enumVars}}
-      case {{{value}}}:
-        value = data;
-        break;
-      {{/enumVars}}{{/allowableValues}}
-      default:
-        throw('Unknown enum value to decode: $data');
-    }
-  }
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-  {{classname}}._internal(this.value);
+part '{{classFilename}}.g.dart';
 
-  /// The underlying value of this enum member.
-  {{dataType}} value;
+class {{classname}} extends EnumClass {
+    const {{classname}}._(String name): super(name);
 
-  {{#allowableValues}}{{#enumVars}}
-    {{#description}}
-  /// {{description}}
-    {{/description}}
-  static {{classname}} {{name}} = {{classname}}._internal({{{value}}});
-  {{/enumVars}}{{/allowableValues}}
+    {{#allowableValues}}{{#enumVars}}
+        {{#description}}
+    /// {{{description}}}
+        {{/description}}
+    @BuiltValueEnumConst({{#isInteger}}wireNumber: {{{value}}}{{/isInteger}}{{^isInteger}}wireName: r{{#lambda.escapeBuiltValueEnum}}{{{value}}}{{/lambda.escapeBuiltValueEnum}}{{/isInteger}})
+    static const {{classname}} {{name}} = _${{name}};
 
-  static dynamic encode({{classname}} data) {
-    return data.value;
-  }
+    {{/enumVars}}{{/allowableValues}}
+
+    static Serializer<{{classname}}> get serializer => _${{#lambda.camelcase}}{{{classname}}}{{/lambda.camelcase}}Serializer;
+
+    static BuiltSet<{{classname}}> get values => _$values;
+
+    static {{classname}} valueOf(String name) => _$valueOf(name);
 }
+
+/// Optionally, enum_class can generate a mixin to go with your enum for use
+/// with Angular. It exposes your enum constants as getters. So, if you mix it
+/// in to your Dart component class, the values become available to the
+/// corresponding Angular template.
+///
+/// Trigger mixin generation by writing a line like this one next to your enum.
+abstract class {{classname}}Mixin = Object with _${{classname}}Mixin;
