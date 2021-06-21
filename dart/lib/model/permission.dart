@@ -1,5 +1,7 @@
+// @dart=2.10
 part of keyclic_sdk_api.api;
 
+// @dart=2.10
 class Permission {
   Permission.fromJson(dynamic data) {
     switch (data) {

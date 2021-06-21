@@ -17,7 +17,7 @@ Dart 1.20.0 or later OR Flutter 0.0.20 or later
 If this Dart package is published to Github, please include the following in pubspec.yaml
 ```
 name: keyclic_sdk_api
-version: 2.13.11
+version: 2.13.11-nullsafety.0
 description: The keyclic_sdk_api package is an implementation of the Keyclic API.
 dependencies:
   keyclic_sdk_api:

@@ -1,3 +1,4 @@
+// @dart=2.10
 library keyclic_sdk_api.api;
 
 import 'dart:async';
