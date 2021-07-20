@@ -730,7 +730,7 @@ Name | Type | Description  | Notes
  **rating** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
  **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
- **visibility[]** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
+ **visibility[]** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 
@@ -982,7 +982,7 @@ Name | Type | Description  | Notes
  **rating** | **String**|  | [optional] 
  **state** | **String**|  | [optional] 
  **states[]** | [**List&lt;String&gt;**](String.md)|  | [optional] 
- **visibility[]** | **String**|  | [optional] [default to VISIBILITY_PUBLIC]
+ **visibility[]** | **String**|  | [optional] 
  **page** | **int**| Page of the overview. | [optional] [default to 1]
  **limit** | **int**| Page of the overview. | [optional] [default to 10]
 

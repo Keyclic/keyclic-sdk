@@ -445,10 +445,6 @@ class ApiClient {
           return Feature.fromJson(value);
         case 'FeatureGeometry':
           return FeatureGeometry.fromJson(value);
-        case 'Feed':
-          return Feed.fromJson(value);
-        case 'FeedCollection':
-          return FeedCollection.fromJson(value);
         case 'Feedback':
           return Feedback.fromJson(value);
         case 'FeedbackCollection':
@@ -1123,8 +1119,6 @@ class ApiClient {
           return DocumentPagination.fromJson(value);
         case 'ExternalServicePagination':
           return ExternalServicePagination.fromJson(value);
-        case 'FeedPagination':
-          return FeedPagination.fromJson(value);
         case 'FeedbackPagination':
           return FeedbackPagination.fromJson(value);
         case 'InternalServicePagination':

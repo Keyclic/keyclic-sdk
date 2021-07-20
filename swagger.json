@@ -9,7 +9,7 @@
             "url": "https:\/\/keyclic.com",
             "email": "techies@keyclic.com"
         },
-        "version": "2.13.11"
+        "version": "2.13.16"
     },
     "host": "api.keyclic.com",
     "basePath": "\/",
@@ -1783,6 +1783,126 @@
                 ]
             }
         },
+        "\/digital-documents\/{digitalDocument}\/feedbacks": {
+            "get": {
+                "tags": [
+                    "DigitalDocument"
+                ],
+                "summary": "Retrieve all Feedback resources.",
+                "externalDocs": {
+                    "description": "Keyclic API documentation.",
+                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
+                },
+                "operationId": "cgetFeedbackByDigitalDocument",
+                "consumes": [
+                    "application\/json;charset=UTF-8"
+                ],
+                "produces": [
+                    "application\/hal+json;charset=UTF-8"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#\/parameters\/accept-language"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-date-time"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-platform"
+                    },
+                    {
+                        "$ref": "#\/parameters\/x-keyclic-app-version"
+                    },
+                    {
+                        "$ref": "#\/parameters\/batch"
+                    },
+                    {
+                        "$ref": "#\/parameters\/batches__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/after"
+                    },
+                    {
+                        "$ref": "#\/parameters\/before"
+                    },
+                    {
+                        "$ref": "#\/parameters\/geo_hash__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/order"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organization"
+                    },
+                    {
+                        "$ref": "#\/parameters\/organizations__"
+                    },
+                    {
+                        "$ref": "#\/parameters\/page"
+                    },
+                    {
+                        "$ref": "#\/parameters\/limit"
+                    },
+                    {
+                        "description": "The identifier of the resource.",
+                        "format": "uuid",
+                        "in": "path",
+                        "name": "digitalDocument",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/FeedbackPagination"
+                        }
+                    },
+                    "400": {
+                        "description": "Returned when the request is invalid.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "401": {
+                        "description": "Returned when the resource is unauthorized.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "403": {
+                        "description": "Returned when the resource is forbidden.",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "404": {
+                        "description": "Returned when the resource is not found",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    },
+                    "500": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#\/definitions\/Error"
+                        }
+                    }
+                },
+                "schemes": [
+                    "https"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
         "\/digital-documents\/{digitalDocument}": {
             "delete": {
                 "tags": [
@@ -3039,88 +3159,6 @@
                 ]
             }
         },
-        "\/feeds": {
-            "get": {
-                "tags": [
-                    "Feed"
-                ],
-                "summary": "Retrieve all Feed resources.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "cgetFeeds",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-date-time"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-platform"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "$ref": "#\/parameters\/page"
-                    },
-                    {
-                        "$ref": "#\/parameters\/limit"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/FeedPagination"
-                        }
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            }
-        },
         "\/feeds\/{feed}": {
             "get": {
                 "tags": [
@@ -3173,185 +3211,6 @@
                         "schema": {
                             "$ref": "#\/definitions\/ActivityAggregatedPagination"
                         }
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "404": {
-                        "description": "Returned when the resource is not found",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            }
-        },
-        "\/feeds\/{feed}\/following": {
-            "get": {
-                "tags": [
-                    "Feed"
-                ],
-                "summary": "Retrieve all Following resources.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "cgetFollowingsByFeed",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-date-time"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-platform"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "$ref": "#\/parameters\/page"
-                    },
-                    {
-                        "$ref": "#\/parameters\/limit"
-                    },
-                    {
-                        "in": "path",
-                        "name": "feed",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/FeedPagination"
-                        }
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "404": {
-                        "description": "Returned when the resource is not found",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            }
-        },
-        "\/feeds\/{feed}\/follow": {
-            "post": {
-                "tags": [
-                    "Feed"
-                ],
-                "summary": "Create one Follow resource.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "postFollowByFeed",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-date-time"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-platform"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "in": "path",
-                        "name": "feed",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": ""
                     },
                     "400": {
                         "description": "Returned when the request is invalid.",
@@ -3485,91 +3344,6 @@
                 ]
             }
         },
-        "\/feeds\/{feed}\/unfollow": {
-            "post": {
-                "tags": [
-                    "Feed"
-                ],
-                "summary": "Create one Unfollow resource.",
-                "externalDocs": {
-                    "description": "Keyclic API documentation.",
-                    "url": "http:\/\/docs.keyclic.com\/fr\/master\/overview.html"
-                },
-                "operationId": "postUnfollowByFeed",
-                "consumes": [
-                    "application\/json;charset=UTF-8"
-                ],
-                "produces": [
-                    "application\/hal+json;charset=UTF-8"
-                ],
-                "parameters": [
-                    {
-                        "$ref": "#\/parameters\/accept-language"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-date-time"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-platform"
-                    },
-                    {
-                        "$ref": "#\/parameters\/x-keyclic-app-version"
-                    },
-                    {
-                        "in": "path",
-                        "name": "feed",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": ""
-                    },
-                    "400": {
-                        "description": "Returned when the request is invalid.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "401": {
-                        "description": "Returned when the resource is unauthorized.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "403": {
-                        "description": "Returned when the resource is forbidden.",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "404": {
-                        "description": "Returned when the resource is not found",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    },
-                    "500": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#\/definitions\/Error"
-                        }
-                    }
-                },
-                "schemes": [
-                    "https"
-                ],
-                "security": [
-                    {
-                        "bearer": []
-                    }
-                ]
-            }
-        },
         "\/feedbacks": {
             "get": {
                 "tags": [
@@ -3604,16 +3378,6 @@
                         "$ref": "#\/parameters\/x-keyclic-app-version"
                     },
                     {
-                        "default": "DELIVERED",
-                        "in": "query",
-                        "name": "state",
-                        "pattern": ".*",
-                        "type": "string"
-                    },
-                    {
-                        "$ref": "#\/parameters\/visibility__"
-                    },
-                    {
                         "$ref": "#\/parameters\/batch"
                     },
                     {
@@ -3636,9 +3400,6 @@
                     },
                     {
                         "$ref": "#\/parameters\/organizations__"
-                    },
-                    {
-                        "$ref": "#\/parameters\/states__"
                     },
                     {
                         "$ref": "#\/parameters\/page"
@@ -17645,52 +17406,6 @@
                 }
             }
         },
-        "Feed": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "format": "string",
-                    "readOnly": true,
-                    "type": "string"
-                },
-                "name": {
-                    "format": "string",
-                    "type": "string"
-                },
-                "type": {
-                    "format": "string",
-                    "readOnly": true,
-                    "type": "string"
-                }
-            }
-        },
-        "FeedCollection": {
-            "type": "object",
-            "properties": {
-                "items": {
-                    "type": "array",
-                    "default": [],
-                    "items": {
-                        "$ref": "#\/definitions\/Feed"
-                    }
-                }
-            }
-        },
-        "FeedPagination": {
-            "allOf": [
-                {
-                    "$ref": "#\/definitions\/Pagination"
-                },
-                {
-                    "type": "object",
-                    "properties": {
-                        "_embedded": {
-                            "$ref": "#\/definitions\/FeedCollection"
-                        }
-                    }
-                }
-            ]
-        },
         "Feedback": {
             "type": "object",
             "properties": {
@@ -23705,6 +23420,32 @@
             },
             "required": true
         },
+        "batch": {
+            "in": "query",
+            "name": "batch",
+            "pattern": ".*",
+            "type": "string"
+        },
+        "batches__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "batches[]",
+            "pattern": ".*",
+            "type": "array"
+        },
+        "geo_hash__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "geo_hash[]",
+            "pattern": "^.{5}$",
+            "type": "array"
+        },
         "DocumentPatch": {
             "name": "DocumentPatch",
             "in": "body",
@@ -23776,56 +23517,6 @@
                 "$ref": "#\/definitions\/ExternalServiceData"
             },
             "required": true
-        },
-        "visibility__": {
-            "collectionFormat": "multi",
-            "default": "VISIBILITY_PUBLIC",
-            "enum": [
-                "VISIBILITY_PRIVATE",
-                "VISIBILITY_PUBLIC",
-                "VISIBILITY_RESTRICTED",
-                "VISIBILITY_SHARED"
-            ],
-            "in": "query",
-            "name": "visibility[]",
-            "pattern": "VISIBILITY_PRIVATE|VISIBILITY_PUBLIC|VISIBILITY_RESTRICTED|VISIBILITY_SHARED",
-            "type": "string"
-        },
-        "batch": {
-            "in": "query",
-            "name": "batch",
-            "pattern": ".*",
-            "type": "string"
-        },
-        "batches__": {
-            "collectionFormat": "multi",
-            "in": "query",
-            "items": {
-                "type": "string"
-            },
-            "name": "batches[]",
-            "pattern": ".*",
-            "type": "array"
-        },
-        "geo_hash__": {
-            "collectionFormat": "multi",
-            "in": "query",
-            "items": {
-                "type": "string"
-            },
-            "name": "geo_hash[]",
-            "pattern": "^.{5}$",
-            "type": "array"
-        },
-        "states__": {
-            "collectionFormat": "multi",
-            "in": "query",
-            "items": {
-                "type": "string"
-            },
-            "name": "states[]",
-            "pattern": ".*",
-            "type": "array"
         },
         "CommentData": {
             "name": "CommentData",
@@ -24033,6 +23724,16 @@
             "pattern": ".*",
             "type": "array"
         },
+        "states__": {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+                "type": "string"
+            },
+            "name": "states[]",
+            "pattern": ".*",
+            "type": "array"
+        },
         "geo_elevation": {
             "in": "query",
             "name": "geo_elevation",
@@ -24189,6 +23890,19 @@
             "in": "query",
             "name": "rating",
             "pattern": "[-+]?\\d+",
+            "type": "string"
+        },
+        "visibility__": {
+            "collectionFormat": "multi",
+            "enum": [
+                "VISIBILITY_PRIVATE",
+                "VISIBILITY_PUBLIC",
+                "VISIBILITY_RESTRICTED",
+                "VISIBILITY_SHARED"
+            ],
+            "in": "query",
+            "name": "visibility[]",
+            "pattern": "VISIBILITY_PRIVATE|VISIBILITY_PUBLIC|VISIBILITY_RESTRICTED|VISIBILITY_SHARED",
             "type": "string"
         },
         "options_property_": {
