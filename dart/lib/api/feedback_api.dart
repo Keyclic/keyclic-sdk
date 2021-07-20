@@ -92,8 +92,6 @@ class FeedbackApi {
     DateTime xDateTime,
     String xKeyclicAppPlatform,
     String xKeyclicAppVersion,
-    String state,
-    String visibility__,
     String batch,
     List<String> batches__,
     DateTime after,
@@ -102,7 +100,6 @@ class FeedbackApi {
     String order,
     String organization,
     List<String> organizations__,
-    List<String> states__,
     int page,
     int limit,
   }) async {
@@ -117,10 +114,6 @@ class FeedbackApi {
 
     // query params
     final List<QueryParam> queryParams = <QueryParam>[
-      if (state != null)
-        ..._convertParametersForCollectionFormat("state", state),
-      if (visibility__ != null)
-        ..._convertParametersForCollectionFormat("visibility[]", visibility__),
       if (batch != null)
         ..._convertParametersForCollectionFormat("batch", batch),
       if (batches__ != null)
@@ -140,9 +133,6 @@ class FeedbackApi {
       if (organizations__ != null)
         ..._convertParametersForCollectionFormat(
             "organizations[]", organizations__,
-            collectionFormat: "multi"),
-      if (states__ != null)
-        ..._convertParametersForCollectionFormat("states[]", states__,
             collectionFormat: "multi"),
       if (page != null) ..._convertParametersForCollectionFormat("page", page),
       if (limit != null)
